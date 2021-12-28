@@ -1,1 +1,8 @@
-site_name: My Docs
+site_name: Budget Analysis
+theme: readthedocs
+
+pages:
+ - Home: index.md
+ - 01 Global: 01_global.md
+ - 02 Cloud regime: 02_cloud_regime.md
+

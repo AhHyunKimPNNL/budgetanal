@@ -1,5 +1,9 @@
 site_name: Budget Analysis
-theme: readthedocs
+theme: 
+    name: readthedocs
+    highlightjs: true
+    analytics:
+        gtag: G-ABC123
 
 pages:
  - Home: index.md

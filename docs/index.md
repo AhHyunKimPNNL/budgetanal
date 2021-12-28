@@ -1,15 +1,19 @@
 # Welcome to budget analysis page
+* since Dec. 27, 2021.
+* url: https://github.com/AhHyunKimPNNL/budgetanal
 
-## Commands
+## How to use mkdocs
+* webstie: https://www.mkdocs.org/
 
+### commands
+* `pip install mkdocs` - install mkdocs
 * `mkdocs new [dir-name]` - Create a new project.
 * `mkdocs serve` - Start the live-reloading docs server.
 * `mkdocs build` - Build the documentation site.
 * `mkdocs -h` - Print help message and exit.
+* `mkdocs gh-deploy` - publish mkdocs using github
 
-## Project layout
+### Settings in mkdocs.yml file
+* `site_name: [name of the website]` - setup name of the website
+* `theme: readthedocs` - setup themes (default: Bootstrap)
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.

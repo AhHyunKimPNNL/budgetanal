@@ -1,3 +1,3 @@
 # Global view of E3SM
 
-![omega](img/omega_zonal_test.eps)
+![omega](img/omega_zonal_test.jpg)

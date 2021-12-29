@@ -10,10 +10,17 @@ pages:
  - 01 Global: 01_global.md
  - 02 Cloud regime: 02_cloud_regime.md
 
-
 markdown_extensions:
+  - tables
+  - pymdownx.tasklist:
+      custom_checkbox: false
+      clickable_checkbox: true
   - pymdownx.highlight:
       anchor_linenums: true
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
+
+extra_javascript:
+  - https://cdnjs.cloudflare.com/ajax/libs/tablesort/5.2.1/tablesort.min.js
+  - javascripts/tablesort.js

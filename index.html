@@ -57,7 +57,21 @@
                 <ul class="current">
                     <li class="toctree-l1 current"><a class="reference internal current" href=".">Home</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#simulation-setup">Simulation setup</a>
+    <li class="toctree-l2"><a class="reference internal" href="#flowchart-for-time-integration-in-eam">Flowchart for time integration in EAM</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#main-checkpoints-in-condidiag">Main Checkpoints in CondiDiag</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#dynamical-core">Dynamical core</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#before-coupler">Before coupler</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#mct-coupler">MCT coupler</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#after-coupler">After coupler</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#simulation-settings">Simulation Settings</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#condidiag-settings">CondiDiag Settings</a>
     </li>
@@ -120,7 +134,213 @@
 <li>since Dec. 27, 2021.</li>
 <li>url: https://github.com/AhHyunKimPNNL/budgetanal</li>
 </ul>
-<h2 id="simulation-setup">Simulation setup</h2>
+<h2 id="flowchart-for-time-integration-in-eam">Flowchart for time integration in EAM</h2>
+<p><img alt="flowchart" src="img/coupling_diagram_EAMv1.png" /></p>
+<p>The following documents provide partial descriptions:
+  - Section 2.1 in https://doi.org/10.5194/gmd-14-1921-2021</p>
+<h2 id="main-checkpoints-in-condidiag">Main Checkpoints in CondiDiag</h2>
+<ul>
+<li>CondiDiag GMD URL: https://gmd.copernicus.org/preprints/gmd-2021-331/</li>
+</ul>
+<h3 id="dynamical-core">Dynamical core</h3>
+<table>
+<thead>
+<tr>
+<th>long name</th>
+<th>short name</th>
+<th>etc.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dynamical core and large-scale transport</td>
+<td>DYNEND</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="before-coupler">Before coupler</h3>
+<table>
+<thead>
+<tr>
+<th>long name</th>
+<th>short name</th>
+<th>etc.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mass and energy fixers</td>
+<td>PBCINI</td>
+<td></td>
+</tr>
+<tr>
+<td>Dry adiabatic adjustment</td>
+<td>DRYADJ</td>
+<td></td>
+</tr>
+<tr>
+<td>Deep convection</td>
+<td>DEEPCU</td>
+<td></td>
+</tr>
+<tr>
+<td>Shallow convection (EAMv0   only)</td>
+<td>SHCU</td>
+<td></td>
+</tr>
+<tr>
+<td>CARMA cloud microphysics</td>
+<td>CARMA</td>
+<td></td>
+</tr>
+<tr>
+<td>Stratiform cloud macrophysics,   sub-step xx</td>
+<td>CLDMACxx</td>
+<td></td>
+</tr>
+<tr>
+<td>Aerosol activation and mixing,   sub-step xx</td>
+<td>CLDAERxx</td>
+<td></td>
+</tr>
+<tr>
+<td>Stratiform cloud microphysics,   sub-step xx</td>
+<td>CLDMICxx</td>
+<td></td>
+</tr>
+<tr>
+<td>Ice saturation adjustment,   sub-step xx</td>
+<td>ICEMACxx</td>
+<td>“clubb_tend_cam”</td>
+</tr>
+<tr>
+<td>CLUBB, sub-step xx</td>
+<td>CLUBBxx</td>
+<td>“clubb_tend_cam”</td>
+</tr>
+<tr>
+<td>Convective detrainment,   sub-step xx</td>
+<td>CUDETxx</td>
+<td>“clubb_tend_cam”</td>
+</tr>
+<tr>
+<td>Miscellaneous diagnostics,   sub-step xx</td>
+<td>MACDIAGxx</td>
+<td>“clubb_tend_cam”</td>
+</tr>
+<tr>
+<td>Stratiform clouds, all   substeps</td>
+<td>STCLD</td>
+<td></td>
+</tr>
+<tr>
+<td>Aerosol wet removal and   resuspension</td>
+<td>AERWETRM</td>
+<td></td>
+</tr>
+<tr>
+<td>Miscellaneous diagnostics and   output</td>
+<td>PBCDIAG</td>
+<td></td>
+</tr>
+<tr>
+<td>Radiative transfer</td>
+<td>RAD</td>
+<td>Beginning of timestep</td>
+</tr>
+<tr>
+<td>Tropopause diagnosis; export   state preparation and output</td>
+<td>PBCEND</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="mct-coupler">MCT coupler</h3>
+<table>
+<thead>
+<tr>
+<th>long name</th>
+<th>short name</th>
+<th>etc.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Couling to surface models</td>
+<td>MCTCPL</td>
+<td></td>
+</tr>
+<tr>
+<td>Emissions of chemical species</td>
+<td>CHEMEMIS</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="after-coupler">After coupler</h3>
+<table>
+<thead>
+<tr>
+<th>long name</th>
+<th>short name</th>
+<th>etc.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tracer   mass fixers</td>
+<td>PACINI</td>
+<td></td>
+</tr>
+<tr>
+<td>Chemistry and aerosol   microphysics</td>
+<td>CHEM</td>
+<td></td>
+</tr>
+<tr>
+<td>Obukov   length and friction velocity;      Application of surface emissions</td>
+<td>CFLXAPP</td>
+<td></td>
+</tr>
+<tr>
+<td>Rayleigh friction</td>
+<td>RAYLEIGH</td>
+<td></td>
+</tr>
+<tr>
+<td>Aerosol dry deposition</td>
+<td>AERDRYRM</td>
+<td></td>
+</tr>
+<tr>
+<td>Gravity wave drag</td>
+<td>GWDRAG</td>
+<td></td>
+</tr>
+<tr>
+<td>QBO relaxation and ION drag</td>
+<td>IONDRAG</td>
+<td></td>
+</tr>
+<tr>
+<td>Application of nudging</td>
+<td>NDG</td>
+<td></td>
+</tr>
+<tr>
+<td>Dry-to-wet mixing ratio   conversion</td>
+<td>DRYWET</td>
+<td></td>
+</tr>
+<tr>
+<td>Various diagnostics</td>
+<td>PACEND</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="simulation-settings">Simulation Settings</h2>
 <ul>
 <li><strong> Code branch</strong>:huiwanpnnl/maint-1.0_cnd_diag1.1</li>
 <li><strong> Computing platform</strong>: compy</li>
@@ -129,19 +349,37 @@
 <li>resolution: ne30_ne30</li>
 <li>RUN_STARTDATE: 2009-10-01</li>
 <li>simulation length: 1 month</li>
-<li>output: average</li>
+<li>output: monthly average</li>
 </ul>
 </li>
 </ul>
 <h2 id="condidiag-settings">CondiDiag Settings</h2>
 <ul>
-<li>GMD url: https://gmd.copernicus.org/preprints/gmd-2021-331/</li>
-<li>conditional sampling option</li>
-<li>checkpoint options</li>
-<li>Quantity of interest (QoI) options</li>
+<li>CondiDiag GMD URL: https://gmd.copernicus.org/preprints/gmd-2021-331/</li>
+<li>Conditional sampling option
+<pre class="highlight"><code class="language-py">metric_name = ’ALL’</code></pre></li>
+<li>Checkpoint options
+<pre class="highlight"><code class="language-py">qoi_chkpt   = 'AERWETRM','RAD','PACEND','DYNEND','DRYADJ','DEEPCU',
+              'CLUBB01','CUDET01','CLDMIC01',
+              'CLUBB02','CUDET02','CLDMIC02',
+              'CLUBB03','CUDET03','CLDMIC03',
+              'CLUBB04','CUDET04','CLDMIC04',
+              'CLUBB05','CUDET05','CLDMIC05',
+              'CLUBB06','CUDET06','CLDMIC06',</code></pre></li>
+<li>Quantity of interest (QoI) options
+<pre class="highlight"><code class="language-py">qoi_name = 'T','T','Q','Q',"U","U","V","V","RHW","RHW","RHI","RHI",'CLDLIQ','CLDLIQ','CLDICE','CLDICE','RAINQM','RAINQM','SNOWQM','SNOWQM',
+qoi_nver =  72, 72, 72, 72, 72, 72, 72, 72,   72,   72,   72,   72,      72,      72,      72,      72,      72,      72,      72,      72,
+qoi_x_dp =   0,  1,  0,  1,  0,  1,  0,  1,    0,    1,    0,    1,       0,       1,       0,       1,       0,       1,       0,       1,</code></pre></li>
 </ul>
 <h2 id="history-output-options">History output options</h2>
-<pre class="highlight"><code class="language-py">import tensorflow as tf</code></pre>
+<pre class="highlight"><code class="language-py"> history_amwg        = .false.
+ history_aero_optics = .false.
+ history_aerosol     = .false.
+
+fincl1 = 'PRECC','PRECL','PRECSC','PRECSL','QFLX','PRECCZM0',
+         'MPDW2V','MPDW2I','MPDW2P','MPDI2V','MPDI2W','MPDI2P',</code></pre>
+<p><br><br><br><br><br></p>
+<hr />
 <h2 id="how-to-use-mkdocs">How to use mkdocs</h2>
 <ul>
 <li>webstie: https://www.mkdocs.org/</li>
@@ -150,7 +388,10 @@
 <ul>
 <li><code>pip install mkdocs</code> - install mkdocs</li>
 <li><code>mkdocs new [dir-name]</code> - Create a new project.</li>
-<li><code>mkdocs serve</code> - Start the live-reloading docs server.</li>
+<li><code>mkdocs serve</code> - Start the live-reloading docs server.<ul>
+<li>--dev-addr=IP:PORT - setup test page ip &amp; port</li>
+</ul>
+</li>
 <li><code>mkdocs build</code> - Build the documentation site.</li>
 <li><code>mkdocs -h</code> - Print help message and exit.</li>
 <li><code>mkdocs gh-deploy</code> - publish mkdocs using github</li>
@@ -202,6 +443,8 @@
     <script>var base_url = '.';</script>
     <script src="js/theme_extra.js" defer></script>
     <script src="js/theme.js" defer></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/tablesort/5.2.1/tablesort.min.js" defer></script>
+      <script src="javascripts/tablesort.js" defer></script>
       <script src="search/main.js" defer></script>
     <script defer>
         window.onload = function () {
@@ -214,5 +457,5 @@
 
 <!--
 MkDocs version : 1.2.3
-Build Date UTC : 2021-12-28 21:43:46.325718+00:00
+Build Date UTC : 2021-12-29 01:28:36.869603+00:00
 -->

@@ -61,7 +61,47 @@
                 <ul class="current">
                     <li class="toctree-l1 current"><a class="reference internal current" href="./">01 Global</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#_1"></a>
+    <li class="toctree-l2"><a class="reference internal" href="#by-checkpoints">By checkpoints</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#rad">RAD</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#pacend">PACEND</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#dynend">DYNEND</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#dryadj">DRYADJ</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#deepcu">DEEPCU</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#clubb">CLUBB</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#cudet">CUDET</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#cldmic">CLDMIC</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#aerwetrm">AERWETRM</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#by-variables">By variables</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#q">Q</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#t">T</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#cldliq">CLDLIQ</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#cldice">CLDICE</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#rainqm">RAINQM</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#snowqm">SNOWQM</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#u">U</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#v">V</a>
+    </li>
+        </ul>
     </li>
     </ul>
                     </li>
@@ -103,8 +143,233 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="global-view-of-e3sm">Global view of E3SM</h1>
-<h2 id="_1"></h2>
+                <h1 id="variable-increments-by-checkpoint-global-view">Variable Increments by Checkpoint: Global view</h1>
+<ul class="task-list">
+<li>need to check </li>
+<li class="task-list-item"><input type="checkbox"/> chkpt RAD: source of at 850 hPa cooling</li>
+<li class="task-list-item"><input type="checkbox"/> chkpt DYNEND: source of surface cooling</li>
+<li class="task-list-item"><input type="checkbox"/> chkpt DEEPCU: source of 500 hPa heating</li>
+</ul>
+<h2 id="by-checkpoints">By checkpoints</h2>
+<h3 id="rad">RAD</h3>
+<ul>
+<li>changes are mostly due to cloud longwave cooling</li>
+<li>at 850 hPa: subtropical low-level cloud<ul>
+<li>need to check if the cooling is coming from stratocumulus or storm track  </li>
+</ul>
+</li>
+</ul>
+<p><img alt="vert int" src="../img/01_global/All_vertical_integral_by_variable_and_add_substeps-0.png" />
+<img alt="zonal" src="../img/01_global/All_zonal_by_variable_and_add_substeps-0.png" /></p>
+<h3 id="pacend">PACEND</h3>
+<ul>
+<li>increments are minor</li>
+</ul>
+<p><img alt="vert int" src="../img/01_global/All_vertical_integral_by_variable_and_add_substeps-1.png" />
+<img alt="zonal" src="../img/01_global/All_zonal_by_variable_and_add_substeps-1.png" /></p>
+<h3 id="dynend">DYNEND</h3>
+<ul>
+<li>changes are mostly due to transport (momentum &amp; coriolis)</li>
+<li>vertical / horizontal transport are not yet separated</li>
+<li>Hadley circulation affects cooling in the Equator and warming at the stratocumulus cloud top</li>
+<li>transportation of hydrometeor &amp; water vapor occurs near the surface.</li>
+<li>need to check the source of cooling near the surface</li>
+</ul>
+<p><img alt="vert int" src="../img/01_global/All_vertical_integral_by_variable_and_add_substeps-2.png" />
+<img alt="zonal" src="../img/01_global/All_zonal_by_variable_and_add_substeps-2.png" /></p>
+<h3 id="dryadj">DRYADJ</h3>
+<ul>
+<li>minor changes</li>
+</ul>
+<p><img alt="vert int" src="../img/01_global/All_vertical_integral_by_variable_and_add_substeps-3.png" />
+<img alt="zonal" src="../img/01_global/All_zonal_by_variable_and_add_substeps-3.png" /></p>
+<h3 id="deepcu">DEEPCU</h3>
+<ul>
+<li>convective tracer transport &amp; momentum transport is calculated in this process.</li>
+<li>water vapor decreases due to condensation of convective hydrometeors (not shown)</li>
+<li>temperature changes are mostly due to convective heat transportation &amp; condensation</li>
+<li>need to check the source of 500 hPa heating</li>
+<li>possibly due to detrainment (turbulence?)</li>
+<li>need to check the source of 60S~30S signal</li>
+<li>is it from tropical cyclone or storm track? why?</li>
+</ul>
+<p><img alt="vert int" src="../img/01_global/All_vertical_integral_by_variable_and_add_substeps-4.png" />
+<img alt="zonal" src="../img/01_global/All_zonal_by_variable_and_add_substeps-4.png" /></p>
+<h3 id="clubb">CLUBB</h3>
+<ul>
+<li>shallow convection &amp; </li>
+<li>near surface circulations are slown down due to the friction caused by this process</li>
+<li>why concentrated near surface??</li>
+<li>U&amp;V<ul>
+<li>Boundary layer turbulence</li>
+<li>surface friction causes decrease in wind speed (opposite to the wind direction)</li>
+</ul>
+</li>
+<li>rain&amp;snow: only work as tracers in this process</li>
+<li>Cloud water: mostly condensation near storm track</li>
+<li>Q<ul>
+<li>transport due to shallow convection</li>
+<li>surface evaporation</li>
+<li>condensation above land due to cooling</li>
+</ul>
+</li>
+<li>Temperature<ul>
+<li>surface: latent &amp; sensible heat flux</li>
+<li>850-400 hPa: 30S~30N condensation</li>
+<li>850 hPa: entrainment due to cloud top mixing </li>
+</ul>
+</li>
+</ul>
+<p><img alt="vert int" src="../img/01_global/All_vertical_integral_by_variable_and_add_substeps-5.png" />
+<img alt="zonal" src="../img/01_global/All_zonal_by_variable_and_add_substeps-5.png" /></p>
+<h3 id="cudet">CUDET</h3>
+<p><img alt="vert int" src="../img/01_global/All_vertical_integral_by_variable_and_add_substeps-6.png" />
+<img alt="zonal" src="../img/01_global/All_zonal_by_variable_and_add_substeps-6.png" /></p>
+<h3 id="cldmic">CLDMIC</h3>
+<p><img alt="vert int" src="../img/01_global/All_vertical_integral_by_variable_and_add_substeps-7.png" />
+<img alt="zonal" src="../img/01_global/All_zonal_by_variable_and_add_substeps-7.png" /></p>
+<h3 id="aerwetrm">AERWETRM</h3>
+<p><img alt="vert int" src="../img/01_global/All_vertical_integral_by_variable_and_add_substeps-8.png" />
+<img alt="zonal" src="../img/01_global/All_zonal_by_variable_and_add_substeps-8.png" /></p>
+<h2 id="by-variables">By variables</h2>
+<h3 id="q">Q</h3>
+<table>
+<thead>
+<tr>
+<th><img alt="vertical profile Q" src="../img/01_global/All_profiles-0.png" /></th>
+<th><img alt="global mean Q" src="../img/01_global/All_global_mean-0.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="zonal Q" src="../img/01_global/All_zonal_by_chkpt_and_add_substeps-0.png" /></td>
+<td><img alt="vert int Q" src="../img/01_global/All_vertical_integral_by_chkpt_and_add_substeps-0.png" /></td>
+</tr>
+</tbody>
+</table>
+<h3 id="t">T</h3>
+<table>
+<thead>
+<tr>
+<th><img alt="vertical profile T" src="../img/01_global/All_profiles-1.png" /></th>
+<th><img alt="global mean T" src="../img/01_global/All_global_mean-1.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="zonal T" src="../img/01_global/All_zonal_by_chkpt_and_add_substeps-1.png" /></td>
+<td><img alt="vert int T" src="../img/01_global/All_vertical_integral_by_chkpt_and_add_substeps-1.png" /></td>
+</tr>
+</tbody>
+</table>
+<h3 id="cldliq">CLDLIQ</h3>
+<ul>
+<li>Liquid water content</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th><img alt="vertical profile CLDLIQ" src="../img/01_global/All_profiles-2.png" /></th>
+<th><img alt="global mean CLDLIQ" src="../img/01_global/All_global_mean-2.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="zonal CLDLIQ" src="../img/01_global/All_zonal_by_chkpt_and_add_substeps-2.png" /></td>
+<td><img alt="vert int CLDLIQ" src="../img/01_global/All_vertical_integral_by_chkpt_and_add_substeps-2.png" /></td>
+</tr>
+</tbody>
+</table>
+<h3 id="cldice">CLDICE</h3>
+<ul>
+<li>Ice water content</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th><img alt="vertical profile CLDICE" src="../img/01_global/All_profiles-3.png" /></th>
+<th><img alt="global mean CLDICE" src="img/01_global/All_global_mean-333ng" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="zonal CLDICE" src="../img/01_global/All_zonal_by_chkpt_and_add_substeps-3.png" /></td>
+<td><img alt="vert int CLDICE" src="../img/01_global/All_vertical_integral_by_chkpt_and_add_substeps-3.png" /></td>
+</tr>
+</tbody>
+</table>
+<h3 id="rainqm">RAINQM</h3>
+<ul>
+<li>Precipitable water (only large-scale precpitation)</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th><img alt="vertical profile Rain" src="../img/01_global/All_profiles-4.png" /></th>
+<th><img alt="global mean Rain" src="../img/01_global/All_global_mean-4.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="zonal Rain" src="../img/01_global/All_zonal_by_chkpt_and_add_substeps-4.png" /></td>
+<td><img alt="vert int Rain" src="../img/01_global/All_vertical_integral_by_chkpt_and_add_substeps-4.png" /></td>
+</tr>
+</tbody>
+</table>
+<h3 id="snowqm">SNOWQM</h3>
+<ul>
+<li>Precipitable ice (only large-scale precpitation)</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th><img alt="vertical profile Snow" src="../img/01_global/All_profiles-5.png" /></th>
+<th><img alt="global mean Snow" src="../img/01_global/All_global_mean-5.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="zonal Snow" src="../img/01_global/All_zonal_by_chkpt_and_add_substeps-5.png" /></td>
+<td><img alt="vert int Snow" src="../img/01_global/All_vertical_integral_by_chkpt_and_add_substeps-5.png" /></td>
+</tr>
+</tbody>
+</table>
+<h3 id="u">U</h3>
+<ul>
+<li>Zonal wind</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th><img alt="vertical profile U" src="../img/01_global/All_profiles-6.png" /></th>
+<th><img alt="global mean U" src="../img/01_global/All_global_mean-6.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="zonal U" src="../img/01_global/All_zonal_by_chkpt_and_add_substeps-6.png" /></td>
+<td><img alt="vert int U" src="../img/01_global/All_vertical_integral_by_chkpt_and_add_substeps-6.png" /></td>
+</tr>
+</tbody>
+</table>
+<h3 id="v">V</h3>
+<ul>
+<li>Meridional wind</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th><img alt="vertical profile V" src="../img/01_global/All_profiles-7.png" /></th>
+<th><img alt="global mean V" src="../img/01_global/All_global_mean-7.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="zonal V" src="../img/01_global/All_zonal_by_chkpt_and_add_substeps-7.png" /></td>
+<td><img alt="vert int V" src="../img/01_global/All_vertical_integral_by_chkpt_and_add_substeps-7.png" /></td>
+</tr>
+</tbody>
+</table>
               
             </div>
           </div>
@@ -151,6 +416,8 @@
     <script>var base_url = '..';</script>
     <script src="../js/theme_extra.js" defer></script>
     <script src="../js/theme.js" defer></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/tablesort/5.2.1/tablesort.min.js" defer></script>
+      <script src="../javascripts/tablesort.js" defer></script>
       <script src="../search/main.js" defer></script>
     <script defer>
         window.onload = function () {

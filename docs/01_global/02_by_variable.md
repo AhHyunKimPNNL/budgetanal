@@ -1,5 +1,17 @@
 # By variables
 
+Pairing Processes
+| Variable | Source | Sink |
+|----------|--------|------|
+| Specific Humidity (Q) | - lower: CLUBB<br> - upper: DYNEND | - lower: DYNEND & DEEPCU<br> - upper: CLUBB |
+| Temperature (T) | DEEPCU (lower: CLUBB) | RAD (lower: DYNEND) |
+| Cloud water (CLDLIQ) | CLUBB | CLDMIC |
+| Cloud ice (CLDICE) | CLUBB & DYNEND & CUDET | CLDMIC & CLUBB |
+| Rain (RAINQM) | CLUBB | CLDMIC |
+| Snow (SNOWQM) | CLUBB | CLDMIC |
+| Wind (U & V) | DYNEND | CLUBB |
+
+
 ## Q
 
 === "Vertical Profile"

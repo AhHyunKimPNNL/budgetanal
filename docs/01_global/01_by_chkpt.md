@@ -34,7 +34,6 @@
      1. horizontal cold advection 
      2. vertical motion due to 
          - upward motion in storm track 
-         - buoyancy from local depression caused by strong LH flux.
 
 |   | source | sink |
 |---|--------|------|
@@ -60,9 +59,14 @@
 ## DEEPCU
 
 * convective tracer transport & momentum transport is calculated in this process.
+* sensitive to vertical horizontal resolution
+    - affect temperature and moisture gradient leading to more variation in layer stability, relative humidity, and buoyancy.
+    - higher vertical resolution near surface may cause drier free troposhere due to the absence of processes that mix water vapor to higher latitudes.
 * water vapor decreases due to condensation of convective hydrometeors (not shown)
 * temperature changes are mostly due to convective heat transportation & condensation
-* {==source of 600 hPa heating==}: seems to be due to temperature dependent snow melting process in `zm_conv.F90`
+* ice thermodynamics are generally neglected (Rasch et al., 2019)
+    - when liquid condensate is detrained from the updraft it is partitioned into liquid and ice over a (tunable) temperature range, and the energy associated with a phase change is applied locally to the temperature tendency to conserve energy.
+    - also may cause the {==source of 600 hPa heating==}: see temperature dependent snow melting process in `zm_conv.F90`
     - in ITCZ, temperature at 600 hPa is near 0ºC
 ``` F90
 ! Melt snow falling into layer, if necessary. 
@@ -77,8 +81,7 @@
 ```
 ![DEEPCU_600hPa](img/DEEPCU_600hPa.png)
 
-* {==Q sink in 850 hPa 60S~30S==}: due to cloud ice formation in storm track regions
-![profile](img/DEEPCU_profile_stormtrack.png)
+* {==Q sink in 850 hPa 60S~30S==}: ??
 
 
 === "Vertical Integration"

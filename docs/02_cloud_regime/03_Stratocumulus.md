@@ -1,5 +1,7 @@
 # Stratocumulus regions
 
+
+### Increments
 * Cloud radiative cooling occurs right above the cloud top 
 * temperature above cloud top increases in DYNEND because descending air is blocked by cloud.
 * in trade cumulus region, convection occurs
@@ -42,3 +44,15 @@
 
 ![](img/02_03_stratocumulus.png)
 
+
+
+
+## Seasonal
+
+=== "Surface"
+    ![](img/seasonal_changes_Surface.png)
+
+=== "Cloud related components"
+    ![](img/seasonal_changes_cloud-2.png)
+
+=== "Precipication"

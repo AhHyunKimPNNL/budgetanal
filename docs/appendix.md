@@ -5,6 +5,8 @@
 * [CESM constants](https://www.cesm.ucar.edu/models/cesm1.0/cesm/doxygen/docs/html/namespaceshr__const__mod.html)
 * [CAM History output names](https://www.cesm.ucar.edu/models/cesm1.0/cam/docs/ug5_0/hist_flds_fv_cam4_super_fast_llnl.html)
 * [vertical grid](https://rda.ucar.edu/datasets/ds115.4/docs/levels.hybrid.html)
+* [CAM Scientific Description](https://ncar.github.io/CAM/doc/build/html/cam5_scientific_guide/index.html)
+* [E3SM Documentation](https://e3sm.org/resources/documentation/)
 
 ## How to use mkdocs
 * webstie: https://www.mkdocs.org/

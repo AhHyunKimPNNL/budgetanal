@@ -1,141 +1,341 @@
+
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+
+<html class="no-js" lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="None">
-  
-  
-  <link rel="shortcut icon" href="img/favicon.ico">
-  <title>Budget Analysis</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
-
-  <link rel="stylesheet" href="css/theme.css" />
-  <link rel="stylesheet" href="css/theme_extra.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
-  
-  <script>
-    // Current page data
-    var mkdocs_page_name = "Home";
-    var mkdocs_page_input_path = "index.md";
-    var mkdocs_page_url = null;
-  </script>
-  
-  <script src="js/jquery-2.1.1.min.js" defer></script>
-  <script src="js/modernizr-2.8.3.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script> 
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ABC123"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-ABC123');
-  </script>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.2.3, mkdocs-material-8.1.4" name="generator"/>
+<title>Budget Analysis</title>
+<link href="assets/stylesheets/main.bb3983ee.min.css" rel="stylesheet"/>
+<link href="assets/stylesheets/palette.e6a45f82.min.css" rel="stylesheet"/>
+<meta content="#009485" name="theme-color"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<script>__md_scope=new URL(".",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 </head>
-
-<body class="wy-body-for-nav" role="document">
-
-  <div class="wy-grid-for-nav">
-
-    
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
-    <div class="wy-side-scroll">
-      <div class="wy-side-nav-search">
-        <a href="." class="icon icon-home"> Budget Analysis</a>
-        <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
-  </form>
+<body data-md-color-accent="" data-md-color-primary="teal" data-md-color-scheme="" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#eamv1-water-budget-analysis-page">
+          Skip to content
+        </a>
 </div>
-      </div>
-
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-                <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href=".">Home</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#flowchart-for-time-integration-in-eam">Flowchart for time integration in EAM</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#main-checkpoints-in-condidiag">Main Checkpoints in CondiDiag</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#dynamical-core">Dynamical core</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#before-coupler">Before coupler</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#mct-coupler">MCT coupler</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#after-coupler">After coupler</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#simulation-settings">Simulation Settings</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#condidiag-settings">CondiDiag Settings</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#history-output-options">History output options</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#how-to-use-mkdocs">How to use mkdocs</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#commands">commands</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#settings-in-mkdocsyml-file">Settings in mkdocs.yml file</a>
-    </li>
-        </ul>
-    </li>
-    </ul>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="01_global/">01 Global</a>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="02_cloud_regime/">02 Cloud regime</a>
-                    </li>
-                </ul>
-      </div>
-    </div>
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href=".">Budget Analysis</a>
-      </nav>
-
-      
-      <div class="wy-nav-content">
-        <div class="rst-content">
-          <div role="navigation" aria-label="breadcrumbs navigation">
-  <ul class="wy-breadcrumbs">
-    <li><a href=".">Docs</a> &raquo;</li>
-    
-      
-    
-    <li>Home</li>
-    <li class="wy-breadcrumbs-aside">
-      
-    </li>
-  </ul>
-  
-  <hr/>
+<div data-md-component="announce">
 </div>
-
-          <div role="main">
-            <div class="section">
-              
-                <h1 id="eamv1-water-budget-analysis-page">EAMv1 Water Budget Analysis page</h1>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="Budget Analysis" class="md-header__button md-logo" data-md-component="logo" href="." title="Budget Analysis">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Budget Analysis
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Home
+            
+          </span>
+</div>
+</div>
+</div>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-tabs__inner md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link md-tabs__link--active" href=".">
+      Home
+    </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="01_global/">
+        01 Global
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="02_cloud_regime/">
+        02 Cloud regime
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="appendix/">
+      Appendix
+    </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="99_Personal_notes/">
+        Ah-Hyun
+      </a>
+</li>
+</ul>
+</div>
+</nav>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Budget Analysis" class="md-nav__button md-logo" data-md-component="logo" href="." title="Budget Analysis">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"></path></svg>
+</a>
+    Budget Analysis
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          Home
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href=".">
+        Home
+      </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#flowchart-for-time-integration-in-eam">
+    Flowchart for time integration in EAM
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#main-checkpoints-in-condidiag">
+    Main Checkpoints in CondiDiag
+  </a>
+<nav aria-label="Main Checkpoints in CondiDiag" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#dynamical-core">
+    Dynamical core
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#before-coupler">
+    Before coupler
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mct-coupler">
+    MCT coupler
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#after-coupler">
+    After coupler
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#simulation-settings">
+    Simulation Settings
+  </a>
+<nav aria-label="Simulation Settings" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#condidiag-settings">
+    CondiDiag Settings
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#history-output-options">
+    History output options
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="01_global/">01 Global</a>
+<label for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="01 Global" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+          01 Global
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="01_global/01_by_chkpt/">
+        By Check Point
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="01_global/02_by_variable/">
+        By Variables
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="02_cloud_regime/">02 Cloud regime</a>
+<label for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="02 Cloud regime" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+          02 Cloud regime
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="02_cloud_regime/01_ITCZ/">
+        ITCZ
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="02_cloud_regime/02_Storm_track/">
+        Storm Track
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="02_cloud_regime/03_Stratocumulus/">
+        Stratocumulus
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="02_cloud_regime/04_by_chkpt/">
+        By Check Point
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="02_cloud_regime/05_by_variable/">
+        By Variables
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="appendix/">
+        Appendix
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="99_Personal_notes/">Ah-Hyun</a>
+<label for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="Ah-Hyun" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+          Ah-Hyun
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="99_Personal_notes/01_workflow/">
+        Summary
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="99_Personal_notes/02_model/">
+        Atmospheric Model
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_5_4" id="__nav_5_4" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="99_Personal_notes/05_references/">References</a>
+<label for="__nav_5_4">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="References" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_4">
+<span class="md-nav__icon md-icon"></span>
+          References
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="99_Personal_notes/05_references/E3SM_related/">
+        E3SM related
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="eamv1-water-budget-analysis-page">EAMv1 Water Budget Analysis page</h1>
 <ul>
 <li>since Dec. 27, 2021.</li>
-<li>url: https://github.com/AhHyunKimPNNL/budgetanal</li>
+<li>URL: https://github.com/AhHyunKimPNNL/budgetanal</li>
 </ul>
 <h2 id="flowchart-for-time-integration-in-eam">Flowchart for time integration in EAM</h2>
-<p><img alt="flowchart" src="img/coupling_diagram_EAMv1.png" /></p>
+<p><img alt="flowchart" src="img/coupling_diagram_EAMv1.png"/></p>
 <p>The following documents provide partial descriptions:
   - Section 2.1 in https://doi.org/10.5194/gmd-14-1921-2021</p>
 <h2 id="main-checkpoints-in-condidiag">Main Checkpoints in CondiDiag</h2>
@@ -155,7 +355,7 @@
 <tr>
 <td>Dynamical core and large-scale transport</td>
 <td>DYNEND</td>
-<td></td>
+<td>primitive equations using a continuous Galerkin spectral-element method for horizontal discretization on a cubed-sphere mesh (Dennis et al., 2012; Taylor et al., 2009)</td>
 </tr>
 </tbody>
 </table>
@@ -166,6 +366,7 @@
 <th>long name</th>
 <th>short name</th>
 <th>etc.</th>
+<th>References</th>
 </tr>
 </thead>
 <tbody>
@@ -173,85 +374,102 @@
 <td>Mass and energy fixers</td>
 <td>PBCINI</td>
 <td></td>
+<td></td>
 </tr>
 <tr>
 <td>Dry adiabatic adjustment</td>
 <td>DRYADJ</td>
+<td></td>
 <td></td>
 </tr>
 <tr>
 <td>Deep convection</td>
 <td>DEEPCU</td>
 <td></td>
+<td>deep convection (Zhang and McFarlane, 1995; Richter and Rasch, 2008; Neale et al., 2008)</td>
 </tr>
 <tr>
 <td>Shallow convection (EAMv0   only)</td>
 <td>SHCU</td>
+<td></td>
 <td></td>
 </tr>
 <tr>
 <td>CARMA cloud microphysics</td>
 <td>CARMA</td>
 <td></td>
+<td></td>
 </tr>
 <tr>
 <td>Stratiform cloud macrophysics,   sub-step xx</td>
 <td>CLDMACxx</td>
+<td></td>
 <td></td>
 </tr>
 <tr>
 <td>Aerosol activation and mixing,   sub-step xx</td>
 <td>CLDAERxx</td>
 <td></td>
+<td></td>
 </tr>
 <tr>
 <td>Stratiform cloud microphysics,   sub-step xx</td>
 <td>CLDMICxx</td>
 <td></td>
+<td>Gettelman and Morrison (2015)</td>
 </tr>
 <tr>
 <td>Ice saturation adjustment,   sub-step xx</td>
 <td>ICEMACxx</td>
 <td>“clubb_tend_cam”</td>
+<td></td>
 </tr>
 <tr>
 <td>CLUBB, sub-step xx</td>
 <td>CLUBBxx</td>
 <td>“clubb_tend_cam”</td>
+<td>(Cloud Layers Unified By Binormals, Golaz et al., 2002; Larson et al., 2002; Larson and Golaz, 2005; Larson, 2017).</td>
 </tr>
 <tr>
 <td>Convective detrainment,   sub-step xx</td>
 <td>CUDETxx</td>
 <td>“clubb_tend_cam”</td>
+<td></td>
 </tr>
 <tr>
 <td>Miscellaneous diagnostics,   sub-step xx</td>
 <td>MACDIAGxx</td>
 <td>“clubb_tend_cam”</td>
+<td></td>
 </tr>
 <tr>
 <td>Stratiform clouds, all   substeps</td>
 <td>STCLD</td>
+<td></td>
 <td></td>
 </tr>
 <tr>
 <td>Aerosol wet removal and   resuspension</td>
 <td>AERWETRM</td>
 <td></td>
+<td>aerosol life cycle and aerosol–cloud interactions (Liu et al., 2016; Wang et al., 2020)</td>
 </tr>
 <tr>
 <td>Miscellaneous diagnostics and   output</td>
 <td>PBCDIAG</td>
+<td></td>
 <td></td>
 </tr>
 <tr>
 <td>Radiative transfer</td>
 <td>RAD</td>
 <td>Beginning of timestep</td>
+<td>solar and terrestrial radiation (Mlawer et al., 1997; Iacono et al., 2008)</td>
 </tr>
 <tr>
 <td>Tropopause diagnosis; export   state preparation and output</td>
 <td>PBCEND</td>
+<td></td>
 <td></td>
 </tr>
 </tbody>
@@ -340,6 +558,35 @@
 </tr>
 </tbody>
 </table>
+<details> <summary> References </summary>
+<br/> Dennis, J. M., Edwards, J., Evans, K. J., Guba, O., Lauritzen, P. H., Mirin, A. A., St-Cyr, A., Taylor, M. A., and Worley, P. H.: CAM- SE: A scalable spectral element dynamical core for the Commu- nity Atmosphere Model, Int. J. High Perform., 26, 74–89, 2012.
+<br/>
+<br/>Gettelman, A. and Morrison, H.: Advanced two-moment bulk microphysics for global models, Part I: Off-line tests and comparison with other schemes, J. Climate, 28, 1268–1287, https://doi.org/10.1175/JCLI-D-14-00102.1, 2015.
+<br/>
+<br/>Golaz, J.-C., Larson, V., and Cotton, W.: A PDF-Based Model for Boundary Layer Clouds. Part I: Method and Model Description, J. Atmos. Sci., 59, 3540–3551, https://doi.org/10.1175/1520- 0469(2002)059&lt;3540:APBMFB&gt;2.0.CO;2, 2002.
+<br/>
+<br/>Iacono, M. J., Delamere, J. S., Mlawer, E. J., Shephard, M. W., Clough, S. A., and Collins, W. D.: Radiative forcing by long–lived greenhouse gases: Calculations with the AER ra- diative transfer models, J. Geophys. Res., 113, D13103, https://doi.org/10.1029/2008JD009944, 2008.
+<br/>
+<br/>Larson, V. E.: CLUBB-SILHS: A parameterization of subgrid variability in the atmosphere, arXiv preprint arXiv:1711.03675v3, 2017.
+<br/>
+<br/>Larson, V. E.: CLUBB-SILHS: A parameterization of subgrid variability in the atmosphere, arXiv preprint arXiv:1711.03675v3, 2017. Larson, V. E. and Golaz, J.-C.: Using Probability Density Functions to Derive Consistent Closure Relationships among Higher-Order Moments, Monthly Weather Review, 133, 1023–1042, https://doi.org/10.1175/MWR2902.1, 2005.
+<br/>
+<br/>Larson, V. E., Golaz, J.-C., and Cotton, W. R.: Small-Scale and Mesoscale Variability in Cloudy Boundary Layers: Joint Probability Density Functions, Journal of the Atmospheric Sciences, 59, 3519–3539, https://doi.org/10.1175/1520-0469(2002)059&lt;3519:SSAMVI&gt;2.0.CO;2, 2002.
+<br/>
+<br/>Liu, X., Easter, R. C., Ghan, S. J., Zaveri, R., Rasch, P., Shi, X., Lamarque, J.-F., Gettelman, A., Morrison, H., Vitt, F., Conley, A., Park, S., Neale, R., Hannay, C., Ekman, A. M. L., Hess, P., Mahowald, N., Collins, W., Iacono, M. J., Bretherton, C. S., Flanner, M. G., and Mitchell, D.: Toward a minimal representation of aerosols in climate models: description and evaluation in the Community Atmosphere Model CAM5, Geoscientific Model Development, 5, 709–739, https://doi.org/10.5194/gmd-5-709-2012, 2012.
+<br/>
+<br/>Mlawer, E. J., Taubman, S. J., Brown, P. D., Iacono, M. J., and Clough, S. A.: Radiative transfer for inhomoge- neous atmospheres: RRTM, a validated correlated?k model for the longwave, J. Geophys. Res., 102, 16663–16682, https://doi.org/10.1029/97JD00237, 1997.
+<br/>
+<br/>Neale, R. B., Richter, J. H., and Jochum, M.: The impact of convec- tion on ENSO: From a delayed oscillator to a series of events, J. Climate, 21, 5904–5924, 2008.
+<br/>
+<br/>Richter, J. H. and Rasch, P. J.: Effects of Convective Momen- tum Transport on the Atmospheric Circulation in the Commu- nity Atmosphere Model, Version 3, J. Climate, 21, 1487–1499, https://doi.org/10.5194/gmd-10-2221-2017, 2008.
+<br/>
+<br/>Taylor, M. A., Cyr, A. S., and Fournier, A.: A Non-oscillatory Advection Operator for the Compatible Spectral Element Method„ International Conference on Computational Science, Springer, Berlin, Heidelberg, https://doi.org/10.1007/978-3-642- 01973-9_31, 2009.
+<br/>
+<br/>Wang, H., Easter, R. C., Zhang, R., Ma, P.-L., Singh, B., Zhang, K., Ganguly, D., Rasch, P. J., Burrows, S. M., Ghan, S. J., Lou, S., Qian, Y., Yang, Y., Feng, Y., Flanner, M., Leung, R. L., Liu, X., Shrivastava, M., Sun, J., Tang, Q., Xie, S., and Yoon, J.- H.: Aerosols in the E3SM Version 1: New Developments and Their Impacts on Radiative Forcing, J. Adv. Model. Earth Sy., 12, e2019MS001851, https://doi.org/10.1029/2019MS001851, 2020.
+<br/>
+<br/>Zhang, G. J. and McFarlane, N. A.: Sensitivity of climate simula- tions to the parameterization of cumulus convection in the Cana- dian Climate Centre general circulation model, Atmos. Ocean, 33, 407–446, https://doi.org/10.1080/07055900.1995.9649539, 1995.
+</details>
 <h2 id="simulation-settings">Simulation Settings</h2>
 <ul>
 <li><strong> Code branch</strong>:huiwanpnnl/maint-1.0_cnd_diag1.1</li>
@@ -353,109 +600,76 @@
 </ul>
 </li>
 </ul>
-<h2 id="condidiag-settings">CondiDiag Settings</h2>
+<h3 id="condidiag-settings">CondiDiag Settings</h3>
 <ul>
 <li>CondiDiag GMD URL: https://gmd.copernicus.org/preprints/gmd-2021-331/</li>
 <li>Conditional sampling option
-<pre class="highlight"><code class="language-py">metric_name = ’ALL’</code></pre></li>
+<div class="highlight"><pre><span></span><code><a href="__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">metric_name</span> <span class="o">=</span> <span class="err">’</span><span class="n">ALL</span><span class="err">’</span>
+</code></pre></div></li>
 <li>Checkpoint options
-<pre class="highlight"><code class="language-py">qoi_chkpt   = 'AERWETRM','RAD','PACEND','DYNEND','DRYADJ','DEEPCU',
-              'CLUBB01','CUDET01','CLDMIC01',
-              'CLUBB02','CUDET02','CLDMIC02',
-              'CLUBB03','CUDET03','CLDMIC03',
-              'CLUBB04','CUDET04','CLDMIC04',
-              'CLUBB05','CUDET05','CLDMIC05',
-              'CLUBB06','CUDET06','CLDMIC06',</code></pre></li>
+<div class="highlight"><pre><span></span><code><a href="__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="n">qoi_chkpt</span>   <span class="o">=</span> <span class="s1">'AERWETRM'</span><span class="p">,</span><span class="s1">'RAD'</span><span class="p">,</span><span class="s1">'PACEND'</span><span class="p">,</span><span class="s1">'DYNEND'</span><span class="p">,</span><span class="s1">'DRYADJ'</span><span class="p">,</span><span class="s1">'DEEPCU'</span><span class="p">,</span>
+<a href="__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a>              <span class="s1">'CLUBB01'</span><span class="p">,</span><span class="s1">'CUDET01'</span><span class="p">,</span><span class="s1">'CLDMIC01'</span><span class="p">,</span>
+<a href="__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a>              <span class="s1">'CLUBB02'</span><span class="p">,</span><span class="s1">'CUDET02'</span><span class="p">,</span><span class="s1">'CLDMIC02'</span><span class="p">,</span>
+<a href="__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a>              <span class="s1">'CLUBB03'</span><span class="p">,</span><span class="s1">'CUDET03'</span><span class="p">,</span><span class="s1">'CLDMIC03'</span><span class="p">,</span>
+<a href="__codelineno-1-5" id="__codelineno-1-5" name="__codelineno-1-5"></a>              <span class="s1">'CLUBB04'</span><span class="p">,</span><span class="s1">'CUDET04'</span><span class="p">,</span><span class="s1">'CLDMIC04'</span><span class="p">,</span>
+<a href="__codelineno-1-6" id="__codelineno-1-6" name="__codelineno-1-6"></a>              <span class="s1">'CLUBB05'</span><span class="p">,</span><span class="s1">'CUDET05'</span><span class="p">,</span><span class="s1">'CLDMIC05'</span><span class="p">,</span>
+<a href="__codelineno-1-7" id="__codelineno-1-7" name="__codelineno-1-7"></a>              <span class="s1">'CLUBB06'</span><span class="p">,</span><span class="s1">'CUDET06'</span><span class="p">,</span><span class="s1">'CLDMIC06'</span><span class="p">,</span>
+</code></pre></div></li>
 <li>Quantity of interest (QoI) options
-<pre class="highlight"><code class="language-py">qoi_name = 'T','T','Q','Q',"U","U","V","V","RHW","RHW","RHI","RHI",'CLDLIQ','CLDLIQ','CLDICE','CLDICE','RAINQM','RAINQM','SNOWQM','SNOWQM',
-qoi_nver =  72, 72, 72, 72, 72, 72, 72, 72,   72,   72,   72,   72,      72,      72,      72,      72,      72,      72,      72,      72,
-qoi_x_dp =   0,  1,  0,  1,  0,  1,  0,  1,    0,    1,    0,    1,       0,       1,       0,       1,       0,       1,       0,       1,</code></pre></li>
+<div class="highlight"><pre><span></span><code><a href="__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="n">qoi_name</span> <span class="o">=</span> <span class="s1">'T'</span><span class="p">,</span><span class="s1">'T'</span><span class="p">,</span><span class="s1">'Q'</span><span class="p">,</span><span class="s1">'Q'</span><span class="p">,</span><span class="s2">"U"</span><span class="p">,</span><span class="s2">"U"</span><span class="p">,</span><span class="s2">"V"</span><span class="p">,</span><span class="s2">"V"</span><span class="p">,</span><span class="s2">"RHW"</span><span class="p">,</span><span class="s2">"RHW"</span><span class="p">,</span><span class="s2">"RHI"</span><span class="p">,</span><span class="s2">"RHI"</span><span class="p">,</span><span class="s1">'CLDLIQ'</span><span class="p">,</span><span class="s1">'CLDLIQ'</span><span class="p">,</span><span class="s1">'CLDICE'</span><span class="p">,</span><span class="s1">'CLDICE'</span><span class="p">,</span><span class="s1">'RAINQM'</span><span class="p">,</span><span class="s1">'RAINQM'</span><span class="p">,</span><span class="s1">'SNOWQM'</span><span class="p">,</span><span class="s1">'SNOWQM'</span><span class="p">,</span>
+<a href="__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="n">qoi_nver</span> <span class="o">=</span>  <span class="mi">72</span><span class="p">,</span> <span class="mi">72</span><span class="p">,</span> <span class="mi">72</span><span class="p">,</span> <span class="mi">72</span><span class="p">,</span> <span class="mi">72</span><span class="p">,</span> <span class="mi">72</span><span class="p">,</span> <span class="mi">72</span><span class="p">,</span> <span class="mi">72</span><span class="p">,</span>   <span class="mi">72</span><span class="p">,</span>   <span class="mi">72</span><span class="p">,</span>   <span class="mi">72</span><span class="p">,</span>   <span class="mi">72</span><span class="p">,</span>      <span class="mi">72</span><span class="p">,</span>      <span class="mi">72</span><span class="p">,</span>      <span class="mi">72</span><span class="p">,</span>      <span class="mi">72</span><span class="p">,</span>      <span class="mi">72</span><span class="p">,</span>      <span class="mi">72</span><span class="p">,</span>      <span class="mi">72</span><span class="p">,</span>      <span class="mi">72</span><span class="p">,</span>
+<a href="__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="n">qoi_x_dp</span> <span class="o">=</span>   <span class="mi">0</span><span class="p">,</span>  <span class="mi">1</span><span class="p">,</span>  <span class="mi">0</span><span class="p">,</span>  <span class="mi">1</span><span class="p">,</span>  <span class="mi">0</span><span class="p">,</span>  <span class="mi">1</span><span class="p">,</span>  <span class="mi">0</span><span class="p">,</span>  <span class="mi">1</span><span class="p">,</span>    <span class="mi">0</span><span class="p">,</span>    <span class="mi">1</span><span class="p">,</span>    <span class="mi">0</span><span class="p">,</span>    <span class="mi">1</span><span class="p">,</span>       <span class="mi">0</span><span class="p">,</span>       <span class="mi">1</span><span class="p">,</span>       <span class="mi">0</span><span class="p">,</span>       <span class="mi">1</span><span class="p">,</span>       <span class="mi">0</span><span class="p">,</span>       <span class="mi">1</span><span class="p">,</span>       <span class="mi">0</span><span class="p">,</span>       <span class="mi">1</span><span class="p">,</span>
+</code></pre></div></li>
 </ul>
-<h2 id="history-output-options">History output options</h2>
-<pre class="highlight"><code class="language-py"> history_amwg        = .false.
- history_aero_optics = .false.
- history_aerosol     = .false.
-
-fincl1 = 'PRECC','PRECL','PRECSC','PRECSL','QFLX','PRECCZM0',
-         'MPDW2V','MPDW2I','MPDW2P','MPDI2V','MPDI2W','MPDI2P',</code></pre>
-<p><br><br><br><br><br></p>
-<hr />
-<h2 id="how-to-use-mkdocs">How to use mkdocs</h2>
-<ul>
-<li>webstie: https://www.mkdocs.org/</li>
-</ul>
-<h3 id="commands">commands</h3>
-<ul>
-<li><code>pip install mkdocs</code> - install mkdocs</li>
-<li><code>mkdocs new [dir-name]</code> - Create a new project.</li>
-<li><code>mkdocs serve</code> - Start the live-reloading docs server.<ul>
-<li>--dev-addr=IP:PORT - setup test page ip &amp; port</li>
-</ul>
-</li>
-<li><code>mkdocs build</code> - Build the documentation site.</li>
-<li><code>mkdocs -h</code> - Print help message and exit.</li>
-<li><code>mkdocs gh-deploy</code> - publish mkdocs using github</li>
-</ul>
-<h3 id="settings-in-mkdocsyml-file">Settings in mkdocs.yml file</h3>
-<ul>
-<li><code>site_name: [name of the website]</code> - setup name of the website</li>
-<li><code>theme: readthedocs</code> - setup themes (default: Bootstrap)</li>
-</ul>
-              
-            </div>
-          </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="01_global/" class="btn btn-neutral float-right" title="01 Global">Next <span class="icon icon-circle-arrow-right"></span></a>
-      
-      
-    </div>
-  
-
-  <hr/>
-
-  <div role="contentinfo">
-    <!-- Copyright etc -->
-    
-  </div>
-
-  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-</footer>
-      
-        </div>
-      </div>
-
-    </section>
-
-  </div>
-
-  <div class="rst-versions" role="note" aria-label="versions">
-  <span class="rst-current-version" data-toggle="rst-current-version">
-    
-    
-    
-      <span><a href="01_global/" style="color: #fcfcfc">Next &raquo;</a></span>
-    
-  </span>
+<h3 id="history-output-options">History output options</h3>
+<div class="highlight"><pre><span></span><code><a href="__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a> <span class="n">history_amwg</span>        <span class="o">=</span> <span class="o">.</span><span class="n">false</span><span class="o">.</span>
+<a href="__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a> <span class="n">history_aero_optics</span> <span class="o">=</span> <span class="o">.</span><span class="n">false</span><span class="o">.</span>
+<a href="__codelineno-3-3" id="__codelineno-3-3" name="__codelineno-3-3"></a> <span class="n">history_aerosol</span>     <span class="o">=</span> <span class="o">.</span><span class="n">false</span><span class="o">.</span>
+<a href="__codelineno-3-4" id="__codelineno-3-4" name="__codelineno-3-4"></a>
+<a href="__codelineno-3-5" id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="n">fincl1</span> <span class="o">=</span> <span class="s1">'PRECC'</span><span class="p">,</span><span class="s1">'PRECL'</span><span class="p">,</span><span class="s1">'PRECSC'</span><span class="p">,</span><span class="s1">'PRECSL'</span><span class="p">,</span><span class="s1">'QFLX'</span><span class="p">,</span><span class="s1">'PRECCZM0'</span><span class="p">,</span>
+<a href="__codelineno-3-6" id="__codelineno-3-6" name="__codelineno-3-6"></a>         <span class="s1">'MPDW2V'</span><span class="p">,</span><span class="s1">'MPDW2I'</span><span class="p">,</span><span class="s1">'MPDW2P'</span><span class="p">,</span><span class="s1">'MPDI2V'</span><span class="p">,</span><span class="s1">'MPDI2W'</span><span class="p">,</span><span class="s1">'MPDI2P'</span><span class="p">,</span>
+</code></pre></div>
+</article>
 </div>
-    <script>var base_url = '.';</script>
-    <script src="js/theme_extra.js" defer></script>
-    <script src="js/theme.js" defer></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/tablesort/5.2.1/tablesort.min.js" defer></script>
-      <script src="javascripts/tablesort.js" defer></script>
-      <script src="search/main.js" defer></script>
-    <script defer>
-        window.onload = function () {
-            SphinxRtdTheme.Navigation.enable(true);
-        };
-    </script>
-
+</div>
+</main>
+<footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a aria-label="Next: General" class="md-footer__link md-footer__link--next" href="01_global/" rel="next">
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Next
+              </span>
+              General
+            </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": ".", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.expand", "navigation.indexes", "toc.integrate", "content.tabs.link"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "assets/javascripts/workers/search.361d90f1.min.js"}</script>
+<script src="assets/javascripts/bundle.289a2a4b.min.js"></script>
+<script src="javascripts/mathjax.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </body>
 </html>
-
-<!--
-MkDocs version : 1.2.3
-Build Date UTC : 2021-12-29 01:28:36.869603+00:00
--->

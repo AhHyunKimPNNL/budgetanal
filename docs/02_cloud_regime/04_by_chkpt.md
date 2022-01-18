@@ -5,32 +5,32 @@
 * at 850 hPa: subtropical low-level cloud
     - cooling from stratocumulus cloud top are the strongest.
     - cooling also comes from storm track cloud top, but the effect is smaller than stratocumulus regions
-![regional_T_inc](../01_global/img/RAD_T_regional.png)
+![regional_T_inc](https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/01_global/RAD_T_regional.png)
 
 
 
 
 === "ITCZ"
-    ![itcz](img/All_profiles_by_variable_and_region_in_one_page-0.png)    
+    ![itcz](https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_cloud_regime/All_profiles_by_variable_and_region_in_one_page-0.png)    
 
 === "Storm Track"
-    ![ST](img/All_profiles_by_variable_and_region_in_one_page-9.png)    
+    ![ST](https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_cloud_regime/All_profiles_by_variable_and_region_in_one_page-9.png)    
 
 === "Stratocumulus"
-    ![SC](img/All_profiles_by_variable_and_region_in_one_page-18.png)    
+    ![SC](https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_cloud_regime/All_profiles_by_variable_and_region_in_one_page-18.png)    
 
 ## PACEND
 
 * minor changes
 
 === "ITCZ"
-    ![itcz](img/All_profiles_by_variable_and_region_in_one_page-1.png)
+    ![itcz](https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_cloud_regime/All_profiles_by_variable_and_region_in_one_page-1.png)
 
 === "Storm Track"
-    ![ST](img/All_profiles_by_variable_and_region_in_one_page-10.png)
+    ![ST](https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_cloud_regime/All_profiles_by_variable_and_region_in_one_page-10.png)
 
 === "Stratocumulus"
-    ![SC](img/All_profiles_by_variable_and_region_in_one_page-19.png) 
+    ![SC](https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_cloud_regime/All_profiles_by_variable_and_region_in_one_page-19.png) 
 
 ## DYNEND
 
@@ -45,26 +45,26 @@
 
 
 === "ITCZ"
-    ![itcz](img/All_profiles_by_variable_and_region_in_one_page-2.png)
+    ![itcz](https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_cloud_regime/All_profiles_by_variable_and_region_in_one_page-2.png)
 
 === "Storm Track"
-    ![ST](img/All_profiles_by_variable_and_region_in_one_page-11.png)
+    ![ST](https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_cloud_regime/All_profiles_by_variable_and_region_in_one_page-11.png)
 
 === "Stratocumulus"
-    ![SC](img/All_profiles_by_variable_and_region_in_one_page-20.png) 
+    ![SC](https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_cloud_regime/All_profiles_by_variable_and_region_in_one_page-20.png) 
 
 ## DRYADJ
 
 * minor increments
 
 === "ITCZ"
-    ![itcz](img/All_profiles_by_variable_and_region_in_one_page-3.png)
+    ![itcz](https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_cloud_regime/All_profiles_by_variable_and_region_in_one_page-3.png)
 
 === "Storm Track"
-    ![ST](img/All_profiles_by_variable_and_region_in_one_page-12.png)
+    ![ST](https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_cloud_regime/All_profiles_by_variable_and_region_in_one_page-12.png)
 
 === "Stratocumulus"
-    ![SC](img/All_profiles_by_variable_and_region_in_one_page-21.png) 
+    ![SC](https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_cloud_regime/All_profiles_by_variable_and_region_in_one_page-21.png) 
 
 ## DEEPCU
 
@@ -84,13 +84,13 @@
 
 
 === "ITCZ"
-    ![itcz](img/All_profiles_by_variable_and_region_in_one_page-4.png)
+    ![itcz](https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_cloud_regime/All_profiles_by_variable_and_region_in_one_page-4.png)
 
 === "Storm Track"
-    ![ST](img/All_profiles_by_variable_and_region_in_one_page-13.png)
+    ![ST](https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_cloud_regime/All_profiles_by_variable_and_region_in_one_page-13.png)
 
 === "Stratocumulus"
-    ![SC](img/All_profiles_by_variable_and_region_in_one_page-22.png) 
+    ![SC](https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_cloud_regime/All_profiles_by_variable_and_region_in_one_page-22.png) 
 
 ## CLUBB
 
@@ -103,40 +103,40 @@
 
 
 === "ITCZ"
-    ![itcz](img/All_profiles_by_variable_and_region_in_one_page-5.png)
+    ![itcz](https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_cloud_regime/All_profiles_by_variable_and_region_in_one_page-5.png)
 
 === "Storm Track"
-    ![ST](img/All_profiles_by_variable_and_region_in_one_page-14.png)
+    ![ST](https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_cloud_regime/All_profiles_by_variable_and_region_in_one_page-14.png)
 
 === "Stratocumulus"
-    ![SC](img/All_profiles_by_variable_and_region_in_one_page-23.png) 
+    ![SC](https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_cloud_regime/All_profiles_by_variable_and_region_in_one_page-23.png) 
 
 ## CUDET
 === "ITCZ"
-    ![itcz](img/All_profiles_by_variable_and_region_in_one_page-6.png)
+    ![itcz](https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_cloud_regime/All_profiles_by_variable_and_region_in_one_page-6.png)
 
 === "Storm Track"
-    ![ST](img/All_profiles_by_variable_and_region_in_one_page-15.png)
+    ![ST](https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_cloud_regime/All_profiles_by_variable_and_region_in_one_page-15.png)
 
 === "Stratocumulus"
-    ![SC](img/All_profiles_by_variable_and_region_in_one_page-24.png) 
+    ![SC](https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_cloud_regime/All_profiles_by_variable_and_region_in_one_page-24.png) 
 
 ## CLDMIC
 === "ITCZ"
-    ![itcz](img/All_profiles_by_variable_and_region_in_one_page-7.png)
+    ![itcz](https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_cloud_regime/All_profiles_by_variable_and_region_in_one_page-7.png)
 
 === "Storm Track"
-    ![ST](img/All_profiles_by_variable_and_region_in_one_page-16.png)
+    ![ST](https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_cloud_regime/All_profiles_by_variable_and_region_in_one_page-16.png)
 
 === "Stratocumulus"
-    ![SC](img/All_profiles_by_variable_and_region_in_one_page-25.png) 
+    ![SC](https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_cloud_regime/All_profiles_by_variable_and_region_in_one_page-25.png) 
 
 ## AERWETRM
 === "ITCZ"
-    ![itcz](img/All_profiles_by_variable_and_region_in_one_page-8.png)
+    ![itcz](https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_cloud_regime/All_profiles_by_variable_and_region_in_one_page-8.png)
 
 === "Storm Track"
-    ![ST](img/All_profiles_by_variable_and_region_in_one_page-17.png)
+    ![ST](https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_cloud_regime/All_profiles_by_variable_and_region_in_one_page-17.png)
 
 === "Stratocumulus"
-    ![SC](img/All_profiles_by_variable_and_region_in_one_page-26.png) 
+    ![SC](https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_cloud_regime/All_profiles_by_variable_and_region_in_one_page-26.png) 

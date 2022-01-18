@@ -1,6 +1,7 @@
 # Personal notes
 
 
+
 ## Dynamics & Physics coupling??
 
 [The numerics of physical parametrization](https://www.ecmwf.int/sites/default/files/elibrary/2004/8032-numerics-physical-parameterization.pdf)

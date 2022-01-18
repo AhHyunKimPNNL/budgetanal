@@ -10,20 +10,20 @@
 
 
 === "North Atlantic"
-    ![NA](img/ST_North_Atlantlic.png)
+    ![NA](https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_cloud_regime/ST_North_Atlantlic.png)
 
 === "North Pacific"
-    ![NP](img/ST_N_Pacific.png)
+    ![NP](https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_cloud_regime/ST_N_Pacific.png)
 
 === "Southern Hemisphere"
-    ![SH](img/ST_SH.png)
+    ![SH](https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_cloud_regime/ST_SH.png)
 
 |regions|plot|
 |-------|----|
-| North Atlantic | ![NA](img/ST_North_Atlantlic.png) |
-| North Pacific | ![NP](img/ST_N_Pacific.png) |
-| Southern Hemisphere | ![SH](img/ST_SH.png) |
+| North Atlantic | ![NA](https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_cloud_regime/ST_North_Atlantlic.png) |
+| North Pacific | ![NP](https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_cloud_regime/ST_N_Pacific.png) |
+| Southern Hemisphere | ![SH](https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_cloud_regime/ST_SH.png) |
 
 
 
-![](img/02_02_stormtrack.png)
+![](https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_cloud_regime/02_02_stormtrack.png)

@@ -11,36 +11,36 @@
 
 ### Cloud components
 === "Low-level cloud"
-    ![CLDLOW](img/GLOBAL_CLDLOW.png)
+    ![CLDLOW](https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/01_global/GLOBAL_CLDLOW.png)
 
 === "Middle-level cloud"
-    ![CLDMED](img/GLOBAL_CLDMED.png)
+    ![CLDMED](https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/01_global/GLOBAL_CLDMED.png)
 
 === "High-level cloud"
-    ![CLDHGH](img/GLOBAL_CLDHGH.png)
+    ![CLDHGH](https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/01_global/GLOBAL_CLDHGH.png)
 
 === "Cloud water path"
-    ![CWP](img/GLOBAL_CWP.png)
+    ![CWP](https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/01_global/GLOBAL_CWP.png)
 
 === "LWP"
-    ![LWP](img/GLOBAL_LWP.png)
+    ![LWP](https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/01_global/GLOBAL_LWP.png)
 
 === "IWP"
-    ![IWP](img/GLOBAL_IWP.png)
+    ![IWP](https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/01_global/GLOBAL_IWP.png)
 
 
 ### Precipitation
 === "Large-scale Precipication"
-    ![PRECL](img/GLOBAL_PRECL.png)
+    ![PRECL](https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/01_global/GLOBAL_PRECL.png)
 
 === "Convective Precipication"
-    ![PRECL](img/GLOBAL_PRECC.png)
+    ![PRECL](https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/01_global/GLOBAL_PRECC.png)
 
 === "Large-scale Snow Precipication"
-    ![PRECL](img/GLOBAL_PRECSL.png)
+    ![PRECL](https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/01_global/GLOBAL_PRECSL.png)
 
 === "Convective Snow Precipication"
-    ![PRECL](img/GLOBAL_PRECSC.png)
+    ![PRECL](https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/01_global/GLOBAL_PRECSC.png)
 
 
 

@@ -23,26 +23,26 @@
 
 
 === "California"
-    ![](img/SC_california.png)
+    ![](https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_cloud_regime/SC_california.png)
 
 === "Peru"
-    ![](img/SC_peru.png)
+    ![](https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_cloud_regime/SC_peru.png)
 
 === "Peru(trade)"
-    ![](img/SC_peru_trade.png)
+    ![](https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_cloud_regime/SC_peru_trade.png)
 
 === "Australia"
-    ![](img/SC_australia.png)
+    ![](https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_cloud_regime/SC_australia.png)
 
 === "Nambian"
-    ![](img/SC_nambian.png)
+    ![](https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_cloud_regime/SC_nambian.png)
 
 === "Canary"
-    ![](img/SC_canary.png)
+    ![](https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_cloud_regime/SC_canary.png)
 
 
 
-![](img/02_03_stratocumulus.png)
+![](https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_cloud_regime/02_03_stratocumulus.png)
 
 
 
@@ -50,9 +50,9 @@
 ## Seasonal
 
 === "Surface"
-    ![](img/seasonal_changes_Surface.png)
+    ![](https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_cloud_regime/seasonal_changes_Surface.png)
 
 === "Cloud related components"
-    ![](img/seasonal_changes_cloud-2.png)
+    ![](https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_cloud_regime/seasonal_changes_cloud-2.png)
 
 === "Precipication"

@@ -335,7 +335,7 @@
 <td>Q</td>
 <td>source</td>
 <td>- lower: CLUBB <br/>- upper: DYNEND</td>
-<td>- lower: CLUBB(+DYNEND) <br/>- upper:DYNEND</td>
+<td>- lower: CLUBB(+<mark class="critic">DYNEND</mark>) <br/>- upper:DYNEND</td>
 <td>- lower: CLUBB <br/>- upper: DYNEND</td>
 <td>CLUBB</td>
 <td>CLUBB</td>
@@ -353,7 +353,7 @@
 <td></td>
 <td>note</td>
 <td></td>
-<td>- DYNEND response is different   from the global ave <br/>- changes are mostly concentrated under 700 hPa</td>
+<td>- <a href="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_cloud_regime/Vertical_profiles_by_region_and_chkpt_in_one_page-0.png"><ins>DYNEND response is different from the global ave</ins></a> <br/> - changes are mostly concentrated under 700 hPa</td>
 <td>changes above &amp; below 700 hPa are almost equivalant even though the Q   amounts are mostly concentrated below 850 hPa</td>
 <td>- no DEEPCU <br/>- no changes above 700 hPa</td>
 <td></td>
@@ -364,7 +364,7 @@
 <td>CLUBB below 850 hPa (+DEEPCU near 850hPa)</td>
 <td>DEEPCU</td>
 <td>CLUBB below 850 hPa (+DEEPCU near 850hPa)</td>
-<td>DYNEND(+CLUBB)</td>
+<td><mark class="critic">DYNEND</mark>(+CLUBB)</td>
 <td>DEEPCU(+DYNEND &amp; CLUBB)</td>
 </tr>
 <tr>
@@ -382,8 +382,8 @@
 <td></td>
 <td>CLUBB increments are small except   for sfc</td>
 <td></td>
-<td>DYNEND &gt; CLUBB (large   subsidence???)</td>
-<td></td>
+<td>DYNEND &gt; CLUBB ( <a href="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/01_global/DYNEND_omega_zonal.png"><ins>large subsidence</ins>???</a>)</td>
+<td>warming due to subsidence is smaller than that of Sc</td>
 </tr>
 <tr>
 <td>CLDLIQ</td>
@@ -392,7 +392,7 @@
 <td>CLUBB(+CUDET in the middle)</td>
 <td>CLUBB</td>
 <td>CLUBB</td>
-<td>CLUBB+CUDET</td>
+<td>CLUBB+<mark class="critic">CUDET</mark></td>
 </tr>
 <tr>
 <td></td>
@@ -407,10 +407,10 @@
 <td></td>
 <td>note</td>
 <td></td>
-<td>- very small value in 700 hPa   (is this correct??) <br/>- source in CUDET</td>
+<td>- <ins>very small value in 700 hPa (is this correct??)</ins> <br/> - source in CUDET</td>
 <td></td>
 <td>changes only near 850 hPa</td>
-<td>convective detrainment vs just detrainment</td>
+<td><ins>convective detrainment</ins> vs detrainment in CLUBB??????</td>
 </tr>
 <tr>
 <td>CLDICE</td>
@@ -444,7 +444,7 @@
 <td>source</td>
 <td>CLUBB</td>
 <td>CLDMIC</td>
-<td></td>
+<td>CLDMIC</td>
 <td></td>
 <td></td>
 </tr>
@@ -452,8 +452,8 @@
 <td></td>
 <td>sink</td>
 <td>CLDMIC</td>
-<td>CLUBB</td>
-<td></td>
+<td>CLUBB<br/>(vert.integ.: DYNEND)</td>
+<td>DYNEND</td>
 <td></td>
 <td></td>
 </tr>
@@ -462,7 +462,7 @@
 <td>note</td>
 <td>peak at sfc</td>
 <td>peak at 700 hPa</td>
-<td>peak at sfc. Very small changes</td>
+<td>peak at sfc. &amp; strong seasonality ( <a href="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_cloud_regime/Seasonal_changes_of_vertical_integrals_by_chkpt-14.png"><ins>Max. in summer</ins></a>)</td>
 <td>changes are neglegible</td>
 <td></td>
 </tr>
@@ -470,8 +470,8 @@
 <td>SNOWQM</td>
 <td>source</td>
 <td>DYNEND</td>
-<td>DYNEND</td>
-<td></td>
+<td>CLDMIC</td>
+<td>CLDMIC</td>
 <td></td>
 <td></td>
 </tr>
@@ -479,8 +479,8 @@
 <td></td>
 <td>sink</td>
 <td>CLDMIC</td>
-<td>CLDMIC</td>
-<td></td>
+<td>CLUBB<br/>(vert.integ.: DYNEND)</td>
+<td>DYNEND</td>
 <td></td>
 <td></td>
 </tr>

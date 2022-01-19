@@ -324,6 +324,7 @@
 <th>Variable</th>
 <th>Source</th>
 <th>Sink</th>
+<th>Note</th>
 </tr>
 </thead>
 <tbody>
@@ -331,36 +332,43 @@
 <td>Specific Humidity (Q)</td>
 <td>- lower: CLUBB<br/> - upper: DYNEND</td>
 <td>- lower: DYNEND &amp; DEEPCU<br/> - upper: CLUBB</td>
+<td>- lower: turbulence supply surface moisture and transport to atmosphere <br/> - upper: moisture is transported from the lower partof the atmosphere and condensate to liquid or ice</td>
 </tr>
 <tr>
 <td>Temperature (T)</td>
 <td>DEEPCU (lower: CLUBB)</td>
 <td>RAD (lower: DYNEND)</td>
+<td></td>
 </tr>
 <tr>
 <td>Cloud water (CLDLIQ)</td>
 <td>CLUBB</td>
 <td>CLDMIC</td>
+<td>clouds that are formed during CLUBB process condensed (evap. or collide) to something else (e.g., rain, snow...) <br/>changes due to the transportation of winds is relatively</td>
 </tr>
 <tr>
 <td>Cloud ice (CLDICE)</td>
 <td>CLUBB &amp; DYNEND &amp; CUDET</td>
 <td>CLDMIC &amp; CLUBB</td>
+<td></td>
 </tr>
 <tr>
 <td>Rain (RAINQM)</td>
 <td>CLUBB</td>
 <td>CLDMIC</td>
+<td></td>
 </tr>
 <tr>
 <td>Snow (SNOWQM)</td>
 <td>CLUBB</td>
 <td>CLDMIC</td>
+<td></td>
 </tr>
 <tr>
 <td>Wind (U &amp; V)</td>
 <td>DYNEND</td>
 <td>CLUBB</td>
+<td></td>
 </tr>
 </tbody>
 </table>

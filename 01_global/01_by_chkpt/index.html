@@ -322,13 +322,62 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="by-checkpoints">By checkpoints</h1>
+<ul>
+<li>overview</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Checkpoints</th>
+<th>Major causes for sources &amp; sinks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RAD</td>
+<td>changes in temperature tendencies mainly due to radiative forcings (cloud, aerosols, etc.)</td>
+</tr>
+<tr>
+<td>PACEND</td>
+<td></td>
+</tr>
+<tr>
+<td>DYNEND</td>
+<td>temperature, moisture, tracers, and momentum transport due to 3D atmospheric flow (dry) <br/> (in this process, <a href="https://ncar.github.io/CAM/doc/build/html/cam5_scientific_guide/dynamics.html">Adjustment of pressure to include change in mass of water vapor</a>)</td>
+</tr>
+<tr>
+<td>DRYADJ</td>
+<td>adjust temperature and specific humidity if a layer is unstable with respect to the dry adiabatic laps rate (momentum, moisture, and potential temperature are mixed in the unstable case)</td>
+</tr>
+<tr>
+<td>DEEPCU</td>
+<td>convective momentum transport, condensation in the updraft plume &amp; entrainment may occur)</td>
+</tr>
+<tr>
+<td>CLUBB</td>
+<td>turbulent momentum &amp; heat &amp; moisture transport  + microphysics (mainly low cloud types such as stratocumulus, shallow cumulus, and intermediate cloud types)</td>
+</tr>
+<tr>
+<td>CUDET</td>
+<td>convective detrainment (mainly detrainment of ice to water??)</td>
+</tr>
+<tr>
+<td>CLDMIC</td>
+<td>growth &amp; condensation of hydrometeor (calcualte tendency of water due to nucleation, evaporation, autoconversion, accretion, accs, heterogeneous ice nucleation, homogeneous ice nucleation, melting, sedimentation, detrainment)</td>
+</tr>
+<tr>
+<td>AERWETRM</td>
+<td>aerosol wet removal</td>
+</tr>
+</tbody>
+</table>
 <h2 id="rad">RAD</h2>
 <ul>
 <li>changes are mostly due to cloud longwave cooling</li>
 <li><mark class="critic">at 850 hPa</mark>: subtropical low-level cloud<ul>
 <li>cooling from stratocumulus cloud top are the strongest.</li>
-<li>cooling also comes from storm track cloud top, but the effect is smaller than stratocumulus regions<br/>
-<img alt="regional_T_inc" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/01_global/RAD_T_regional.png"/></li>
+<li>cooling also comes from storm track cloud top, but the effect is smaller than stratocumulus regions<br>
+<img alt="regional_T_inc" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/01_global/RAD_T_regional.png"/></br></li>
 </ul>
 </li>
 </ul>

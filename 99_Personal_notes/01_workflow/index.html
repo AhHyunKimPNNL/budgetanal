@@ -237,9 +237,33 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#overview">
-    overview
+<a class="md-nav__link" href="#1-scidac-project">
+    1. SciDAC project
   </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-about-e3sm">
+    2. About E3SM
+  </a>
+<nav aria-label="2. About E3SM" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cam-vs-eam">
+    CAM vs EAM
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#time-inetgration-in-eam">
+    Time inetgration in EAM
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#performance-of-e3sm">
+    Performance of E3SM
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -282,37 +306,98 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="work-flow">Work Flow</h1>
-<h2 id="overview">overview</h2>
-<p><a href="https://squidfunk.github.io/mkdocs-material/reference/diagrams/#using-sequence-diagrams">diagram tutorial</a></p>
+<h2 id="1-scidac-project">1. SciDAC project</h2>
+<p>Background
+* SciDAC project addressing time interation errors associated with EAM<span class="arithmatex">\(\prime\)</span>s physics parameterizations in individual parameterisations and process coupling
+* E3SM have shown strong time-step sensitivities</p>
+<h2 id="2-about-e3sm">2. About E3SM</h2>
+<h3 id="cam-vs-eam">CAM vs EAM</h3>
+<p>EAM (the E3SM (Energy Exascale Earth System Model) Atmosphere Model) was forked from the the Comunity Atmosphere Model (CAM; Neale et al., 2010) version 5.3. Independent development of EAM began around June 2014 with the goal of producing a tool optimized for Department of Energy (DOE) scientific and computational needs. The E3SM project is focused on modeling and assessment of environmental change occuring over the last 40 years and next 40 years in these research areas:
+1. the water cycle
+    - water cycle extremes: e.g., hurricanes, midlatitude cyclones, atmospheric rivers
+    - water variability and availability (storms, storm tracks, blocking, snowmelt)
+    - sea level rise issues (especially topography associated with Greenland and Antarctic ice sheet)
+2. Sea level rise
+3. Exploratory studies of the nitrogen and phosphorus on land biogeochemistry (BGC)</p>
+<p>Compared to CAM5.3, E3SM has:</p>
 <ol>
-<li>E3SM</li>
-<li>SciDAC &amp; time integration<ul>
-<li>see SciDAC homepage</li>
-<li>read paper again</li>
+<li>higher vertical resolution (30 levels to 72 levels)<ul>
+<li>the surface layer is 20 m thick, with 15 layers between the surface and 850 hPa to better capture thin clouds, sharp gradients at top of the boundary layer, rapid changes in process rate (autoconversion, accretion, evaporation, and radiative heating rates) and cloud properties (drop size and rain rates)</li>
+<li>between 850 hPa and 500 hPa vertical grid spacing is slowly increased from 100 to 500 m to represent the variations in water vapor features and aerosol plumes that are frequently observed at scale of 500 m and less.</li>
+<li>free troposphere (above 500 hPa) up to the lower stratosphere (70 hPa) was increased from 1200 to 600 m to allow for adequate representation of upward propagating large-scale tropical waves such as Kelvin and mixed-Rossby gravity.</li>
 </ul>
 </li>
-<li>Water budget analysis.<ul>
-<li>Q, T, Cloud water/ice, Rain</li>
-<li>checkpoints...</li>
+<li>improved treatment of some diabatic processes:<ul>
+<li>Turbulence, shallow convection, and stratoform cloud macrophysics (CLUBB) and the improved representation of ice clouds (threshold size for autoconversion of ice to snow particle is a function of temperature)</li>
+<li>aerosol-cloud (stratiform and shallow convective clouds) interaction when CLUBB and MAM4 are coupled</li>
+<li>some stratospheric ozone</li>
 </ul>
 </li>
+<li>COSP (the Cloud Feedback Model Intercomparison Project Obseration Simulator Package; Bodas-Salcedo et al., 2011) version 1.4</li>
 </ol>
-<div class="mermaid">classDiagram
-  E3SM -- Dynamics
-  E3SM -- Physics
-  E3SM -- Coupler
-  Dynamics --&gt; Physics
-  Physics --&gt; Coupler
-  class E3SM{
-
-  }
-  class Dynamics{
-  }
-  class Coupler{
-  }
-  class Physics{
-  }
-</div>
+<h3 id="time-inetgration-in-eam">Time inetgration in EAM</h3>
+<p>Atmospheric general circulation models (AGCMs) are mainly consist of two distinct parts: the dynamical core and the physics parameterizations.Consider the general prediction equation for a generic variable <span class="arithmatex">\(\psi\)</span>,</p>
+<p>(1) <span class="arithmatex">\(\frac{\partial \psi} {\partial t}\)</span> = <span class="arithmatex">\(D\left(\psi\right)\)</span>  + <span class="arithmatex">\(P\left(\psi\right)\)</span> ;,</p>
+<ul>
+<li><span class="arithmatex">\(\psi\)</span>: a prognostic variable (e.g., temperature, horizontal wind component)</li>
+<li>D: The dynamical core component</li>
+<li>P: the physical parameterization suite</li>
+</ul>
+<p>A hybrid physics-dyanmics coupling that uses different methods for fluid dynamics and tracer transport (Lauritzen et al., 2014) is used in EAM. <mark class="critic">(????not sure??? need more understanding on this)</mark> This method is also called as many names: "isolated sequential splitting" (Wan et al., 2021), "time splitting method" (Williamson, 2002; Lauritzen et al., 2018), "sequential-update splitting" (Donahue and Caldwell, 2018), and "operator splitting" (Sportisse, 2000).
+The Time Split coupling is approximated by</p>
+<p>(2)<span class="arithmatex">\(\psi^* = \psi^{n-1} + 2\Delta t D(\psi^*,\psi^{n},\psi^{n-1}) \;,\)</span></p>
+<p>(3)<span class="arithmatex">\(\psi^{n+1} = \psi^* + 2\Delta t P(\psi^{n+1},\psi^*) \;\)</span>.</p>
+<p>the time split approximations D and P are calculated sequentially, each based on the state produced by the other. In other words, a model component takes the atmospheric state variables (e.g., winds, temperature, pressure, and tracer concentrations that have already been updated by a proceding component) as inputs. Tendencies caused by the current component are calculated by considering the current component in isolation. The tendencies are then used to update the atmospheric state before passing it to the next component. EAMv1 has "physics time step" of 30 minutes and "sub-cycling timestep" of 5 minutes. Within one physics time step, the atmospheric state is updated multiple times. </p>
+<p>The schematic diagram for the time integration is as follows:
+<img alt="flowchart" src="../../img/coupling_diagram_EAMv1.png"/></p>
+<p>The focus points of the dyanmical core and physics parameterization developmenets are different. The dynamical core developments focuses on designing accurate and computationally efficient discretization methods for modern computing architectures (see, e.g., Lauritzen et al., 2011; Williamson, 2007). In contrast, the development of physics parameterizations has a stronger emphasis on how to formulate the equations to conceptually describe a physical phenomena. For that reason (?), a number of recent studies have shown that time integration errors in the parameterizations or process coupling can be sufficiently large to dominate the total error of the numerical solutions (e.g., Barrett et al., 2019; Zhang et al., 2012, 2018).</p>
+<p>To understand or to evaluate the tendency of a variable in each processes, the typical way to obtain the value is to review the model source code and manually add extra lines of code and variables into subroutines. However, with the work of Wan et al. (2021), now we can get the rate of changes from the process of interest using a minimal amount of coding by using CondiDiag.</p>
+<h3 id="performance-of-e3sm">Performance of E3SM</h3>
+<ul>
+<li>
+<p>Cloud</p>
+<ul>
+<li>CLUBB led to a more realistic transition from stratocumulus to trade wind cumulus regions in the subtropical oceans in CAM5 (Bogenschutz et al., 2013) and also in EAMv1L.</li>
+<li>substantial decrease in Sc near the coasts in EAMv1:<ul>
+<li>might be due to the narrow area of low vertical velocity skewness in CLUBB and the annual mean skewness is too high</li>
+<li>near Peru/Chile and Calinornian coast</li>
+</ul>
+</li>
+<li>increase of low clouds:<ul>
+<li>especially in the trade cumulus regions due to a better representation of the boundary layer structure.(see Figure2 and Figure4 in this article)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Precipitation</p>
+<ul>
+<li>excessive precipiation over large portions of the tropic, Arabian Sea, Pacific ITCZ, the subtropical oceans, Nortwestern Indian Ocean and Africa.</li>
+<li>less precipitation over Amazon, TWP, and South China Sea. (mostly due to tuning)</li>
+</ul>
+</li>
+<li>
+<p>Temperature &amp; Moisture</p>
+<ul>
+<li>cold biases in the upper troposphere in the tropical and subtropical regions</li>
+<li>moistures are trapped in the lower levels, drier mid/upper troposphere.</li>
+</ul>
+</li>
+<li>
+<p>remaining problems due to CLUBB, MG2:</p>
+<ul>
+<li>dry biases over the Amazon region</li>
+<li>substantial reduction of Sc off the west coast of major continents in the subtropics</li>
+<li>largely reduced high clouds over TWP</li>
+<li>lack of low and middle level clouds over deep convection regions</li>
+<li>dry bias in TWP and South East Asia.</li>
+<li><mark class="critic">CLUBB led to an initial reduction of stratocumulus clouds</mark></li>
+</ul>
+</li>
+</ul>
+<p>when the spatial or temporal resolution increases, water budgets changes mainly in the major cloud regimes. For that reason, we need to focus on the changes in water budget by processes.</p>
+<p><img alt="Figure 5 in Wan et al., 2021" src="https://gmd.copernicus.org/articles/14/1921/2021/gmd-14-1921-2021-f05-thumb.png"/></p>
+<p>to be continued............</p>
 </article>
 </div>
 </div>
@@ -368,5 +453,5 @@
 <script src="../../javascripts/mathjax.js"></script>
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-<script src="https://unpkg.com/mermaid@8.8.0/dist/mermaid.min.js"></script><script>mermaid.initialize({});</script></body>
+</body>
 </html>

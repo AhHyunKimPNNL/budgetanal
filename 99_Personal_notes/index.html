@@ -264,6 +264,38 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="personal-notes">Personal notes</h1>
+<p>Notes to broaden the understanding of E3SM budget analysis.</p>
+<h2 id="overview">overview</h2>
+<p><a href="https://squidfunk.github.io/mkdocs-material/reference/diagrams/#using-sequence-diagrams">diagram tutorial</a></p>
+<ol>
+<li>E3SM</li>
+<li>SciDAC &amp; time integration<ul>
+<li>see SciDAC homepage</li>
+<li>read paper again</li>
+</ul>
+</li>
+<li>Water budget analysis.<ul>
+<li>Q, T, Cloud water/ice, Rain</li>
+<li>checkpoints...</li>
+</ul>
+</li>
+</ol>
+<div class="mermaid">classDiagram
+  E3SM -- Dynamics
+  E3SM -- Physics
+  E3SM -- Coupler
+  Dynamics --&gt; Physics
+  Physics --&gt; Coupler
+  class E3SM{
+
+  }
+  class Dynamics{
+  }
+  class Coupler{
+  }
+  class Physics{
+  }
+</div>
 </article>
 </div>
 </div>
@@ -319,5 +351,5 @@
 <script src="../javascripts/mathjax.js"></script>
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-</body>
+<script src="https://unpkg.com/mermaid@8.8.0/dist/mermaid.min.js"></script><script>mermaid.initialize({});</script></body>
 </html>

@@ -391,6 +391,20 @@
 </ul>
 </nav>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#lauritzen-and-williamson-2019-james">
+    Lauritzen and Williamson (2019, JAMES)
+  </a>
+<nav aria-label="Lauritzen and Williamson (2019, JAMES)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-introduction">
+    1. Introduction
+  </a>
+</li>
+</ul>
+</nav>
+</li>
 </ul>
 </nav>
 </li>
@@ -1338,6 +1352,41 @@ Autoconversion rate (a–c) as a function of cloud water mixing ratio (Qc) at cl
 </ul>
 </li>
 <li>due to the long time step, newly formed or dissipated clouds is <span class="arithmatex">\(\tilde{q_l}= \frac{\overline{q_l} } {f}\)</span>  (Theoretically, it<span class="arithmatex">\(^\prime\)</span>s zero)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="lauritzen-and-williamson-2019-james">Lauritzen and Williamson (2019, JAMES)</h2>
+<h3 id="1-introduction">1. Introduction</h3>
+<ul>
+<li>it is important to conserve total energy (TE) to a high degree in each component individually and in the complete model to avoid spurious long-term trends in the simulated Earth system.</li>
+<li>the atmospheric components<ul>
+<li>a resolved-scale component (the dynamic core)</li>
+<li>a subgrid-scale component (parameterization or, in modeling jargon, physics)</li>
+</ul>
+</li>
+<li>CAM configuration<ul>
+<li>the spectral-element (SE; Lauritzen et al., 2018) and finite-volume (FV; Lin, 2004) dynamical core</li>
+<li>Physics-dynamics coupling (PDC): time-split<ul>
+<li>state-updatin (ftype=1 in CAM code, both for SE and FV): the physics tendencies are added to the state previously produced by the dynamical core and the resulting state provides the initial state for the subsequent dynamical core calculation.</li>
+<li>dribbling (ftype=0, only for SE): when the dynamical core adopts a shorter time step than the physics (has nsplit substeps), then 1/nsplith of the physics-calculated tendency is added to the state before each dynamics substep.</li>
+<li>dribbling variants can lead to spurious sources or sink of TE, mass, and water mass budget error.</li>
+</ul>
+</li>
+<li>
+<p>methods to remove spurious error</p>
+<ul>
+<li>put inherent or specified filters to control spurious noise near the grid scale which will lead to energy dissipation (Jablonowski &amp; Williamson, 2011; Thuburn, 2008)</li>
+<li>put sponge layers to control the solution near the top of the model that may be a sink of TE</li>
+<li>use numerical discretizations of the adiabatic frictionless equations of motion: TE is conserved in the absence of time-truncation and filtering errors<ul>
+<li>e.g., mimetic spectral-element discretizations (Eldred and Randall, 2017; McRae &amp; Cotter, 2013; Taylor, 2011)</li>
+</ul>
+</li>
+<li>
+<p>add the energy change due to explicit diffusion on momentum back as heating.</p>
+</li>
+<li></li>
 </ul>
 </li>
 </ul>

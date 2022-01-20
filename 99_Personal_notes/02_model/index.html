@@ -261,6 +261,11 @@
     Spectral-element dynamical core
   </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#dyanmical-core-clipping">
+    Dyanmical core clipping?
+  </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -355,6 +360,18 @@
 <h2 id="horizontal-discretization">Horizontal discretization</h2>
 <p><img alt="Horizontal discretization" src="https://agupubs.onlinelibrary.wiley.com/cms/asset/bf1ead11-db1c-46b1-bcfd-67804109d477/jame20932-fig-0001-m.png"/></p>
 <h2 id="spectral-element-dynamical-core">Spectral-element dynamical core</h2>
+<p>TBC</p>
+<h2 id="dyanmical-core-clipping">Dyanmical core clipping?</h2>
+<p>In E3SM, <a href="https://github.com/E3SM-Project/E3SM/blob/master/components/eam/src/physics/cam/clubb_intr.F90#L1804">clipping was mentioned in clubb_intr.F90</a></p>
+<div class="admonition note">
+<p>An example of an inconsistency in CAM physics is that surface pressure is held fixed during physical parameterization updates, but water vapor, and hence surface pressure, does change during evaporation/precipitation and an inconsistency appears in the mass and energy budget. Similarly, if a “<mark class="critic">clipper</mark>” is used on water vapor or condensates to avoid (unphysical) negative mixing ratios (more details in section 3.2) and this is not accounted for in the thermodynamics or through a surface flux, that “<mark class="critic">clipping</mark>” will produce an energy source via the mass weightening in the TE vertical integral. In the dynamical core TE is not conserved locally in each column as there is a horizontal flux of energy between columns; but the local energy budget should, ideally, be closed and thereby, globally, TE should be conserved. If a dynamical core does not inherently conserve dry air mass and/or water mass then a spurious source of TE is inevitable again through the mass weightening in the vertical integral (unless fixers are applied). (Lauritzen et al., 2019)</p>
+</div>
+<details class="note" open="open">
+<summary>References</summary>
+<ul>
+<li>Lauritzen, P. H., &amp; Williamson, D. L. (2019). A total energy error analysis of dynamical cores and physics-dynamics coupling in the Community Atmosphere Model (CAM). Journal of Advances in Modeling Earth Systems, 11, 1309–1328. https://doi.org/10.1029/2018MS001549</li>
+</ul>
+</details>
 </article>
 </div>
 </div>

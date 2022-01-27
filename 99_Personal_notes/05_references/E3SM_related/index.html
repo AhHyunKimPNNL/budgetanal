@@ -231,16 +231,21 @@
         Atmospheric Model
       </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../03_code/">
+        codes
+      </a>
+</li>
 <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_4" id="__nav_5_4" type="checkbox"/>
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_5" id="__nav_5_5" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../">References</a>
-<label for="__nav_5_4">
+<label for="__nav_5_5">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
 <nav aria-label="References" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_5_4">
+<label class="md-nav__title" for="__nav_5_5">
 <span class="md-nav__icon md-icon"></span>
           References
         </label>
@@ -400,6 +405,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="#1-introduction">
     1. Introduction
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#spurious-energy-sources-and-sinks">
+    Spurious Energy Sources and Sinks
   </a>
 </li>
 </ul>
@@ -1366,7 +1376,9 @@ Autoconversion rate (a–c) as a function of cloud water mixing ratio (Qc) at cl
 <li>a subgrid-scale component (parameterization or, in modeling jargon, physics)</li>
 </ul>
 </li>
-<li>CAM configuration<ul>
+<li>
+<p>CAM configuration</p>
+<ul>
 <li>the spectral-element (SE; Lauritzen et al., 2018) and finite-volume (FV; Lin, 2004) dynamical core</li>
 <li>Physics-dynamics coupling (PDC): time-split<ul>
 <li>state-updatin (ftype=1 in CAM code, both for SE and FV): the physics tendencies are added to the state previously produced by the dynamical core and the resulting state provides the initial state for the subsequent dynamical core calculation.</li>
@@ -1374,24 +1386,89 @@ Autoconversion rate (a–c) as a function of cloud water mixing ratio (Qc) at cl
 <li>dribbling variants can lead to spurious sources or sink of TE, mass, and water mass budget error.</li>
 </ul>
 </li>
-<li>
-<p>methods to remove spurious error</p>
-<ul>
+<li>methods to remove spurious error<ul>
 <li>put inherent or specified filters to control spurious noise near the grid scale which will lead to energy dissipation (Jablonowski &amp; Williamson, 2011; Thuburn, 2008)</li>
 <li>put sponge layers to control the solution near the top of the model that may be a sink of TE</li>
 <li>use numerical discretizations of the adiabatic frictionless equations of motion: TE is conserved in the absence of time-truncation and filtering errors<ul>
 <li>e.g., mimetic spectral-element discretizations (Eldred and Randall, 2017; McRae &amp; Cotter, 2013; Taylor, 2011)</li>
 </ul>
 </li>
+<li>add the energy change due to explicit diffusion on momentum back as heating.</li>
+</ul>
+</li>
+</ul>
+</li>
 <li>
-<p>add the energy change due to explicit diffusion on momentum back as heating.</p>
-</li>
-<li></li>
+<p>TE definition</p>
+<ul>
+<li>TE = kinetic enenrgy + internal energy + potential energy</li>
+<li>no flux of mass through the model top and bottom.</li>
+<li>In a moist atmosphere, <ul>
+<li>if the thermodynamic equation is formulated in terms of temperature, the energy conversion term includes a generalized heat capacity which is a function of the condensates and their associated heat capacities</li>
+<li>the weight of the condensates is included in the pressure field and pressure gradient force.</li>
+<li>due to the evolutionary nature of the model development, the parameterizations have not yet been converted to match the SE dynamical core.</li>
+<li>to avoid PDC errors, state-update is used in this paper <ul>
+<li>"state-update": the adiabatic, frictionless equation of motion that does not include condensates in the mass/pressure filed as well as energy conversion term in the thermodynamic equation and setting the heat capacity for moisture to  <span class="arithmatex">\(c_p^{(d)}\)</span></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
+</li>
+<li>
+<p>some remarks on local energy conservation</p>
+<ul>
+<li>in real world,<ul>
+<li>water vapor amount and the condensation/evaporation processes consequently changes the pressure</li>
+<li>the local energy budget should be closed and thereby, globally, TE should be conserved.</li>
+</ul>
+</li>
+<li>surface pressure is held fixed during physical parameterization updates, therefore an inconsistency appears in the mass and energy budget </li>
+<li>use of "clipper" produce an energy source via the mass weightening in the TE vertical integral.<ul>
+<li>clipper: remove (unphysical) negative mixing ratios</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="spurious-energy-sources-and-sinks">Spurious Energy Sources and Sinks</h3>
+<ol>
+<li>Parameterization errors: individual parameterizations may not designed to have a closed energy budget.<ul>
+<li>in CAM, parameterizations are required to have a closed energy budget under the assumption that pressure remains constant during the computation of the subgrid-scale parameterization tendencies. <ins>If not, a fixerneeds to be applied</ins>.</li>
+</ul>
+</li>
+<li>Pressure work: the surface pressure changes and concomitant changes in TE when the parameterizations update specific humidity.</li>
+<li>Continuous TE formula discrepancy: discrepancies in continuous equations of motion conservation between physics parameterzations and the dynamical core.</li>
+<li>Dynamical core errors: <ul>
+<li>filtering (e.g., limiters in flux operators (Lin, 2004)</li>
+<li>possessing inherent damping: controls small scales energy dissipation<ul>
+<li>if a hyperviscosity term or some other diffusion is added to the momentum equation, then one can diagnose the local energy dissipation from such damping and add a corresponding heating to palance it (frictional heating) </li>
+<li>viscosity applied to other variable (e.g., temperature, pressure -&gt; harder to compensate)</li>
+</ul>
+</li>
+<li>horizontal invicid dynamics: energy errors resulting from solving the inviscid, adiabatic equation of motion</li>
+<li>hyperviscosity: filtering errors</li>
+<li>vertical remapping: the vertical remapping algorithm from Lagrangian to Eulerian reference surfaces does not conserve TE.</li>
+<li>near round-off negative values of water vapor: they are filled to a minimal value without compensation.</li>
+</ul>
+</li>
+<li>Physics-dynamics coupling (PDC)<ul>
+<li>Dribbling Error (temporal PDC errors): mismatch in physics and dynamics TE when the tendencies from physics parameters are added to the state (this will not occur with the <ins>state-update</ins> approach)<ul>
+<li>Thermal energy dribbling error: the temperature tendency change leads to a dry thermal energy change of <span class="arithmatex">\(\delta M^{(d)} \delta T\)</span> (could possibly eliminated by using thermal energy forcing instead of temperature increments)</li>
+<li>Kinetic energy dribbling error: the velocity component forcing increments lead to the dry kinetic energy change of <span class="arithmatex">\(\deta M^{(d)} [(\delta u)^2 + (\delta v)^2 ]\)</span></li>
+<li>Mass clipping: while the dynamical core transport vapor and cloud liquid, physics mass increments are applied in the same location. A negative mass increment from the parameterizations may be larger than the mass available to remove. This can lead to a spurious source mass. The "clipping" changes the water mass budget without accounting for it in water fluxes or in the thermodynamics and hence lead to TE conservation erros (both kinetic and thermal energy)</li>
+</ul>
+</li>
+<li>change of vertical grid/coordinate errors: occurs when there are discrepancies in vertical coordinate between physics and dynamics<ul>
+<li>e.g., nonhydrostatic dynamical cores: a terrain-following height coordinate, physics: pressure coordinate.</li>
+</ul>
+</li>
+<li>change of horizontal grid errors: discrepancies in horizontal coordinate between physics and dynamics.</li>
+</ul>
+</li>
+<li>compensating energy fixers: an arbitrary energy fixer to restore TE conservation. In general, global fixers are used (uniform increments are added to the temperature field to compensate for TE imbalance from all processes)</li>
+</ol>
+<p><img alt="time-stepping sequence" src="https://agupubs.onlinelibrary.wiley.com/cms/asset/4c149a97-b7ac-4e0c-b842-d1119aa775f8/jame20838-fig-0001-m.png"/></p>
 </article>
 </div>
 </div>

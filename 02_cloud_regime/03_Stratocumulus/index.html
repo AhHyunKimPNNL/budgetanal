@@ -200,6 +200,11 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#questions">
+    Questions
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#increments">
     Increments
   </a>
@@ -254,16 +259,21 @@
         Atmospheric Model
       </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../99_Personal_notes/03_code/">
+        codes
+      </a>
+</li>
 <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_5_4" id="__nav_5_4" type="checkbox"/>
+<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_5_5" id="__nav_5_5" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../../99_Personal_notes/05_references/">References</a>
-<label for="__nav_5_4">
+<label for="__nav_5_5">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
 <nav aria-label="References" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_5_4">
+<label class="md-nav__title" for="__nav_5_5">
 <span class="md-nav__icon md-icon"></span>
           References
         </label>
@@ -287,6 +297,45 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="stratocumulus-regions">Stratocumulus regions</h1>
+<h3 id="questions">Questions</h3>
+<ol>
+<li>Why the temperature increments due to CLUBB is so spiky near the surface in the trade cumulus regions?</li>
+<li>What is the impact?</li>
+<li>
+<p>In the new simulation, how much weaker the deep convection is?</p>
+</li>
+<li>
+<p>possible reasons</p>
+<ol>
+<li>
+<p>model settings? -&gt; re-run the model: Branch: huiwanpnnl/gmd_2020_330_with_forcing_method</p>
+<ul>
+<li><a href="https://compy-dtn.pnl.gov/kima320/Budget_Analysis/With_forcing_method/Cloud_regime/Vertical_profiles_by_region_and_chkpt_in_one_page.pdf">results from the branch name gmd_2020_330_with_forcing_method</a> (see pg.18 for temperature tendency profile in stratocumulus regions)</li>
+<li><a href="https://compy-dtn.pnl.gov/kima320/Budget_Analysis/Cloud_regime/Vertical_profiles_by_region_and_chkpt_in_one_page.pdf">results from the branch name maint-1.0_cnd_diag1.1</a> (see pg.18 for temperature tendency profile in stratocumulus regions)</li>
+<li><a href="https://compy-dtn.pnl.gov/kima320/Budget_Analysis/With_forcing_method/Cloud_regime_diff/Diff_Vertical_profiles_by_region_and_chkpt_in_one_page.pdf">difference between gmd_* and maint-1.0</a> (see pg.18 for temperature tendency profile in stratocumulus regions)</li>
+<li>simulation results from gmd_* does reduces some spikes in the surface of CLUBB_T_tendency</li>
+<li>simulation results from gmd_* has large cooling tendency above the cloud top in Peru stratocumulus region (maybe even larger than the condensational heating due to cloud formation). -&gt; <ins>maybe the major source of heating is not condensation but turbulence in CLUBB??</ins></li>
+</ul>
+</li>
+<li>
+<p>due to warm surface?? (surface sensible heat flux)</p>
+<ul>
+<li><img alt="sensible heat flux" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_cloud_regime/SFLX.png"/></li>
+</ul>
+</li>
+<li>related to liftlevel in DEEPCU<ul>
+<li>in zm_conv.F90, lift level (<a href="https://github.com/E3SM-Project/E3SM/blob/master/components/eam/src/physics/cam/zm_conv.F90#L81">mx_bot_lyr_adj</a> in zm_conv.F90???????) is set to 2 (about 100 m above the surface, see <a href="https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2018MS001350">Xie et al. (2019)</a> )</li>
+<li>in subroutine <a href="https://github.com/E3SM-Project/E3SM/blob/master/components/eam/src/physics/cam/zm_conv.F90#L3129">q1q2_pjr</a>, temperature (static energy) and moisture tendencies at and below liftlevel (or at and below LCL) is calculated as if there are no values at the bottom of these layers.<ul>
+<li>above liftlevel: <span class="arithmatex">\({\partial \bar q \over \partial t} = {\partial \over \partial p} (M_u (q_u-\bar q) + M_d (q_d-\bar q))=( (M_u (q_u-\bar q) + M_d (q_d-\bar q))^{lower level} - (M_u (q_u-\bar q) + M_d (q_d-\bar q))^{this level} )/ \partial p\)</span></li>
+<li>below liftlevel: <span class="arithmatex">\({\partial \bar q \over \partial t} = {\partial \over \partial p} (M_u (q_u-\bar q) + M_d (q_d-\bar q))=( - (M_u (q_u-\bar q) + M_d (q_d-\bar q))^{this level} )/ \partial p\)</span></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>related to l_host_applies_sfc_fluxes ????(<a href="https://doi.org/10.5194/gmd-11-1971-2018">Zhang et al., 2018</a> )</li>
+</ol>
+</li>
+</ol>
 <h3 id="increments">Increments</h3>
 <ul>
 <li>Cloud radiative cooling occurs right above the cloud top </li>

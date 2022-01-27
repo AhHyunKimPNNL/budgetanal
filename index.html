@@ -297,16 +297,21 @@
         Atmospheric Model
       </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="99_Personal_notes/03_code/">
+        codes
+      </a>
+</li>
 <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_5_4" id="__nav_5_4" type="checkbox"/>
+<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_5_5" id="__nav_5_5" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="99_Personal_notes/05_references/">References</a>
-<label for="__nav_5_4">
+<label for="__nav_5_5">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
 <nav aria-label="References" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_5_4">
+<label class="md-nav__title" for="__nav_5_5">
 <span class="md-nav__icon md-icon"></span>
           References
         </label>
@@ -407,6 +412,30 @@
 <td></td>
 </tr>
 <tr>
+<td>- Ice saturation adjustment,   sub-step xx</td>
+<td>ICEMACxx</td>
+<td>“clubb_tend_cam”</td>
+<td></td>
+</tr>
+<tr>
+<td>- CLUBB, sub-step xx</td>
+<td>CLUBBxx</td>
+<td>“clubb_tend_cam”</td>
+<td>(Cloud Layers Unified By Binormals, Golaz et al., 2002; Larson et al., 2002; Larson and Golaz, 2005; Larson, 2017).</td>
+</tr>
+<tr>
+<td>- Convective detrainment,   sub-step xx</td>
+<td>CUDETxx</td>
+<td>“clubb_tend_cam”</td>
+<td></td>
+</tr>
+<tr>
+<td>- Miscellaneous diagnostics,   sub-step xx</td>
+<td>MACDIAGxx</td>
+<td>“clubb_tend_cam”</td>
+<td></td>
+</tr>
+<tr>
 <td>Aerosol activation and mixing,   sub-step xx</td>
 <td>CLDAERxx</td>
 <td></td>
@@ -417,30 +446,6 @@
 <td>CLDMICxx</td>
 <td></td>
 <td>Gettelman and Morrison (2015)</td>
-</tr>
-<tr>
-<td>Ice saturation adjustment,   sub-step xx</td>
-<td>ICEMACxx</td>
-<td>“clubb_tend_cam”</td>
-<td></td>
-</tr>
-<tr>
-<td>CLUBB, sub-step xx</td>
-<td>CLUBBxx</td>
-<td>“clubb_tend_cam”</td>
-<td>(Cloud Layers Unified By Binormals, Golaz et al., 2002; Larson et al., 2002; Larson and Golaz, 2005; Larson, 2017).</td>
-</tr>
-<tr>
-<td>Convective detrainment,   sub-step xx</td>
-<td>CUDETxx</td>
-<td>“clubb_tend_cam”</td>
-<td></td>
-</tr>
-<tr>
-<td>Miscellaneous diagnostics,   sub-step xx</td>
-<td>MACDIAGxx</td>
-<td>“clubb_tend_cam”</td>
-<td></td>
 </tr>
 <tr>
 <td>Stratiform clouds, all   substeps</td>
@@ -507,8 +512,13 @@
 </thead>
 <tbody>
 <tr>
-<td>Tracer   mass fixers</td>
+<td>Start of after coupler (check energy, moisture, latent heat flux, tracers, +qneg4)</td>
 <td>PACINI</td>
+<td></td>
+</tr>
+<tr>
+<td>Tracer   mass fixers</td>
+<td>TRACER</td>
 <td></td>
 </tr>
 <tr>
@@ -522,6 +532,11 @@
 <td></td>
 </tr>
 <tr>
+<td>Vertical diffusion for extended model (if the model calculate ionosphere or neutral)</td>
+<td>VDIFF</td>
+<td></td>
+</tr>
+<tr>
 <td>Rayleigh friction</td>
 <td>RAYLEIGH</td>
 <td></td>
@@ -529,6 +544,11 @@
 <tr>
 <td>Aerosol dry deposition</td>
 <td>AERDRYRM</td>
+<td></td>
+</tr>
+<tr>
+<td>(When CARMA microphysics is used)</td>
+<td>CARMAA</td>
 <td></td>
 </tr>
 <tr>

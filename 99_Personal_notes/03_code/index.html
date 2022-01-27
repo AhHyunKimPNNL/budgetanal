@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.2.3, mkdocs-material-8.1.4" name="generator"/>
-<title>Atmospheric Model - Budget Analysis</title>
+<title>codes - Budget Analysis</title>
 <link href="../../assets/stylesheets/main.bb3983ee.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.e6a45f82.min.css" rel="stylesheet"/>
 <meta content="#009485" name="theme-color"/>
@@ -21,7 +21,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#personal-notes">
+<a class="md-skip" href="#code">
           Skip to content
         </a>
 </div>
@@ -45,7 +45,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Atmospheric Model
+              codes
             
           </span>
 </div>
@@ -226,14 +226,19 @@
         Summary
       </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../02_model/">
+        Atmospheric Model
+      </a>
+</li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
 <label class="md-nav__link md-nav__link--active" for="__toc">
-          Atmospheric Model
+          codes
           <span class="md-nav__icon md-icon"></span>
 </label>
 <a class="md-nav__link md-nav__link--active" href="./">
-        Atmospheric Model
+        codes
       </a>
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
 <label class="md-nav__title" for="__toc">
@@ -242,51 +247,17 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#dynamics-physics-coupling">
-    Dynamics &amp; Physics coupling??
+<a class="md-nav__link" href="#physics-update">
+    Physics update
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#coupling-of-dynamical-core-and-parameterization-suite-in-cam5">
-    Coupling of Dynamical Core and Parameterization Suite in CAM5
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#horizontal-discretization">
-    Horizontal discretization
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#spectral-element-dynamical-core">
-    Spectral-element dynamical core
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#dyanmical-core-clipping">
-    Dyanmical core clipping?
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#deep-convection">
-    Deep Convection
-  </a>
-<nav aria-label="Deep Convection" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#dilution">
-    dilution
+<a class="md-nav__link" href="#-">
+    ---------------------
   </a>
 </li>
 </ul>
 </nav>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../03_code/">
-        codes
-      </a>
 </li>
 <li class="md-nav__item md-nav__item--section md-nav__item--nested">
 <input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_5_5" id="__nav_5_5" type="checkbox"/>
@@ -320,93 +291,77 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="personal-notes">Personal notes</h1>
-<h2 id="dynamics-physics-coupling">Dynamics &amp; Physics coupling??</h2>
-<p><a href="https://www.ecmwf.int/sites/default/files/elibrary/2004/8032-numerics-physical-parameterization.pdf">The numerics of physical parametrization</a></p>
-<h2 id="coupling-of-dynamical-core-and-parameterization-suite-in-cam5">Coupling of Dynamical Core and Parameterization Suite in CAM5</h2>
-<p><a href="https://ncar.github.io/CAM/doc/build/html/cam5_scientific_guide/pd_coupling.html">Link for the documentation</a></p>
-<p><ins>The CAM5.0 cleanly separates the parameterization suite from the dynamical core</ins>, and makes it easier to replace or modify each in isolation. The dynamical core can be coupled to the parameterization suite in a purely time split manner or in a purely process split one, as described below.</p>
-<p>Consider the general prediction equation for a generic variable <span class="arithmatex">\(\psi\)</span>,</p>
-<p>(1) <span class="arithmatex">\(\frac{\partial \psi} {\partial t}\)</span> = <span class="arithmatex">\(D\left(\psi\right)\)</span>  + <span class="arithmatex">\(P\left(\psi\right)\)</span> ;,</p>
+<h1 id="code">code</h1>
+<h3 id="physics-update">Physics update</h3>
 <ul>
-<li><span class="arithmatex">\(\psi\)</span>: a prognostic variable (e.g., temperature, horizontal wind component)</li>
-<li>D: The dynamical core component</li>
-<li>P: the physical parameterization suite</li>
+<li>sequence<ol>
+<li>Call physics interface</li>
+<li>Check energy</li>
+<li>Call physics_update</li>
+</ol>
+</li>
 </ul>
-<p>A three-time-level notation is employed which is appropriate for the semi-implicit Eulerian spectral transform dynamical core. However, the numerical characteristics of the physical parameterizations are more like those of diffusive processes rather than advective ones. They are therefore approximated with forward or backward differences, rather than centered three-time-level forms.</p>
-<p><mark class="critic">The Process Split coupling</mark> is approximated by</p>
-<p>(2) <span class="arithmatex">\(\psi^{n+1}\)</span> = <span class="arithmatex">\(\psi^{n-1} + 2\Delta t D(\psi^{n+1},\psi^{n},\psi^{n-1})
-                        + 2\Delta t P(\psi^*,\psi^{n-1}) \;,\)</span></p>
-<p>where <span class="arithmatex">\(P(\psi^*,\psi^{n-1})\)</span> is calculated first from</p>
-<p>(3)<span class="arithmatex">\(\psi^* = \psi^{n-1} + 2\Delta t P(\psi^*,\psi^{n-1}) \;.\)</span></p>
-<p><mark class="critic">The Time Split coupling</mark> is approximated by</p>
-<p>(4)<span class="arithmatex">\(\psi^* = \psi^{n-1} + 2\Delta t D(\psi^*,\psi^{n},\psi^{n-1}) \;,\)</span></p>
-<p>(5)<span class="arithmatex">\(\psi^{n+1} = \psi^* + 2\Delta t P(\psi^{n+1},\psi^*) \;\)</span>.</p>
-<p>The distinction is that in the Process Split approximation the calculations of D and P are both based on the same past state, <span class="arithmatex">\(\psi^{n-1}\)</span>, <ins>while in the Time Split approximations D and P are calculated sequentially</ins>, each based on the state produced by the other.</p>
-<p>As mentioned above, the Eulerian core employs the three-time-level notation in eq. (2)-(5). Eqns. (2)-(5) also apply to two-time-level finite volume, semi-Lagrangian and spectral element (HOMME) cores by dropping centered n term dependencies, and replacing n-1 by n and <span class="arithmatex">\(2 \Delta t\)</span> by <span class="arithmatex">\(\Delta t\)</span>.</p>
-<p>The parameterization package can be applied to produce an updated field as indicated in Eq. (3) and Eq. (5). Thus Eq. (5) can be written with an operator notation</p>
-<p>(6)<span class="arithmatex">\(\psi^{n+1} = {\boldsymbol{P}}\left(\psi^*\right) \;\)</span>,</p>
-<p>where only the past state is included in the operator dependency for notational convenience. The implicit predicted state dependency is understood. The Process Split equation (2) can also be written in operator notation as</p>
-<p>(7)<span class="arithmatex">\(\psi^{n+1} = {\boldsymbol{D}}\left(\psi^{n-1},
-      \frac {{\boldsymbol{P}}(\psi^{n-1})-\psi^{n-1}} {2 \Delta t} \right) \;\)</span>,</p>
+<p>call outfld( trim(adjustl(varname)),get_var(state,vsuffix), pcols , lchnk )
+call pbuf_get_field
+call check_qflx
+call check_water
+call qneg3
+    - Clipping of negative water concentrations within the physics package (QNEG3) (<a href="https://doi.org/10.5194/gmd-11-1971-2018">Zhang et al., 2018</a>)
+call massborrow(</p>
+<p>call physics_state_check(
+    - validate state coming from the dynamics</p>
+<p>call diag_state_b4_phys_write (state)
+    - dump out "before physics" state</p>
+<p>call check_tracers_init(state, tracerint)</p>
+<h2 id="-">---------------------</h2>
+<div class="highlight"><pre><span></span><code>call t_startf('energy_fixer')
+   call check_energy_fix(state, ptend, nstep, flx_heat)
+   call physics_update(state, ptend, ztodt, tend)
+   call check_energy_chng(state, tend, "chkengyfix", nstep, ztodt, zero, zero, zero, flx_heat)
+! Save state for convective tendency calculations.
+call diag_conv_tend_ini(state, pbuf)
+call t_stopf('energy_fixer')
+</code></pre></div>
+<hr/>
+<div class="highlight"><pre><span></span><code>call t_startf('dry_adjustment')
+
+! Copy state info for input to dadadj
+! This is a kludge, so that dadadj does not have to be correctly reformulated in dry static energy
+
+lq(:) = .FALSE.
+lq(1) = .TRUE.
+call physics_ptend_init(ptend, state%psetcols, 'dadadj', ls=.true., lq=lq)
+ptend%s(:ncol,:pver)   = state%t(:ncol,:pver)
+ptend%q(:ncol,:pver,1) = state%q(:ncol,:pver,1)
+
+call dadadj (lchnk, ncol, state%pmid,  state%pint,  state%pdel,  &amp;
+     ptend%s, ptend%q(1,1,1))
+ptend%s(:ncol,:)   = (ptend%s(:ncol,:)   - state%t(:ncol,:)  )/ztodt * cpair
+ptend%q(:ncol,:,1) = (ptend%q(:ncol,:,1) - state%q(:ncol,:,1))/ztodt
+call physics_update(state, ptend, ztodt, tend)
+
+call t_stopf('dry_adjustment')
+</code></pre></div>
+<hr/>
+<p>state$s, t, q, pdel 
+tend%dTdt, dudt, dvdt,
+cam_in%cflx</p>
+<p>ftem
+CIDiff
+pbuf</p>
 <ul>
-<li><span class="arithmatex">\(\psi^{n-1}\)</span>: the prognostic variable input to the dynamical core</li>
-<li><span class="arithmatex">\(\frac {{\boldsymbol{P}}(\psi^{n-1})-\psi^{n-1}} {2 \Delta t} ;\)</span>: the forcing rate from the parameterization package (e.g. the heating rate in the thermodynamic equation). </li>
+<li>pten: derive type variable</li>
+<li>state vector (state%T)</li>
+<li>pbuf (optional) 아무거나 넣고 필요할 때 꺼내 씀.</li>
+<li>e.g., state + pten x dt = 다음 timestep state variable.</li>
 </ul>
-<p>Again only the past state is included in the operator dependency, with the implicit predicted state dependency left understood. With this notation the Time Split system (4) and (5) can be written</p>
-<p>(8)<span class="arithmatex">\(\psi^{n+1} = {\boldsymbol{P}}\left({\boldsymbol{D}}\left(\psi^{n-1},0\right)\right) \;\)</span>.</p>
-<p>The total parameterization package in CAM5.0 consists of a sequence of components, indicated by</p>
-<p>(9)<span class="arithmatex">\(P = \{ M,R,S,T \} \;\)</span>,</p>
-<ul>
-<li>M: (Moist) precipitation processes</li>
-<li>R: clouds and Radiation</li>
-<li>S: the Surface model</li>
-<li>T: Turbulent mixing. </li>
-</ul>
-<p>Each of these in turn is subdivided into various components: M includes an optional dry adiabatic adjustment (normally applied only in the stratosphere), moist penetrative convection, shallow convection, and large-scale stable condensation; R first calculates the cloud parameterization followed by the radiation parameterization; S provides the surface fluxes obtained from land, ocean and sea ice models, or calculates them based on specified surface conditions such as sea surface temperatures and sea ice distribution. These surface fluxes provide lower flux boundary conditions for the turbulent mixing T which is comprised of the planetary boundary layer parameterization, vertical diffusion, and gravity wave drag.</p>
-<p>Defining operators following (6) for each of the parameterization components, the couplings in CAM5.0 are summarized as:</p>
-<p>TIME SPLIT</p>
-<p>(10)<span class="arithmatex">\(\psi^{n+1} = {\boldsymbol{T}}\left({\boldsymbol{S}}\left({\boldsymbol{R}}\left({\boldsymbol{M}}\left(
-             {\boldsymbol{D}}\left(\psi^{n-1},0\right)\right)\right)\right)\right)\)</span></p>
-<p>PROCESS SPLIT</p>
-<p>(11)<span class="arithmatex">\(\psi^{n+1} = {\boldsymbol{D}}\left(\psi^{n-1},\frac {
-{\boldsymbol{T}}\left({\boldsymbol{S}}\left({\boldsymbol{R}}\left(
-{\boldsymbol{M}}\left(\psi^{n-1}\right)\right)\right)\right) - \psi^{n-1}}
-{2\Delta t}\right)\)</span></p>
-<p>The labels Time Split and Process Split refer to the coupling of the dynamical core with the complete parameterization suite. The components within the parameterization suite are coupled via time splitting in both forms.</p>
-<p>The Process Split form is convenient for spectral transform models. With Time Split approximations extra spectral transforms are required to convert the updated momentum variables provided by the parameterizations to vorticity and divergence for the Eulerian spectral core, or to recalculate the temperature gradient for the semi-Lagrangian spectral core. The Time Split form is convenient for the finite-volume core which adopts a Lagrangian vertical coordinate. Since the scheme is explicit and restricted to small time-steps by its non-advective component, it sub-steps the dynamics multiple times during a longer parameterization time step. With Process Split approximations the forcing terms must be interpolated to an evolving Lagrangian vertical coordinate every sub-step of the dynamical core. Besides the expense involved, it is not completely obvious how to interpolate the parameterized forcing, which can have a vertical grid scale component arising from vertical grid scale clouds, to a different vertical grid. [Wil02] compares simulations with the Eulerian spectral transform dynamical core coupled to the CCM3 parameterization suite via Process Split and Time Split approximations.</p>
-<p>[Wil02] D. L. Williamson. Time-split versus process-split coupling of parameterizations and dynamical core. Mon. Wea. Rev., 130:2024–2041, 2002.</p>
-<h2 id="horizontal-discretization">Horizontal discretization</h2>
-<p><img alt="Horizontal discretization" src="https://agupubs.onlinelibrary.wiley.com/cms/asset/bf1ead11-db1c-46b1-bcfd-67804109d477/jame20932-fig-0001-m.png"/></p>
-<h2 id="spectral-element-dynamical-core">Spectral-element dynamical core</h2>
-<p>TBC</p>
-<h2 id="dyanmical-core-clipping">Dyanmical core clipping?</h2>
-<p>In E3SM, <a href="https://github.com/E3SM-Project/E3SM/blob/master/components/eam/src/physics/cam/clubb_intr.F90#L1804">clipping was mentioned in clubb_intr.F90</a></p>
-<div class="admonition note">
-<p>An example of an inconsistency in CAM physics is that surface pressure is held fixed during physical parameterization updates, but water vapor, and hence surface pressure, does change during evaporation/precipitation and an inconsistency appears in the mass and energy budget. Similarly, if a “<mark class="critic">clipper</mark>” is used on water vapor or condensates to avoid (unphysical) negative mixing ratios (more details in section 3.2) and this is not accounted for in the thermodynamics or through a surface flux, that “<mark class="critic">clipping</mark>” will produce an energy source via the mass weightening in the TE vertical integral. In the dynamical core TE is not conserved locally in each column as there is a horizontal flux of energy between columns; but the local energy budget should, ideally, be closed and thereby, globally, TE should be conserved. If a dynamical core does not inherently conserve dry air mass and/or water mass then a spurious source of TE is inevitable again through the mass weightening in the vertical integral (unless fixers are applied). (Lauritzen et al., 2019)</p>
-</div>
-<details class="note" open="open">
-<summary>References</summary>
-<ul>
-<li>Lauritzen, P. H., &amp; Williamson, D. L. (2019). A total energy error analysis of dynamical cores and physics-dynamics coupling in the Community Atmosphere Model (CAM). Journal of Advances in Modeling Earth Systems, 11, 1309–1328. https://doi.org/10.1029/2018MS001549</li>
-</ul>
-</details>
-<h2 id="deep-convection">Deep Convection</h2>
-<h3 id="dilution">dilution</h3>
-<p><a href="https://doi.org/10.1175/JAS-D-16-0169.1">see Hannah 2017</a></p>
-<p>Dilution of a given tracer is defined here as a proportional rate of change of the mass-weighted average tracer concentration over a volume of interest. Using a proportional rate of change allows the dilution to reflect the properties of the volume being diluted, in addition to the intensity of the process responsible for the dilution (i.e., entrainment).</p>
-<p><a href="https://doi.org/10.1029/2020MS002365">see Zhang et al. 2021</a>
-CAPE-based triggers are commonly used in deep convection schemes such as the ZM scheme, which is one of the common deep convection schemes used in several climate models including the NCAR CAM and the Department of Energy E3SM Atmosphere Model (EAM). </p>
-<p><mark class="critic">undiluted CAPE</mark> is defined as the vertical integral of the local buoyancy of a parcel from the launch level to the equilibrium level.</p>
-<p>By construction, the undilute CAPE trigger scheme prevents the accumulation of instability in the atmosphere beyond the threshold value and results in generally triggering convection too frequently and too early during the day (e.g., Xie &amp; Zhang, 2000).</p>
-<p>Neale et al. (2008) introduced the <ins>dilution effect of entrained air</ins> into the CAPE calculation (hereafter called <mark class="critic">dilute</mark> CAPE). </p>
 </article>
 </div>
 </div>
 </main>
 <footer class="md-footer">
 <nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="Previous: Summary" class="md-footer__link md-footer__link--prev" href="../01_workflow/" rel="prev">
+<a aria-label="Previous: Atmospheric Model" class="md-footer__link md-footer__link--prev" href="../02_model/" rel="prev">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
 </div>
@@ -415,17 +370,17 @@ CAPE-based triggers are commonly used in deep convection schemes such as the ZM 
 <span class="md-footer__direction">
                 Previous
               </span>
-              Summary
+              Atmospheric Model
             </div>
 </div>
 </a>
-<a aria-label="Next: codes" class="md-footer__link md-footer__link--next" href="../03_code/" rel="next">
+<a aria-label="Next: Summary" class="md-footer__link md-footer__link--next" href="../05_references/" rel="next">
 <div class="md-footer__title">
 <div class="md-ellipsis">
 <span class="md-footer__direction">
                 Next
               </span>
-              codes
+              Summary
             </div>
 </div>
 <div class="md-footer__button md-icon">

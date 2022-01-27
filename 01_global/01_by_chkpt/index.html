@@ -289,16 +289,21 @@
         Atmospheric Model
       </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../99_Personal_notes/03_code/">
+        codes
+      </a>
+</li>
 <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_5_4" id="__nav_5_4" type="checkbox"/>
+<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_5_5" id="__nav_5_5" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../../99_Personal_notes/05_references/">References</a>
-<label for="__nav_5_4">
+<label for="__nav_5_5">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
 <nav aria-label="References" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_5_4">
+<label class="md-nav__title" for="__nav_5_5">
 <span class="md-nav__icon md-icon"></span>
           References
         </label>
@@ -418,7 +423,9 @@
 </ul>
 </li>
 <li>humidity<ul>
-<li>dT/dt is eventually a function of humidity in dynamics</li>
+<li>dT/dt is eventually a function of humidity in dynamics.</li>
+<li>in the real world, pressure chnages when the amount of water vapor change (see Lauritzen et al., 2019)</li>
+<li>However, pressure field is held fixed during the physics parameterzation processes causing physics-dynamical core coupling error.</li>
 <li>see <a href="https://ncar.github.io/CAM/doc/build/html/cam5_scientific_guide/dynamics.html#generalized-terrain-following-vertical-coordinates">Equation 95 &amp; 102 in CAM5 Scientific Guide Section 4.3.1</a>
 <img alt="95" src="https://ncar.github.io/CAM/doc/build/html/_images/math/6d401281fd19c33d9ebb0d8db7a55091f1794bf3.png"/>
 <img alt="102" src="https://ncar.github.io/CAM/doc/build/html/_images/math/ea2cdabba9252f4b71ae20e26cc8f11759eecc21.png"/></li>

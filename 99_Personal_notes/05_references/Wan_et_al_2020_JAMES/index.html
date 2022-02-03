@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="../../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.2.3, mkdocs-material-8.1.4" name="generator"/>
-<title>E3SM related papers - Budget Analysis</title>
+<title>Wan et al.(2020,JAMES) - Budget Analysis</title>
 <link href="../../../assets/stylesheets/main.bb3983ee.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.e6a45f82.min.css" rel="stylesheet"/>
 <meta content="#009485" name="theme-color"/>
@@ -45,7 +45,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              E3SM related papers
+              Wan et al.(2020,JAMES)
             
           </span>
 </div>
@@ -108,7 +108,7 @@
     </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../">
+<a class="md-tabs__link md-tabs__link--active" href="../../">
         Ah-Hyun
       </a>
 </li>
@@ -251,8 +251,8 @@
         Appendix
       </a>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../../">Ah-Hyun</a>
 <label for="__nav_5">
@@ -280,8 +280,8 @@
         codes
       </a>
 </li>
-<li class="md-nav__item md-nav__item--section md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_5_5" id="__nav_5_5" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_5" id="__nav_5_5" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../">References</a>
 <label for="__nav_5_5">
@@ -319,8 +319,8 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_5_5_3" id="__nav_5_5_3" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_5_3" id="__nav_5_5_3" type="checkbox"/>
 <label class="md-nav__link" for="__nav_5_5_3">
           Process Coupling
           <span class="md-nav__icon md-icon"></span>
@@ -336,10 +336,42 @@
         Lauritzen and Williamson(2019,JAMES)
       </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../Wan_et_al_2020_JAMES/">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          Wan et al.(2020,JAMES)
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
         Wan et al.(2020,JAMES)
       </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#wan-et-al-2020">
+    Wan et al. (2020)
+  </a>
+<nav aria-label="Wan et al. (2020)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#intro">
+    Intro
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#model-equations">
+    Model equations
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../Zhang_et_al_2018_GMD/">
@@ -383,71 +415,122 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="e3sm-related-papers">E3SM related papers</h1>
-<h2 id="zhang-et-al-2018">Zhang et al., (2018)</h2>
-<p><a href="https://doi.org/10.5194/gmd-11-1971-2018">Impact of numerical choices on water conservation in the E3SM Atmosphere Model version 1 (EAMv1)</a></p>
-<ul>
-<li>Water balance<ul>
-<li>ERA-Interim: a global moisture residual of 0.003 kg m<sup>-2</sup> day<sup>-1</sup> for the period of 1989-2008. -&gt; 11 cm sea level rise (Berrisford et al., 2011)</li>
-<li>E3SM: v0-&gt; 5.8 cm, v1<span class="arithmatex">\(\alpha\)</span>: 11 cm sea level rise</li>
-<li>20th century sea level rise: 17-20 (Church and White, 2006; Church et al., 2013)</li>
-</ul>
-</li>
-</ul>
-<p><img alt="Figure 1" src="https://gmd.copernicus.org/articles/11/1971/2018/gmd-11-1971-2018-f01-web.png"/>
-Figure 1. the sequence of calculation ( the time intergration loop)</p>
-<ul>
-<li>spurious sources and sinks<ul>
-<li>INTERR: non-conservative model formulation</li>
-<li>discretization choices in the representation of individual physical process</li>
-<li>simplistic algorithms used for removing unphysical (e.g., negative) value<ul>
-<li>QNEG3: Clipping of negative water concentrations within the physics package</li>
-<li>QNEG4: Clipping of downward moisture fluxes at the Earth´s surface</li>
-</ul>
-</li>
-<li>Physics-dynamics coupling (PDC) error: errors/inconsistencies in the coupling of different physical processes.</li>
-<li>LHFLX: inconsistent relationship between surface moisture and latent heat fluxes</li>
-</ul>
-</li>
-</ul>
-<h3 id="physics-dynamics-coupling-pdc">Physics-dynamics coupling (PDC)</h3>
+<h2 id="wan-et-al-2020">Wan et al. (2020)</h2>
+<p><a href="https://doi.org/10.1029/2019MS001982">Improving Time Step Convergence in an Atmosphere Model With Simplified Physics: The Impacts of Closure Assumption and Process Coupling</a></p>
+<h3 id="intro">Intro</h3>
 <ul>
 <li>
-<p>Dynamical core</p>
+<p>Time stepping errors in CAM5</p>
 <ul>
-<li>calculate the advection of momentum/heat/airmass/mass of additional tracers (water vapor, cloud condensate, aerosols, and their precursors)</li>
-<li>sub-cycled with se_nsplit (2~4 steps): horizontal advection, vertical remapping<ul>
-<li>horizontal advection is further sub-cycled with se_rsplit (2~3 steps) steps per one vertical remapping</li>
-<li><img alt="Figure 2" src="https://gmd.copernicus.org/articles/11/1971/2018/gmd-11-1971-2018-f02-thumb.png"/></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p>PDC options (see Figure 2)</p>
-<ol>
-<li>se_ftype=1: For all prognostic variables affected by the dynamical core (temperature, winds, surface pressure, and the concentrations of all tracers), <ins>the tendencies from the physics package are multiplied by Δt to update the atmospheric state before the first dynamics sub-step</ins>. <ul>
-<li>problems: When Δt is large compared to the characteristic timescales of the parameterized processes, the changes in temperature during a coupling step Δt can be sizable but the column-based parameterizations do not provide a mechanism for the wind fields to respond; thus spurious gravity waves can be triggered in the dynamics sub-steps.</li>
-</ul>
-</li>
-<li>se_ftype=0: Within a coupling time step Δt, the physics tendencies are applied as a constant source term in each of the se_nsplit sub-steps (multiply Δt/se_nsplit at a time). <ul>
-<li>problems: for the subsequent dynamics sub-steps, the physics tendencies based on step n are inconsistent with the current intermediate atmosphere state, which can lead to situations in which <ins>the physics tendencies attempt to remove more water than is available in a grid cell</ins>.</li>
-<li>options to solve problem: 1. use a sign-preserving 2-D (horizontal) limiter to constrain numerical oscillation (Taylor et al., 2009; Guba et al., 2014). </li>
-</ul>
-</li>
-<li>se_ftype=2: use se_ftype=0 for the fluid dynamics variable (temperature, winds, and surface pressure), and use se_ftype=1 for water vapor, liquid, and ice-phase condensate, and other advected tracers. Any problems are reported so far.</li>
-<li>other option: reduce physics parameterization timestep equal to dynamical core and set to se_ftype=1 (high computational cost).</li>
+<li>First-order convergence was expected based on <ol>
+<li>the assumption that the time stepping methods used by individual parameterizations were at least first-order accurate </li>
+<li>the understanding that CAM4 and CAM5 used sequential splitting for the coupling between parameterizations. </li>
 </ol>
 </li>
+<li>The observed convergence rate =0.4 for the full model (i.e., with all the default parameterizations turned on)</li>
+<li>the stratiform clouds were the primary source of large time stepping error and poor convergence (Wan et al. 2015)</li>
+<li>the parameterization of large-scale condensation without any representation of rain and snow formation already converged poorly. </li>
 </ul>
-<h3 id="inconsistent-relationship-between-surface-moisture-and-latent-heat-fluxes-lhflx">Inconsistent relationship between surface moisture and latent heat fluxes (LHFLX)</h3>
+</li>
+<li>
+<p>Goal: investigate the time step convergence in a simplified model configuration that consists of a hydrostatic dynamical core coupled with a bare-bone version of the large-scale condensation parameterization used in CAM versions 2 to 4.</p>
 <ul>
-<li>the vertical fluxes of moisture, latent heat, and senstible heat across the Earth´s surface </li>
+<li>improves the solution conversionce through intuitive changes in a closure assumption and in the numerical coupling of dynamics and physics.</li>
+</ul>
+</li>
+</ul>
+<h3 id="model-equations">Model equations</h3>
+<ul>
+<li>
+<p>Continuous Form</p>
+<ul>
+<li>The hydrostatic dynamical core: developed by Taylor and Fournier (2010) &amp; Dennis et al., (2012)<ul>
+<li>describe large-scale adiabitic fluid dynamics and advection of tracers by the resolved winds.</li>
+<li>only two tracers (water vapor and cloud liquids) are considered </li>
+</ul>
+</li>
+<li>
+<p><ins>the large-scale condensation parameterization</ins>: Three categories of atmospheric processes that can cause temperature (T) humidity(water vapor: <span class="arithmatex">\(q_v\)</span>, liquid: <span class="arithmatex">\(q_l\)</span>) changes (Sundqvist, 1978) </p>
+<ul>
+<li>condensation of water vapor in nonconvective cloud (Q)</li>
+<li>the formation and evaporation of rain in nonconvective cloud (R)</li>
+<li>
+<p>all other processes (A) </p>
+<ul>
+<li>models with no cloud microphysics: the large-scale transport and adiabatic dynamics</li>
+<li>full model: radiative heating, turbulent transport, convection. </li>
+</ul>
+</li>
+<li>
+<p><span class="arithmatex">\(\frac{\partial T} {\partial t} = A_T + R_T + \frac{L_v} {C_p} Q\)</span></p>
+</li>
+<li><span class="arithmatex">\(\frac{\partial q_v} {\partial t} = A_v + R_v - Q\)</span></li>
+<li>
+<p><span class="arithmatex">\(\frac{\partial q_l} {\partial t} = A_l + R_l + Q\)</span></p>
+<ul>
+<li><span class="arithmatex">\(L_v = 2.501 \times 10^6 J kg^{-1}\)</span></li>
+<li><span class="arithmatex">\(C_p = 1004.64 J kg^{-1} K^{-1}\)</span></li>
+<li>cloud microphysics is ignored (<span class="arithmatex">\(R_T = R_v = R_l = 0\)</span> )</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Grid box mean condensation rate</p>
+<ul>
+<li>developed by Rasch and Kristjansson (1998) and revised by Zhang et al. (2003)</li>
+<li>assumption: condensation can occur in a portion of a grid box before the grid box mean RH reaches 100%.</li>
+</ul>
+</li>
+<li>Closure assumption<ul>
+<li>assume that the condensation of water vapor and evaporation of liquid water occur at time scales substantially shorter than the target time step size of the model and hence can be viewed as instantaneous processes</li>
+<li>cloud fraction is a function of RH ( when RH is greater than 0.8, cloud exists within the grid box)</li>
+<li>assumptions<ul>
+<li>RH inside clouds = 100%</li>
+<li>subgrid variabilities in T &amp; p are ignored</li>
+<li>tendencies for <span class="arithmatex">\(A_T\)</span> and <span class="arithmatex">\(A_v\)</span> are homogenous</li>
+<li><span class="arithmatex">\(q_v\)</span> have different values in the cloudy (a function of T &amp; p) and cloud-free portion of a grid boxes</li>
+</ul>
+</li>
+<li>due to the long time step, newly formed or dissipated clouds is <span class="arithmatex">\(\tilde{q_l}= \frac{\overline{q_l} } {f}\)</span>  (Theoretically, it´s zero)</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </article>
 </div>
 </div>
 </main>
 <footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a aria-label="Previous: Lauritzen and Williamson(2019,JAMES)" class="md-footer__link md-footer__link--prev" href="../Lauritzen_and_Williamson_2019_JAMES/" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</div>
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Previous
+              </span>
+              Lauritzen and Williamson(2019,JAMES)
+            </div>
+</div>
+</a>
+<a aria-label="Next: Zhang et al.(2018,GMD)" class="md-footer__link md-footer__link--next" href="../Zhang_et_al_2018_GMD/" rel="next">
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Next
+              </span>
+              Zhang et al.(2018,GMD)
+            </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"></path></svg>
+</div>
+</a>
+</nav>
 <div class="md-footer-meta md-typeset">
 <div class="md-footer-meta__inner md-grid">
 <div class="md-copyright">

@@ -1,8 +1,8 @@
 #!/bin/bash
-filedir=/compyfs/www/kima320/Budget_Analysis/Cloud_regime/
-filename=Seasonal_changes_of_vertical_integrals_by_chkpt
+filedir=/compyfs/www/kima320/Budget_Analysis/With_forcing_method/Difference/
+filename="Compare_Diff(test-ctrl)Vertical_profiles_by_variable_and_region_in_one_page"
 #filename=Vertical_profiles_by_region_and_chkpt_in_one_page
-savedir=/compyfs/www/kima320/png_plot/Budget_Analysis/02_cloud_regime/
+savedir=/compyfs/www/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/Difference/
 #filedir=/compyfs/www/kima320/pictures/q_budget_rad_compy_FC5AV1C-L_ne30_maint-1.0_cnd_diag1.1/
 #savedir=/qfs/people/kima320/git_work/budgetanal/docs/02_cloud_regime/img/
 #filename=seasonal_changes_Precipitation

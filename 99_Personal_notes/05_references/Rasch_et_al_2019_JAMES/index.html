@@ -1,0 +1,873 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.2.3, mkdocs-material-8.1.4" name="generator"/>
+<title>Rasch et al.(2019,JAMES) - Budget Analysis</title>
+<link href="../../../assets/stylesheets/main.bb3983ee.min.css" rel="stylesheet"/>
+<link href="../../../assets/stylesheets/palette.e6a45f82.min.css" rel="stylesheet"/>
+<meta content="#009485" name="theme-color"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="" data-md-color-primary="teal" data-md-color-scheme="" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#e3sm-related-papers">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="Budget Analysis" class="md-header__button md-logo" data-md-component="logo" href="../../.." title="Budget Analysis">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Budget Analysis
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Rasch et al.(2019,JAMES)
+            
+          </span>
+</div>
+</div>
+</div>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-tabs__inner md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../..">
+      Home
+    </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../01_basic_simulation/">
+        Base Simulation
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../02_zm_rad_modification/">
+        New Simulation
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../appendix/">
+      Appendix
+    </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link md-tabs__link--active" href="../../">
+        Ah-Hyun
+      </a>
+</li>
+</ul>
+</div>
+</nav>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Budget Analysis" class="md-nav__button md-logo" data-md-component="logo" href="../../.." title="Budget Analysis">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"></path></svg>
+</a>
+    Budget Analysis
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../..">
+        Home
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../../01_basic_simulation/">Base Simulation</a>
+<label for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="Base Simulation" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+          Base Simulation
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_2_2" id="__nav_2_2" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../../01_basic_simulation/01_global/">01 Global</a>
+<label for="__nav_2_2">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="01 Global" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_2">
+<span class="md-nav__icon md-icon"></span>
+          01 Global
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../01_basic_simulation/01_global/01_by_chkpt/">
+        By Check Point
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../01_basic_simulation/01_global/02_by_variable/">
+        By Variables
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_2_3" id="__nav_2_3" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../../01_basic_simulation/02_cloud_regime/">02 Cloud regime</a>
+<label for="__nav_2_3">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="02 Cloud regime" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_3">
+<span class="md-nav__icon md-icon"></span>
+          02 Cloud regime
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../01_basic_simulation/02_cloud_regime/01_ITCZ/">
+        ITCZ
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../01_basic_simulation/02_cloud_regime/02_Storm_track/">
+        Storm Track
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../01_basic_simulation/02_cloud_regime/03_Stratocumulus/">
+        Stratocumulus
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../01_basic_simulation/02_cloud_regime/04_by_chkpt/">
+        By Check Point
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../01_basic_simulation/02_cloud_regime/05_by_variable/">
+        By Variables
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../../02_zm_rad_modification/">New Simulation</a>
+<label for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="New Simulation" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+          New Simulation
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../02_zm_rad_modification/01_global/">
+        Global
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../02_zm_rad_modification/02_cloud_regime/">
+        Cloud Regime
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../appendix/">
+        Appendix
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../">Ah-Hyun</a>
+<label for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="Ah-Hyun" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+          Ah-Hyun
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../01_workflow/">
+        Summary
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../02_model/">
+        Atmospheric Model
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../03_code/">
+        codes
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_5" id="__nav_5_5" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../">References</a>
+<label for="__nav_5_5">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="References" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_5">
+<span class="md-nav__icon md-icon"></span>
+          References
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_5_2" id="__nav_5_5_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_5_2">
+          E3SM
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="E3SM" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_5_5_2">
+<span class="md-nav__icon md-icon"></span>
+          E3SM
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          Rasch et al.(2019,JAMES)
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+        Rasch et al.(2019,JAMES)
+      </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#rasch-et-al-2019-james">
+    Rasch et al. (2019, JAMES)
+  </a>
+<nav aria-label="Rasch et al. (2019, JAMES)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#e3sm-s-main-research-areas">
+    E3SM´s Main  Research Areas
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#difference-with-cam53">
+    Difference with CAM5.3
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#model-configuration">
+    Model Configuration
+  </a>
+<nav aria-label="Model Configuration" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#resolution">
+    resolution
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#dynamical-formulation">
+    Dynamical Formulation
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#physical-process">
+    Physical Process
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#turbulence-shallow-convection-and-stratiform-clouds">
+    Turbulence, Shallow Convection, and Stratiform Clouds
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#deep-convection">
+    Deep convection
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#aerosol">
+    Aerosol
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cloud-microphysics">
+    Cloud Microphysics
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#chemistry">
+    Chemistry
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#radiative-transfer">
+    Radiative Transfer
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#gravity-waves">
+    Gravity Waves
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tuning-strategy">
+    Tuning strategy
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#model-evaluation">
+    Model Evaluation
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Xie_et_al_2018_JAMES/">
+        Xie et al.(2018,JAMES)
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_5_5_3" id="__nav_5_5_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_5_3">
+          Process Coupling
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Process Coupling" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_5_5_3">
+<span class="md-nav__icon md-icon"></span>
+          Process Coupling
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Lauritzen_and_Williamson_2019_JAMES/">
+        Lauritzen and Williamson(2019,JAMES)
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Wan_et_al_2020_JAMES/">
+        Wan et al.(2020,JAMES)
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Zhang_et_al_2018_GMD/">
+        Zhang et al.(2018,GMD)
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_5_5_4" id="__nav_5_5_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_5_4">
+          Stratocumulus
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Stratocumulus" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_5_5_4">
+<span class="md-nav__icon md-icon"></span>
+          Stratocumulus
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Medeiros_et_al_2012_JC/">
+        Medeiros et al. (2012,JC)
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="e3sm-related-papers">E3SM related papers</h1>
+<h2 id="rasch-et-al-2019-james">Rasch et al. (2019, JAMES)</h2>
+<p><a href="https://doi.org/10.1029/2019MS001629">An Overview of the Atmospheric Component of the Energy Exascale Earth system Model</a></p>
+<h3 id="e3sm-s-main-research-areas">E3SM´s Main  Research Areas</h3>
+<ol>
+<li>the water cycle<ul>
+<li>water cycle extremes: e.g., hurricanes, midlatitude cyclones, atmospheric rivers</li>
+<li>water variability and availability (storms, storm tracks, blocking, snowmelt)</li>
+<li>sea level rise issues (especially topography associated with Greenland and Antarctic ice sheet)</li>
+</ul>
+</li>
+<li>Sea level rise</li>
+<li>Exploratory studies of the nitrogen and phosphorus on land biogeochemistry (BGC)</li>
+</ol>
+<h3 id="difference-with-cam53">Difference with CAM5.3</h3>
+<ul>
+<li>improved treatment of some diabatic process<ul>
+<li>boundary layer turbulences</li>
+<li>cloud</li>
+<li>aerosols</li>
+<li>some stratospheric ozon</li>
+<li>new tuning &amp; evaluation strategies</li>
+</ul>
+</li>
+<li>COSP (Bodas-Salcedo et al., 2011) version 1.4</li>
+<li>Thinner surface layer: 100-m-thick -&gt; 20-m-thick</li>
+<li>aerosol-cloud(stratiform and shallow convective cloud) interaction is included when coupled with CLUBB and MAM4.</li>
+<li>Thresuhold size for autoconversion of ice crystals to snow particles: constant --&gt; function of temperature</li>
+</ul>
+<h3 id="model-configuration">Model Configuration</h3>
+<h4 id="resolution">resolution</h4>
+<ul>
+<li>
+<p>Horizontal</p>
+<ul>
+<li>LR(Lower-horizontal resolution): ~100 km</li>
+<li>HR(High-horizontal reosolution): ~25 km</li>
+</ul>
+</li>
+<li>
+<p>Vertical</p>
+<ul>
+<li>72 layers (~60km, ~0.1 hPa)</li>
+<li>surface layer: 20 m thick</li>
+<li>15 layers between the surface and 850 hPa<ul>
+<li>better capture thin cloud, sharp gradients at top of BL, rapid changes in process rate (autoconversion, accretion, evaporation, and radiative heating rates) and cloud properties (drop size and rain rates)</li>
+</ul>
+</li>
+<li>850 hPa ~ 500 hPa: slowly increase from 100 to 500 m<ul>
+<li>water vapor gradients are still very strong compared to important cloud features </li>
+<li>variations in water vapor features</li>
+<li>aerosol plumes that are frequently observed to occur at vertical scales of 500 m and less.</li>
+</ul>
+</li>
+<li>free troposphere (above 500 hPa) ~ the lower stratosphere (70 hPa): increased from 1200 to 600 m.<ul>
+<li>for adequate representation of upward propagating large-scale tropical waves (e.g., Kelvin and mixed-Rossby gravity)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="dynamical-formulation">Dynamical Formulation</h4>
+<ul>
+<li>Galerkin spectral finite element method (Dennis et al., 2012; Taylor, Tribbia &amp; Iskandarani, 1997; Taylor &amp; Fournier, 2010)<ul>
+<li>solve the primitive equation on a cubed-sphere grid</li>
+</ul>
+</li>
+<li>tracer transport: semi-Lagrangian vertical coordinate system (Lin 2004)</li>
+<li>tendencies from dynamics, tracer transport, and physics parameterizations are calculated in time split manner.<ul>
+<li>The subcycling frequency and strategy for communication of information between updates to the model state by physical parameterizations trace constituent transport and fluid dynamics by the dynamical core is <mark class="critic">resolution dependent</mark>. </li>
+</ul>
+</li>
+<li>coupling method: a hybrid physics-dynamics coupling (Lauritzen et al., 2014, Zhang et al., 2018)</li>
+</ul>
+<h4 id="physical-process">Physical Process</h4>
+<h4 id="turbulence-shallow-convection-and-stratiform-clouds">Turbulence, Shallow Convection, and Stratiform Clouds</h4>
+<ul>
+<li>Cloud Layers Unified By Binormals (CLUBB) (Golaz et al., 2002; Larson, 2017; Larson &amp; Golaz, 2005; Bogenshutz et al. (2013)<ul>
+<li>a set of probability density function (PDF) of fields<ul>
+<li>shape: Analytic Double Gaussian 1 shape of Larson et al. (2002)</li>
+</ul>
+</li>
+<li>based on a higher-order closure to the prognostic equations for higher-order moments</li>
+<li>prognoses nine subgrid higher-order moments<ul>
+<li>the vertical turbulent fluxes of total water (vapor plus cloud liquid) and liquid water potential temperature (θl);</li>
+<li>the variances of total water, θl, vertical velocity, zonal velocity, and meridional velocity;</li>
+<li>the covariance of total water and θl; and the third-order moment of vertical velocity</li>
+</ul>
+</li>
+<li><mark class="critic"> CLUBB does not yet incorporate a treatment for ice</mark></li>
+<li>turbulent advection and buoyancy terms are closed by analytic integration over the subgrid PDF.</li>
+<li>momentum flux: parameterized by downgradient eddy diffusion.
+(7416 of the CLUBB svn repository)</li>
+</ul>
+</li>
+<li><mark class="critic">CLUBB's turbulent kinetic energy (and corresponding cloud updraft velocities) does not currently depend directly on radiative cooling rates near cloud top and often produce weak estimated subgrid vertical velocities</mark></li>
+</ul>
+<h4 id="deep-convection">Deep convection</h4>
+<ul>
+<li>Zhang and McFarlane (1995) (+ Richter and Jochum, 2008; Richter and Rasch, 2008)</li>
+<li>a bulk updraft and downdraft<ul>
+<li>updraft: undergoing entrainment, detrainment, condensation, precipitation</li>
+<li>downdraft: undergoing entrainment and evaporation</li>
+</ul>
+</li>
+<li>cloud base mass flux: CAPE at a prescribed (tunable) timescale</li>
+<li>updraft condensate mass: a saturation adjustment (to the liquid saturation vapor pressure along a moist adiabat) followed by conversion to precipiation with a (tunable) adjustment timescale proportionate to the convective updraft mass flux (timescale for land and ocean may differ)</li>
+<li>downdraft coefficient (tunable): <ul>
+<li>control the mass flux at the downdraft top</li>
+<li>the evaporation rateof the rainfall driving the downdraft.</li>
+</ul>
+</li>
+<li>ice thermodynamics are generally neglected.<ul>
+<li>when liqud condensate is detrained from the updraft it is partitioned into liquid and ice over a (tunable) temperature range.</li>
+<li>the energy associated with a phase change is applied locally to the temperature tendency to conserve energy.</li>
+</ul>
+</li>
+<li>sensitive to vertical &amp; horizontal resolution. Higher vertical resolution causes:<ul>
+<li>much stronger temperature &amp; moisture gradient in the boundary layer.</li>
+<li>allow more variation in layer stability, RH, and buoyancy (i.e., updraft plumes may penetrate more layers before reaching their level of neutral buoyancy [LNB])</li>
+<li>drier free troposphere: because water vapor is confined to the boundary layer, in the absence of processes that mix air to higher altitudes</li>
+<li>shallower convection due to the stronger gradients (and a drier free troposhere) influencing many meteorological features (radiative heating, altitude of detraining heat, and water substances) and the moisture modes that play a significant role in equatorial wave variability.</li>
+</ul>
+</li>
+<li>LNB (level of neutral buoyancy) calculation (or cloud top calculation) (Xie et al. 2018):<ul>
+<li>resolution dependent</li>
+<li>depend strongly on the environment air properties entrained in the updraft (Neal et al. 2008)</li>
+<li>convection top is sensitive to free troposphere humidity.</li>
+<li><ins>EAMv1 reduce the resolution dependence by terminating the CAPE calculation when the parcel encounters a single negatively buoyant layer in the plume buoyancy calculation</ins>.</li>
+</ul>
+</li>
+<li>optional parameterization of convective gustiness: designed to represent the increase in surface wind produced in the presence of evaporating precipitation (Harrop et al., 2018)</li>
+<li>convective cloud fraction is assumed proportional to the log of the updraft mass flux (Hack et al., 1993)</li>
+<li>detraining convective condensate in partitioned into liquid and ice<ul>
+<li>liquid size: inherits the stratiform cloud at the same location</li>
+<li>ice size: specified as a tunable parameter  </li>
+</ul>
+</li>
+<li>tunable parameters:<ul>
+<li>timescale for calculating closure designed to reduce CAPE (essential to determine cloud base mass) </li>
+<li>timescale for conversion to precipitation (essential to generate updraft condensate mass via a saturation adjustment)</li>
+<li>downdraft coefficient: used to control the mass flux at the downdraft top and the evaporation rate of the rainfall driving the downdraft.</li>
+<li>temperature range that partitioning liquid and ice during the detrainment process due to convective updraft </li>
+<li>the lowest possible launch level (maybe buoyancy??): from surface to 100 m</li>
+<li>entrainment parameter(dmpdx): when this is reduced, depth of the convection is controlled.</li>
+<li>size of the cloud ice formed from detrainment of convective condensate</li>
+</ul>
+</li>
+</ul>
+<h4 id="aerosol">Aerosol</h4>
+<ul>
+<li>Four-mode version of the Modal Aerosol Module (MAM4; Liu et al., 2016): 1 coarse, 3 fine-particle</li>
+<li>moajor aerosol speies: sulfate, black carbon, primary organic matter, marine organic aerosol (MOA), secondary organic aerosol (SOA), mineral dust, and sea spray</li>
+<li>new representation of MOA (Burrows et al., 2014; Burrows et al., 2018) -&gt; important step towards linking ocean BGC process with the ocean surface chemistry that determines sea spray aerosol formation.</li>
+<li>revise the simplified treatment of SOA (single-lumped-species treatment of SOA) --&gt; by adapting SOA production sources (Shrivastava et al., 2015)<ul>
+<li>explicit treatment of multigenerational gas-pase chemistry of SOA precursor gases and particle-phase transformation of SOA.</li>
+</ul>
+</li>
+<li>Aging of primary carbon: 8-monolayer (slow ageing; Liu et al. 2016)</li>
+<li>Parallel time-split treatment of H2SO4 production: by gas-phase chemistry and loss by condensation (improve new particle formation process, increases small particle number concentration).</li>
+<li>Include Aerosol wet removal (Wang et al, 2013): convective transport and scavenging of aerosols (with secondary activation in convective updrafts above colud base) (the upper tropospheric and polar region concentration was improved).</li>
+<li>resuspension of aerosol matter from evaporating raindrops: <ul>
+<li>revised to return particles to the coarse mode (before revision, it return to the originating mode) </li>
+<li>modest reduction to aerosol mass and CCN</li>
+</ul>
+</li>
+</ul>
+<h4 id="cloud-microphysics">Cloud Microphysics</h4>
+<ul>
+<li>Two-moment bulk microphysics parameterization for stratiform clouds (Morrison and Gettelman version 2; Gettelman and Morrison, 2015)</li>
+<li><a href="https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2019MS001629#jame20932-tbl-0006">8 prognostic variables</a></li>
+<li>aerosol-cloud(stratiform and shallow convective cloud) interaction is included when coupled with CLUBB and MAM4.<ul>
+<li>default rate at which liquid is transferred from liquid to ice via the Wegener-Bergeron-Findeison (WBF) process was set unrealistically low.</li>
+<li>aerosol interaction with deep convective cloud is still neglected.</li>
+</ul>
+</li>
+<li>stratiform cloud liquid and ice nucleation processes use a characteristic in-cloud updraft velocity that is diagnosed as a function of the turbulent kinetic energy predicted by CLUBB.<ul>
+<li>CLUBB´s turbulent kinetic energy (and corresponding cloud updraft velocities) does not currently depend directly on radiative cooling rates near cloud top and often produce weak estimated subgrid vertical velocities so a (tunable) lower limit of 0.2 m/s was chosen for the subgrid velocity used to activate liquid and ice clouds.</li>
+</ul>
+</li>
+<li>the lower bound for IN calculation is triggered very frequently (impact is small with 0.3 W/m<sup>2</sup> changes in global annual mean longwave and shortwave cloud radiative effects)</li>
+<li>liquid cloud drop activation: Abdul-Razzak and Ghan (2000).</li>
+<li>ice nucleation parameterization for heterogeneous ice formation in mixed-phase cloud (Wang et al., 2014)<ul>
+<li>classic nucleation theory(CNT)-based ice nucleation parameterization</li>
+<li>depends on interstitial and cloud-borne BC &amp; dust aerosol</li>
+</ul>
+</li>
+<li>Thresuhold size for autoconversion of ice crystals to snow particles: constant --&gt; function of temperature</li>
+<li>
+<p>Autoconversion parameterization: Khairoutdinov and Kogan (2000)</p>
+<ul>
+<li>represent self-collection of small liquid drops to form precipitataion size particles<ul>
+<li>the tree parameters developed for that parameterization (and usually treated as fixed inviolate constants) are actually subjected to significant uncertainty depending upon cloud regime (Wood, 2005; Kogan, 2013) and have a very strong impact on aerosol indirect radiative effect( e.g., Wang et al., 2012).</li>
+<li>these values are mostly fitted using a central values for autoconversion (and accretion)</li>
+<li>choose the values that reduce radiative biases in regions with low cloud water and droplet number in the regimes other than stratocumulus regions (e.g., trade cumuli) produce less precipitation through autoconversion than the standard KK@000 treatment and are very consistent with Kogan (2013) and Beheng (1994) rates in low aerosol (cloud droplet) regimes.</li>
+</ul>
+</li>
+<li>Autoconvertion rate parameters: <a href="https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2019MS001629#jame20932-app-0001">Appendix A in this article</a>
+<img alt="EAMv1 vs KK2000" src="https://agupubs.onlinelibrary.wiley.com/cms/asset/eac03789-6df9-4674-b329-996e9d5dab18/jame20932-fig-0002-m.jpg"/>
+Autoconversion rate (a–c) as a function of cloud water mixing ratio (Qc) at cloud droplet number concentration (Nc) = 20, 100, and 200 cm−3 and (d–f) as a function of Nc at Qc = 0.3, 0.5, and 0.7 g/</li>
+</ul>
+</li>
+<li>
+<p>aerosols and light-absorbing particles (e.g., BC and dust) deposition on snow and ice surfaces over land and sea ice + this process is harmonized to treat both external mixing and internal mixing (within hydrometeor) of BC and snow grains (Flanner et al, 2012; Flanner, 2013)</p>
+</li>
+<li>hygroscopicity for soluble species depends on RH.</li>
+<li>Aerosol mass and number concentrations are merged with a historic inventory of volcanic aerosols wwith an assumed mean radius in the stratosphere.</li>
+<li>Aerosol optical properties for each aerosol mode (Ghan and Zaveri, 2007) <ul>
+<li>are calculated after merging with historic inventory.</li>
+<li>optical properties of aerosols are combined using a "homogeneous mixing assumption" by volume to produce estimates of single scattering albedo, extinction, and backscatter by wavelength and then provided to the radiative transfer parameterization.</li>
+</ul>
+</li>
+</ul>
+<h4 id="chemistry">Chemistry</h4>
+<ul>
+<li>stratosperic ozone concentration: Hsu and Prather (2009, LINOZ2)</li>
+<li>Linearized production and loss coefficients characterizing sensitivity to local ozone concentration, local temperature, and the ozone column above are used to calculate <ul>
+<li>stratospheric production</li>
+<li>loss terms for ozone for each decade of the 1850-2000 time period between 12 and 58 km</li>
+<li>monthly mean zonal estimates</li>
+</ul>
+</li>
+<li>Cariolle et al. (1990): a simple parameterization for ozone depletion in the presence of polar stratospheric clouds at cold temperatures in the stratosphere.<ul>
+<li>the rate of exponential decay is a function of the prescribed chlorine loading (ozone holes will only form when chlorine loading is high, and the temperature is cold enough to form polar stratospheric clouds)</li>
+<li>advected stratospheric ozone mixing ratios are then merged at the tropopause with prescribed monthly mean tropospheric ozone archived from more comprehensive chemical simulations performed with the MOZART chemical transport model as discussed in Neale et al (2010).</li>
+<li>this merged ozone distribution is then used in the radiative transfer calculation and for oxidation of aerosol precursors.</li>
+</ul>
+</li>
+<li>Chlorine loading: <ul>
+<li>changeable</li>
+<li>advected by dynamics part.</li>
+</ul>
+</li>
+</ul>
+<h4 id="radiative-transfer">Radiative Transfer</h4>
+<ul>
+<li>Rapid Radiative Transfer Model for GCM (RRTMG; Iacono et al., 2008; Mlawer et al., 1997)</li>
+<li>Radiative fluxes and heating rate calculation in the clear sky: uses a modified correlated-k method</li>
+<li>Shortwave<ul>
+<li>14 SW bands (from 0.2 to 12.2 micro meters) </li>
+<li>have Extinction optical depth, single scattering albedo, asymmetry properties</li>
+<li>solar irradiance is specified for the SW bands from the Lean data set (Wang et al. 2005)</li>
+</ul>
+</li>
+<li>Longwave<ul>
+<li>a mass specific absorbtion is specified</li>
+<li>16 bands (from 3.1 to 1000 micro meter)</li>
+<li>Rayleigh scattering &amp; sources of extinction for H<sub>2</sub>O, O<sub>3</sub>, CO<sub>2</sub>, O<sub>2</sub>, CH<sub>4</sub>, and N<sub>2</sub>O.</li>
+<li>uses moelcular sources of absorption for the same species + CFC-11 &amp; CFC-12</li>
+</ul>
+</li>
+<li>cloud properties<ul>
+<li>a single set of in-cloud properties</li>
+<li>a single cloud fraction for each model cell</li>
+<li>the composite cloud properties are derived as a complicated function of individual estimates of convective and stratiform (liquid and ice) cloud fraction and condensate properties (mass and number mixing ratios) and assumptions of ice crystal shape using the following recipe.</li>
+<li>cloud fraction compositing: Park et al (2014)</li>
+<li>vertical cloud overlap: Neale et al. (2010)<ul>
+<li>maximum vertical overlap is assumed within each of the three regimes representing low (p&gt;700 hPa), middle (400 hPa &lt; p &lt; 700 hPa), and high (p &lt; 400 hPa) clouds.</li>
+<li>random vertical overlap is assumed between these three regimes</li>
+</ul>
+</li>
+<li>liquid cloud drop optic: Wiscombe (1996)</li>
+<li>ice cloud optics: Mitchell (2002): extended to allow for radiatively active falling snow.</li>
+<li>process for cloud<ol>
+<li>A subcolumn decomposition of cloud overlap and fraction generates a set of subcolumns in which cloud is either 1 or 0 in each layer. </li>
+<li>these composited cloud and aerosol properties for each subcolumn are in turn passed to RRTMG along with concentrations of radiatively active gases.</li>
+<li>the MonteCarlo Independent Column Approximation (Pincus, Baker &amp; Morcrette, 2003) that represents subgrid-scale cloud variability is used to calculate the heating rates and fluxes in each subcolumn for specific spectral bands; averaging each subcolumn´s radiative heating rate over time and subcolumn provides an estimate o f grid mean radiative heating rate.</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="gravity-waves">Gravity Waves</h4>
+<ul>
+<li>Richter et al. (2010)</li>
+<li>orographic mountain waves (McFarlane. 1987)<ul>
+<li>launched from the layer nearest the surface</li>
+<li>obstacle heights are determined from root-mean-square deviations of unresolved topography. (Lauritzen et al)<ul>
+<li>source files are downscaled </li>
+<li>16 iteration of the discrete HOMME second-order Laplacian operator are applied by running the dynamical core in a special mode.</li>
+<li>topography is smoother in CAM-SE than CAM-FV: CAM-SE does not have a good pressure gradient fixer</li>
+</ul>
+</li>
+<li>average flow properties are estimated in a "source layer" extending from the model surface to an obstacle peak height based on the RMS deviation of unresolved topography.</li>
+<li>Isotropic orographic source is assumed (wave amplitudes are independent of source-layer wind direction, but orographic GW wave orientations are assumed to be normal to the source-layer wind.</li>
+<li>near-surface flow nonlinearities arising from flow splitting (blocking) of downslope winds is not represented (e.g., Lott &amp; Miller, 1997; Scinocca &amp; McFarlane, 2004)</li>
+</ul>
+</li>
+<li>convective (Beres et al. 2004)<ul>
+<li>produced by oscillating convectivee motion with the deep convective cells</li>
+<li>launched when deep convection procuded by the ZM parameterization       </li>
+<li>width and shape: a function of phase speed determined by the depth of deep convective heating (from heating profile from the ZM parameterization)</li>
+<li>amplitude: the square of the max heating in ZM scaled by a factor</li>
+<li>obstacle effect is not considered</li>
+<li><ins>responsible for producing QBO-like fluctuation of the equatorial zonal wind</ins>, but the amplitude and period were not optimized in the current EAM and the oscillation is currently too strong</li>
+</ul>
+</li>
+<li>frontal (Charron &amp; Manzini, 2002)<ul>
+<li>produced when the frontogenesis function (by Hoskins, 1982) is found to exceed a specified threshold at 600 hPa</li>
+<li>lanched at 500 hPa with a prespecified momentum flux amplitude.</li>
+<li>spectrum is alligned parallel to the wind at the source level (the steering level of fronts)</li>
+<li>40 individual waves with phase speeds from U -100 to U +100 m/s are launched</li>
+<li>The spectrum is Gaussian in shape and centered on the source level wind.</li>
+<li>critical in reversing high-latitude upper-stratospheric and mesospheric jets and are ultimately responsible for producing the mesopause temperature reversal in models.</li>
+<li>the top boundary condition for GW is set so the momentum flux goes out at the model top</li>
+<li><ins>important in the momentum budget above 40 km in the Northern Hemisphere and above 50 km in the Southern Hemisphere</ins>.</li>
+</ul>
+</li>
+</ul>
+<h3 id="tuning-strategy">Tuning strategy</h3>
+<ul>
+<li>brute force strategy: 2-10 year simulations and subjective evaluations of dozens of climate diagnostics</li>
+<li>higher resolution tuning<ol>
+<li>Xie et al. (2012) and Ma et al. (2018): two frameworks using short simulations were used as an interal part of model development <ul>
+<li>model biases related to fast physical processes in short-term hindcast resemble those from long-term climate simulations</li>
+</ul>
+</li>
+<li>A hindcasting methodology identified with Transpose-AMIP &amp; Cloud-Associated Parameterization Testbed (Phillips et al., 2004; Williams et al., 2013)<ul>
+<li>assess candidate physical parameterizations and tune the computationally expensive high-resolution EAM configuration following protocols described in previous studies (Boyle &amp; Klein, 2010; ...)</li>
+</ul>
+</li>
+<li>Wan et al., (2014) and Qian et al. (2015): a protocol for using perturbed parameters ensembles of 3-day simulations to reveal model sensitivities to parameter changes that provide insight similar to that found in longer, multiyear simulation</li>
+<li>Qian et al. (2018): identify simulation sensitivity to 18 uncertain parameters related to convection, turbulence, cloud microphysics, and orographic GW drag.</li>
+</ol>
+</li>
+<li>The resolution-dependent tuning parameter: see <a href="https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2019MS001629#jame20932-app-0001">Appendix A</a> of this article</li>
+</ul>
+<h3 id="model-evaluation">Model Evaluation</h3>
+<ul>
+<li>SST is prescribed. (see Golaz et al. (2018) for ocean-coupled simulation results)</li>
+</ul>
+</article>
+</div>
+</div>
+</main>
+<footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a aria-label="Previous: Summary" class="md-footer__link md-footer__link--prev" href="../" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</div>
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Previous
+              </span>
+              Summary
+            </div>
+</div>
+</a>
+<a aria-label="Next: Xie et al.(2018,JAMES)" class="md-footer__link md-footer__link--next" href="../Xie_et_al_2018_JAMES/" rel="next">
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Next
+              </span>
+              Xie et al.(2018,JAMES)
+            </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.expand", "navigation.indexes", "toc.integrate", "content.tabs.link"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.361d90f1.min.js"}</script>
+<script src="../../../assets/javascripts/bundle.289a2a4b.min.js"></script>
+<script src="../../../javascripts/mathjax.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</body>
+</html>

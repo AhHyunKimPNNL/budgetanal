@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.2.3, mkdocs-material-8.1.4" name="generator"/>
-<title>Stratocumulus - Budget Analysis</title>
+<title>General - Budget Analysis</title>
 <link href="../../assets/stylesheets/main.bb3983ee.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.e6a45f82.min.css" rel="stylesheet"/>
 <meta content="#009485" name="theme-color"/>
@@ -21,7 +21,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#stratocumulus-regions">
+<a class="md-skip" href="#global-view">
           Skip to content
         </a>
 </div>
@@ -45,7 +45,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Stratocumulus
+              General
             
           </span>
 </div>
@@ -93,13 +93,13 @@
     </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../01_global/">
-        01 Global
+<a class="md-tabs__link md-tabs__link--active" href="../">
+        Base Simulation
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link md-tabs__link--active" href="../">
-        02 Cloud regime
+<a class="md-tabs__link" href="../../02_zm_rad_modification/">
+        New Simulation
       </a>
 </li>
 <li class="md-tabs__item">
@@ -133,98 +133,114 @@
         Home
       </a>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../01_global/">01 Global</a>
+<a href="../">Base Simulation</a>
 <label for="__nav_2">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-label="01 Global" class="md-nav" data-md-level="1">
+<nav aria-label="Base Simulation" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+          Base Simulation
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" id="__nav_2_2" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index md-nav__link--active">
+<a href="./">01 Global</a>
+<label for="__nav_2_2">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="01 Global" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_2">
 <span class="md-nav__icon md-icon"></span>
           01 Global
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../01_global/01_by_chkpt/">
+<a class="md-nav__link" href="01_by_chkpt/">
         By Check Point
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../01_global/02_by_variable/">
+<a class="md-nav__link" href="02_by_variable/">
         By Variables
       </a>
 </li>
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_2_3" id="__nav_2_3" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../">02 Cloud regime</a>
-<label for="__nav_3">
+<a href="../02_cloud_regime/">02 Cloud regime</a>
+<label for="__nav_2_3">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-label="02 Cloud regime" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_3">
+<nav aria-label="02 Cloud regime" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_3">
 <span class="md-nav__icon md-icon"></span>
           02 Cloud regime
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../01_ITCZ/">
+<a class="md-nav__link" href="../02_cloud_regime/01_ITCZ/">
         ITCZ
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../02_Storm_track/">
+<a class="md-nav__link" href="../02_cloud_regime/02_Storm_track/">
         Storm Track
       </a>
 </li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-          Stratocumulus
-          <span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../02_cloud_regime/03_Stratocumulus/">
         Stratocumulus
       </a>
-<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#questions">
-    Questions
-  </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#increments">
-    Increments
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#seasonal">
-    Seasonal
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../04_by_chkpt/">
+<a class="md-nav__link" href="../02_cloud_regime/04_by_chkpt/">
         By Check Point
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../05_by_variable/">
+<a class="md-nav__link" href="../02_cloud_regime/05_by_variable/">
         By Variables
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../02_zm_rad_modification/">New Simulation</a>
+<label for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="New Simulation" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+          New Simulation
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../02_zm_rad_modification/01_global/">
+        Global
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../02_zm_rad_modification/02_cloud_regime/">
+        Cloud Regime
       </a>
 </li>
 </ul>
@@ -278,10 +294,80 @@
           References
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_5_5_2" id="__nav_5_5_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_5_2">
+          E3SM
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="E3SM" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_5_5_2">
+<span class="md-nav__icon md-icon"></span>
+          E3SM
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../99_Personal_notes/05_references/E3SM_related/">
-        E3SM related
+<a class="md-nav__link" href="../../99_Personal_notes/05_references/Rasch_et_al_2019_JAMES/">
+        Rasch et al.(2019,JAMES)
       </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../99_Personal_notes/05_references/Xie_et_al_2018_JAMES/">
+        Xie et al.(2018,JAMES)
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_5_5_3" id="__nav_5_5_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_5_3">
+          Process Coupling
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Process Coupling" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_5_5_3">
+<span class="md-nav__icon md-icon"></span>
+          Process Coupling
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../99_Personal_notes/05_references/Lauritzen_and_Williamson_2019_JAMES/">
+        Lauritzen and Williamson(2019,JAMES)
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../99_Personal_notes/05_references/Wan_et_al_2020_JAMES/">
+        Wan et al.(2020,JAMES)
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../99_Personal_notes/05_references/Zhang_et_al_2018_GMD/">
+        Zhang et al.(2018,GMD)
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_5_5_4" id="__nav_5_5_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_5_4">
+          Stratocumulus
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Stratocumulus" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_5_5_4">
+<span class="md-nav__icon md-icon"></span>
+          Stratocumulus
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../99_Personal_notes/05_references/Medeiros_et_al_2012_JC/">
+        Medeiros et al. (2012,JC)
+      </a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -296,118 +382,72 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="stratocumulus-regions">Stratocumulus regions</h1>
-<h3 id="questions">Questions</h3>
-<ol>
-<li>Why the temperature increments due to CLUBB is so spiky near the surface in the trade cumulus regions?</li>
-<li>What is the impact?</li>
-<li>
-<p>In the new simulation, how much weaker the deep convection is?</p>
-</li>
-<li>
-<p>possible reasons</p>
-<ol>
-<li>
-<p>model settings? -&gt; re-run the model: Branch: huiwanpnnl/gmd_2020_330_with_forcing_method</p>
+<h1 id="global-view">Global view</h1>
 <ul>
-<li><a href="https://compy-dtn.pnl.gov/kima320/Budget_Analysis/With_forcing_method/Cloud_regime/Vertical_profiles_by_region_and_chkpt_in_one_page.pdf">results from the branch name gmd_2020_330_with_forcing_method</a> (see pg.18 for temperature tendency profile in stratocumulus regions)</li>
-<li><a href="https://compy-dtn.pnl.gov/kima320/Budget_Analysis/Cloud_regime/Vertical_profiles_by_region_and_chkpt_in_one_page.pdf">results from the branch name maint-1.0_cnd_diag1.1</a> (see pg.18 for temperature tendency profile in stratocumulus regions)</li>
-<li><a href="https://compy-dtn.pnl.gov/kima320/Budget_Analysis/With_forcing_method/Cloud_regime_diff/Diff_Vertical_profiles_by_region_and_chkpt_in_one_page.pdf">difference between gmd_* and maint-1.0</a> (see pg.18 for temperature tendency profile in stratocumulus regions)</li>
-<li>simulation results from gmd_* does reduces some spikes in the surface of CLUBB_T_tendency</li>
-<li>simulation results from gmd_* has large cooling tendency above the cloud top in Peru stratocumulus region (maybe even larger than the condensational heating due to cloud formation). -&gt; <ins>maybe the major source of heating is not condensation but turbulence in CLUBB??</ins></li>
+<li>General view of E3SM: <a href="https://compy-dtn.pnl.gov/kima320/AMWG_diag_pkg/q_budget_rad_compy_FC5AV1C-L_ne30_maint-1.0_cnd_diag1.1-obs/">https://compy-dtn.pnl.gov/kima320/AMWG_diag_pkg/q_budget_rad_compy_FC5AV1C-L_ne30_maint-1.0_cnd_diag1.1-obs/</a></li>
 </ul>
-</li>
-<li>
-<p>due to warm surface?? (surface sensible heat flux)</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <ul>
-<li><img alt="sensible heat flux" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_cloud_regime/SFLX.png"/></li>
+<li>currently, data used in 'by checkpoint' analysis are only <mark class="critic">October 2009 data</mark></li>
 </ul>
-</li>
-<li>related to liftlevel in DEEPCU<ul>
-<li>in zm_conv.F90, lift level (<a href="https://github.com/E3SM-Project/E3SM/blob/master/components/eam/src/physics/cam/zm_conv.F90#L81">mx_bot_lyr_adj</a> in zm_conv.F90???????) is set to 2 (about 100 m above the surface, see <a href="https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2018MS001350">Xie et al. (2019)</a> )</li>
-<li>in subroutine <a href="https://github.com/E3SM-Project/E3SM/blob/master/components/eam/src/physics/cam/zm_conv.F90#L3129">q1q2_pjr</a>, temperature (static energy) and moisture tendencies at and below liftlevel (or at and below LCL) is calculated as if there are no values at the bottom of these layers.<ul>
-<li>above liftlevel: <span class="arithmatex">\({\partial \bar q \over \partial t} = {\partial \over \partial p} (M_u (q_u-\bar q) + M_d (q_d-\bar q))=( (M_u (q_u-\bar q) + M_d (q_d-\bar q))^{lower level} - (M_u (q_u-\bar q) + M_d (q_d-\bar q))^{this level} )/ \partial p\)</span></li>
-<li>below liftlevel: <span class="arithmatex">\({\partial \bar q \over \partial t} = {\partial \over \partial p} (M_u (q_u-\bar q) + M_d (q_d-\bar q))=( - (M_u (q_u-\bar q) + M_d (q_d-\bar q))^{this level} )/ \partial p\)</span></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>related to l_host_applies_sfc_fluxes ????(<a href="https://doi.org/10.5194/gmd-11-1971-2018">Zhang et al., 2018</a> )</li>
-</ol>
-</li>
-</ol>
-<h3 id="increments">Increments</h3>
-<ul>
-<li>Cloud radiative cooling occurs right above the cloud top </li>
-<li>temperature above cloud top increases in DYNEND because descending air is blocked by cloud.</li>
-<li>in trade cumulus region, convection occurs<ul>
-<li>cloud water increases during convective detrainment (CUDET) process</li>
-<li>DEEPCU</li>
-</ul>
-</li>
-<li>Temperature changes<ul>
-<li>cloud bottom<ul>
-<li>surface LH &amp; SH fluxes (heating)</li>
-<li>boundary layer turbulence (cooling)</li>
-<li>temperature advection (cooling, DYNEND)</li>
-</ul>
-</li>
-<li>in cloud<ul>
-<li>condensational heating</li>
-<li>stratocumulus: <mark class="critic">CLUBB T warming</mark> &gt; DEEPCU T warming</li>
-<li>trade cumulus: CLUBB T warming &lt; <mark class="critic">DEEPCU T warming</mark> + large Q changes in DEEPCU</li>
-</ul>
-</li>
-<li>cloud top<ul>
-<li>cloud radiative effect (cooling)</li>
-<li>entrainment (evaporative cooling)</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:6"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><input id="__tabbed_1_3" name="__tabbed_1" type="radio"><input id="__tabbed_1_4" name="__tabbed_1" type="radio"><input id="__tabbed_1_5" name="__tabbed_1" type="radio"><input id="__tabbed_1_6" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">California</label><label for="__tabbed_1_2">Peru</label><label for="__tabbed_1_3">Peru(trade)</label><label for="__tabbed_1_4">Australia</label><label for="__tabbed_1_5">Nambian</label><label for="__tabbed_1_6">Canary</label></div>
+</div>
+<h2 id="annual-mean">Annual Mean</h2>
+<h3 id="cloud-components">Cloud components</h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:6"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><input id="__tabbed_1_3" name="__tabbed_1" type="radio"><input id="__tabbed_1_4" name="__tabbed_1" type="radio"><input id="__tabbed_1_5" name="__tabbed_1" type="radio"><input id="__tabbed_1_6" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Low-level cloud</label><label for="__tabbed_1_2">Middle-level cloud</label><label for="__tabbed_1_3">High-level cloud</label><label for="__tabbed_1_4">Cloud water path</label><label for="__tabbed_1_5">LWP</label><label for="__tabbed_1_6">IWP</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_cloud_regime/SC_california.png"/></p>
+<p><img alt="CLDLOW" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/01_global/GLOBAL_CLDLOW.png"/></p>
 </div>
 <div class="tabbed-block">
-<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_cloud_regime/SC_peru.png"/></p>
+<p><img alt="CLDMED" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/01_global/GLOBAL_CLDMED.png"/></p>
 </div>
 <div class="tabbed-block">
-<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_cloud_regime/SC_peru_trade.png"/></p>
+<p><img alt="CLDHGH" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/01_global/GLOBAL_CLDHGH.png"/></p>
 </div>
 <div class="tabbed-block">
-<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_cloud_regime/SC_australia.png"/></p>
+<p><img alt="CWP" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/01_global/GLOBAL_CWP.png"/></p>
 </div>
 <div class="tabbed-block">
-<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_cloud_regime/SC_nambian.png"/></p>
+<p><img alt="LWP" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/01_global/GLOBAL_LWP.png"/></p>
 </div>
 <div class="tabbed-block">
-<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_cloud_regime/SC_canary.png"/></p>
+<p><img alt="IWP" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/01_global/GLOBAL_IWP.png"/></p>
 </div>
 </div>
 </input></input></input></input></input></input></div>
-<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_cloud_regime/02_03_stratocumulus.png"/></p>
-<h2 id="seasonal">Seasonal</h2>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><input id="__tabbed_2_3" name="__tabbed_2" type="radio"/><div class="tabbed-labels"><label for="__tabbed_2_1">Surface</label><label for="__tabbed_2_2">Cloud related components</label><label for="__tabbed_2_3">Precipication</label></div>
+<h3 id="precipitation">Precipitation</h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:4"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><input id="__tabbed_2_3" name="__tabbed_2" type="radio"><input id="__tabbed_2_4" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">Large-scale Precipication</label><label for="__tabbed_2_2">Convective Precipication</label><label for="__tabbed_2_3">Large-scale Snow Precipication</label><label for="__tabbed_2_4">Convective Snow Precipication</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_cloud_regime/seasonal_changes_Surface.png"/></p>
+<p><img alt="PRECL" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/01_global/GLOBAL_PRECL.png"/></p>
 </div>
 <div class="tabbed-block">
-<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_cloud_regime/seasonal_changes_cloud-2.png"/></p>
+<p><img alt="PRECL" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/01_global/GLOBAL_PRECC.png"/></p>
 </div>
-<div class="tabbed-block"></div>
+<div class="tabbed-block">
+<p><img alt="PRECL" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/01_global/GLOBAL_PRECSL.png"/></p>
 </div>
-</input></input></div>
+<div class="tabbed-block">
+<p><img alt="PRECL" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/01_global/GLOBAL_PRECSC.png"/></p>
+</div>
+</div>
+</input></input></input></input></div>
+<h2 id="need-to-check">need to check</h2>
+<ul class="task-list">
+<li class="task-list-item"><input type="checkbox"> chkpt RAD: source of at 850 hPa cooling → <a href="01_by_chkpt/#rad">Cloud radiative cooling</a></input></li>
+<li class="task-list-item"><input type="checkbox"> chkpt DYNEND: source of surface cooling → <a href="01_by_chkpt/#dynend">Temp. adv. &amp; local depression</a></input></li>
+<li class="task-list-item"><input type="checkbox"/> chkpt DEEPCU: source of 500 hPa heating → <a href="01_by_chkpt/#deepcu">Temp. dependent snow melting code</a></li>
+<li class="task-list-item"><input type="checkbox"/> chkpt DEEPCU: 850 hPa 60S-30S Q sink → <a href="01_by_chkpt/#deepcu">Cloud ice formation</a></li>
+<li class="task-list-item"><input type="checkbox"/> chkpt CLUBB: U&amp;V increments → coupling with DYNEND</li>
+</ul>
 </article>
 </div>
 </div>
 </main>
 <footer class="md-footer">
 <nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="Previous: Storm Track" class="md-footer__link md-footer__link--prev" href="../02_Storm_track/" rel="prev">
+<a aria-label="Previous: General" class="md-footer__link md-footer__link--prev" href="../" rel="prev">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
 </div>
@@ -416,11 +456,11 @@
 <span class="md-footer__direction">
                 Previous
               </span>
-              Storm Track
+              General
             </div>
 </div>
 </a>
-<a aria-label="Next: By Check Point" class="md-footer__link md-footer__link--next" href="../04_by_chkpt/" rel="next">
+<a aria-label="Next: By Check Point" class="md-footer__link md-footer__link--next" href="01_by_chkpt/" rel="next">
 <div class="md-footer__title">
 <div class="md-ellipsis">
 <span class="md-footer__direction">

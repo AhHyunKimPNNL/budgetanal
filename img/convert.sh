@@ -1,12 +1,12 @@
 #!/bin/bash
-#filedir=/compyfs/www/kima320/Budget_Analysis/With_forcing_method/Difference/
+filedir=/compyfs/www/kima320/Budget_Analysis/With_forcing_method/Difference/
 #filedir=/compyfs/www/kima320/Budget_Analysis/With_forcing_method/Control/
-filedir=/compyfs/www/kima320/Budget_Analysis/Cloud_regime/
+#filedir=/compyfs/www/kima320/Budget_Analysis/Cloud_regime/
 #filedir=/compyfs/www/kima320/pictures/q_budget_rad_compy_FC5AV1C-L_ne30_maint-1.0_cnd_diag1.1/
-filename="Diff_Vertical_profiles_of_single_Variable"
+filename="Compare_test_n_ctrl"
 #filename=Vertical_profiles_by_region_and_chkpt_in_one_page
 #savedir=/compyfs/www/kima320/png_plot/Budget_Analysis/03_Sc_Cu/
-savedir=/compyfs/www/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/differences/
+savedir=/compyfs/www/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/differences/by_regions/
 #filedir=/compyfs/www/kima320/pictures/q_budget_rad_compy_FC5AV1C-L_ne30_maint-1.0_cnd_diag1.1/
 #savedir=/qfs/people/kima320/git_work/budgetanal/docs/02_cloud_regime/img/
 #filename=seasonal_changes_Precipitation

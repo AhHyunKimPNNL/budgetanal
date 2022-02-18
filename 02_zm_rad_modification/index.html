@@ -248,6 +248,66 @@
         Cloud Regime
       </a>
 </li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_3_4" id="__nav_3_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_4">
+          by regions
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="by regions" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_4">
+<span class="md-nav__icon md-icon"></span>
+          by regions
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="03_by_regions/11_ITCZ/">
+        ITCZ
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="03_by_regions/21_North_Atlantic/">
+        North Atlantic
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="03_by_regions/22_North_Pacific/">
+        North Pacific
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="03_by_regions/23_Southern_Hemisphere/">
+        Southern Hemisphere
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="03_by_regions/31_California/">
+        California
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="03_by_regions/32_Peru/">
+        Peru
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="03_by_regions/33_Peru_trade/">
+        Peru trade
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="03_by_regions/34_Australia/">
+        Australia
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="03_by_regions/35_Nambian/">
+        Nambian
+      </a>
+</li>
+</ul>
+</nav>
+</li>
 </ul>
 </nav>
 </li>
@@ -335,6 +395,11 @@
         Xie et al.(2018,JAMES)
       </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../99_Personal_notes/05_references/Zhang_et_al_2018_GMD/">
+        Zhang et al.(2018,GMD)
+      </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -406,6 +471,15 @@
 <li>start date: 2022.Jan.28</li>
 </ul>
 <h2 id="simulation-settings">Simulation settings</h2>
+<div class="mermaid">graph LR
+  A[RAD]     --&gt; B;
+  B[IONDRAG] ----&gt; |save radiation flux| E;
+  B --&gt; C;
+  C[DRYADJ] --&gt; D;
+  D[DEEPCU] --&gt; E;
+  E[CLUBB] --&gt; F;
+  F[other processes] --&gt; A;
+</div>
 <h3 id="experiments">Experiments</h3>
 <p>Control: <code>radheat_cpl_opt = 0</code></p>
 <p>Test run: <code>radheat_cpl_opt = 2</code></p>
@@ -486,6 +560,50 @@
 </ul>
 </li>
 </ul>
+<h2 id="analysis">Analysis</h2>
+<ul>
+<li>radiation flux is removed after 'IONDRAG' check point.</li>
+<li>Dynamical core → dry adjustment → deep convection process exprience hotter atmosphere<ul>
+<li>Changes in temperature may change synoptic-scale pressure systems and wind patterns.</li>
+<li>Dynamic core advects<ul>
+<li>less heat near the Panama (less warm advection: see <a href="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/01_global/DYNEND_temp_adv.png">temp. adv.</a> and <a href="https://compy-dtn.pnl.gov/kima320/Budget_Analysis/With_forcing_method/Difference/map_of_cld_cape_u.pdf">surface zonal wind</a>)</li>
+<li>less heat near Eastern Pacific, more heat near Bering Sea (Less impact on CAPE because CAPE is not strong around these areas)</li>
+</ul>
+</li>
+<li>For that reason, <a href="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/ctrl/CAPE_vertical_integral_by_variable_and_add_substeps-3.png">CAPE</a> changes after the Dynamic core</li>
+<li><ins>stratocumulus region</ins>: subsidence increases during DYNEND (warm region shifted downward)
+        - the cloud layer becomes more stable
+        - <a href="https://compy-dtn.pnl.gov/kima320/Budget_Analysis/With_forcing_method/Difference/map_of_PBL.pdf">Thinner PBL</a></li>
+</ul>
+</li>
+<li>compensating amount of <a href="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/ctrl/CAPE_vertical_integral_by_variable_and_add_substeps-5.png">CAPE from DYNEND changes during DEEPCU</a><ul>
+<li>Detrainment decreases (but Q does not change during CUDET in this model)</li>
+</ul>
+</li>
+<li>radiation flux tendency is added again right before CLUBB<ul>
+<li>stratocumulus region<ul>
+<li>new cloud top (where it was used to be the cloud layer) is cold again,<ul>
+<li>less inversion in the new cloud top.</li>
+<li>seems to be that the temerature decrease in the cloud layer did not affect CLUBB turbulence much due to cold surface temperature.</li>
+</ul>
+</li>
+<li>during RAD, temperature around the new cloud top decreases</li>
+</ul>
+</li>
+<li>trade wind cumulus region<ul>
+<li>during DYNEND, subsidence increases, but not as strong as in Peru stratocumulus region.</li>
+<li>deep convection near cloud top decreases because this layer is stable now</li>
+<li>PBL decreases</li>
+<li>before CLUBB, cloud layer is cold again,<ul>
+<li><a href="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/differences/Diff_Vertical_profiles_of_single_Variable-2.png">increased turbulence</a> within the new boundary layer</li>
+<li>less stronger inversion near the new cloud top</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 </article>
 </div>
 </div>
@@ -541,5 +659,5 @@
 <script src="../javascripts/mathjax.js"></script>
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-</body>
+<script src="https://unpkg.com/mermaid@8.8.0/dist/mermaid.min.js"></script><script>mermaid.initialize({});</script></body>
 </html>

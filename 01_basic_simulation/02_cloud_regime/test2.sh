@@ -12,6 +12,10 @@ for region in $regions; do
     echo "    ![${region}_$var](${FigDir}${FigName}_${region}.png)" >> $file
     echo " " >> $file
   done
+    FigName=Diurnal_cycle_of_Turbulence
+    echo "=== \"Turbulence\" " >> $file
+    echo "    ![${region}_CLUBB_Turbulence](${FigDir}${FigName}_${region}.png)" >> $file
+    echo " " >> $file
   echo " " >> $file
 done
 

@@ -218,6 +218,11 @@
         By Variables
       </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../01_basic_simulation/02_cloud_regime/06_diurnal_cycle/">
+        Diurnal Cycle
+      </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -315,6 +320,9 @@
 <input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index md-nav__link--active">
 <a href="./">Sc to Cu</a>
+<label for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+</label>
 </div>
 <nav aria-label="Sc to Cu" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_4">
@@ -322,6 +330,16 @@
           Sc to Cu
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="01_status/">
+        E3SM status
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="02_diurnal/">
+        Diurnal Cycle
+      </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -450,6 +468,11 @@
         Medeiros et al. (2012,JC)
       </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../99_Personal_notes/05_references/Eastman_and_Warren_2014_JC/">
+        Eastman and Warren (2014,JC)
+      </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -473,46 +496,19 @@
 <li>Satellite data download:</li>
 <li>CALIPSO: https://www-calipso.larc.nasa.gov/resources/calipso_users_guide/qs/cal_lid_l3_cloud_occurrence_v1-00.php</li>
 <li>E3SM vs satellite: <a href="https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2018MS001562">Zhang et al., 2019</a></li>
-<li></li>
 </ul>
-<h2 id="e3sm-status">E3SM status</h2>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><input id="__tabbed_1_3" name="__tabbed_1" type="radio"><input id="__tabbed_1_4" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Total Cloud fraction: E3SM vs ISCCP</label><label for="__tabbed_1_2">low-level Cloud fraction: E3SM vs ISCCP</label><label for="__tabbed_1_3">low-level Cloud fraction: E3SM vs CLOUDSAT</label><label for="__tabbed_1_4">Cloud Fraction: E3SM vs MISR shown in Xie et al. (2018)</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<p><img alt="Cloud fraction compared with ISCCP" src="https://compy-dtn.pnl.gov/kima320/Budget_Analysis/AMWG_diag/set5_6/set5_ANN_CLDTOT_VISIR_obsc.png"/></p>
-</div>
-<div class="tabbed-block">
-<p><img alt="low-level cloud" src="https://compy-dtn.pnl.gov/kima320/Budget_Analysis/AMWG_diag/set5_6/set5_ANN_CLDLOW_VISIR_obsc.png"/></p>
-</div>
-<div class="tabbed-block">
-<p><img alt="low-level cloud" src="https://compy-dtn.pnl.gov/kima320/AMWG_diag_pkg/q_budget_rad_compy_FC5AV1C-L_ne30_maint-1.0_cnd_diag1.1-obs/set5_6/set5_ANN_CLDLOW_CLOUDSAT_obsc.png"/></p>
-</div>
-<div class="tabbed-block">
-<p><img alt="" src="https://agupubs.onlinelibrary.wiley.com/cms/asset/c50c3b91-50a6-4a7c-9d67-bf3bc5d03af5/jame20776-fig-0002-m.png"/></p>
-</div>
-</div>
-</input></input></input></input></div>
-<ul>
-<li>compared to ISCCP and MISR, EAM simulates less stratocumulus cloud.</li>
-</ul>
-<h2 id="cross-section">Cross section</h2>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">Mer. Avg. (30˚S to 5˚S) near Peru</label><label for="__tabbed_2_2">Zonal Avg. (150˚W to 120˚W) near California</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<p><img alt="Sc-Cu Peru" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/Cross_section_meridionalcloud_products.png"/></p>
-</div>
-<div class="tabbed-block">
-<p><img alt="Sc-Cu Cal" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/Cross_section_cloud_products.png"/></p>
-</div>
-</div>
-</input></input></div>
 <h2 id="notes">Notes</h2>
 <ul>
-<li>
-<p>stratocumulus</p>
+<li>stratocumulus<ul>
+<li>forms around 900 hPa</li>
+<li>high LWP</li>
+</ul>
 </li>
 <li>
 <p>cumulus</p>
+<ul>
+<li>forms around 800 hPa</li>
+</ul>
 </li>
 <li>
 <p>causes of Sc to Cu transition</p>
@@ -543,13 +539,13 @@
             </div>
 </div>
 </a>
-<a aria-label="Next: Appendix" class="md-footer__link md-footer__link--next" href="../appendix/" rel="next">
+<a aria-label="Next: E3SM status" class="md-footer__link md-footer__link--next" href="01_status/" rel="next">
 <div class="md-footer__title">
 <div class="md-ellipsis">
 <span class="md-footer__direction">
                 Next
               </span>
-              Appendix
+              E3SM status
             </div>
 </div>
 <div class="md-footer__button md-icon">

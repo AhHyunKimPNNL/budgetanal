@@ -218,6 +218,11 @@
         By Variables
       </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../01_basic_simulation/02_cloud_regime/06_diurnal_cycle/">
+        Diurnal Cycle
+      </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -315,6 +320,9 @@
 <input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../03_Sc_to_Cu/">Sc to Cu</a>
+<label for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+</label>
 </div>
 <nav aria-label="Sc to Cu" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_4">
@@ -322,6 +330,16 @@
           Sc to Cu
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../03_Sc_to_Cu/01_status/">
+        E3SM status
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../03_Sc_to_Cu/02_diurnal/">
+        Diurnal Cycle
+      </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -450,6 +468,11 @@
         Medeiros et al. (2012,JC)
       </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../99_Personal_notes/05_references/Eastman_and_Warren_2014_JC/">
+        Eastman and Warren (2014,JC)
+      </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -473,12 +496,13 @@
 <h2 id="simulation-settings">Simulation settings</h2>
 <div class="mermaid">graph LR
   A[RAD]     --&gt; B;
-  B[IONDRAG] ----&gt; |save radiation flux| E;
+  B[IONDRAG] ----&gt; |save radiation flux| F;
   B --&gt; C;
-  C[DRYADJ] --&gt; D;
-  D[DEEPCU] --&gt; E;
-  E[CLUBB] --&gt; F;
-  F[other processes] --&gt; A;
+  C[DYNEND] --&gt; D;
+  D[DRYADJ] --&gt; E;
+  E[DEEPCU] --&gt; F;
+  F[CLUBB] --&gt; G;
+  G[other processes] --&gt; A;
 </div>
 <h3 id="experiments">Experiments</h3>
 <p>Control: <code>radheat_cpl_opt = 0</code></p>
@@ -564,41 +588,45 @@
 <ul>
 <li>radiation flux is removed after 'IONDRAG' check point.</li>
 <li>Dynamical core → dry adjustment → deep convection process exprience hotter atmosphere<ul>
-<li>Changes in temperature may change synoptic-scale pressure systems and wind patterns.</li>
+<li>Changes in temperature may change <a href="https://compy-dtn.pnl.gov/kima320/Budget_Analysis/With_forcing_method/Difference/map_of_PSL_cape_u.pdf">synoptic-scale pressure systems and wind patterns</a>.</li>
 <li>Dynamic core advects<ul>
 <li>less heat near the Panama (less warm advection: see <a href="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/01_global/DYNEND_temp_adv.png">temp. adv.</a> and <a href="https://compy-dtn.pnl.gov/kima320/Budget_Analysis/With_forcing_method/Difference/map_of_cld_cape_u.pdf">surface zonal wind</a>)</li>
 <li>less heat near Eastern Pacific, more heat near Bering Sea (Less impact on CAPE because CAPE is not strong around these areas)</li>
 </ul>
 </li>
 <li>For that reason, <a href="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/ctrl/CAPE_vertical_integral_by_variable_and_add_substeps-3.png">CAPE</a> changes after the Dynamic core</li>
-<li><ins>stratocumulus region</ins>: subsidence increases during DYNEND (warm region shifted downward)
-        - the cloud layer becomes more stable
-        - <a href="https://compy-dtn.pnl.gov/kima320/Budget_Analysis/With_forcing_method/Difference/map_of_PBL.pdf">Thinner PBL</a></li>
+<li><ins>stratocumulus region</ins>: subsidence increases during DYNEND (warm region shifted downward)<ul>
+<li>the cloud layer becomes more stable</li>
+<li><a href="https://compy-dtn.pnl.gov/kima320/Budget_Analysis/With_forcing_method/Difference/map_of_PBL.pdf">Thinner PBL</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li>compensating amount of <a href="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/ctrl/CAPE_vertical_integral_by_variable_and_add_substeps-5.png">CAPE from DYNEND changes during DEEPCU</a><ul>
 <li>Detrainment decreases (but Q does not change during CUDET in this model)</li>
 </ul>
 </li>
-<li>radiation flux tendency is added again right before CLUBB<ul>
+<li>
+<p>radiation flux tendency is added again right before CLUBB, and <a href="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/ctrl/CAPE_vertical_integral_by_variable_and_add_substeps-6.png">CAPE increases</a></p>
+<ul>
 <li>stratocumulus region<ul>
 <li>new cloud top (where it was used to be the cloud layer) is cold again,<ul>
 <li>less inversion in the new cloud top.</li>
 <li>seems to be that the temerature decrease in the cloud layer did not affect CLUBB turbulence much due to cold surface temperature.</li>
 </ul>
 </li>
-<li>during RAD, temperature around the new cloud top decreases</li>
 </ul>
 </li>
+</ul>
+</li>
+<li>
+<p>during RAD, temperature around the new cloud top decreases</p>
+<ul>
 <li>trade wind cumulus region<ul>
 <li>during DYNEND, subsidence increases, but not as strong as in Peru stratocumulus region.</li>
 <li>deep convection near cloud top decreases because this layer is stable now</li>
 <li>PBL decreases</li>
-<li>before CLUBB, cloud layer is cold again,<ul>
-<li><a href="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/differences/Diff_Vertical_profiles_of_single_Variable-2.png">increased turbulence</a> within the new boundary layer</li>
-<li>less stronger inversion near the new cloud top</li>
-</ul>
-</li>
+<li>before CLUBB, cloud layer is cold again,</li>
 </ul>
 </li>
 </ul>
@@ -610,7 +638,7 @@
 </main>
 <footer class="md-footer">
 <nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="Previous: By Variables" class="md-footer__link md-footer__link--prev" href="../01_basic_simulation/02_cloud_regime/05_by_variable/" rel="prev">
+<a aria-label="Previous: Diurnal Cycle" class="md-footer__link md-footer__link--prev" href="../01_basic_simulation/02_cloud_regime/06_diurnal_cycle/" rel="prev">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
 </div>
@@ -619,7 +647,7 @@
 <span class="md-footer__direction">
                 Previous
               </span>
-              By Variables
+              Diurnal Cycle
             </div>
 </div>
 </a>

@@ -1,0 +1,864 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.2.3, mkdocs-material-8.1.4" name="generator"/>
+<title>Diurnal Cycle - Budget Analysis</title>
+<link href="../../../assets/stylesheets/main.bb3983ee.min.css" rel="stylesheet"/>
+<link href="../../../assets/stylesheets/palette.e6a45f82.min.css" rel="stylesheet"/>
+<meta content="#009485" name="theme-color"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="" data-md-color-primary="teal" data-md-color-scheme="" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#diurnal-cycle">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="Budget Analysis" class="md-header__button md-logo" data-md-component="logo" href="../../.." title="Budget Analysis">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Budget Analysis
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Diurnal Cycle
+            
+          </span>
+</div>
+</div>
+</div>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-tabs__inner md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../..">
+      Home
+    </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link md-tabs__link--active" href="../../">
+        Base Simulation
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../02_zm_rad_modification/">
+        New Simulation
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../03_Sc_to_Cu/">
+        Sc to Cu
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../appendix/">
+      Appendix
+    </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../99_Personal_notes/">
+        Ah-Hyun
+      </a>
+</li>
+</ul>
+</div>
+</nav>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Budget Analysis" class="md-nav__button md-logo" data-md-component="logo" href="../../.." title="Budget Analysis">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"></path></svg>
+</a>
+    Budget Analysis
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../..">
+        Home
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../">Base Simulation</a>
+<label for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="Base Simulation" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+          Base Simulation
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_2_2" id="__nav_2_2" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../01_global/">01 Global</a>
+<label for="__nav_2_2">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="01 Global" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_2">
+<span class="md-nav__icon md-icon"></span>
+          01 Global
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../01_global/01_by_chkpt/">
+        By Check Point
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../01_global/02_by_variable/">
+        By Variables
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" id="__nav_2_3" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../">02 Cloud regime</a>
+<label for="__nav_2_3">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="02 Cloud regime" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_3">
+<span class="md-nav__icon md-icon"></span>
+          02 Cloud regime
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../01_ITCZ/">
+        ITCZ
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../02_Storm_track/">
+        Storm Track
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../03_Stratocumulus/">
+        Stratocumulus
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../04_by_chkpt/">
+        By Check Point
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../05_by_variable/">
+        By Variables
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          Diurnal Cycle
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+        Diurnal Cycle
+      </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#radiation-budget">
+    Radiation budget
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#by-regions">
+    by regions
+  </a>
+<nav aria-label="by regions" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#itcz">
+    ITCZ
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#north_atlantic">
+    North_Atlantic
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#north_pacific">
+    North_Pacific
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#southern_hemisphere">
+    Southern_Hemisphere
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#california">
+    California
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#peru">
+    Peru
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#peru_trade">
+    Peru_trade
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#australia">
+    Australia
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#namibian">
+    Namibian
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../../02_zm_rad_modification/">New Simulation</a>
+<label for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="New Simulation" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+          New Simulation
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../02_zm_rad_modification/01_global/">
+        Global
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../02_zm_rad_modification/02_cloud_regime/">
+        Cloud Regime
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_3_4" id="__nav_3_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_4">
+          by regions
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="by regions" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_4">
+<span class="md-nav__icon md-icon"></span>
+          by regions
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../02_zm_rad_modification/03_by_regions/11_ITCZ/">
+        ITCZ
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../02_zm_rad_modification/03_by_regions/21_North_Atlantic/">
+        North Atlantic
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../02_zm_rad_modification/03_by_regions/22_North_Pacific/">
+        North Pacific
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../02_zm_rad_modification/03_by_regions/23_Southern_Hemisphere/">
+        Southern Hemisphere
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../02_zm_rad_modification/03_by_regions/31_California/">
+        California
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../02_zm_rad_modification/03_by_regions/32_Peru/">
+        Peru
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../02_zm_rad_modification/03_by_regions/33_Peru_trade/">
+        Peru trade
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../02_zm_rad_modification/03_by_regions/34_Australia/">
+        Australia
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../02_zm_rad_modification/03_by_regions/35_Nambian/">
+        Nambian
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../../03_Sc_to_Cu/">Sc to Cu</a>
+<label for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="Sc to Cu" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+          Sc to Cu
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../03_Sc_to_Cu/01_status/">
+        E3SM status
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../03_Sc_to_Cu/02_diurnal/">
+        Diurnal Cycle
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../appendix/">
+        Appendix
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_6" id="__nav_6" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../../99_Personal_notes/">Ah-Hyun</a>
+<label for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="Ah-Hyun" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+          Ah-Hyun
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../99_Personal_notes/01_workflow/">
+        Summary
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../99_Personal_notes/02_model/">
+        Atmospheric Model
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../99_Personal_notes/03_code/">
+        codes
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_6_5" id="__nav_6_5" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../../99_Personal_notes/05_references/">References</a>
+<label for="__nav_6_5">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="References" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_6_5">
+<span class="md-nav__icon md-icon"></span>
+          References
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_6_5_2" id="__nav_6_5_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6_5_2">
+          E3SM
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="E3SM" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_6_5_2">
+<span class="md-nav__icon md-icon"></span>
+          E3SM
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../99_Personal_notes/05_references/Rasch_et_al_2019_JAMES/">
+        Rasch et al.(2019,JAMES)
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../99_Personal_notes/05_references/Xie_et_al_2018_JAMES/">
+        Xie et al.(2018,JAMES)
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../99_Personal_notes/05_references/Zhang_et_al_2018_GMD/">
+        Zhang et al.(2018,GMD)
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_6_5_3" id="__nav_6_5_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6_5_3">
+          Process Coupling
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Process Coupling" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_6_5_3">
+<span class="md-nav__icon md-icon"></span>
+          Process Coupling
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../99_Personal_notes/05_references/Lauritzen_and_Williamson_2019_JAMES/">
+        Lauritzen and Williamson(2019,JAMES)
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../99_Personal_notes/05_references/Wan_et_al_2020_JAMES/">
+        Wan et al.(2020,JAMES)
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../99_Personal_notes/05_references/Zhang_et_al_2018_GMD/">
+        Zhang et al.(2018,GMD)
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_6_5_4" id="__nav_6_5_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6_5_4">
+          Stratocumulus
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Stratocumulus" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_6_5_4">
+<span class="md-nav__icon md-icon"></span>
+          Stratocumulus
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../99_Personal_notes/05_references/Medeiros_et_al_2012_JC/">
+        Medeiros et al. (2012,JC)
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../99_Personal_notes/05_references/Eastman_and_Warren_2014_JC/">
+        Eastman and Warren (2014,JC)
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="diurnal-cycle">Diurnal Cycle</h1>
+<ul>
+<li>contour (color): Tendency</li>
+<li>contour line: state</li>
+</ul>
+<h2 id="radiation-budget">Radiation budget</h2>
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/Regional_timeseries_radiation-0.png"/>
+<img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/Regional_timeseries_radiation-1.png"/>
+<img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/Regional_timeseries_radiation-2.png"/></p>
+<h2 id="by-regions">by regions</h2>
+<h3 id="itcz">ITCZ</h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:7"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><input id="__tabbed_1_3" name="__tabbed_1" type="radio"><input id="__tabbed_1_4" name="__tabbed_1" type="radio"><input id="__tabbed_1_5" name="__tabbed_1" type="radio"><input id="__tabbed_1_6" name="__tabbed_1" type="radio"><input id="__tabbed_1_7" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Q</label><label for="__tabbed_1_2">T</label><label for="__tabbed_1_3">CLDLIQ</label><label for="__tabbed_1_4">CLDICE</label><label for="__tabbed_1_5">RAINQM</label><label for="__tabbed_1_6">CLD</label><label for="__tabbed_1_7">RH</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><img alt="ITCZ_Q" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/multiple_plots/regional/Diurnal_cycle_of_Q_chkpt_in_one_page_ITCZ.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="ITCZ_T" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/multiple_plots/regional/Diurnal_cycle_of_T_chkpt_in_one_page_ITCZ.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="ITCZ_CLDLIQ" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/multiple_plots/regional/Diurnal_cycle_of_CLDLIQ_chkpt_in_one_page_ITCZ.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="ITCZ_CLDICE" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/multiple_plots/regional/Diurnal_cycle_of_CLDICE_chkpt_in_one_page_ITCZ.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="ITCZ_RAINQM" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/multiple_plots/regional/Diurnal_cycle_of_RAINQM_chkpt_in_one_page_ITCZ.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="ITCZ_CLD" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/multiple_plots/regional/Diurnal_cycle_of_CLD_chkpt_in_one_page_ITCZ.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="ITCZ_RH" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/multiple_plots/regional/Diurnal_cycle_of_RH_chkpt_in_one_page_ITCZ.png"/></p>
+</div>
+</div>
+</input></input></input></input></input></input></input></div>
+<h3 id="north_atlantic">North_Atlantic</h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:7"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><input id="__tabbed_2_3" name="__tabbed_2" type="radio"><input id="__tabbed_2_4" name="__tabbed_2" type="radio"><input id="__tabbed_2_5" name="__tabbed_2" type="radio"><input id="__tabbed_2_6" name="__tabbed_2" type="radio"><input id="__tabbed_2_7" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">Q</label><label for="__tabbed_2_2">T</label><label for="__tabbed_2_3">CLDLIQ</label><label for="__tabbed_2_4">CLDICE</label><label for="__tabbed_2_5">RAINQM</label><label for="__tabbed_2_6">CLD</label><label for="__tabbed_2_7">RH</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><img alt="North_Atlantic_Q" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/multiple_plots/regional/Diurnal_cycle_of_Q_chkpt_in_one_page_North_Atlantic.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="North_Atlantic_T" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/multiple_plots/regional/Diurnal_cycle_of_T_chkpt_in_one_page_North_Atlantic.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="North_Atlantic_CLDLIQ" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/multiple_plots/regional/Diurnal_cycle_of_CLDLIQ_chkpt_in_one_page_North_Atlantic.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="North_Atlantic_CLDICE" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/multiple_plots/regional/Diurnal_cycle_of_CLDICE_chkpt_in_one_page_North_Atlantic.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="North_Atlantic_RAINQM" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/multiple_plots/regional/Diurnal_cycle_of_RAINQM_chkpt_in_one_page_North_Atlantic.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="North_Atlantic_CLD" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/multiple_plots/regional/Diurnal_cycle_of_CLD_chkpt_in_one_page_North_Atlantic.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="North_Atlantic_RH" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/multiple_plots/regional/Diurnal_cycle_of_RH_chkpt_in_one_page_North_Atlantic.png"/></p>
+</div>
+</div>
+</input></input></input></input></input></input></input></div>
+<h3 id="north_pacific">North_Pacific</h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:7"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio"><input id="__tabbed_3_2" name="__tabbed_3" type="radio"/><input id="__tabbed_3_3" name="__tabbed_3" type="radio"/><input id="__tabbed_3_4" name="__tabbed_3" type="radio"/><input id="__tabbed_3_5" name="__tabbed_3" type="radio"/><input id="__tabbed_3_6" name="__tabbed_3" type="radio"/><input id="__tabbed_3_7" name="__tabbed_3" type="radio"/><div class="tabbed-labels"><label for="__tabbed_3_1">Q</label><label for="__tabbed_3_2">T</label><label for="__tabbed_3_3">CLDLIQ</label><label for="__tabbed_3_4">CLDICE</label><label for="__tabbed_3_5">RAINQM</label><label for="__tabbed_3_6">CLD</label><label for="__tabbed_3_7">RH</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><img alt="North_Pacific_Q" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/multiple_plots/regional/Diurnal_cycle_of_Q_chkpt_in_one_page_North_Pacific.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="North_Pacific_T" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/multiple_plots/regional/Diurnal_cycle_of_T_chkpt_in_one_page_North_Pacific.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="North_Pacific_CLDLIQ" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/multiple_plots/regional/Diurnal_cycle_of_CLDLIQ_chkpt_in_one_page_North_Pacific.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="North_Pacific_CLDICE" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/multiple_plots/regional/Diurnal_cycle_of_CLDICE_chkpt_in_one_page_North_Pacific.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="North_Pacific_RAINQM" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/multiple_plots/regional/Diurnal_cycle_of_RAINQM_chkpt_in_one_page_North_Pacific.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="North_Pacific_CLD" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/multiple_plots/regional/Diurnal_cycle_of_CLD_chkpt_in_one_page_North_Pacific.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="North_Pacific_RH" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/multiple_plots/regional/Diurnal_cycle_of_RH_chkpt_in_one_page_North_Pacific.png"/></p>
+</div>
+</div>
+</input></div>
+<h3 id="southern_hemisphere">Southern_Hemisphere</h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:7"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio"/><input id="__tabbed_4_2" name="__tabbed_4" type="radio"/><input id="__tabbed_4_3" name="__tabbed_4" type="radio"/><input id="__tabbed_4_4" name="__tabbed_4" type="radio"/><input id="__tabbed_4_5" name="__tabbed_4" type="radio"/><input id="__tabbed_4_6" name="__tabbed_4" type="radio"/><input id="__tabbed_4_7" name="__tabbed_4" type="radio"/><div class="tabbed-labels"><label for="__tabbed_4_1">Q</label><label for="__tabbed_4_2">T</label><label for="__tabbed_4_3">CLDLIQ</label><label for="__tabbed_4_4">CLDICE</label><label for="__tabbed_4_5">RAINQM</label><label for="__tabbed_4_6">CLD</label><label for="__tabbed_4_7">RH</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><img alt="Southern_Hemisphere_Q" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/multiple_plots/regional/Diurnal_cycle_of_Q_chkpt_in_one_page_Southern_Hemisphere.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="Southern_Hemisphere_T" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/multiple_plots/regional/Diurnal_cycle_of_T_chkpt_in_one_page_Southern_Hemisphere.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="Southern_Hemisphere_CLDLIQ" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/multiple_plots/regional/Diurnal_cycle_of_CLDLIQ_chkpt_in_one_page_Southern_Hemisphere.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="Southern_Hemisphere_CLDICE" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/multiple_plots/regional/Diurnal_cycle_of_CLDICE_chkpt_in_one_page_Southern_Hemisphere.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="Southern_Hemisphere_RAINQM" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/multiple_plots/regional/Diurnal_cycle_of_RAINQM_chkpt_in_one_page_Southern_Hemisphere.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="Southern_Hemisphere_CLD" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/multiple_plots/regional/Diurnal_cycle_of_CLD_chkpt_in_one_page_Southern_Hemisphere.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="Southern_Hemisphere_RH" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/multiple_plots/regional/Diurnal_cycle_of_RH_chkpt_in_one_page_Southern_Hemisphere.png"/></p>
+</div>
+</div>
+</div>
+<h3 id="california">California</h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:7"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio"/><input id="__tabbed_5_2" name="__tabbed_5" type="radio"/><input id="__tabbed_5_3" name="__tabbed_5" type="radio"/><input id="__tabbed_5_4" name="__tabbed_5" type="radio"/><input id="__tabbed_5_5" name="__tabbed_5" type="radio"/><input id="__tabbed_5_6" name="__tabbed_5" type="radio"/><input id="__tabbed_5_7" name="__tabbed_5" type="radio"/><div class="tabbed-labels"><label for="__tabbed_5_1">Q</label><label for="__tabbed_5_2">T</label><label for="__tabbed_5_3">CLDLIQ</label><label for="__tabbed_5_4">CLDICE</label><label for="__tabbed_5_5">RAINQM</label><label for="__tabbed_5_6">CLD</label><label for="__tabbed_5_7">RH</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><img alt="California_Q" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/multiple_plots/regional/Diurnal_cycle_of_Q_chkpt_in_one_page_California.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="California_T" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/multiple_plots/regional/Diurnal_cycle_of_T_chkpt_in_one_page_California.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="California_CLDLIQ" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/multiple_plots/regional/Diurnal_cycle_of_CLDLIQ_chkpt_in_one_page_California.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="California_CLDICE" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/multiple_plots/regional/Diurnal_cycle_of_CLDICE_chkpt_in_one_page_California.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="California_RAINQM" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/multiple_plots/regional/Diurnal_cycle_of_RAINQM_chkpt_in_one_page_California.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="California_CLD" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/multiple_plots/regional/Diurnal_cycle_of_CLD_chkpt_in_one_page_California.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="California_RH" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/multiple_plots/regional/Diurnal_cycle_of_RH_chkpt_in_one_page_California.png"/></p>
+</div>
+</div>
+</div>
+<h3 id="peru">Peru</h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:7"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio"/><input id="__tabbed_6_2" name="__tabbed_6" type="radio"/><input id="__tabbed_6_3" name="__tabbed_6" type="radio"/><input id="__tabbed_6_4" name="__tabbed_6" type="radio"/><input id="__tabbed_6_5" name="__tabbed_6" type="radio"/><input id="__tabbed_6_6" name="__tabbed_6" type="radio"/><input id="__tabbed_6_7" name="__tabbed_6" type="radio"/><div class="tabbed-labels"><label for="__tabbed_6_1">Q</label><label for="__tabbed_6_2">T</label><label for="__tabbed_6_3">CLDLIQ</label><label for="__tabbed_6_4">CLDICE</label><label for="__tabbed_6_5">RAINQM</label><label for="__tabbed_6_6">CLD</label><label for="__tabbed_6_7">RH</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><img alt="Peru_Q" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/multiple_plots/regional/Diurnal_cycle_of_Q_chkpt_in_one_page_Peru.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="Peru_T" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/multiple_plots/regional/Diurnal_cycle_of_T_chkpt_in_one_page_Peru.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="Peru_CLDLIQ" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/multiple_plots/regional/Diurnal_cycle_of_CLDLIQ_chkpt_in_one_page_Peru.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="Peru_CLDICE" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/multiple_plots/regional/Diurnal_cycle_of_CLDICE_chkpt_in_one_page_Peru.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="Peru_RAINQM" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/multiple_plots/regional/Diurnal_cycle_of_RAINQM_chkpt_in_one_page_Peru.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="Peru_CLD" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/multiple_plots/regional/Diurnal_cycle_of_CLD_chkpt_in_one_page_Peru.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="Peru_RH" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/multiple_plots/regional/Diurnal_cycle_of_RH_chkpt_in_one_page_Peru.png"/></p>
+</div>
+</div>
+</div>
+<h3 id="peru_trade">Peru_trade</h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="7:7"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio"/><input id="__tabbed_7_2" name="__tabbed_7" type="radio"/><input id="__tabbed_7_3" name="__tabbed_7" type="radio"/><input id="__tabbed_7_4" name="__tabbed_7" type="radio"/><input id="__tabbed_7_5" name="__tabbed_7" type="radio"/><input id="__tabbed_7_6" name="__tabbed_7" type="radio"/><input id="__tabbed_7_7" name="__tabbed_7" type="radio"/><div class="tabbed-labels"><label for="__tabbed_7_1">Q</label><label for="__tabbed_7_2">T</label><label for="__tabbed_7_3">CLDLIQ</label><label for="__tabbed_7_4">CLDICE</label><label for="__tabbed_7_5">RAINQM</label><label for="__tabbed_7_6">CLD</label><label for="__tabbed_7_7">RH</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><img alt="Peru_trade_Q" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/multiple_plots/regional/Diurnal_cycle_of_Q_chkpt_in_one_page_Peru_trade.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="Peru_trade_T" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/multiple_plots/regional/Diurnal_cycle_of_T_chkpt_in_one_page_Peru_trade.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="Peru_trade_CLDLIQ" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/multiple_plots/regional/Diurnal_cycle_of_CLDLIQ_chkpt_in_one_page_Peru_trade.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="Peru_trade_CLDICE" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/multiple_plots/regional/Diurnal_cycle_of_CLDICE_chkpt_in_one_page_Peru_trade.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="Peru_trade_RAINQM" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/multiple_plots/regional/Diurnal_cycle_of_RAINQM_chkpt_in_one_page_Peru_trade.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="Peru_trade_CLD" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/multiple_plots/regional/Diurnal_cycle_of_CLD_chkpt_in_one_page_Peru_trade.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="Peru_trade_RH" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/multiple_plots/regional/Diurnal_cycle_of_RH_chkpt_in_one_page_Peru_trade.png"/></p>
+</div>
+</div>
+</div>
+<h3 id="australia">Australia</h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="8:7"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio"/><input id="__tabbed_8_2" name="__tabbed_8" type="radio"/><input id="__tabbed_8_3" name="__tabbed_8" type="radio"/><input id="__tabbed_8_4" name="__tabbed_8" type="radio"/><input id="__tabbed_8_5" name="__tabbed_8" type="radio"/><input id="__tabbed_8_6" name="__tabbed_8" type="radio"/><input id="__tabbed_8_7" name="__tabbed_8" type="radio"/><div class="tabbed-labels"><label for="__tabbed_8_1">Q</label><label for="__tabbed_8_2">T</label><label for="__tabbed_8_3">CLDLIQ</label><label for="__tabbed_8_4">CLDICE</label><label for="__tabbed_8_5">RAINQM</label><label for="__tabbed_8_6">CLD</label><label for="__tabbed_8_7">RH</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><img alt="Australia_Q" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/multiple_plots/regional/Diurnal_cycle_of_Q_chkpt_in_one_page_Australia.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="Australia_T" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/multiple_plots/regional/Diurnal_cycle_of_T_chkpt_in_one_page_Australia.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="Australia_CLDLIQ" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/multiple_plots/regional/Diurnal_cycle_of_CLDLIQ_chkpt_in_one_page_Australia.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="Australia_CLDICE" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/multiple_plots/regional/Diurnal_cycle_of_CLDICE_chkpt_in_one_page_Australia.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="Australia_RAINQM" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/multiple_plots/regional/Diurnal_cycle_of_RAINQM_chkpt_in_one_page_Australia.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="Australia_CLD" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/multiple_plots/regional/Diurnal_cycle_of_CLD_chkpt_in_one_page_Australia.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="Australia_RH" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/multiple_plots/regional/Diurnal_cycle_of_RH_chkpt_in_one_page_Australia.png"/></p>
+</div>
+</div>
+</div>
+<h3 id="namibian">Namibian</h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="9:7"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio"/><input id="__tabbed_9_2" name="__tabbed_9" type="radio"/><input id="__tabbed_9_3" name="__tabbed_9" type="radio"/><input id="__tabbed_9_4" name="__tabbed_9" type="radio"/><input id="__tabbed_9_5" name="__tabbed_9" type="radio"/><input id="__tabbed_9_6" name="__tabbed_9" type="radio"/><input id="__tabbed_9_7" name="__tabbed_9" type="radio"/><div class="tabbed-labels"><label for="__tabbed_9_1">Q</label><label for="__tabbed_9_2">T</label><label for="__tabbed_9_3">CLDLIQ</label><label for="__tabbed_9_4">CLDICE</label><label for="__tabbed_9_5">RAINQM</label><label for="__tabbed_9_6">CLD</label><label for="__tabbed_9_7">RH</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><img alt="Namibian_Q" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/multiple_plots/regional/Diurnal_cycle_of_Q_chkpt_in_one_page_Namibian.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="Namibian_T" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/multiple_plots/regional/Diurnal_cycle_of_T_chkpt_in_one_page_Namibian.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="Namibian_CLDLIQ" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/multiple_plots/regional/Diurnal_cycle_of_CLDLIQ_chkpt_in_one_page_Namibian.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="Namibian_CLDICE" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/multiple_plots/regional/Diurnal_cycle_of_CLDICE_chkpt_in_one_page_Namibian.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="Namibian_RAINQM" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/multiple_plots/regional/Diurnal_cycle_of_RAINQM_chkpt_in_one_page_Namibian.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="Namibian_CLD" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/multiple_plots/regional/Diurnal_cycle_of_CLD_chkpt_in_one_page_Namibian.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="Namibian_RH" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/multiple_plots/regional/Diurnal_cycle_of_RH_chkpt_in_one_page_Namibian.png"/></p>
+</div>
+</div>
+</div>
+</article>
+</div>
+</div>
+</main>
+<footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a aria-label="Previous: By Variables" class="md-footer__link md-footer__link--prev" href="../05_by_variable/" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</div>
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Previous
+              </span>
+              By Variables
+            </div>
+</div>
+</a>
+<a aria-label="Next: General" class="md-footer__link md-footer__link--next" href="../../../02_zm_rad_modification/" rel="next">
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Next
+              </span>
+              General
+            </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.expand", "navigation.indexes", "toc.integrate", "content.tabs.link"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.361d90f1.min.js"}</script>
+<script src="../../../assets/javascripts/bundle.289a2a4b.min.js"></script>
+<script src="../../../javascripts/mathjax.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</body>
+</html>

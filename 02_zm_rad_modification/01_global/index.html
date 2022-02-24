@@ -218,6 +218,11 @@
         By Variables
       </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../01_basic_simulation/02_cloud_regime/06_diurnal_cycle/">
+        Diurnal Cycle
+      </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -254,14 +259,57 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#zonal-average">
+    Zonal average
+  </a>
+<nav aria-label="Zonal average" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#by-check-point">
+    by check point
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#vertical-integral-map">
+    Vertical Integral (Map)
+  </a>
+<nav aria-label="Vertical Integral (Map)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#q">
+    Q
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#t">
+    T
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cldliq">
+    CLDLIQ
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cldice">
+    CLDICE
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cld">
+    CLD
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#cape">
     CAPE
   </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#zonal-average">
-    Zonal average
-  </a>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -338,6 +386,9 @@
 <input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../../03_Sc_to_Cu/">Sc to Cu</a>
+<label for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+</label>
 </div>
 <nav aria-label="Sc to Cu" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_4">
@@ -345,6 +396,16 @@
           Sc to Cu
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../03_Sc_to_Cu/01_status/">
+        E3SM status
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../03_Sc_to_Cu/02_diurnal/">
+        Diurnal Cycle
+      </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -473,6 +534,11 @@
         Medeiros et al. (2012,JC)
       </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../99_Personal_notes/05_references/Eastman_and_Warren_2014_JC/">
+        Eastman and Warren (2014,JC)
+      </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -490,50 +556,9 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="global-view">Global view</h1>
-<h2 id="cape">CAPE</h2>
-<ul>
-<li>expectation from the test simulation: less turbulence in DEEPCU and more in CLUBB</li>
-<li>After the modification, remaining CAPE after DEEPCU process is positive. But, due to the atmospheric motions (+other processes), CAPEs in stratocumulus regions are smaller than control simulation.</li>
-</ul>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:11"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><input id="__tabbed_1_3" name="__tabbed_1" type="radio"><input id="__tabbed_1_4" name="__tabbed_1" type="radio"><input id="__tabbed_1_5" name="__tabbed_1" type="radio"><input id="__tabbed_1_6" name="__tabbed_1" type="radio"><input id="__tabbed_1_7" name="__tabbed_1" type="radio"><input id="__tabbed_1_8" name="__tabbed_1" type="radio"><input id="__tabbed_1_9" name="__tabbed_1" type="radio"><input id="__tabbed_1_10" name="__tabbed_1" type="radio"><input id="__tabbed_1_11" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">RAD</label><label for="__tabbed_1_2">IONDRAG</label><label for="__tabbed_1_3">ACRADRVT</label><label for="__tabbed_1_4">DYNEND</label><label for="__tabbed_1_5">DRYADJ</label><label for="__tabbed_1_6">DEEPCU</label><label for="__tabbed_1_7">BCRADADD</label><label for="__tabbed_1_8">CLUBB</label><label for="__tabbed_1_9">CUDET</label><label for="__tabbed_1_10">CLDMIC</label><label for="__tabbed_1_11">AERWETRM</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<p><img alt="RAD" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/ctrl/CAPE_vertical_integral_by_variable_and_add_substeps-0.png"/> </p>
-</div>
-<div class="tabbed-block">
-<p><img alt="RAD" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/ctrl/CAPE_vertical_integral_by_variable_and_add_substeps-1.png"/></p>
-</div>
-<div class="tabbed-block">
-<p><img alt="RAD" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/ctrl/CAPE_vertical_integral_by_variable_and_add_substeps-2.png"/></p>
-</div>
-<div class="tabbed-block">
-<p><img alt="RAD" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/ctrl/CAPE_vertical_integral_by_variable_and_add_substeps-3.png"/></p>
-</div>
-<div class="tabbed-block">
-<p><img alt="RAD" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/ctrl/CAPE_vertical_integral_by_variable_and_add_substeps-4.png"/></p>
-</div>
-<div class="tabbed-block">
-<p><img alt="RAD" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/ctrl/CAPE_vertical_integral_by_variable_and_add_substeps-5.png"/></p>
-</div>
-<div class="tabbed-block">
-<p><img alt="RAD" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/ctrl/CAPE_vertical_integral_by_variable_and_add_substeps-6.png"/></p>
-</div>
-<div class="tabbed-block">
-<p><img alt="RAD" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/ctrl/CAPE_vertical_integral_by_variable_and_add_substeps-7.png"/></p>
-</div>
-<div class="tabbed-block">
-<p><img alt="RAD" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/ctrl/CAPE_vertical_integral_by_variable_and_add_substeps-8.png"/></p>
-</div>
-<div class="tabbed-block">
-<p><img alt="RAD" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/ctrl/CAPE_vertical_integral_by_variable_and_add_substeps-9.png"/></p>
-</div>
-<div class="tabbed-block">
-<p><img alt="RAD" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/ctrl/CAPE_vertical_integral_by_variable_and_add_substeps-10.png"/></p>
-</div>
-</div>
-</input></input></input></input></input></input></input></input></input></input></input></div>
 <h2 id="zonal-average">Zonal average</h2>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:12"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><input id="__tabbed_2_3" name="__tabbed_2" type="radio"><input id="__tabbed_2_4" name="__tabbed_2" type="radio"><input id="__tabbed_2_5" name="__tabbed_2" type="radio"/><input id="__tabbed_2_6" name="__tabbed_2" type="radio"/><input id="__tabbed_2_7" name="__tabbed_2" type="radio"/><input id="__tabbed_2_8" name="__tabbed_2" type="radio"/><input id="__tabbed_2_9" name="__tabbed_2" type="radio"/><input id="__tabbed_2_10" name="__tabbed_2" type="radio"/><input id="__tabbed_2_11" name="__tabbed_2" type="radio"/><input id="__tabbed_2_12" name="__tabbed_2" type="radio"/><div class="tabbed-labels"><label for="__tabbed_2_1">RAD</label><label for="__tabbed_2_2">IONDRAG</label><label for="__tabbed_2_3">ACRADRVT</label><label for="__tabbed_2_4">DYNEND</label><label for="__tabbed_2_5">DRYADJ</label><label for="__tabbed_2_6">DEEPCU</label><label for="__tabbed_2_7">BCRADADD</label><label for="__tabbed_2_8">CLUBB</label><label for="__tabbed_2_9">CUDET</label><label for="__tabbed_2_10">CLDMIC</label><label for="__tabbed_2_11">MACDIAG</label><label for="__tabbed_2_12">AERWETRM</label></div>
+<h3 id="by-check-point">by check point</h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:12"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><input id="__tabbed_1_3" name="__tabbed_1" type="radio"><input id="__tabbed_1_4" name="__tabbed_1" type="radio"><input id="__tabbed_1_5" name="__tabbed_1" type="radio"><input id="__tabbed_1_6" name="__tabbed_1" type="radio"><input id="__tabbed_1_7" name="__tabbed_1" type="radio"><input id="__tabbed_1_8" name="__tabbed_1" type="radio"><input id="__tabbed_1_9" name="__tabbed_1" type="radio"><input id="__tabbed_1_10" name="__tabbed_1" type="radio"><input id="__tabbed_1_11" name="__tabbed_1" type="radio"><input id="__tabbed_1_12" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">RAD</label><label for="__tabbed_1_2">IONDRAG</label><label for="__tabbed_1_3">ACRADRVT</label><label for="__tabbed_1_4">DYNEND</label><label for="__tabbed_1_5">DRYADJ</label><label for="__tabbed_1_6">DEEPCU</label><label for="__tabbed_1_7">BCRADADD</label><label for="__tabbed_1_8">CLUBB</label><label for="__tabbed_1_9">CUDET</label><label for="__tabbed_1_10">CLDMIC</label><label for="__tabbed_1_11">MACDIAG</label><label for="__tabbed_1_12">AERWETRM</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p><img alt="RAD" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/global/Diff_Zonal_mean_by_variable_and_add_substep_RAD-0.png"/><img alt="RAD" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/global/Diff_Zonal_mean_by_variable_and_add_substep_RAD-1.png"/><img alt="RAD" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/global/Diff_Zonal_mean_by_variable_and_add_substep_RAD-2.png"/> <img alt="RAD" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/global/Diff_Zonal_mean_by_variable_and_add_substep_RAD-3.png"/></p>
@@ -572,7 +597,255 @@
 <p><img alt="AERWETRM" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/global/Diff_Zonal_mean_by_variable_and_add_substep_AERWETRM-0.png"/><img alt="AERWETRM" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/global/Diff_Zonal_mean_by_variable_and_add_substep_AERWETRM-1.png"/><img alt="AERWETRM" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/global/Diff_Zonal_mean_by_variable_and_add_substep_AERWETRM-2.png"/> <img alt="AERWETRM" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/global/Diff_Zonal_mean_by_variable_and_add_substep_AERWETRM-3.png"/></p>
 </div>
 </div>
-</input></input></input></input></div>
+</input></input></input></input></input></input></input></input></input></input></input></input></div>
+<h2 id="vertical-integral-map">Vertical Integral (Map)</h2>
+<h3 id="q">Q</h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:12"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><input id="__tabbed_2_3" name="__tabbed_2" type="radio"><input id="__tabbed_2_4" name="__tabbed_2" type="radio"/><input id="__tabbed_2_5" name="__tabbed_2" type="radio"/><input id="__tabbed_2_6" name="__tabbed_2" type="radio"/><input id="__tabbed_2_7" name="__tabbed_2" type="radio"/><input id="__tabbed_2_8" name="__tabbed_2" type="radio"/><input id="__tabbed_2_9" name="__tabbed_2" type="radio"/><input id="__tabbed_2_10" name="__tabbed_2" type="radio"/><input id="__tabbed_2_11" name="__tabbed_2" type="radio"/><input id="__tabbed_2_12" name="__tabbed_2" type="radio"/><div class="tabbed-labels"><label for="__tabbed_2_1">RAD</label><label for="__tabbed_2_2">IONDRAG</label><label for="__tabbed_2_3">ACRADRVT</label><label for="__tabbed_2_4">DYNEND</label><label for="__tabbed_2_5">DRYADJ</label><label for="__tabbed_2_6">DEEPCU</label><label for="__tabbed_2_7">BCRADADD</label><label for="__tabbed_2_8">CLUBB</label><label for="__tabbed_2_9">CUDET</label><label for="__tabbed_2_10">CLDMIC</label><label for="__tabbed_2_11">MACDIAG</label><label for="__tabbed_2_12">AERWETRM</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><img alt="Q_RAD" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/global/Diff_vertical_integral_add_substeps_Q_RAD.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="Q_IONDRAG" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/global/Diff_vertical_integral_add_substeps_Q_IONDRAG.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="Q_ACRADRVT" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/global/Diff_vertical_integral_add_substeps_Q_ACRADRVT.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="Q_DYNEND" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/global/Diff_vertical_integral_add_substeps_Q_DYNEND.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="Q_DRYADJ" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/global/Diff_vertical_integral_add_substeps_Q_DRYADJ.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="Q_DEEPCU" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/global/Diff_vertical_integral_add_substeps_Q_DEEPCU.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="Q_BCRADADD" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/global/Diff_vertical_integral_add_substeps_Q_BCRADADD.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="Q_CLUBB" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/global/Diff_vertical_integral_add_substeps_Q_CLUBB.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="Q_CUDET" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/global/Diff_vertical_integral_add_substeps_Q_CUDET.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="Q_CLDMIC" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/global/Diff_vertical_integral_add_substeps_Q_CLDMIC.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="Q_MACDIAG" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/global/Diff_vertical_integral_add_substeps_Q_MACDIAG.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="Q_AERWETRM" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/global/Diff_vertical_integral_add_substeps_Q_AERWETRM.png"/></p>
+</div>
+</div>
+</input></input></input></div>
+<h3 id="t">T</h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:12"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio"/><input id="__tabbed_3_2" name="__tabbed_3" type="radio"/><input id="__tabbed_3_3" name="__tabbed_3" type="radio"/><input id="__tabbed_3_4" name="__tabbed_3" type="radio"/><input id="__tabbed_3_5" name="__tabbed_3" type="radio"/><input id="__tabbed_3_6" name="__tabbed_3" type="radio"/><input id="__tabbed_3_7" name="__tabbed_3" type="radio"/><input id="__tabbed_3_8" name="__tabbed_3" type="radio"/><input id="__tabbed_3_9" name="__tabbed_3" type="radio"/><input id="__tabbed_3_10" name="__tabbed_3" type="radio"/><input id="__tabbed_3_11" name="__tabbed_3" type="radio"/><input id="__tabbed_3_12" name="__tabbed_3" type="radio"/><div class="tabbed-labels"><label for="__tabbed_3_1">RAD</label><label for="__tabbed_3_2">IONDRAG</label><label for="__tabbed_3_3">ACRADRVT</label><label for="__tabbed_3_4">DYNEND</label><label for="__tabbed_3_5">DRYADJ</label><label for="__tabbed_3_6">DEEPCU</label><label for="__tabbed_3_7">BCRADADD</label><label for="__tabbed_3_8">CLUBB</label><label for="__tabbed_3_9">CUDET</label><label for="__tabbed_3_10">CLDMIC</label><label for="__tabbed_3_11">MACDIAG</label><label for="__tabbed_3_12">AERWETRM</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><img alt="T_RAD" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/global/Diff_vertical_integral_add_substeps_T_RAD.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="T_IONDRAG" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/global/Diff_vertical_integral_add_substeps_T_IONDRAG.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="T_ACRADRVT" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/global/Diff_vertical_integral_add_substeps_T_ACRADRVT.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="T_DYNEND" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/global/Diff_vertical_integral_add_substeps_T_DYNEND.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="T_DRYADJ" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/global/Diff_vertical_integral_add_substeps_T_DRYADJ.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="T_DEEPCU" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/global/Diff_vertical_integral_add_substeps_T_DEEPCU.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="T_BCRADADD" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/global/Diff_vertical_integral_add_substeps_T_BCRADADD.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="T_CLUBB" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/global/Diff_vertical_integral_add_substeps_T_CLUBB.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="T_CUDET" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/global/Diff_vertical_integral_add_substeps_T_CUDET.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="T_CLDMIC" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/global/Diff_vertical_integral_add_substeps_T_CLDMIC.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="T_MACDIAG" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/global/Diff_vertical_integral_add_substeps_T_MACDIAG.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="T_AERWETRM" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/global/Diff_vertical_integral_add_substeps_T_AERWETRM.png"/></p>
+</div>
+</div>
+</div>
+<h3 id="cldliq">CLDLIQ</h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:12"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio"/><input id="__tabbed_4_2" name="__tabbed_4" type="radio"/><input id="__tabbed_4_3" name="__tabbed_4" type="radio"/><input id="__tabbed_4_4" name="__tabbed_4" type="radio"/><input id="__tabbed_4_5" name="__tabbed_4" type="radio"/><input id="__tabbed_4_6" name="__tabbed_4" type="radio"/><input id="__tabbed_4_7" name="__tabbed_4" type="radio"/><input id="__tabbed_4_8" name="__tabbed_4" type="radio"/><input id="__tabbed_4_9" name="__tabbed_4" type="radio"/><input id="__tabbed_4_10" name="__tabbed_4" type="radio"/><input id="__tabbed_4_11" name="__tabbed_4" type="radio"/><input id="__tabbed_4_12" name="__tabbed_4" type="radio"/><div class="tabbed-labels"><label for="__tabbed_4_1">RAD</label><label for="__tabbed_4_2">IONDRAG</label><label for="__tabbed_4_3">ACRADRVT</label><label for="__tabbed_4_4">DYNEND</label><label for="__tabbed_4_5">DRYADJ</label><label for="__tabbed_4_6">DEEPCU</label><label for="__tabbed_4_7">BCRADADD</label><label for="__tabbed_4_8">CLUBB</label><label for="__tabbed_4_9">CUDET</label><label for="__tabbed_4_10">CLDMIC</label><label for="__tabbed_4_11">MACDIAG</label><label for="__tabbed_4_12">AERWETRM</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><img alt="CLDLIQ_RAD" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/global/Diff_vertical_integral_add_substeps_CLDLIQ_RAD.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="CLDLIQ_IONDRAG" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/global/Diff_vertical_integral_add_substeps_CLDLIQ_IONDRAG.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="CLDLIQ_ACRADRVT" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/global/Diff_vertical_integral_add_substeps_CLDLIQ_ACRADRVT.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="CLDLIQ_DYNEND" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/global/Diff_vertical_integral_add_substeps_CLDLIQ_DYNEND.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="CLDLIQ_DRYADJ" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/global/Diff_vertical_integral_add_substeps_CLDLIQ_DRYADJ.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="CLDLIQ_DEEPCU" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/global/Diff_vertical_integral_add_substeps_CLDLIQ_DEEPCU.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="CLDLIQ_BCRADADD" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/global/Diff_vertical_integral_add_substeps_CLDLIQ_BCRADADD.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="CLDLIQ_CLUBB" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/global/Diff_vertical_integral_add_substeps_CLDLIQ_CLUBB.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="CLDLIQ_CUDET" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/global/Diff_vertical_integral_add_substeps_CLDLIQ_CUDET.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="CLDLIQ_CLDMIC" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/global/Diff_vertical_integral_add_substeps_CLDLIQ_CLDMIC.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="CLDLIQ_MACDIAG" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/global/Diff_vertical_integral_add_substeps_CLDLIQ_MACDIAG.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="CLDLIQ_AERWETRM" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/global/Diff_vertical_integral_add_substeps_CLDLIQ_AERWETRM.png"/></p>
+</div>
+</div>
+</div>
+<h3 id="cldice">CLDICE</h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:12"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio"/><input id="__tabbed_5_2" name="__tabbed_5" type="radio"/><input id="__tabbed_5_3" name="__tabbed_5" type="radio"/><input id="__tabbed_5_4" name="__tabbed_5" type="radio"/><input id="__tabbed_5_5" name="__tabbed_5" type="radio"/><input id="__tabbed_5_6" name="__tabbed_5" type="radio"/><input id="__tabbed_5_7" name="__tabbed_5" type="radio"/><input id="__tabbed_5_8" name="__tabbed_5" type="radio"/><input id="__tabbed_5_9" name="__tabbed_5" type="radio"/><input id="__tabbed_5_10" name="__tabbed_5" type="radio"/><input id="__tabbed_5_11" name="__tabbed_5" type="radio"/><input id="__tabbed_5_12" name="__tabbed_5" type="radio"/><div class="tabbed-labels"><label for="__tabbed_5_1">RAD</label><label for="__tabbed_5_2">IONDRAG</label><label for="__tabbed_5_3">ACRADRVT</label><label for="__tabbed_5_4">DYNEND</label><label for="__tabbed_5_5">DRYADJ</label><label for="__tabbed_5_6">DEEPCU</label><label for="__tabbed_5_7">BCRADADD</label><label for="__tabbed_5_8">CLUBB</label><label for="__tabbed_5_9">CUDET</label><label for="__tabbed_5_10">CLDMIC</label><label for="__tabbed_5_11">MACDIAG</label><label for="__tabbed_5_12">AERWETRM</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><img alt="CLDICE_RAD" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/global/Diff_vertical_integral_add_substeps_CLDICE_RAD.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="CLDICE_IONDRAG" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/global/Diff_vertical_integral_add_substeps_CLDICE_IONDRAG.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="CLDICE_ACRADRVT" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/global/Diff_vertical_integral_add_substeps_CLDICE_ACRADRVT.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="CLDICE_DYNEND" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/global/Diff_vertical_integral_add_substeps_CLDICE_DYNEND.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="CLDICE_DRYADJ" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/global/Diff_vertical_integral_add_substeps_CLDICE_DRYADJ.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="CLDICE_DEEPCU" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/global/Diff_vertical_integral_add_substeps_CLDICE_DEEPCU.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="CLDICE_BCRADADD" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/global/Diff_vertical_integral_add_substeps_CLDICE_BCRADADD.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="CLDICE_CLUBB" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/global/Diff_vertical_integral_add_substeps_CLDICE_CLUBB.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="CLDICE_CUDET" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/global/Diff_vertical_integral_add_substeps_CLDICE_CUDET.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="CLDICE_CLDMIC" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/global/Diff_vertical_integral_add_substeps_CLDICE_CLDMIC.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="CLDICE_MACDIAG" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/global/Diff_vertical_integral_add_substeps_CLDICE_MACDIAG.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="CLDICE_AERWETRM" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/global/Diff_vertical_integral_add_substeps_CLDICE_AERWETRM.png"/></p>
+</div>
+</div>
+</div>
+<h3 id="cld">CLD</h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:12"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio"/><input id="__tabbed_6_2" name="__tabbed_6" type="radio"/><input id="__tabbed_6_3" name="__tabbed_6" type="radio"/><input id="__tabbed_6_4" name="__tabbed_6" type="radio"/><input id="__tabbed_6_5" name="__tabbed_6" type="radio"/><input id="__tabbed_6_6" name="__tabbed_6" type="radio"/><input id="__tabbed_6_7" name="__tabbed_6" type="radio"/><input id="__tabbed_6_8" name="__tabbed_6" type="radio"/><input id="__tabbed_6_9" name="__tabbed_6" type="radio"/><input id="__tabbed_6_10" name="__tabbed_6" type="radio"/><input id="__tabbed_6_11" name="__tabbed_6" type="radio"/><input id="__tabbed_6_12" name="__tabbed_6" type="radio"/><div class="tabbed-labels"><label for="__tabbed_6_1">RAD</label><label for="__tabbed_6_2">IONDRAG</label><label for="__tabbed_6_3">ACRADRVT</label><label for="__tabbed_6_4">DYNEND</label><label for="__tabbed_6_5">DRYADJ</label><label for="__tabbed_6_6">DEEPCU</label><label for="__tabbed_6_7">BCRADADD</label><label for="__tabbed_6_8">CLUBB</label><label for="__tabbed_6_9">CUDET</label><label for="__tabbed_6_10">CLDMIC</label><label for="__tabbed_6_11">MACDIAG</label><label for="__tabbed_6_12">AERWETRM</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><img alt="CLD_RAD" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/global/Diff_vertical_integral_add_substeps_CLD_RAD.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="CLD_IONDRAG" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/global/Diff_vertical_integral_add_substeps_CLD_IONDRAG.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="CLD_ACRADRVT" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/global/Diff_vertical_integral_add_substeps_CLD_ACRADRVT.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="CLD_DYNEND" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/global/Diff_vertical_integral_add_substeps_CLD_DYNEND.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="CLD_DRYADJ" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/global/Diff_vertical_integral_add_substeps_CLD_DRYADJ.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="CLD_DEEPCU" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/global/Diff_vertical_integral_add_substeps_CLD_DEEPCU.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="CLD_BCRADADD" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/global/Diff_vertical_integral_add_substeps_CLD_BCRADADD.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="CLD_CLUBB" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/global/Diff_vertical_integral_add_substeps_CLD_CLUBB.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="CLD_CUDET" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/global/Diff_vertical_integral_add_substeps_CLD_CUDET.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="CLD_CLDMIC" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/global/Diff_vertical_integral_add_substeps_CLD_CLDMIC.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="CLD_MACDIAG" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/global/Diff_vertical_integral_add_substeps_CLD_MACDIAG.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="CLD_AERWETRM" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/global/Diff_vertical_integral_add_substeps_CLD_AERWETRM.png"/></p>
+</div>
+</div>
+</div>
+<h3 id="cape">CAPE</h3>
+<ul>
+<li>expectation from the test simulation: less turbulence in DEEPCU and more in CLUBB</li>
+<li>After the modification, remaining CAPE after DEEPCU process is positive. But, due to the atmospheric motions (+other processes), CAPEs in stratocumulus regions are smaller than control simulation.</li>
+</ul>
+<div class="tabbed-set tabbed-alternate" data-tabs="7:11"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio"/><input id="__tabbed_7_2" name="__tabbed_7" type="radio"/><input id="__tabbed_7_3" name="__tabbed_7" type="radio"/><input id="__tabbed_7_4" name="__tabbed_7" type="radio"/><input id="__tabbed_7_5" name="__tabbed_7" type="radio"/><input id="__tabbed_7_6" name="__tabbed_7" type="radio"/><input id="__tabbed_7_7" name="__tabbed_7" type="radio"/><input id="__tabbed_7_8" name="__tabbed_7" type="radio"/><input id="__tabbed_7_9" name="__tabbed_7" type="radio"/><input id="__tabbed_7_10" name="__tabbed_7" type="radio"/><input id="__tabbed_7_11" name="__tabbed_7" type="radio"/><div class="tabbed-labels"><label for="__tabbed_7_1">RAD</label><label for="__tabbed_7_2">IONDRAG</label><label for="__tabbed_7_3">ACRADRVT</label><label for="__tabbed_7_4">DYNEND</label><label for="__tabbed_7_5">DRYADJ</label><label for="__tabbed_7_6">DEEPCU</label><label for="__tabbed_7_7">BCRADADD</label><label for="__tabbed_7_8">CLUBB</label><label for="__tabbed_7_9">CUDET</label><label for="__tabbed_7_10">CLDMIC</label><label for="__tabbed_7_11">AERWETRM</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><img alt="RAD" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/ctrl/CAPE_vertical_integral_by_variable_and_add_substeps-0.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="RAD" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/ctrl/CAPE_vertical_integral_by_variable_and_add_substeps-1.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="RAD" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/ctrl/CAPE_vertical_integral_by_variable_and_add_substeps-2.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="RAD" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/ctrl/CAPE_vertical_integral_by_variable_and_add_substeps-3.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="RAD" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/ctrl/CAPE_vertical_integral_by_variable_and_add_substeps-4.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="RAD" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/ctrl/CAPE_vertical_integral_by_variable_and_add_substeps-5.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="RAD" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/ctrl/CAPE_vertical_integral_by_variable_and_add_substeps-6.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="RAD" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/ctrl/CAPE_vertical_integral_by_variable_and_add_substeps-7.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="RAD" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/ctrl/CAPE_vertical_integral_by_variable_and_add_substeps-8.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="RAD" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/ctrl/CAPE_vertical_integral_by_variable_and_add_substeps-9.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="RAD" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/ctrl/CAPE_vertical_integral_by_variable_and_add_substeps-10.png"/></p>
+</div>
+</div>
+</div>
 </article>
 </div>
 </div>

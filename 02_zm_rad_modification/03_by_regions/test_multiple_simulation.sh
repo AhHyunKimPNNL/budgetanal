@@ -5,13 +5,13 @@ regions="Australia California ITCZ Nambian North_Atlantic North_Pacific Peru Per
 #files=$(find ./ -name "*.md" | sort)
 vars="Q T CLDLIQ CLDICE CLD CAPE"
 FigDir=https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/differences/by_regions/
-FigName=Compare_test_n_ctrl_
+FigName=Compare_multiple_cases_
 
 for region in $regions; do
   file=$(find ./ -name "*${region}.md")
   echo $file
   echo " " >> $file
-  echo "## Test vs. CTRL" >> $file
+  echo "## Multiple simulations" >> $file
   echo " " >> $file
   for var in $vars; do
     echo "### "$var >> $file

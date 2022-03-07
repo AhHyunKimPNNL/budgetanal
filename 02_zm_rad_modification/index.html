@@ -644,16 +644,15 @@
 <ul>
 <li>DEEPCU: Reduction of convection due to radiative heating lead to:<ul>
 <li>increase in Q in the lower part of the atmosphere due to less pumping of air.</li>
-<li>decrease in Q in the cloud layer due to less detrainment.</li>
+<li>decrease in Q in the cloud layer due to less 'pumping up the air'.
+<img alt="Q" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/differences/by_regions/Compare_test_n_ctrl_Peru_trade_Q_CLUBB_n_DEEPCU.png"/></li>
 </ul>
 </li>
 <li>CLUBB: put convection due to radiative heating back.<ul>
-<li>excessive instability from DEEPCU allow more turbulence especially in trade cumulus region.</li>
+<li>surplus instability from DEEPCU allow more turbulence especially in trade cumulus region. <img alt="turbulence" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/differences/Diff_Vertical_profiles_of_single_Variable-2.png"/></li>
 <li>more clouds forms in the lower part of the atmosphere due to the excessive Q </li>
-<li>but, clouds decrease near the cloud top due to the less detrainment during DEEPCU<ul>
-<li>e.g., Gamache and Houze (1983) estimate that as much as 60% to 75% of the condensate in the stratiform portion of the convective system comes from detrainment of hydrometeors from the convective updrafts.</li>
-</ul>
-</li>
+<li>but, clouds decrease near the cloud top because less Q is pumped up during DEEPCU</li>
+<li><img alt="CLDLIQ" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/differences/by_regions/Compare_test_n_ctrl_Peru_trade_CLDLIQ_CLUBB_n_DEEPCU.png"/></li>
 </ul>
 </li>
 <li>
@@ -665,9 +664,16 @@
 <li>
 <p>next plan</p>
 <ul>
-<li>check diurnal cycle of these simulations --&gt; to see the effect of detrainment </li>
-<li>change the location of DEEPCU process</li>
+<li>check detrainment/entrainment effect on shallow cumulus<ul>
+<li>check diurnal cycle of these simulations  </li>
+<li>reduce CUDET CLDLIQ and see if the changes in cloud is almost equilvalant to the 'test' simulation </li>
+</ul>
+</li>
+<li>change the location of DEEPCU process (e.g., <a href="https://doi.org/10.1002/2017MS001067">Donahue and Caldwell, 2018</a><ul>
+<li>to make CLUBB trigger shallow cumulus before DEEPCU does --&gt; <a href="https://compy-dtn.pnl.gov/kima320/pictures/q_budget_rad_compy_FC5AV1C-L_ne30_maint-1.0_cnd_diag1.1/Compare_INC_Diff(relo_DC-ctrl)Vertical_profiles_by_variable_and_chkpt_in_one_page.pdf">result</a></li>
 <li>find new ways to enhance the detrainment/entrainment effect during CLUBB.</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>

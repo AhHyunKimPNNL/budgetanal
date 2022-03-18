@@ -244,6 +244,11 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="00_notes/">
+        Notes
+      </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="01_global/">
         Global
       </a>
@@ -254,13 +259,13 @@
       </a>
 </li>
 <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_3_4" id="__nav_3_4" type="checkbox"/>
-<label class="md-nav__link" for="__nav_3_4">
+<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_3_5" id="__nav_3_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_5">
           by regions
           <span class="md-nav__icon md-icon"></span>
 </label>
 <nav aria-label="by regions" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_3_4">
+<label class="md-nav__title" for="__nav_3_5">
 <span class="md-nav__icon md-icon"></span>
           by regions
         </label>
@@ -555,6 +560,27 @@
   I{add radiative heat flux} --&gt; F;
   G[other processes] --&gt; A;
 </div></li>
+<li>
+<p>det setting
+  dlf = dlf*(1-0.2)</p>
+</li>
+<li>
+<p>delayZM setting
+<div class="mermaid">graph LR
+  A[DRYADJ state variable] --&gt; B;
+  A --&gt; C;
+  A --&gt; D;
+  B[DEEPCU] --&gt; {ptend}E;
+  C[CLUBB01]  --&gt; {ptend}E;
+  D[CLDMIC01] --&gt; {ptend}E;
+  E[update state] --&gt; F[CLUBB02];
+</div></p>
+</li>
+<li>noclubbdet setting
+<div class="mermaid">graph LR
+  A[DEEPCU] --&gt; {remove radheat}B;
+  B[MACMIC]  --&gt; {add radheat}C[STCLD];
+</div></li>
 </ul>
 <h3 id="experiments">Experiments</h3>
 <ul>
@@ -562,6 +588,17 @@
 <li>Test run: <code>radheat_cpl_opt = 2</code></li>
 <li>Test2 run: <code>radheat_cpl_opt = 1</code></li>
 <li>Test3 run: <code>radheat_cpl_opt = 3</code></li>
+<li>det setting:<ul>
+<li><code>radheat_cpl_opt = 0</code></li>
+<li><code>detrainment_cpl_percent = 0.2</code></li>
+</ul>
+</li>
+<li>delayZM setting:<ul>
+<li><code>radheat_cpl_opt = 0</code></li>
+<li><code>l_delay_deepcu = .true.</code></li>
+</ul>
+</li>
+<li>noclubbdet setting: <code>radheat_cpl_opt = 4</code></li>
 </ul>
 <h3 id="common-settings-for-condidiag">Common settings for CondiDiag</h3>
 <table>
@@ -640,43 +677,6 @@
 </ul>
 </li>
 </ul>
-<h2 id="analysis">Analysis</h2>
-<ul>
-<li>DEEPCU: Reduction of convection due to radiative heating lead to:<ul>
-<li>increase in Q in the lower part of the atmosphere due to less pumping of air.</li>
-<li>decrease in Q in the cloud layer due to less 'pumping up the air'.
-<img alt="Q" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/differences/by_regions/Compare_test_n_ctrl_Peru_trade_Q_CLUBB_n_DEEPCU.png"/></li>
-</ul>
-</li>
-<li>CLUBB: put convection due to radiative heating back.<ul>
-<li>surplus instability from DEEPCU allow more turbulence especially in trade cumulus region. <img alt="turbulence" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/differences/Diff_Vertical_profiles_of_single_Variable-2.png"/></li>
-<li>more clouds forms in the lower part of the atmosphere due to the excessive Q </li>
-<li>but, clouds decrease near the cloud top because less Q is pumped up during DEEPCU</li>
-<li><img alt="CLDLIQ" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/differences/by_regions/Compare_test_n_ctrl_Peru_trade_CLDLIQ_CLUBB_n_DEEPCU.png"/></li>
-</ul>
-</li>
-<li>
-<p>The response is not as active due to high vertical resolution (<a href="https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2018MS001505">Guo et al., 2019</a>)</p>
-<ul>
-<li>Figure 14 <img alt="" src="https://agupubs.onlinelibrary.wiley.com/cms/asset/866709e8-a397-44b1-bb8b-73355738fede/jame20872-fig-0014-m.png"/></li>
-</ul>
-</li>
-<li>
-<p>next plan</p>
-<ul>
-<li>check detrainment/entrainment effect on shallow cumulus<ul>
-<li>check diurnal cycle of these simulations  </li>
-<li>reduce CUDET CLDLIQ and see if the changes in cloud is almost equilvalant to the 'test' simulation </li>
-</ul>
-</li>
-<li>change the location of DEEPCU process (e.g., <a href="https://doi.org/10.1002/2017MS001067">Donahue and Caldwell, 2018</a><ul>
-<li>to make CLUBB trigger shallow cumulus before DEEPCU does --&gt; <a href="https://compy-dtn.pnl.gov/kima320/pictures/q_budget_rad_compy_FC5AV1C-L_ne30_maint-1.0_cnd_diag1.1/Compare_INC_Diff(relo_DC-ctrl)Vertical_profiles_by_variable_and_chkpt_in_one_page.pdf">result</a></li>
-<li>find new ways to enhance the detrainment/entrainment effect during CLUBB.</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
 </article>
 </div>
 </div>
@@ -696,13 +696,13 @@
             </div>
 </div>
 </a>
-<a aria-label="Next: Global" class="md-footer__link md-footer__link--next" href="01_global/" rel="next">
+<a aria-label="Next: Notes" class="md-footer__link md-footer__link--next" href="00_notes/" rel="next">
 <div class="md-footer__title">
 <div class="md-ellipsis">
 <span class="md-footer__direction">
                 Next
               </span>
-              Global
+              Notes
             </div>
 </div>
 <div class="md-footer__button md-icon">

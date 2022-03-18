@@ -1,13 +1,14 @@
 #!/bin/bash
-filedir=/compyfs/www/kima320/pictures/cosp_compy_FC5AV1C-L_ne30_maint-1.0_cnd_diag1.1/
-#filedir=/compyfs/www/kima320/pictures/rad_ctrl_compy_FC5AV1C-L_ne30_gmd_2020_330_with_forcing_method/
-#filedir=/compyfs/www/kima320/Budget_Analysis/With_forcing_method/Control/
+#filedir=/compyfs/www/kima320/pictures/cosp_compy_FC5AV1C-L_ne30_maint-1.0_cnd_diag1.1/
+casename=rad_det_compy_FC5AV1C-L_ne30_gmd_2020_330_with_forcing_method
+filedir=/compyfs/www/kima320/pictures/$casename/
+#filedir=/compyfs/www/kima320/Budget_Analysis/With_forcing_method/Difference/
 #filedir=/compyfs/www/kima320/Budget_Analysis/Cloud_regime/
 #filedir=/compyfs/www/kima320/pictures/q_budget_rad_compy_FC5AV1C-L_ne30_maint-1.0_cnd_diag1.1/
-filename="Cross_section_compare_with_era5_water_Peru_change_deepcu_loc"
+filename="Diff(det-ctrl)_Vertical_profiles_of_single_Variable1"
 #filename=Vertical_profiles_by_region_and_chkpt_in_one_page
 #savedir=/compyfs/www/kima320/png_plot/Budget_Analysis/03_Sc_Cu/
-savedir=/compyfs/www/kima320/png_plot/Budget_Analysis/03_Sc_Cu/
+savedir=/compyfs/www/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/
 #savedir=/qfs/people/kima320/git_work/budgetanal/docs/02_cloud_regime/img/
 
 convert -density 800 ${filedir}${filename}.pdf -resize 25% ${savedir}${filename}.png

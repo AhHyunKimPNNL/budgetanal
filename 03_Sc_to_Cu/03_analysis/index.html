@@ -244,6 +244,11 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="../../02_zm_rad_modification/00_notes/">
+        Notes
+      </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../../02_zm_rad_modification/01_global/">
         Global
       </a>
@@ -254,13 +259,13 @@
       </a>
 </li>
 <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_3_4" id="__nav_3_4" type="checkbox"/>
-<label class="md-nav__link" for="__nav_3_4">
+<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_3_5" id="__nav_3_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_5">
           by regions
           <span class="md-nav__icon md-icon"></span>
 </label>
 <nav aria-label="by regions" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_3_4">
+<label class="md-nav__title" for="__nav_3_5">
 <span class="md-nav__icon md-icon"></span>
           by regions
         </label>
@@ -353,6 +358,25 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="#20220302">
     2022.03.02
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cloud-radiative-feedback-effect">
+    Cloud radiative feedback effect.
+  </a>
+<nav aria-label="Cloud radiative feedback effect." class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#result">
+    result
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#-check-diurnal-cycle-to-see-if-the-cloud-breaking-had-been-really-decrease">
+    - check diurnal cycle to see if the cloud breaking had been really decrease
   </a>
 </li>
 </ul>
@@ -553,10 +577,13 @@
 <p>Low-level clouds are underestimated in the stratocumulus (Sc) to cumulus (Cu) cloud regime. <img alt="CALIPSO low and high level clouds and zonal mean" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/Zonal_average_w_sat_cloud_products.png"/></p>
 </li>
 <li>
+<p>Bogenschutz et al (<a href="https://doi.org/10.1029/2020MS002239">2021</a>) also found that E3SM tends to produce too little cloud fraction compared to the C3M (Kato et al., 2010) satellite observations, but produces a peak cloud liquid water amount that is fairly comparable to observations. Thus, the radiational biases in the CNTL experiment appear to stem from Sc clouds that are simulated to be too few in amount. <img alt="Figure 8" src="https://agupubs.onlinelibrary.wiley.com/cms/asset/8ee79ebb-fa82-414f-aba8-7c30b0593a1e/jame21390-fig-0008-m.jpg"/></p>
+</li>
+<li>
 <p>For the better understanding of Sc to Cu regime, cross sections of two regions are selected.</p>
 <ul>
 <li>Peru:<ul>
-<li>15˚N, 120˚W to -20˚S, 80˚W (currently select the region by my self, could be changed if I find a more appropriate place)</li>
+<li>-5˚N, 120˚W to -5˚S, 80˚W (currently select the region by my self, could be changed if I find a more appropriate place)</li>
 </ul>
 </li>
 <li>California:<ul>
@@ -583,6 +610,11 @@
 <li>Near the Sc to Cu transition region, <ul>
 <li>PBL (gray line) is separamted from the cloud bottom.</li>
 <li>buoyancy flux (w´<span class="arithmatex">\(\theta_{vp}\)</span>) and the skewness term (w´<sup>3</sup>) has two layer.</li>
+<li>w´<sup>3</sup> term in stratocumulus region is too positively skewed (negative or small w´<sup>2</sup> is expected in the stratocumulus region (Larson, 2019, in CLUBB document paper)<ul>
+<li>similar error have been found in Bogenschutz et al (<a href="https://doi.org/10.1029/2020MS002239">2021</a>)</li>
+<li>in Bogenschutz et al. (2021), since CLUBB is a function of the vertical velocity skewness (Golaz et al., 2002),  the near zero values of vertical velocity skewness parameterized by high vertical resolution simulation within the cloud will directly result in more cloud fraction and cloud liquid compared to the positive values simulated in the lower resolution counterparts.</li>
+</ul>
+</li>
 <li>Major cloud water sink is found near the cloud bottom.</li>
 </ul>
 </li>
@@ -624,7 +656,7 @@
 </input></input></input></div>
 <ul>
 <li>
-<p>possible reason for cloud water sink near cloud base</p>
+<p>possible reasons for cloud water sink near cloud base</p>
 <ol>
 <li>drier boundary layer:<ul>
 <li>Compared to ERA5 data (only 2009 Oct data), E3SM has higher humidity, therefore this would not be the case: <a href="https://compy-dtn.pnl.gov/kima320/pictures/cosp_compy_FC5AV1C-L_ne30_maint-1.0_cnd_diag1.1/Cross_section_compare_with_era5_water_California_change_deepcu_loc.pdf">Figure</a></li>
@@ -637,8 +669,7 @@
 <li><img alt="" src="https://agupubs.onlinelibrary.wiley.com/cms/asset/66979bed-e3cb-47a5-bd2a-cd8ea38ce56f/jame20872-fig-0003-m.png"/></li>
 </ul>
 </li>
-<li>cloud water advects upward </li>
-<li>updraft is the trigger of CLUBB shallow cumulus(?)</li>
+<li>model itself simulate strong updraft </li>
 </ul>
 </li>
 <li>
@@ -682,7 +713,11 @@
 <li>
 <p>new simulation</p>
 <ul>
-<li>if radiative cooling effect is removed, will cloud formed in the lower altitude?</li>
+<li>if cloud radiative feedback effect is removed during CLUBB,<ul>
+<li>will cloud formed in the lower layer?</li>
+<li>can we expect less decoupling and less cloud breaking? </li>
+</ul>
+</li>
 <li>if the water depletion due to DEEPCU is removed, how the CLUBB would react?</li>
 <li>change DEEPCU location.<ul>
 <li>original: DEEPCU -&gt; CLUBB01</li>
@@ -701,6 +736,188 @@
 </li>
 <li>decrease efficiency for penetrative entrainment.  </li>
 <li>enhance updraft in the shallow cumulus layer (?) to trigger more shallow cumulus than in the deep convection.</li>
+</ul>
+</li>
+</ul>
+<h2 id="cloud-radiative-feedback-effect">Cloud radiative feedback effect.</h2>
+<ul>
+<li>2022.03.15</li>
+<li>cloud radiative feedback<ul>
+<li>nighttime: LW cooling at cloud top intensifies the BL instability  </li>
+<li>daytime: absorption of SW is greater than LW cooling, increase stability, reduces RH, evaporates clouds (detrain).</li>
+</ul>
+</li>
+<li>purpose<ul>
+<li>to see if the cause of the cloud water sink near cloud base is<ol>
+<li>too strong cloud layer updraft due to strong cloud radiative feedback</li>
+<li>decoupling due too strong cloud radiative feedback.</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li>Decoupling can be caused either by reducing the intensity of radiatively driven circulation in relation to STBL depth or by stabilizing the subcloud layer (Zheng et al., 2018b). </li>
+<li>The first possibility might be realized with daytime shortwave radiative heating which offsets longwave cooling (Nicholls, 1984; Turton and Nicholls, 1987) or by extensive entrainment of warm and dry free-tropospheric air which deepens the STBL to such an extent that the turbulence is no longer sufficient to sustain the mixing (Bretherton and Wyant, 1997). </li>
+<li>The second possibility involves stratification of the lower part by cooling, for instance, due to precipitation evaporation (Caldwell et al., 2005; Dodson and Small Griswold, 2021) or advection over colder sea surface (Stevens et al., 1998).</li>
+</ul>
+</div>
+<ul>
+<li>
+<p>hypothesis: if the radiative heating effect is reduced</p>
+<ul>
+<li>stratocumulus: less cloud, but more clouds in the altitude of cloud base due to weakend turbulence.</li>
+<li>trade cumulus: <ul>
+<li>nighttime: similar with stratocumulus</li>
+<li>daytime: more cloud cloud fraction due to less cloud breakup (less decoupling).<ul>
+<li>checkpoint: PBL height during daytime, turbulence, buoyancy</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>simulation setting</p>
+<ul>
+<li>basic setting: same as ctrl setting in Radheat simulation</li>
+<li>ctrl: same as "Radheat simulation" (<code>radheat_cpl_opt = 0</code>)</li>
+<li>noclubbrad: radiation heat is subtracted before CLUBB, and added back after CLDMIC (<code>radheat_cpl_opt = 4</code>)</li>
+</ul>
+</li>
+</ul>
+<h3 id="result">result</h3>
+<ul>
+<li>
+<p>low-level cloud fraction</p>
+<ul>
+<li>stratocumulus region<ul>
+<li>cloud formation weakens</li>
+<li>clouds are shifted to lower altitude due to weakened turbulence.</li>
+</ul>
+</li>
+<li>trade-cumulus region cloud fraction increases</li>
+<li>clouds are formed in lower altitudes in noclubbrad simulation than ctrl.</li>
+</ul>
+</li>
+<li>
+<p>CLUBB turbulence</p>
+<ul>
+<li>decrease in heat flux gradient is larger over trade cumulus region, leading to less moisture flux.</li>
+<li>overall turbulence decreases (w<sup>´2</sup> term)</li>
+<li>less cloud break up<ul>
+<li>skewness near Sc to Cu transition increases</li>
+<li>buoyancy flux also decrease in the trade cumulus region, and the separation of buoyancy flux is reduced. We can expect that the decoupling effect had been reduced in this region. </li>
+</ul>
+</li>
+<li>not much of a difference in <a href="https://compy-dtn.pnl.gov/kima320/pictures/rad_noclubbrad_compy_FC5AV1C-L_ne30_gmd_2020_330_with_forcing_method/Diff_PBLH.pdf">PBL height</a></li>
+</ul>
+</li>
+</ul>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio"><input id="__tabbed_4_2" name="__tabbed_4" type="radio"><div class="tabbed-labels"><label for="__tabbed_4_1">Peru turbulence</label><label for="__tabbed_4_2">California</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/Cross_section_single_var_diff_turbulence_Peru-0.png"/> <img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/Cross_section_single_var_diff_turbulence_Peru-1.png"/> <img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/Cross_section_single_var_diff_turbulence_Peru-2.png"/> <img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/Cross_section_single_var_diff_turbulence_Peru-3.png"/></p>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>not available yet.... running simulation.</li>
+</ul>
+</div>
+</div>
+</input></input></div>
+<ul>
+<li>vertical profile by checkpoint<ul>
+<li>Globally, cloud fraction increases</li>
+<li>in trade cumulus region, cloud water decreases, but cloud fraction increases.<ul>
+<li>evidence of less stratocumulus </li>
+<li>evidence of less cloud breaking</li>
+<li>need to check diurnal cycle</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:6"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio"><input id="__tabbed_5_2" name="__tabbed_5" type="radio"><input id="__tabbed_5_3" name="__tabbed_5" type="radio"><input id="__tabbed_5_4" name="__tabbed_5" type="radio"><input id="__tabbed_5_5" name="__tabbed_5" type="radio"/><input id="__tabbed_5_6" name="__tabbed_5" type="radio"/><div class="tabbed-labels"><label for="__tabbed_5_1">Global</label><label for="__tabbed_5_2">California</label><label for="__tabbed_5_3">Peru</label><label for="__tabbed_5_4">Peru trade</label><label for="__tabbed_5_5">Australia</label><label for="__tabbed_5_6">Namibian</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/Compare_INC_Diff(noclubbrad-ctrl)Vertical_profiles_by_variable_and_chkpt_in_one_page-12.png"/> <img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/Compare_INC_Diff(noclubbrad-ctrl)Vertical_profiles_by_variable_and_chkpt_in_one_page-13.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/Compare_INC_Diff(noclubbrad-ctrl)Vertical_profiles_by_variable_and_chkpt_in_one_page-14.png"/> <img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/Compare_INC_Diff(noclubbrad-ctrl)Vertical_profiles_by_variable_and_chkpt_in_one_page-15.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/Compare_INC_Diff(noclubbrad-ctrl)Vertical_profiles_by_variable_and_chkpt_in_one_page-16.png"/> <img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/Compare_INC_Diff(noclubbrad-ctrl)Vertical_profiles_by_variable_and_chkpt_in_one_page-17.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/Compare_INC_Diff(noclubbrad-ctrl)Vertical_profiles_by_variable_and_chkpt_in_one_page-18.png"/> <img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/Compare_INC_Diff(noclubbrad-ctrl)Vertical_profiles_by_variable_and_chkpt_in_one_page-19.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/Compare_INC_Diff(noclubbrad-ctrl)Vertical_profiles_by_variable_and_chkpt_in_one_page-20.png"/> <img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/Compare_INC_Diff(noclubbrad-ctrl)Vertical_profiles_by_variable_and_chkpt_in_one_page-21.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/Compare_INC_Diff(noclubbrad-ctrl)Vertical_profiles_by_variable_and_chkpt_in_one_page-22.png"/> <img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/Compare_INC_Diff(noclubbrad-ctrl)Vertical_profiles_by_variable_and_chkpt_in_one_page-23.png"/></p>
+</div>
+</div>
+</input></input></input></input></div>
+<ul>
+<li>
+<p>next step</p>
+<h2 id="-check-diurnal-cycle-to-see-if-the-cloud-breaking-had-been-really-decrease">- check diurnal cycle to see if the cloud breaking had been really decrease</h2>
+</li>
+<li>
+<p>Diurnal cycle</p>
+<ul>
+<li><a href="https://compy-dtn.pnl.gov/kima320/pictures/rad_noclubbrad_3h_compy_FC5AV1C-L_ne30_gmd_2020_330_with_forcing_method/multiple_plot/Diur_cy_diff_of_Turbulence.pdf">diurnal turbulence plot</a> (<mark class="critic">note: to see the 'cloud breakup', cloud fraction filtering option is turned off</mark></li>
+<li>overall decrease in turbulence.</li>
+<li>daytime:<ul>
+<li>increase in turbulence near cloud layer</li>
+<li>less warming</li>
+<li>increase in buoyancy</li>
+<li>moisture flux....not sure</li>
+<li>increase in cloud fraction due to less cloud breakup (cannot separate the effect of increase due to long-lasting cloud effect and decrease due to less formation of cloud)</li>
+</ul>
+</li>
+<li>nighttime: opposite from daytime<ul>
+<li>decrease in turbulence</li>
+<li>less cooling</li>
+<li>decrease in buoyancy</li>
+<li>decrease in moisture flux: less suppliment of vapor due to weakened turbulence</li>
+<li>decrease in cloud fraction.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:5"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio"/><input id="__tabbed_6_2" name="__tabbed_6" type="radio"/><input id="__tabbed_6_3" name="__tabbed_6" type="radio"/><input id="__tabbed_6_4" name="__tabbed_6" type="radio"/><input id="__tabbed_6_5" name="__tabbed_6" type="radio"/><div class="tabbed-labels"><label for="__tabbed_6_1">California</label><label for="__tabbed_6_2">Peru</label><label for="__tabbed_6_3">Peru trade</label><label for="__tabbed_6_4">Australia</label><label for="__tabbed_6_5">Namibian</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/Diur_cy_diff_of_Turbulence-7.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/Diur_cy_diff_of_Turbulence-8.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/Diur_cy_diff_of_Turbulence-9.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/Diur_cy_diff_of_Turbulence-10.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/Diur_cy_diff_of_Turbulence-11.png"/></p>
+</div>
+</div>
+</div>
+<ul>
+<li>next step<ul>
+<li>time step sensitivity: if radiation scheme is calculated iteratively with MACMIC, will decoupling effect reduced and increase the overall cloud fraction?<ul>
+<li>Xiao et al. (<a href="https://doi.org/10.1002/2013JD020999">2014</a>) show that reducing horizontal radiative heating variability decrease cloud fraction, causing rapid transition from Sc to Cu.</li>
+<li>However, Bogenschutz et al (2021)  examined the turbulence profiles from various time step setting experiments and found no evidence that the time steps produce any significant changes in the behavior of the simulated turbulence (not shown). --&gt; different from this case because they only reduce MACMIC timestep. </li>
+<li>Also, Lee et al. (<a href="https://doi.org/10.1029/2020MS002240">2021</a>) found that decreasing time step in CLUBB and microphysics in high vertical resolution similation does not appear to substantially affect the long-term climate trend nor the climatological stratocumulus results. <img alt="Figure 14" src="https://agupubs.onlinelibrary.wiley.com/cms/asset/4c359c4e-c9a5-43d8-b5c8-ca82ab5d2ec3/jame21391-fig-0014-m.jpg"/></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>

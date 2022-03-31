@@ -4,14 +4,14 @@
 regions="Australia California ITCZ Nambian North_Atlantic North_Pacific Peru Peru_trade Southern_Hemisphere"
 #files=$(find ./ -name "*.md" | sort)
 vars="Q T CLDLIQ CLDICE CLD CAPE"
-FigDir=https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/differences/by_regions/
-FigName=Compare_delayZM_n_ctrl_
+FigDir=https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/differences/by_regions/dribbleZM/
+FigName=Compare_dribbleZM_n_ctrl_
 
 for region in $regions; do
   file=$(find ./ -name "*${region}.md")
   echo $file
   echo " " >> $file
-  echo "## move DEEPCU vs. CTRL" >> $file
+  echo "## dribble DEEPCU vs. CTRL" >> $file
   echo " " >> $file
   for var in $vars; do
     echo "### "$var >> $file

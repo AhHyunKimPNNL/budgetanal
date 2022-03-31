@@ -561,26 +561,64 @@
   G[other processes] --&gt; A;
 </div></li>
 <li>
-<p>det setting
-  dlf = dlf*(1-0.2)</p>
+<p>det setting</p>
+<ul>
+<li>dlf = dlf*(1-0.2)</li>
+</ul>
 </li>
 <li>
 <p>delayZM setting
 <div class="mermaid">graph LR
-  A[DRYADJ state variable] --&gt; B;
-  A --&gt; C;
-  A --&gt; D;
-  B[DEEPCU] --&gt; {ptend}E;
-  C[CLUBB01]  --&gt; {ptend}E;
-  D[CLDMIC01] --&gt; {ptend}E;
-  E[update state] --&gt; F[CLUBB02];
+  A[DRYADJ] --&gt; |state| B[DEEPCU];
+  A --&gt; |state| C[CLUBB01];
+  B --&gt; |ptend| D[CLUBB02];
+  C --&gt; |ptend| D;
 </div></p>
 </li>
-<li>noclubbdet setting
+<li>
+<p>dribbleZM setting
 <div class="mermaid">graph LR
-  A[DEEPCU] --&gt; {remove radheat}B;
-  B[MACMIC]  --&gt; {add radheat}C[STCLD];
-</div></li>
+  A[DRYADJ] --&gt; |start subcycle| B{DEEPCU ptend};
+  B --&gt; C[CLUBB];
+  C --&gt; D[CLDMIC];
+  D --&gt; B;
+  D --&gt; |end subcycle|E[other processes];
+</div></p>
+</li>
+<li>
+<p>subcycZM setting
+<div class="mermaid">graph LR
+  A[DRYADJ] --&gt; |start subcycle| B[DEEPCU];
+  B --&gt; C[CLUBB];
+  C --&gt; D[CLDMIC];
+  D --&gt; B;
+  D --&gt; |end subcycle|E[other processes];
+</div></p>
+</li>
+<li>
+<p>noclubbrad setting
+<div class="mermaid">graph LR
+  A[DEEPCU] --&gt; |remove radheat|B;
+  B[MACMIC]  --&gt; |add radheat|C[other processes];
+</div></p>
+</li>
+<li>
+<p>radsub setting
+<div class="mermaid">graph LR
+  A[DRYADJ] --&gt; |start subcycle| B[CLUBB];
+  B --&gt; C[CLDMIC];
+  C --&gt; |remove old radheat| D[RAD];
+  D --&gt; B;
+  D --&gt; |end subcycle|E[other processes];
+</div></p>
+</li>
+<li>
+<p>noradcld setting
+<div class="mermaid">graph LR
+  A[DRYADJ] --&gt; |remove radheat|B;
+  B[DEEPCU &amp; MACMIC]  --&gt; |add radheat|C[other processes];
+</div></p>
+</li>
 </ul>
 <h3 id="experiments">Experiments</h3>
 <ul>
@@ -595,10 +633,18 @@
 </li>
 <li>delayZM setting:<ul>
 <li><code>radheat_cpl_opt = 0</code></li>
-<li><code>l_delay_deepcu = .true.</code></li>
+<li><code>l_delay_deepcu = 1</code></li>
 </ul>
 </li>
-<li>noclubbdet setting: <code>radheat_cpl_opt = 4</code></li>
+<li>dribbleZM setting: <code>l_delay_deepcu = 2</code></li>
+<li>subcycZM setting: <code>l_delay_deepcu = 3</code></li>
+<li>other simulations<ul>
+<li>noclubbrad setting: <code>radheat_cpl_opt = 4</code></li>
+<li>noradcld setting:<code>radheat_cpl_opt = 5</code></li>
+<li>radsub setting: <code>l_rad_substep = .true.</code></li>
+<li>short setting: <code>dtime = 900</code></li>
+</ul>
+</li>
 </ul>
 <h3 id="common-settings-for-condidiag">Common settings for CondiDiag</h3>
 <table>

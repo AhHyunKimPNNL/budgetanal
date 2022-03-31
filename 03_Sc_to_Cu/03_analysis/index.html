@@ -374,11 +374,6 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#-check-diurnal-cycle-to-see-if-the-cloud-breaking-had-been-really-decrease">
-    - check diurnal cycle to see if the cloud breaking had been really decrease
-  </a>
-</li>
 </ul>
 </nav>
 </li>
@@ -547,6 +542,27 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="analysis">Analysis</h1>
+<ul>
+<li>
+<p>E3SM underestimate low level clouds in the Sc to Cu regime especially shallow cumulus clouds</p>
+<ul>
+<li>Altitude that shows maximum cloud fraction is almost similar</li>
+<li>but the less clouds are forming below that altitude.</li>
+</ul>
+</li>
+<li>
+<p>possible causes</p>
+<ol>
+<li>????</li>
+<li>seems to be due to too strong decoupling<ul>
+<li>due to too weak turbulence within the boundary layer</li>
+<li>too strong skewness causes frequent cloud break up.
+*</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
 <h2 id="20220302">2022.03.02</h2>
 <ul>
 <li>Clouds in tratocumulus (Sc) to cumulus (Cu) transition regimes have unique structure and diurnal patterns and are important influence on the physics and dynamics of climate.</li>
@@ -711,7 +727,7 @@
 </ol>
 </li>
 <li>
-<p>new simulation</p>
+<p><del>new simulation</del> -&gt; this is not numerical problem skip this</p>
 <ul>
 <li>if cloud radiative feedback effect is removed during CLUBB,<ul>
 <li>will cloud formed in the lower layer?</li>
@@ -726,7 +742,7 @@
 </li>
 <li>implement new entrainment scheme.<ul>
 <li>Gamache and Houze (1983) estimate that as much as 60% to 75% of the condensate in the stratiform portion of the convective system comes from detrainment of hydrometeors from the convective updrafts.</li>
-<li>ZM scheme does not allow detraining below <span class="arithmatex">\(\lamda_0\)</span>.</li>
+<li>ZM scheme does not allow detraining below <span class="arithmatex">\(\lambda_0\)</span>.</li>
 <li>but shallow cumulus occors below that level (<a href="https://doi.org/10.1029/2012gl053646">Lu et al., 2012</a>; <a href="https://doi.org/10.3390/atmos6091362">Guo et al., 2015</a>)<ul>
 <li><img alt="" src="https://agupubs.onlinelibrary.wiley.com/cms/asset/6ea3bf9c-f656-44c0-b784-b54b56e03171/jame21349-fig-0001-m.png"/></li>
 </ul>
@@ -819,7 +835,7 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio"><input id="__tabbed_4_2" name="__tabbed_4" type="radio"><div class="tabbed-labels"><label for="__tabbed_4_1">Peru turbulence</label><label for="__tabbed_4_2">California</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/Cross_section_single_var_diff_turbulence_Peru-0.png"/> <img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/Cross_section_single_var_diff_turbulence_Peru-1.png"/> <img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/Cross_section_single_var_diff_turbulence_Peru-2.png"/> <img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/Cross_section_single_var_diff_turbulence_Peru-3.png"/></p>
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/noclubbrad/Cross_section_single_var_diff_turbulence_Peru-0.png"/> <img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/noclubbrad/Cross_section_single_var_diff_turbulence_Peru-1.png"/> <img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/noclubbrad/Cross_section_single_var_diff_turbulence_Peru-2.png"/> <img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/noclubbrad/Cross_section_single_var_diff_turbulence_Peru-3.png"/></p>
 </div>
 <div class="tabbed-block">
 <ul>
@@ -835,6 +851,15 @@
 <li>evidence of less stratocumulus </li>
 <li>evidence of less cloud breaking</li>
 <li>need to check diurnal cycle</li>
+</ul>
+</li>
+<li>other possibility: DEEPCU triggers more shallow convection. -&gt; seems to be not the case<ul>
+<li>when the radiative heating is removed in DEEPCU (test3 sim.), cloud fraction shifted to higher altitude in trade cumulus region and lower altitude in stratocumulus region compared to ctrl</li>
+<li>whereas the overall cloud fraction increases when the radiative heating is removed only in CLUBB (noclubbrad)</li>
+<li>when the radiative heating is removed both in DEEPCU and CLUBB, the results are similar with noclubbrad simulation.</li>
+<li><a href="https://compy-dtn.pnl.gov/kima320/pictures/rad_noclubbrad_compy_FC5AV1C-L_ne30_gmd_2020_330_with_forcing_method/Cross_section_single_var_diff_turbulence_Peru.pdf">no radiative heating effect in CLUBB</a></li>
+<li><a href="https://compy-dtn.pnl.gov/kima320/pictures/rad_test3_compy_FC5AV1C-L_ne30_gmd_2020_330_with_forcing_method/Cross_section_single_var_diff_turbulence_Peru.pdf">no radiative heating effect in DEEPCU</a></li>
+<li><a href="https://compy-dtn.pnl.gov/kima320/pictures/rad_noradcld_compy_FC5AV1C-L_ne30_gmd_2020_330_with_forcing_method/Cross_section_single_var_diff_turbulence_Peru.pdf">no radiative heating effect both in DEEPCU and CLUBB</a></li>
 </ul>
 </li>
 </ul>
@@ -865,12 +890,14 @@
 <ul>
 <li>
 <p>next step</p>
-<h2 id="-check-diurnal-cycle-to-see-if-the-cloud-breaking-had-been-really-decrease">- check diurnal cycle to see if the cloud breaking had been really decrease</h2>
+<ul>
+<li>check diurnal cycle to see if the cloud breaking had been really decrease</li>
+</ul>
 </li>
 <li>
 <p>Diurnal cycle</p>
 <ul>
-<li><a href="https://compy-dtn.pnl.gov/kima320/pictures/rad_noclubbrad_3h_compy_FC5AV1C-L_ne30_gmd_2020_330_with_forcing_method/multiple_plot/Diur_cy_diff_of_Turbulence.pdf">diurnal turbulence plot</a> (<mark class="critic">note: to see the 'cloud breakup', cloud fraction filtering option is turned off</mark></li>
+<li><a href="https://compy-dtn.pnl.gov/kima320/pictures/rad_noclubbrad_3h_compy_FC5AV1C-L_ne30_gmd_2020_330_with_forcing_method/multiple_plot/Diur_cy_diff_of_Turbulence.pdf">diurnal turbulence plot</a> (<mark class="critic">note: to see the 'cloud breakup', cloud mask option in the plot is turned off</mark>)</li>
 <li>overall decrease in turbulence.</li>
 <li>daytime:<ul>
 <li>increase in turbulence near cloud layer</li>
@@ -912,10 +939,17 @@
 </div>
 <ul>
 <li>next step<ul>
+<li>LWP comparison with observation.</li>
+<li><del>try removing radheat from both DEEPCU and CLUBB (to see if the response shown in removing radiative heat in CLUBB is due to enhanced DEEPCU or not)</del> (done)</li>
 <li>time step sensitivity: if radiation scheme is calculated iteratively with MACMIC, will decoupling effect reduced and increase the overall cloud fraction?<ul>
 <li>Xiao et al. (<a href="https://doi.org/10.1002/2013JD020999">2014</a>) show that reducing horizontal radiative heating variability decrease cloud fraction, causing rapid transition from Sc to Cu.</li>
 <li>However, Bogenschutz et al (2021)  examined the turbulence profiles from various time step setting experiments and found no evidence that the time steps produce any significant changes in the behavior of the simulated turbulence (not shown). --&gt; different from this case because they only reduce MACMIC timestep. </li>
 <li>Also, Lee et al. (<a href="https://doi.org/10.1029/2020MS002240">2021</a>) found that decreasing time step in CLUBB and microphysics in high vertical resolution similation does not appear to substantially affect the long-term climate trend nor the climatological stratocumulus results. <img alt="Figure 14" src="https://agupubs.onlinelibrary.wiley.com/cms/asset/4c359c4e-c9a5-43d8-b5c8-ca82ab5d2ec3/jame21391-fig-0014-m.jpg"/></li>
+<li>Wan et al. (2021) also found that the radiation scheme is not so sensitive to the time step change.</li>
+<li>first step: check turbulence in the simulation with the different time step.         <ul>
+<li>https://confluence.pnnl.gov/confluence/display/CMDVSE/SciDAC+simulation</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>

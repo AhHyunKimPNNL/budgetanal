@@ -284,6 +284,16 @@
     change DEEPCU location.
   </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#dribbling-deepcu-tendency-in-the-macmic-subcycle">
+    Dribbling DEEPCU tendency in the MACMIC subcycle
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#subcycle-deepcu-with-macmic">
+    subcycle DEEPCU with MACMIC
+  </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -582,9 +592,10 @@
 <li>skewness increased in trade cumulus region(w´<sup>3</sup>) meaning that the clouds in this region is more cumulus-like </li>
 </ul>
 </li>
-<li><mark class="critic">heat flux is reversed near the cloud top (why??)</mark> and increase the stability.<ul>
-<li>possible cause: if CLUBB triggers more shallow cumulus, clouds are triggered in the lower altitude (?), depleting water vapor, hence the clouds near 850 hPa decreases, lowering the cloud top height (?)</li>
+<li>heat flux is reversed near the cloud top due to downward shift of cloud and increase the stability.<ul>
+<li>possible cause: enhanced turbulence during CLUBB trigger cloud formations in the lower altitude (?), depleting water vapor, hence the clouds near 850 hPa decreases, lowering the cloud top height (?)</li>
 <li>this effect may change the temperature vertical profile <img alt="turbulence" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/differences/Diff_Vertical_profiles_of_single_Variable-2.png"/></li>
+<li>strengthening the surface turbulence consequently decrease the overall cloud fraction</li>
 </ul>
 </li>
 <li>more clouds forms in the lower part of the atmosphere due to the excessive Q and buoyancy.</li>
@@ -636,12 +647,14 @@
 </ul>
 </li>
 <li>result<ul>
-<li>moisture flux near detrained cloud altitude decreased, but the changes are not large (increase in moisture flux at 850 hPa in trade cumulus is due to less separation of two cloud layers) <img alt="turbulence" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/Diff(det-ctrl)_Vertical_profiles_of_single_Variable1-2.png"/></li>
-<li>decrease in cloud water not only decrease the CUDET CLDLIQ but also change CLUBB CLDLIQ (why?). </li>
-<li>This result indicates that the detrainment/entrainment effect is one of the major source of water for shallow cumulus clouds to formation. </li>
+<li>moisture flux within the boundary layer decreases <img alt="turbulence" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/Diff(det-ctrl)_Vertical_profiles_of_single_Variable1-2.png"/></li>
+<li>Magnitude of Q tendency decreases in DEEPCU, and the compensating amount increases in CLUBB</li>
+<li>overall cloud liquid tendencies decreases in CLUBB process</li>
+<li>This result indicates that the when the detrainment/entrainment effect cause the formation of cloud in CLUBB process. </li>
+<li><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/differences/by_regions/Compare_det_n_ctrl_Peru_trade_Q_only_DEEPCU_CLUBB-1.png"/></li>
+<li><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/differences/by_regions/Compare_det_n_ctrl_Peru_trade_CLDLIQ_only_DEEPCU_CLUBB-1.png"/></li>
 </ul>
 </li>
-<li><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/differences/by_regions/Compare_det_n_ctrl_Peru_trade_CLDLIQ-6.png"/></li>
 </ul>
 <h3 id="change-deepcu-location">change DEEPCU location.</h3>
 <ul>
@@ -659,18 +672,109 @@
 <li>
 <p>result:</p>
 <ul>
-<li>CLDLIQ did not changed much <img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/differences/by_regions/Compare_delayZM_n_ctrl_Peru_trade_CLDLIQ-6.png"/></li>
+<li>the new simulation trigger more shallow convection in the first CLUBB substep (almost twice as large as ctrl), but the compensating amount decreases in the second substep in trade cumulus region (this response is not shown in stratocumulus region.) <img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/Compare_INC_Diff(delayZM-ctrl)Vertical_profiles_by_variable_and_chkpt_in_one_page-17.png"/> <img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/Compare_INC_Diff(delayZM-ctrl)Vertical_profiles_by_variable_and_chkpt_in_one_page-19.png"/> </li>
+<li>Overall, CLDLIQ did not changed much <img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/differences/by_regions/Compare_delayZM_n_ctrl_Peru_trade_CLDLIQ-6.png"/></li>
 <li>CLDICE changed (temperature is erroneously applied to CUDET due to code change, triggering ZM ice detrainment) <img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/differences/by_regions/Compare_delayZM_n_ctrl_Peru_trade_CLDICE-6.png"/></li>
-<li>convection and turbulence change, but these changes did not linearly link to the shallow cumulus cloud formation. <a href="https://compy-dtn.pnl.gov/kima320/pictures/rad_delayZM_compy_FC5AV1C-L_ne30_gmd_2020_330_with_forcing_method/Cross_section_single_var_diff_turbulence_Peru.pdf">see turbulence plots</a></li>
+<li>Vertical wind variance and the moisture flux increases and the skewness decreases in the trade cumulus region <a href="https://compy-dtn.pnl.gov/kima320/pictures/rad_delayZM_compy_FC5AV1C-L_ne30_gmd_2020_330_with_forcing_method/Cross_section_single_var_diff_turbulence_Peru.pdf">see turbulence plots</a></li>
+<li>it seems to be that the differences between test and ctrl are due to the radiative cooling effect <ul>
+<li>When radiative heat is removed during CLUBB process, CLDLIQ increment differences from ctrl is opposite from the difference between test and ctrl.</li>
+</ul>
+</li>
+<li>triggering shallow convection either DEEPCU or CLUBB is not the problem because errors from triggering effect will be compensated during substepping.</li>
+<li></li>
+<li>Although changing the location of DEEPCU process won´t cause the overall result, substepping DEEPCU will change the result, not because of the numerical problem but because of the time-step sensitivity of DEEPCU </li>
 </ul>
 </li>
 <li>
-<p>next step:</p>
+<p>next step</p>
 <ul>
-<li></li>
+<li>dribbling DEEPCU tendency in the MACMIC subcycle</li>
+<li>subcycle DEEPCU</li>
 </ul>
 </li>
 </ul>
+<h3 id="dribbling-deepcu-tendency-in-the-macmic-subcycle">Dribbling DEEPCU tendency in the MACMIC subcycle</h3>
+<ul>
+<li>
+<p>simulation setting</p>
+<ul>
+<li>save DEEPCU ptend and update ptend_deepcu/cld_macmic_num_steps in every substep</li>
+</ul>
+</li>
+<li>
+<p>result</p>
+<ul>
+<li>the response of CLUBB to cloud water in dribbling deep convection tendency in MACMIC subcycle is somewhat similar with test simulation in Peru and Peru trade cumulus region ( <a href="https://ahhyunkimpnnl.github.io/budgetanal/02_zm_rad_modification/03_by_regions/33_Peru_trade/">see differences</a>)</li>
+<li>however, CLUBB in dribbleZM simulation not only triggers more shallow convections but also triggers some deep convections. </li>
+<li>for that reason, state differences in dribbleZM-ctrl are different from test-ctrl.</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>region</th>
+<th>test - ctrl</th>
+<th>dribbleZM - ctrl</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Peru</td>
+<td><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/differences/Compare_INC_Diff(test-ctrl)Vertical_profiles_by_variable_and_chkpt_in_one_page-16.png"/></td>
+<td><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/dribbleZM/Compare_INC_Diff(dribbleZM-ctrl)Vertical_profiles_DEEPCU_and_CLUBB-16.png"/></td>
+</tr>
+<tr>
+<td>Peru trade</td>
+<td><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/differences/Compare_INC_Diff(test-ctrl)Vertical_profiles_by_variable_and_chkpt_in_one_page-18.png"/></td>
+<td><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/dribbleZM/Compare_INC_Diff(dribbleZM-ctrl)Vertical_profiles_DEEPCU_and_CLUBB-18.png"/></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>result (continue)<ul>
+<li>In the first subcycle of CLUBB, cloud water increments are even larger than ctrl, but the 2~6 subcycles of CLUBB produce less cloud water than ctrl. </li>
+<li>This indicates that cloud formation in CLUBB process largely affected by the supersaturation, and DEEPCU in ctrl simulation remove supersaturation prior to CLUBB.</li>
+<li>Interestingly, eventhough the DEEPCU tendencies are updated evenly in every sub-steps, changes in dribbleZM from ctrl in CLUBB tendency in the first substep is even higher than the rest of the substep</li>
+<li><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/dribbleZM/Compare_INC_Diff(ctrl-dribbleZM)Vertical_profiles_CLUBB-19.png"/></li>
+<li>Overall, <ul>
+<li>cloud fraction increases in the trade cumulus regions but decrease in the stratocumulus region</li>
+<li>clouds are shifted downward</li>
+<li>Sc to Cu transition is much more smoother in dribble ZM than ctrl</li>
+<li><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/dribbleZM/Cross_section_single_var_diff_turbulence_Peru-0.png"/> <img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/dribbleZM/Cross_section_single_var_diff_turbulence_Peru-2.png"/></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="subcycle-deepcu-with-macmic">subcycle DEEPCU with MACMIC</h3>
+<ul>
+<li>result<ul>
+<li>clouds in the stratiform regions are simulated more 'stratus'-like clouds (higher w´<sup>2</sup>, lower  w´<sup>3</sup>), increasing cloud water.</li>
+<li>transition from Sc to Cu is much more smoother than ctrl.</li>
+<li>shallow convections are triggered more in CLUBB, but the clouds formed by CLUBB appears in the lower level than the one that is triggered by DEEPCU.</li>
+<li>however, detrained cloud water from DEEPCU decreases, leading to decrease the cloud near 800 hPa in the trade-cumulus region.</li>
+</ul>
+</li>
+</ul>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><input id="__tabbed_1_3" name="__tabbed_1" type="radio"><input id="__tabbed_1_4" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">cloud fraction (Peru cross section)</label><label for="__tabbed_1_2">turbulence (Peru cross section)</label><label for="__tabbed_1_3">Peru vertical profile</label><label for="__tabbed_1_4">Peru-trade vertical profile</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ul>
+<li><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/subcycZM/Cross_section_single_var_diff_turbulence2_Peru-0.png"/> </li>
+</ul>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/subcycZM/Cross_section_single_var_diff_turbulence2_Peru-1.png"/> <img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/subcycZM/Cross_section_single_var_diff_turbulence2_Peru-2.png"/> </p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/subcycZM/Compare_INC_Diff(subcycZM-ctrl)Vertical_profiles-18.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/subcycZM/Compare_INC_Diff(subcycZM-ctrl)Vertical_profiles-20.png"/></p>
+</div>
+</div>
+</input></input></input></input></div>
 </article>
 </div>
 </div>

@@ -603,13 +603,24 @@
 </div></p>
 </li>
 <li>
-<p>radsub setting
+<p>subrad setting
 <div class="mermaid">graph LR
   A[DRYADJ] --&gt; |start subcycle| B[CLUBB];
   B --&gt; C[CLDMIC];
   C --&gt; |remove old radheat| D[RAD];
   D --&gt; B;
   D --&gt; |end subcycle|E[other processes];
+</div></p>
+</li>
+<li>
+<p>subradZM setting
+<div class="mermaid">graph LR
+  A[DRYADJ] --&gt; |start subcycle| B[DEEPCU];
+  B --&gt; C[CLUBB];
+  C --&gt; D[CLUBB];
+  D --&gt; |remove old radheat| E[RAD];
+  E --&gt; B;
+  E --&gt; |end subcycle|F[other processes];
 </div></p>
 </li>
 <li>
@@ -641,7 +652,12 @@
 <li>other simulations<ul>
 <li>noclubbrad setting: <code>radheat_cpl_opt = 4</code></li>
 <li>noradcld setting:<code>radheat_cpl_opt = 5</code></li>
-<li>radsub setting: <code>l_rad_substep = .true.</code></li>
+<li>subrad setting: <code>l_rad_substep = .true.</code></li>
+<li>subradZM setting: <ul>
+<li><code>l_delay_deepcu = 3</code></li>
+<li><code>l_rad_substep = .true.</code></li>
+</ul>
+</li>
 <li>short setting: <code>dtime = 900</code></li>
 </ul>
 </li>

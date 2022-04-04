@@ -367,8 +367,13 @@
 <nav aria-label="Cloud radiative feedback effect." class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#result">
-    result
+<a class="md-nav__link" href="#no-radiative-heating-during-clubb-process">
+    no radiative heating during CLUBB process
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#subcycle-radiation-scheme-with-macmic">
+    subcycle radiation scheme with MACMIC
   </a>
 </li>
 </ul>
@@ -804,7 +809,7 @@
 </ul>
 </li>
 </ul>
-<h3 id="result">result</h3>
+<h3 id="no-radiative-heating-during-clubb-process">no radiative heating during CLUBB process</h3>
 <ul>
 <li>
 <p>low-level cloud fraction</p>
@@ -898,26 +903,46 @@
 <p>Diurnal cycle</p>
 <ul>
 <li><a href="https://compy-dtn.pnl.gov/kima320/pictures/rad_noclubbrad_3h_compy_FC5AV1C-L_ne30_gmd_2020_330_with_forcing_method/multiple_plot/Diur_cy_diff_of_Turbulence.pdf">diurnal turbulence plot</a> (<mark class="critic">note: to see the 'cloud breakup', cloud mask option in the plot is turned off</mark>)</li>
-<li>overall decrease in turbulence.</li>
-<li>daytime:<ul>
-<li>increase in turbulence near cloud layer</li>
-<li>less warming</li>
-<li>increase in buoyancy</li>
-<li>moisture flux....not sure</li>
-<li>increase in cloud fraction due to less cloud breakup (cannot separate the effect of increase due to long-lasting cloud effect and decrease due to less formation of cloud)</li>
-</ul>
-</li>
-<li>nighttime: opposite from daytime<ul>
-<li>decrease in turbulence</li>
-<li>less cooling</li>
-<li>decrease in buoyancy</li>
-<li>decrease in moisture flux: less suppliment of vapor due to weakened turbulence</li>
-<li>decrease in cloud fraction.</li>
+<li>overall decrease in turbulence, but increase in cloud fraction due to less cloud breaking.</li>
 </ul>
 </li>
 </ul>
-</li>
-</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>daytime</th>
+<th>nighttime</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>w´<sup>2</sup></td>
+<td>increase near cloud layer</td>
+<td>decrease</td>
+</tr>
+<tr>
+<td>heat flux</td>
+<td>less warming</td>
+<td>less cooling</td>
+</tr>
+<tr>
+<td>moisture flux</td>
+<td>???</td>
+<td>less suppliment of vapor due to weakened turbulence</td>
+</tr>
+<tr>
+<td>buoyancy</td>
+<td>increase</td>
+<td>decrease</td>
+</tr>
+<tr>
+<td>cloud fraction</td>
+<td>increases due to less cloud breakup (cannot separate the effect of increase due to long-lasting cloud effect and decrease due to less formation of cloud)</td>
+<td>decrease</td>
+</tr>
+</tbody>
+</table>
 <div class="tabbed-set tabbed-alternate" data-tabs="6:5"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio"/><input id="__tabbed_6_2" name="__tabbed_6" type="radio"/><input id="__tabbed_6_3" name="__tabbed_6" type="radio"/><input id="__tabbed_6_4" name="__tabbed_6" type="radio"/><input id="__tabbed_6_5" name="__tabbed_6" type="radio"/><div class="tabbed-labels"><label for="__tabbed_6_1">California</label><label for="__tabbed_6_2">Peru</label><label for="__tabbed_6_3">Peru trade</label><label for="__tabbed_6_4">Australia</label><label for="__tabbed_6_5">Namibian</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -955,6 +980,42 @@
 </ul>
 </li>
 </ul>
+<h3 id="subcycle-radiation-scheme-with-macmic">subcycle radiation scheme with MACMIC</h3>
+<ul>
+<li>simulation<ul>
+<li>subrad: subcycle radiation scheme with MACMIC (only ptend of the radiation scheme is subcycled)</li>
+<li>sybcycZM: subcycle DEEPCU scheme with MACMIC</li>
+<li>subradZM: subcycle radiation scheme and DEEPCU scheme with MACMIC</li>
+<li>(subrad - ctrl) &amp; (subradZM - subcycZM) : effect of subcycling radiation scheme </li>
+</ul>
+</li>
+<li>result<ul>
+<li>overall, cloud fraction increases in Sc to CU regions when the radiation scheme is subcycled with MACMIC (and the response to the turbulence terms are somewhat similar to that of noclubbrad).</li>
+<li>However, more convective clouds are triggered in the trade cumulus region.</li>
+<li>when the DEEPCU is also subcycled, <ul>
+<li>turbulence in the stratocumulus region increases (see <a href="https://compy-dtn.pnl.gov/kima320/pictures/rad_subradZM_compy_FC5AV1C-L_ne30_gmd_2020_330_with_forcing_method/Cross_section_single_var_diff_turbulence_Peru15(subradZM-subcycZM).pdf">15S in Peruvian region</a></li>
+<li>cloud fraction increases in subradZM simulation, but the response due to subcycling radiation scheme is different from subrad. Higher temporal resolution for radiation scheme do increase the cloud fraction, but not particularly increase the clouds near cloud base. </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="tabbed-set tabbed-alternate" data-tabs="7:4"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio"/><input id="__tabbed_7_2" name="__tabbed_7" type="radio"/><input id="__tabbed_7_3" name="__tabbed_7" type="radio"/><input id="__tabbed_7_4" name="__tabbed_7" type="radio"/><div class="tabbed-labels"><label for="__tabbed_7_1">cloud fraction (subrad - ctrl)</label><label for="__tabbed_7_2">cloud fraction (subradZM - subcycZM)</label><label for="__tabbed_7_3">Peruvian cross section (radsub-ctrl)</label><label for="__tabbed_7_4">Peruvian cross section (subradZM - subcycZM)</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/subrad/Single_level_plot_clouds(subrad-ctrl).png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/subradZM/Single_level_plot_clouds(subradZM-subcycZM).png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/subrad/Cross_section_single_var_diff_turbulence_Peru(subrad-ctrl)-0.png"/> <img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/subrad/Cross_section_single_var_diff_turbulence_Peru(subrad-ctrl)-1.png"/> <img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/subrad/Cross_section_single_var_diff_turbulence_Peru(subrad-ctrl)-2.png"/> <img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/subrad/Cross_section_single_var_diff_turbulence_Peru(subrad-ctrl)-3.png"/> <img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/subrad/Cross_section_single_var_diff_turbulence_Peru(subrad-ctrl)-4.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/subradZM/Cross_section_single_var_diff_turbulence_Peru(subradZM-subcycZM)-0.png"/> <img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/subradZM/Cross_section_single_var_diff_turbulence_Peru(subradZM-subcycZM)-1.png"/> <img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/subradZM/Cross_section_single_var_diff_turbulence_Peru(subradZM-subcycZM)-2.png"/> <img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/subradZM/Cross_section_single_var_diff_turbulence_Peru(subradZM-subcycZM)-3.png"/> <img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/subradZM/Cross_section_single_var_diff_turbulence_Peru(subradZM-subcycZM)-4.png"/></p>
+</div>
+</div>
+</div>
 </article>
 </div>
 </div>

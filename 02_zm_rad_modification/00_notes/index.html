@@ -704,8 +704,11 @@
 <li>
 <p>result</p>
 <ul>
-<li>the response of CLUBB to cloud water in dribbling deep convection tendency in MACMIC subcycle is somewhat similar with test simulation in Peru and Peru trade cumulus region ( <a href="https://ahhyunkimpnnl.github.io/budgetanal/02_zm_rad_modification/03_by_regions/33_Peru_trade/">see differences</a>)</li>
-<li>however, CLUBB in dribbleZM simulation not only triggers more shallow convections but also triggers some deep convections. </li>
+<li>the response of CLUBB to cloud water in dribbling deep convection tendency in MACMIC subcycle is somewhat similar with test simulation in Peru and Peru trade cumulus region ( <a href="https://ahhyunkimpnnl.github.io/budgetanal/02_zm_rad_modification/03_by_regions/33_Peru_trade/">see differences</a>)<ul>
+<li>Clouds are shifted downward.</li>
+</ul>
+</li>
+<li>however, CLUBB in dribbleZM simulation not only triggers more shallow convections but also falsely triggers some deep convections. </li>
 <li>for that reason, state differences in dribbleZM-ctrl are different from test-ctrl.</li>
 </ul>
 </li>
@@ -733,14 +736,21 @@
 </table>
 <ul>
 <li>result (continue)<ul>
-<li>In the first subcycle of CLUBB, cloud water increments are even larger than ctrl, but the 2~6 subcycles of CLUBB produce less cloud water than ctrl. </li>
-<li>This indicates that cloud formation in CLUBB process largely affected by the supersaturation, and DEEPCU in ctrl simulation remove supersaturation prior to CLUBB.</li>
+<li>In the first subcycle of CLUBB, cloud water increments are even larger than ctrl, but the 2~6 subcycles of CLUBB produce less cloud water than ctrl. <ul>
+<li>clouds are formed in the lower altitude in dribbleZM than ctrl.</li>
+<li><a href="https://compy-dtn.pnl.gov/kima320/pictures/rad_subcycZM_compy_FC5AV1C-L_ne30_gmd_2020_330_with_forcing_method/multiple_plots/Compare_RHW_subcycZM_n_ctrl.pdf">RH is shifted downward</a> </li>
+</ul>
+</li>
+<li>This indicates that cloud formation in CLUBB process largely affected by the supersaturation formed by other processes (other than DEEPCU), and DEEPCU in ctrl simulation remove supersaturation prior to CLUBB.</li>
 <li>Interestingly, eventhough the DEEPCU tendencies are updated evenly in every sub-steps, changes in dribbleZM from ctrl in CLUBB tendency in the first substep is even higher than the rest of the substep</li>
 <li><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/dribbleZM/Compare_INC_Diff(ctrl-dribbleZM)Vertical_profiles_CLUBB-19.png"/></li>
 <li>Overall, <ul>
 <li>cloud fraction increases in the trade cumulus regions but decrease in the stratocumulus region</li>
 <li>clouds are shifted downward</li>
-<li>Sc to Cu transition is much more smoother in dribble ZM than ctrl</li>
+<li>Sc to Cu transition is much more smoother in dribble ZM than ctrl<ul>
+<li>w´<sup>2</sup> is higher, w´<sup>3</sup> is more continuous </li>
+</ul>
+</li>
 <li><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/dribbleZM/Cross_section_single_var_diff_turbulence_Peru-0.png"/> <img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/dribbleZM/Cross_section_single_var_diff_turbulence_Peru-2.png"/></li>
 </ul>
 </li>
@@ -768,10 +778,10 @@
 <p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/subcycZM/Cross_section_single_var_diff_turbulence2_Peru-1.png"/> <img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/subcycZM/Cross_section_single_var_diff_turbulence2_Peru-2.png"/> </p>
 </div>
 <div class="tabbed-block">
-<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/subcycZM/Compare_INC_Diff(subcycZM-ctrl)Vertical_profiles-18.png"/></p>
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/subcycZM/Compare_INC_Diff(subcycZM-ctrl)Vertical_profiles-16.png"/></p>
 </div>
 <div class="tabbed-block">
-<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/subcycZM/Compare_INC_Diff(subcycZM-ctrl)Vertical_profiles-20.png"/></p>
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/subcycZM/Compare_INC_Diff(subcycZM-ctrl)Vertical_profiles-18.png"/></p>
 </div>
 </div>
 </input></input></input></input></div>

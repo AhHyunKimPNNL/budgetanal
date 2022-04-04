@@ -1,15 +1,17 @@
 #!/bin/bash
 #filedir=/compyfs/www/kima320/pictures/cosp_compy_FC5AV1C-L_ne30_maint-1.0_cnd_diag1.1/
-casename=rad_subcycZM_compy_FC5AV1C-L_ne30_gmd_2020_330_with_forcing_method
+cases=subrad
+casename=rad_${cases}_compy_FC5AV1C-L_ne30_gmd_2020_330_with_forcing_method
 filedir=/compyfs/www/kima320/pictures/$casename/
 #filedir=/compyfs/www/kima320/pictures/$casename/multiple_plot/
 #filedir=/compyfs/www/kima320/Budget_Analysis/With_forcing_method/Difference/
 #filedir=/compyfs/www/kima320/Budget_Analysis/Cloud_regime/
 #filedir=/compyfs/www/kima320/pictures/q_budget_rad_compy_FC5AV1C-L_ne30_maint-1.0_cnd_diag1.1/
-filename="Compare_INC_Diff(subcycZM-ctrl)Vertical_profiles"
+filename="Single_level_plot_clouds(subrad-ctrl)"
 #filename=Vertical_profiles_by_region_and_chkpt_in_one_page
 #savedir=/compyfs/www/kima320/png_plot/Budget_Analysis/03_Sc_Cu/noclubbrad/
-savedir=/compyfs/www/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/subcycZM/
+savedir=/compyfs/www/kima320/png_plot/Budget_Analysis/03_Sc_Cu/${cases}/
+#savedir=/compyfs/www/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/${cases}/
 #savedir=/qfs/people/kima320/git_work/budgetanal/docs/02_cloud_regime/img/
 mkdir $savedir
 

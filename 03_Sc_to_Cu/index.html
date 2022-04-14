@@ -539,6 +539,78 @@
 </li>
 </ul>
 </li>
+<li>
+<p>Sc to Cu cross section analysis</p>
+<ul>
+<li>GPCI Field Campaign (GEWEX/WGNE Pacific Cross-section Intercomparison (GPCI) )<ul>
+<li>June 2003 to 31 Aug 2003 </li>
+<li>covers a region from 5.0S to 45.0N latitude and from 160.0E to 240.0E longitude. <img alt="" src="https://gcss-dime.giss.nasa.gov/gpci/gpciwsmap.jpg"/></li>
+<li>website: https://gcss-dime.giss.nasa.gov/gpci/wscomp.html</li>
+<li>free data</li>
+</ul>
+</li>
+<li>MAGIC field campaign<ul>
+<li>Oct. 2012 ~ Sep. 2013 (<a href="https://doi.org/10.1029/2015EO031303">Lewis and Teixeira, 2015</a>)</li>
+<li>website: https://www.arm.gov/research/campaigns/amf2012magic</li>
+<li>need a special accecss to obtain the data</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="summary">Summary</h2>
+<ul>
+<li>objective: finding the cause of less cloud in Sc to Cu transition region due to numerical issues.</li>
+<li>
+<p>E3SM´s status </p>
+<ul>
+<li>Compared to CALIPSO, E3SM overestimate high cloud, underestimate low cloud (<a href="https://doi.org/10.1029/2018MS001350">Xie et al., 2018</a>)</li>
+<li>Compared to MISR, E3SM underestimate low-level cumulus cloud, overestimate stratocumulus (but underestimates near coastal region) (<a href="https://doi.org/10.1029/2018MS001562">Zhang et al., 2019</a> )</li>
+<li>Sc to Cu transition region<ul>
+<li>Sc to Cu transition region uncertainty in cloud product prediction is one of the known problem.</li>
+<li>The lack of coastal Sc in E3SM might be because the area of low vertical velocity skewness assumed for Sc in CLUBB is too narrow and the annual mean skewness is too high (Xie et al., 2018 + separate paper)</li>
+<li>sensitive to temporal resolution (Wan et al., 2021; Bogenschutz et al., 2021; Santos et al., 2021)</li>
+<li>also sensitive to vertical resolution (Bogenschutz et al., 2021; Lee et al., 2021)</li>
+<li>E3SM tends to produce too little cloud fraction compared to the C3M (Kato et al., 2010) satellite observations, but produces a peak cloud liquid water amount that is fairly comparable to observations (<a href="https://doi.org/10.1029/2020MS002239">Bogenschutz et al. 2021</a> ). </li>
+<li>underestimate in the Sc regions appears to be related to the underpredicted optically intermediate thick clouds (Zhang et al., 2019) (optically intermediate thick low-level cloud is classified as cumulus cloud in ISCCP cloud classification)</li>
+<li>compared to GPCP, E3SM underestimate TWP region and overestimate precipitation in Sc to Cu regions but the differences over Sc to Cu region are not statistically significant (<a href="https://doi.org/10.1029/2019MS001702">Xie et al. 2019</a> )</li>
+<li>compared to MODIS, E3SM underestimate LWP.</li>
+</ul>
+</li>
+<li><mark class="critic">time step sensitivity problem</mark><ul>
+<li>how the interplay between convection and stratiform clouds can be affected by thier corresponding timescales and the model time step (Williamson, 2013)</li>
+<li>or caused by the temporal truncation errors inside the parameterization,</li>
+<li>or caused by the coupling between the parameterization and other model component (Wan et al., 2021).<ul>
+<li>decreases in cloud fraction around 850 hPa in the subtropics are primarily attributable to shorter step sizes outside the cloud macro-microphysics subcycle.</li>
+<li>the impact of dynamics and radiation time steps on subtropical clouds is small.</li>
+<li>DEEPCU timescale ratio alone cannot explain the changes in CRE.</li>
+<li>the low-cloud fraction and SWCRE changes in regions associated with subsidence can be attributed primarily to the thermodynamic responses of the model atmosphere instead of vertical velocity changes.</li>
+<li></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Possible physical causes for small low-level cloud fraction </p>
+<ul class="task-list">
+<li class="task-list-item"><input checked="" type="checkbox"> Drier Boundary layer: compare data with ERA5, E3SM BL is more moist.</input></li>
+<li class="task-list-item"><input checked="" type="checkbox"> due to weak cloud radiative cooling effect: when the radiative heating is reduced in CLUBB, more clouds are formed.</input></li>
+<li class="task-list-item"><input type="checkbox"> too strong shallow convection (high skewness, frequent cloud break-up): sensitivity test for second order &amp; third order vertical velocity term (?)</input></li>
+<li class="task-list-item"><input type="checkbox"> Deep convection - shallow convection scheme related relationship<ul>
+<li>Deep convection scheme falsely triggers shallow convection prior to shallow convection scheme.</li>
+</ul>
+</input></li>
+<li class="task-list-item"><input type="checkbox"> Decoupling: analysing turbulence &amp; diurnal cycle</input></li>
+<li class="task-list-item"><input type="checkbox"> cloud positive feedback (warmer surface -&gt; less cloud)</input></li>
+<li>check surface temp. &amp; SHFLX</li>
+<li class="task-list-item"><input type="checkbox"> physics-dynamics feedback (Brunke et al., 2019): ??</input></li>
+</ul>
+</li>
+<li>
+<p>scientific question</p>
+</li>
 </ul>
 </article>
 </div>

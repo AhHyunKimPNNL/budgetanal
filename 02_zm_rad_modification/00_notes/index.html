@@ -297,6 +297,25 @@
 </ul>
 </nav>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#analysis3">
+    Analysis3
+  </a>
+<nav aria-label="Analysis3" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-shallow-cumulus-are-formed-in-the-lower-layer">
+    3. Shallow cumulus are formed in the lower layer
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4-positive-feedback-between-pbl-cloud-sst">
+    4. positive feedback between PBL cloud-SST
+  </a>
+</li>
+</ul>
+</nav>
+</li>
 </ul>
 </nav>
 </li>
@@ -566,13 +585,12 @@
 <ul>
 <li>remove the radiative heating effect during deep convection parameterization to reduce the deep convection</li>
 <li>Questions<ul class="task-list">
-<li class="task-list-item"><input type="checkbox"> When deep convection becomes weaker, how CLUBB will react?</input></li>
-<li class="task-list-item"><input type="checkbox"> Why CLUBB is not as active? -&gt; check CAPE<ul>
-<li>CLUBB is decreasing in Sc region<ul>
-<li>less condensation?</li>
-<li>less cloud top cooling reduces the strength of CAPE (less positive feedback?)?</li>
+<li class="task-list-item"><input type="checkbox"> When deep convection becomes weaker, how CLUBB will react?<ul>
+<li>PBL becomes more turbulent during CLUBB process, decreasing cloud fraction.</li>
 </ul>
-</li>
+</input></li>
+<li class="task-list-item"><input type="checkbox"> Why CLUBB is not as active? <ul>
+<li>enhanced turbulence -&gt; </li>
 </ul>
 </input></li>
 </ul>
@@ -662,8 +680,8 @@
 <p>problems: </p>
 <ul>
 <li>DEEPCU depletes relatively large amount of water vapor and decrease surface temperature in the trade cumulus region which reduces a lot of instability. <img alt="Q" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/Cross_section_chkpt_MACMIC_DEEPCU_Peru-0.png"/> <img alt="T" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/Cross_section_chkpt_MACMIC_DEEPCU_Peru-1.png"/></li>
-<li>CLUBB uses some variables that is calculated in DEEPCU.</li>
-<li>Therefore, instead of calculating DEEPCU after CLUBB, I setup an experiment as if DEEPCU and CLUBB is happening simultaneously.<ul>
+<li>Cloud water is diagnosed in CLUBB using saturation adjustment; that is, instantaneous condensation and evaporation within small air parcels (Larson et al., 2012). Therefore, CLUBB is very sensitive to the state variables. </li>
+<li>For that reason, although it is not physically meaningful, instead of calculating DEEPCU after CLUBB, I setup an experiment as if DEEPCU and CLUBB is happening simultaneously (parallel splitting).<ul>
 <li>put same state variable for DEEPCU and CLUBB01 so CLUBB01 does not affected by the changes due to DEEPCU ptend.</li>
 </ul>
 </li>
@@ -683,6 +701,13 @@
 <li>triggering shallow convection either DEEPCU or CLUBB is not the problem because errors from triggering effect will be compensated during substepping.</li>
 <li></li>
 <li>Although changing the location of DEEPCU process won´t cause the overall result, substepping DEEPCU will change the result, not because of the numerical problem but because of the time-step sensitivity of DEEPCU </li>
+</ul>
+</li>
+<li>
+<p>what I learn from this simulation</p>
+<ul>
+<li>CLUBB condensates cloud liquid instantaneously, whereas DEEPCU condensates cloud liquid for a certain time period.</li>
+<li>For that reason, increasing substeps in MACMIC sub cycle does not affect model results much. Changes in "STATE" variable affect the CLUBB´s behavior.</li>
 </ul>
 </li>
 <li>
@@ -782,6 +807,188 @@
 </div>
 <div class="tabbed-block">
 <p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/subcycZM/Compare_INC_Diff(subcycZM-ctrl)Vertical_profiles-18.png"/></p>
+</div>
+</div>
+</input></input></input></input></div>
+<h2 id="analysis3">Analysis3</h2>
+<ul>
+<li>Bogenschutz  et al. (2021): <ul>
+<li>Timestep sensitivity is due to <ins>a weakening of tendencies and mass fluxes from the ZM scheme</ins>. A reduction of the ZM time scale helps to consume convective available potential energy (CAPE) more efficiently to ameliorate this bias in the tropics (not shown (G. Zhang &amp; McFarlane, 1995),), though the bias in the low cloud regions is very similar.</li>
+<li>Of course, in E3SM <ins>the CLUBB parameterization, MG2 microphysics, and large scale vertical advection in the dynamical core should not have time step limitation</ins> since they employ implicit, semi-Lagrangian, and timesplitted sedimentation methods, respectively. </li>
+<li>Unfortunately, our ultra-high vertical resolution 16XL simulation provides inconclusive results on this matter as that simulation required extreme time step adjustments to run stably, to which we find E3SM is quite sensitive to the time step.</li>
+</ul>
+</li>
+<li>
+<p>Yang et al. (<a href="https://doi.org/10.1029/2020MS002050">2020</a>)</p>
+<ul>
+<li>remove the CAPE that is consumed by shallow convection from ZM so CLUBB can trigger more shallow convection <img alt="equation 4" src="https://agupubs.onlinelibrary.wiley.com/cms/asset/330bb2d2-0846-4cb2-8475-f23f18da375c/jame21153-math-0007.png"/></li>
+<li><ins>precipitation did not change much, but the precipitation peak time has changed</ins>.</li>
+<li>The improvements are less evident over ocean than over land mainly due to <ins>the weak diurnal variation of the reserved CAPE over ocean</ins> because shallow convections are relatively statistically steady there (Brown et al., 2002). </li>
+</ul>
+</li>
+<li>
+<p>Additional hypothesis:</p>
+<ol>
+<li>Since CLUBB condensates cloud water instantaneously, less 'pumping-up-the-Q' due to weaker DEEPCU <ul>
+<li>however, when the CAPE is low in both DEEPCU and CLUBB, cloud fraction increases (<a href="https://compy-dtn.pnl.gov/kima320/pictures/rad_noclubbrad_3h_compy_FC5AV1C-L_ne30_gmd_2020_330_with_forcing_method/multiple_plot/Diur_cy_diff_of_Turbulence.pdf">see plots</a>).</li>
+</ul>
+</li>
+<li>enhanced cloud-top entrainment decrease the clouds<ul>
+<li>enhanced turbulence may enhance entrainment leading to drying the cloud top</li>
+<li>However, the contribution of entrainment rate is rather small (0.3%) compared to other tunable parameters <img alt="Zhang et al. figure 11" src="https://agupubs.onlinelibrary.wiley.com/cms/asset/48f63346-bbae-4702-8baf-56d6e767743c/jame20786-fig-0011-m.png"/></li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h3 id="3-shallow-cumulus-are-formed-in-the-lower-layer">3. Shallow cumulus are formed in the lower layer</h3>
+<ul>
+<li>available CAPE trigger more of shallow convection in CLUBB process, but shallow cumulus are formed in the lower layer, depleting humidity in the lower layer</li>
+<li>shallow convections are often triggered in the lower level then deep convection (Lu et al., 2012; Guo et al., 2015)</li>
+<li>however, this effect cannot explain the overall cloud fraction decrease.<ul>
+<li>check point: <ul>
+<li>did CLUBB really trigger more shallow convection?: <ul>
+<li>CLDLIQ in CLUBB substeps: <ul>
+<li>in Peru stratocumulus: 4.87e-06 kg kg<sup>-1</sup> of cloud water increases in the lower altitude and 8.94e-06 kg kg<sup>-1</sup> cloud water decreased compared to ctrlin the original cloud layer.</li>
+<li>in Peru trade: 1.41e-05 kg kg<sup>-1</sup> of cloud water formed and 2.98e-06 kg kg<sup>-1</sup> of cloud water decreased compared to ctrl in the original cloud layer.</li>
+<li><a href="https://compy-dtn.pnl.gov/kima320/pictures/rad_test_compy_FC5AV1C-L_ne30_gmd_2020_330_with_forcing_method/Compare__DEEPCU_INC_Diff(test-ctrl)Vertical_profiles.pdf">plot link</a></li>
+</ul>
+</li>
+<li>turbulence: turbulence within the PBL increased in the trade cumulus region. But, cloud top turbulence decreased because clouds are no longer formed in the higher layer.<img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/differences/Diff_Vertical_profiles_of_single_Variable-2.png"/></li>
+<li>overall Q &amp; RH changes</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-positive-feedback-between-pbl-cloud-sst">4. positive feedback between PBL cloud-SST</h3>
+<ul>
+<li>available CAPE heat up the lower atmosphere enhances a well-known positive feedback between subtropical boundary layer clouds and the SST, where a negative bias in cloud cover and cloud water leads to warmer surface waters (due to increased short- wave radiation at the ocean surface) that, in turn, lead to even less clouds (e.g., Philander et al. 1996; Ma et al. 1996; Park et al. 2005; Teixeira et al. 2008)</li>
+<li>Zhang et al. (<a href="https://doi.org/10.1029/2018MS001423">2018</a>) shows that enhanced shallow convection (+4 K SST perturbation simulation) generally dries the PBL, and stronger shallow convection in the present climate would then imply more drying and larger reduction in LCC (convective drying, mostly stratocumulus regions).</li>
+<li>
+<p>Brient et al. (2015) and M. Zhang et al. (2013) found that <ins>strengthened shallow convection in a warmer climate leads to drying of the PBL by transporting moisture to the free troposphere</ins> (convective drying) when shallow convection dominates turbulent mixing, suggesting a positive cloud feedback (decreased low cloud cover, LCC). The strength of convective drying has been found to be related to model-specific convection parameterizations (Vial et al., 2016). As the climate warms, large-scale and small-scale lower-tropospheric mixings have been found to deplete the layers of water vapor needed to sustain low clouds in a similar way, and lower-tropospheric mixing in the present climate has been further proposed to provide a good observational constraint on ECS among GCMs (Sherwood et al., 2014).</p>
+<ul>
+<li>Brient et al. (2015) point outs that boundary-layer turbulence (causing negative cloud feedback) and shallow convection (causing positive cloud feedback) can act simultaneously, and their relative strength controls the sign and intensity of low-cloud feedbacks in models. Indeed, the strength of low-cloud feedbacks in individual climate models can be changed substantially by manipulating either convection schemes (e.g., Gettelman et al. 2012; Tomassini et al. 2014) or turbulence schemes (Watanabe et al. 2012).</li>
+<li>in this paper, reduced boundary-layer turbulence lower the cloud altitude</li>
+<li>intensified shallow convection decrease the cloud fraction. </li>
+<li>Signs of convective drying: <ul>
+<li>stronger shallow convection (higher skewness) can transport more moisture from the PBL to the free troposphere (higher RH in the above and below the cloud layer) and thus contribute to the cloud fraction decrease, usually with the deepening of PBL clouds (convective drying) (see <a href="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/test/Diur_cy_diff_of_Turbulence_0th-9.png">Oct. 1~9th turbulence plot below</a>  ) </li>
+<li>state Q differences shows that the moisture is transported to the free troposphere <img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/differences/Compare_INC_Diff(test-ctrl)Vertical_profiles_by_variable_and_chkpt_in_one_page-18.png"/></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>strong shallow convection case</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>near surface</th>
+<th>cloud layer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>w´<sup>2</sup></td>
+<td>↑ (more turbulent)</td>
+<td>↓ (more upward motion due to enhanced shallow convection</td>
+</tr>
+<tr>
+<td>skewness</td>
+<td>-</td>
+<td>↑ (more convective)</td>
+</tr>
+<tr>
+<td>buoyancy</td>
+<td>↑</td>
+<td>↑</td>
+</tr>
+<tr>
+<td>moisture flux</td>
+<td>↑</td>
+<td>cloud bottom ↑ (moisture source from the sfc), cloud top ↓ (detrain/entrainment, moistening FT)</td>
+</tr>
+<tr>
+<td>RH</td>
+<td>↑ (moistend due to turbulence)</td>
+<td>↓ (convective drying)</td>
+</tr>
+<tr>
+<td>cloud fraction</td>
+<td>-</td>
+<td>decrease</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>when the cloud fraction decrease -&gt; shallow convection weakens</li>
+</ul>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:4"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><input id="__tabbed_2_3" name="__tabbed_2" type="radio"><input id="__tabbed_2_4" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">Oct. 1~9 Peru trade cloud</label><label for="__tabbed_2_2">Oct. 1~9 Peru trade turbulence</label><label for="__tabbed_2_3">Oct. 20~29 Peru trade cloud</label><label for="__tabbed_2_4">Oct. 20~29 Peru trade turbulence</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/test/Diur_cy_diff_of_Cloud-9.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/test/Diur_cy_diff_of_Turbulence_0th-9.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/test/Diur_cy_diff_of_Cloud_20th-9.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/test/Diur_cy_diff_of_Turbulence_20th-9.png"/></p>
+</div>
+</div>
+</input></input></input></input></div>
+<ul>
+<li>when the radiative heating effect is removed during CLUBB process (noclubbrad simulation), cloud fraction increases.
+<img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/noclubbrad/Cross_section_single_var_diff_turbulence_Peru-0.png"/> <img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/noclubbrad/Cross_section_single_var_diff_turbulence_Peru-2.png"/></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Cause of the diurnal cycle</p>
+<ul>
+<li>radiative heating effect increase CAPE during nighttime and reduce CAPE during daytime over stratocumulus region.</li>
+<li>for that reason, in the beginning of the calculation, CAPE tendency of CLUBB in Peru trade cumulus region is higher in test than ctrl during daytime</li>
+<li>starting from the third day of the calculation, CLUBB in test simulation starts to consume more CAPE <img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/test/Timeseries_4_ALL_chkpt_in_one_page-2.png"/> </li>
+<li>However, during the adjustment period, test simulation produce less cloud, resulting weaker radiative cooling effect.<ul>
+<li>during the daytime, relative humidity is lower in the cloud layer in the test simulation, resulting in less cloud. <img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/test/Diur_cy_diff_of_RHW-9.png"/><ul>
+<li>possible cause: <ul>
+<li>less Q pumped up to provide more humidity in the cloud layer</li>
+<li>more Q is consumed to form clouds that were supposed to be consumed during DEEPCU. </li>
+<li>Enhanced PBL turbulence dry the PBL by transporting mositure to the free troposphere <ul>
+<li>Brient et al. (2015) and M. Zhang et al. (2013) found that strengthened shallow convection in a warmer climate leads to drying of the PBL by transporting moisture to the free troposphere (convective drying) when shallow convection dominates turbulent mixing, suggesting a positive cloud feedback (decreased low cloud cover, LCC).</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>cloud-radiation feedback (less cloud -&gt;less radiative heating effect -&gt; less cloud) reduces more cloud.</li>
+</ul>
+</li>
+<li>the results in test simulation are unstable. </li>
+</ul>
+</div>
+<ul>
+<li>when we look at the variable tendencies by checkpoint in the first 3 days of the calculation, CAPE in DEEPCU process start to change  </li>
+</ul>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:4"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio"><input id="__tabbed_3_2" name="__tabbed_3" type="radio"><input id="__tabbed_3_3" name="__tabbed_3" type="radio"><input id="__tabbed_3_4" name="__tabbed_3" type="radio"><div class="tabbed-labels"><label for="__tabbed_3_1">Oct. 1~3 Peru trade Q</label><label for="__tabbed_3_2">CLDLIQ</label><label for="__tabbed_3_3">T</label><label for="__tabbed_3_4">Relative humidity</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/test/Diurnal_cycle_of_4_ALL_chkpt_in_one_page-2.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/test/Diurnal_cycle_of_4_ALL_chkpt_in_one_page-12.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/test/Diurnal_cycle_of_4_ALL_chkpt_in_one_page-7.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/test/Diurnal_cycle_of_4_ALL_chkpt_in_one_page-17.png"/></p>
 </div>
 </div>
 </input></input></input></input></div>

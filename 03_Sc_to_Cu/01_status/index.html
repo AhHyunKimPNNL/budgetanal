@@ -369,6 +369,21 @@
 </ul>
 </nav>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#precipitation">
+    Precipitation
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#water-budget">
+    Water budget
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#previously-studied">
+    Previously studied.
+  </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -555,12 +570,12 @@
 <li>CALIPSO data are only available between 80˚S and 80˚N</li>
 <li>Compared to CALIPSO, E3SM simulate<ul>
 <li>High-level cloud: <ul>
-<li>underestimate near the west tropical Pacific and other tropical deep convection regions (Xie et al., 2018; Zhang et al. 2019)</li>
+<li>underestimate near the west tropical Pacific and other tropical deep convection regions (Xie et al., 2018; Zhang,Yuying et al. 2019)</li>
 <li>closely associated with the increase of vertical resolution (Xie et al., 2018)    </li>
 </ul>
 </li>
 <li>Low-level cloud:<ul>
-<li>underestimate the marine stratocumulus regions along the west coasts of major continents (Xie et al., 2018, Zhang et al., 2019) </li>
+<li>underestimate the marine stratocumulus regions along the west coasts of major continents (Xie et al., 2018, Zhang,Yuying et al., 2019) </li>
 <li>underestimate the marine stratocumulus region near California</li>
 <li>underestimation of coastal Sc might be due to the area of low vertical velocity skewness assumed for Sc in CLUBB is too narrow and the annual mean skewness is too high (<a href="https://doi.org/10.1029/2018JD028927">Qian et al. 2018</a>).<ul>
 <li>gamma (Constant of the width of PDF in w coordinate)</li>
@@ -577,7 +592,7 @@
 </div>
 <div class="tabbed-block">
 <ul>
-<li>underestimate in the Sc regions appears to be related to the underpredicted optically intermediate thick clouds (Zhang et al., 2019)</li>
+<li>underestimate in the Sc regions appears to be related to the underpredicted optically intermediate thick clouds (Zhang,Yuying et al., 2019)</li>
 <li><img alt="Figure 5" src="https://agupubs.onlinelibrary.wiley.com/cms/asset/90824f3f-8f11-4133-b6a3-5b704fa05bdf/jame20880-fig-0005-m.jpg"/></li>
 </ul>
 </div>
@@ -595,7 +610,7 @@
 <li>gray line: planetary boundary layer height </li>
 </ul>
 </li>
-<li>underesimate optically thin clouds (shown in Zhang et al., 2019)</li>
+<li>underesimate optically thin clouds (shown in Zhang,Yuying et al., 2019)</li>
 <li>underestimation of deep convective clouds: Xie et al. (2018) show that the changes in tunable parameter, especially reducing dp1 (convective cloud fraction coefficient that controls the size of ensemble convective plume), lead to a large reduction of clouds in the low and middle levels.</li>
 <li><ins>too high cloud base</ins></li>
 <li>cloud top<ul>
@@ -616,16 +631,16 @@
 </li>
 <li>cloud thickness<ul>
 <li>stratocumulus: shallower in E3SM than CALIPSO<ul>
-<li>underestimate optically thin low cloud (Zhang et al., 2019)</li>
+<li>underestimate optically thin low cloud (Zhang,Yuying et al., 2019)</li>
 </ul>
 </li>
 <li>trade cumulus: </li>
-<li>deep convective cloud: E3SM underestimates mid-level clouds (typical error in climate models; Zhang et al., 2005).</li>
+<li>deep convective cloud: E3SM underestimates mid-level clouds (typical error in climate models; Zhang,M.H. et al., <a href="https://doi.org/10.1029/2004JD005021">2005</a>).</li>
 </ul>
 </li>
 <li>convection reduce turbulence and heat/moisture transport during CLUBB</li>
 </ul>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:5"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><input id="__tabbed_2_3" name="__tabbed_2" type="radio"><input id="__tabbed_2_4" name="__tabbed_2" type="radio"><input id="__tabbed_2_5" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">CALIPSO</label><label for="__tabbed_2_2">MISR (only 0.3&lt;tau&lt;3.6)</label><label for="__tabbed_2_3">MISR (only 3.6&lt;tau&lt;23)</label><label for="__tabbed_2_4">turbulence</label><label for="__tabbed_2_5">Cloud water increment by checkpoint</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:8"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><input id="__tabbed_2_3" name="__tabbed_2" type="radio"><input id="__tabbed_2_4" name="__tabbed_2" type="radio"><input id="__tabbed_2_5" name="__tabbed_2" type="radio"><input id="__tabbed_2_6" name="__tabbed_2" type="radio"><input id="__tabbed_2_7" name="__tabbed_2" type="radio"><input id="__tabbed_2_8" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">CALIPSO</label><label for="__tabbed_2_2">MISR (only 0.3&lt;tau&lt;3.6)</label><label for="__tabbed_2_3">MISR (only 3.6&lt;tau&lt;23)</label><label for="__tabbed_2_4">LWP (MODIS) Annual</label><label for="__tabbed_2_5">Cloud Forcing (CERES) Annual</label><label for="__tabbed_2_6">Precipitation</label><label for="__tabbed_2_7">turbulence</label><label for="__tabbed_2_8">Cloud water increment by checkpoint</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <ul>
@@ -643,6 +658,15 @@
 </ul>
 </div>
 <div class="tabbed-block">
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/cosp/Cross_section_w_sat_LWP_Peru_ANN.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/cosp/Cross_section_CERES_Precip_Peru_ANN.png"/></p>
+</div>
+<div class="tabbed-block">
+<p>![](<img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/cosp/Cross_section_GPCP_Precip_Peru_ANN.png"/></p>
+</div>
+<div class="tabbed-block">
 <ul>
 <li>currently have only 2009 Oct result</li>
 <li><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/Cross_section_single_var_turbulence_Peru.png"/></li>
@@ -654,14 +678,33 @@
 </ul>
 </div>
 </div>
-</input></input></input></input></input></div>
+</input></input></input></input></input></input></input></input></div>
 <h3 id="near-california">near California</h3>
 <ul>
-<li>GPCI cross section (35˚N, 125˚W to 1˚S, 173˚W</li>
+<li>GPCI cross section (35˚N, 125˚W to 1˚S, 173˚W): to examine how well these models capture cloud regime transition.<ul>
+<li>E3SM fails to simulate the evolution and transition of clouds from Sc to shallow Cu toped boundary layers in the trade cumulus regions (Xie et al. <a href="https://doi.org/10.1029/ 2018MS001350">2018</a>)<ul>
+<li>reduced triggering of deep convective activities over the low cloud regions improves the low clouds (inclusion of CLUBB) </li>
+<li>retuning the convective entrainment rate (dmpdz) and convective cloud fraction coefficient (dp1) acts to redistribute clouds in the vertical and reduced convective ice cloud effective radius (re_ice_deep) helps sustain more high clouds.</li>
+<li>considerable reduction of low clouds off the California cost and a lack of clouds at low and middle levels (&lt;6 km) over the ITCZ region.</li>
+<li>increase in high clouds is mostly attributable to a reduction in the threshold RH with respect to ice for ice cloud fraction to equal to 1.0 (Xie et al., 2018)</li>
+</ul>
+</li>
 <li>underestimate the occurence of stratocumulus cloud (3.6&lt;tau&lt;23) top near coastal region</li>
 <li>Largely underestimate cumulus cloud (0.3&lt;tau&lt;3.6) top</li>
 </ul>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:5"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio"><input id="__tabbed_3_2" name="__tabbed_3" type="radio"><input id="__tabbed_3_3" name="__tabbed_3" type="radio"><input id="__tabbed_3_4" name="__tabbed_3" type="radio"><input id="__tabbed_3_5" name="__tabbed_3" type="radio"><div class="tabbed-labels"><label for="__tabbed_3_1">CALIPSO</label><label for="__tabbed_3_2">MISR (only 0.3&lt;tau&lt;3.6)</label><label for="__tabbed_3_3">MISR (only 3.6&lt;tau&lt;23)</label><label for="__tabbed_3_4">turbulence</label><label for="__tabbed_3_5">Cloud water increment by checkpoint</label></div>
+</li>
+<li>underestimate LWP compared to MODIS<ul>
+<li>LWP observations from microwave instruments such as SSM/I can have significant uncertainties (see <a href="https://doi.org/10.1029/2008GL035427">Li et al. 2008</a>, for a comparison between different satellite observations of LWP)</li>
+<li>but, according to Sporre et al. (<a href="https://doi.org/10.5194/amt-9-3193-2016">2016</a>), MODIS shows reasonable agreement with their ground-based counterparts over Finland.</li>
+</ul>
+</li>
+<li>overestimate precipitation but the differences over Sc to Cu region are not statistically significant (Xie et al (<a href="https://doi.org/10.1029/2019MS001702">2019</a>) )</li>
+<li>stratocumulus clouds are not as bright in the stratocumulus region, but brighter than CERES when it gets closer to the equator. <ul>
+<li>Less brighter clouds in stratocumulus regions seem to be due to low LWP and relatively high precipitation.</li>
+</ul>
+</li>
+</ul>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:7"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio"><input id="__tabbed_3_2" name="__tabbed_3" type="radio"><input id="__tabbed_3_3" name="__tabbed_3" type="radio"><input id="__tabbed_3_4" name="__tabbed_3" type="radio"><input id="__tabbed_3_5" name="__tabbed_3" type="radio"><input id="__tabbed_3_6" name="__tabbed_3" type="radio"/><input id="__tabbed_3_7" name="__tabbed_3" type="radio"/><div class="tabbed-labels"><label for="__tabbed_3_1">CALIPSO</label><label for="__tabbed_3_2">MISR (0.3&lt;tau&lt;3.6)</label><label for="__tabbed_3_3">MISR (3.6&lt;tau&lt;23)</label><label for="__tabbed_3_4">LWP (MODIS) Ann.</label><label for="__tabbed_3_5">LWP JJA</label><label for="__tabbed_3_6">Cloud Forcing</label><label for="__tabbed_3_7">Precip.</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <ul>
@@ -679,10 +722,29 @@
 </ul>
 </div>
 <div class="tabbed-block">
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/cosp/Cross_section_w_sat_LWP_California_ANN.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/cosp/Cross_section_w_sat_LWP_California_JJA.png"/></p>
+</div>
+<div class="tabbed-block">
 <ul>
-<li>currently have only 2009 Oct result</li>
-<li><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/Cross_section_single_var_turbulence_California.png"/></li>
+<li>CERES Annual average</li>
+<li><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/cosp/Cross_section_CERES_Precip_California_ANN.png"/></li>
 </ul>
+</div>
+<div class="tabbed-block">
+<p>![](<img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/cosp/Cross_section_GPCP_Precip_California_ANN.png"/> </p>
+</div>
+</div>
+</input></input></input></input></input></div>
+<ul>
+<li>turbulence</li>
+</ul>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio"/><input id="__tabbed_4_2" name="__tabbed_4" type="radio"/><div class="tabbed-labels"><label for="__tabbed_4_1">turbulence</label><label for="__tabbed_4_2">Cloud water increment by checkpoint</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><img alt="Sc-Cu Cal" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/cosp/Cross_section_single_var_turbulence_California_ANN.png"/></p>
 </div>
 <div class="tabbed-block">
 <ul>
@@ -690,7 +752,67 @@
 </ul>
 </div>
 </div>
-</input></input></input></input></input></div>
+</div>
+<h2 id="precipitation">Precipitation</h2>
+<ul>
+<li>GPCP vs. E3SM
+<img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/ctrl/Single_level_plot_precip(GPCP-ctrl).png"/></li>
+</ul>
+<h2 id="water-budget">Water budget</h2>
+<ul>
+<li>ERA5 vs. E3SM<ul>
+<li>updraft: in the deep convection region, E3SM has its peak in the upper part of the atmosphere, where ERA5 has its peak in the lower part of the atmosphere</li>
+<li>subsidence: relatively weaker subsidence in the trade cumulus region near California coast (important in determining the vertical extent of boundary layer convection and the characteristics of clouds).</li>
+<li>RH: <ul>
+<li>Peru: drier in E3SM above the boundary layer. seems to be due to stronger subsidence</li>
+<li>Cali: Higher RH in E3SM but lower RH in the mid-cloud level of the deep convective region.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:3"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio"/><input id="__tabbed_5_2" name="__tabbed_5" type="radio"/><input id="__tabbed_5_3" name="__tabbed_5" type="radio"/><div class="tabbed-labels"><label for="__tabbed_5_1">Peru Annual</label><label for="__tabbed_5_2">California Annual</label><label for="__tabbed_5_3">California JJA</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/ctrl/Cross_section_compare_with_era5_water_Peru_ANN-0.png"/> <img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/ctrl/Cross_section_compare_with_era5_water_Peru_ANN-1.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/ctrl/Cross_section_compare_with_era5_water_California_ANN-0.png"/> <img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/ctrl/Cross_section_compare_with_era5_water_California_ANN-1.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/ctrl/Cross_section_compare_with_era5_water_California_JJA-0.png"/> <img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/ctrl/Cross_section_compare_with_era5_water_California_JJA-1.png"/></p>
+</div>
+</div>
+</div>
+<h2 id="previously-studied">Previously studied.</h2>
+<ul>
+<li>
+<p>Physics vs. Dynamics</p>
+<ul>
+<li>
+<p>Brunke et al. (<a href="https://doi.org/10.1029/2019GL084747">2019</a>) analyize the E3SMv1 &amp; other models´ spatial errors of low-level clouds.</p>
+<ul>
+<li>E3SMv1 generates low cloud fraction (only the clouds with cloud fractions that are 45% or higher) for higher LTS values than ERA-Interim, indicating that the model dynamics deficiencies are not the primary reason for the spatial errors in the modeled cloud deck.</li>
+<li>when the prescribed dynamics is used (MERRA2 wind data were nudged), more low-level clouds closer to the coast and less low-level clouds further away from the coast (figures e &amp; f is actually sensitivity - AMIP) <img alt="" src="https://agupubs.onlinelibrary.wiley.com/cms/asset/17fc4f0e-d9c0-46f5-ab28-0ad1387157f5/grl59704-fig-0003-m.jpg"/>.</li>
+<li>this result indicates that the interactions between the large-scale dynamics and physical parameterization may generate deficiencies in simulating low-level clouds.<ul>
+<li>suspecting that the error is due to the skewness of the subgrid vertical velocity variance simulated by CLUBB might be too high near the coast.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Wan et al., (2021) also mentioned that the low-cloud fraction and SWCRE changes in regions associated with subsidence can be attributed primarily to the thermodynamic responses of the model atmosphere instead of vertical velocity changes.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>CLUBB related</p>
+<ul>
+<li>Bogenschutz et al (<a href="https://doi.org/10.1029/2020MS002239">2021</a>) also found that E3SM tends to produce too little cloud fraction compared to the C3M (Kato et al., 2010) satellite observations, but produces a peak cloud liquid water amount that is fairly comparable to observations. Thus, the radiational biases in the CNTL experiment appear to stem from Sc clouds that are simulated to be too few in amount. <img alt="Figure 8" src="https://agupubs.onlinelibrary.wiley.com/cms/asset/8ee79ebb-fa82-414f-aba8-7c30b0593a1e/jame21390-fig-0008-m.jpg"/></li>
+<li>tunable parameter sensitivity (Zhang,Haipeng et al. <a href="https://doi.org/10.1029/2018MS001423">2018</a> </li>
+</ul>
+</li>
+</ul>
 </article>
 </div>
 </div>

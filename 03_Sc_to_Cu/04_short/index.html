@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.2.3, mkdocs-material-8.1.4" name="generator"/>
-<title>codes - Budget Analysis</title>
+<title>Shorter timestep - Budget Analysis</title>
 <link href="../../assets/stylesheets/main.bb3983ee.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.e6a45f82.min.css" rel="stylesheet"/>
 <meta content="#009485" name="theme-color"/>
@@ -21,7 +21,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#code">
+<a class="md-skip" href="#results-for-shorter-timestep">
           Skip to content
         </a>
 </div>
@@ -45,7 +45,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              codes
+              Shorter timestep
             
           </span>
 </div>
@@ -103,7 +103,7 @@
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../03_Sc_to_Cu/">
+<a class="md-tabs__link md-tabs__link--active" href="../">
         Sc to Cu
       </a>
 </li>
@@ -113,7 +113,7 @@
     </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link md-tabs__link--active" href="../">
+<a class="md-tabs__link" href="../../99_Personal_notes/">
         Ah-Hyun
       </a>
 </li>
@@ -321,10 +321,10 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../03_Sc_to_Cu/">Sc to Cu</a>
+<a href="../">Sc to Cu</a>
 <label for="__nav_4">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -336,22 +336,79 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../03_Sc_to_Cu/03_analysis/">
+<a class="md-nav__link" href="../03_analysis/">
         Notes
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../03_Sc_to_Cu/01_status/">
+<a class="md-nav__link" href="../01_status/">
         E3SM status
       </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../03_Sc_to_Cu/04_short/">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          Shorter timestep
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
         Shorter timestep
       </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#simulation-setting">
+    simulation setting
+  </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../03_Sc_to_Cu/02_diurnal/">
+<a class="md-nav__link" href="#results">
+    Results
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#turbulence">
+    Turbulence
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#advection-at-850-hpa">
+    Advection at 850 hPa
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#checkpoints">
+    Checkpoints
+  </a>
+<nav aria-label="Checkpoints" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#california">
+    California
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#peru">
+    Peru
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#next-step">
+    next step
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../02_diurnal/">
         Diurnal Cycle
       </a>
 </li>
@@ -363,10 +420,10 @@
         Appendix
       </a>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" id="__nav_6" type="checkbox"/>
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_6" id="__nav_6" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../">Ah-Hyun</a>
+<a href="../../99_Personal_notes/">Ah-Hyun</a>
 <label for="__nav_6">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -378,57 +435,34 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../01_workflow/">
+<a class="md-nav__link" href="../../99_Personal_notes/01_workflow/">
         Summary
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../02_model/">
+<a class="md-nav__link" href="../../99_Personal_notes/02_model/">
         Atmospheric Model
       </a>
 </li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-          codes
-          <span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../99_Personal_notes/03_code/">
         codes
       </a>
-<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#physics-update">
-    Physics update
-  </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#-">
-    ---------------------
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../04_cloud/">
+<a class="md-nav__link" href="../../99_Personal_notes/04_cloud/">
         about cloud regime
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../05_satellite/">
+<a class="md-nav__link" href="../../99_Personal_notes/05_satellite/">
         about satellite
       </a>
 </li>
 <li class="md-nav__item md-nav__item--section md-nav__item--nested">
 <input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_6_7" id="__nav_6_7" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../05_references/">References</a>
+<a href="../../99_Personal_notes/05_references/">References</a>
 <label for="__nav_6_7">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -452,17 +486,17 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../05_references/Rasch_et_al_2019_JAMES/">
+<a class="md-nav__link" href="../../99_Personal_notes/05_references/Rasch_et_al_2019_JAMES/">
         Rasch et al.(2019,JAMES)
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../05_references/Xie_et_al_2018_JAMES/">
+<a class="md-nav__link" href="../../99_Personal_notes/05_references/Xie_et_al_2018_JAMES/">
         Xie et al.(2018,JAMES)
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../05_references/Zhang_et_al_2018_GMD/">
+<a class="md-nav__link" href="../../99_Personal_notes/05_references/Zhang_et_al_2018_GMD/">
         Zhang et al.(2018,GMD)
       </a>
 </li>
@@ -482,17 +516,17 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../05_references/Lauritzen_and_Williamson_2019_JAMES/">
+<a class="md-nav__link" href="../../99_Personal_notes/05_references/Lauritzen_and_Williamson_2019_JAMES/">
         Lauritzen and Williamson(2019,JAMES)
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../05_references/Wan_et_al_2020_JAMES/">
+<a class="md-nav__link" href="../../99_Personal_notes/05_references/Wan_et_al_2020_JAMES/">
         Wan et al.(2020,JAMES)
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../05_references/Zhang_et_al_2018_GMD/">
+<a class="md-nav__link" href="../../99_Personal_notes/05_references/Zhang_et_al_2018_GMD/">
         Zhang et al.(2018,GMD)
       </a>
 </li>
@@ -512,12 +546,12 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../05_references/Medeiros_et_al_2012_JC/">
+<a class="md-nav__link" href="../../99_Personal_notes/05_references/Medeiros_et_al_2012_JC/">
         Medeiros et al. (2012,JC)
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../05_references/Eastman_and_Warren_2014_JC/">
+<a class="md-nav__link" href="../../99_Personal_notes/05_references/Eastman_and_Warren_2014_JC/">
         Eastman and Warren (2014,JC)
       </a>
 </li>
@@ -537,69 +571,153 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="code">code</h1>
-<h3 id="physics-update">Physics update</h3>
+<h1 id="results-for-shorter-timestep">Results for shorter timestep</h1>
 <ul>
-<li>sequence<ol>
-<li>Call physics interface</li>
-<li>Check energy</li>
-<li>Call physics_update</li>
-</ol>
+<li>
+<p>Focus more on macmic timestep sensitivity over Sc to Cu transition region.</p>
+<ul>
+<li>
+<p>eye catching points: </p>
+<ul>
+<li>warm advection at 850 hPa. (Is this results in stable BL?) </li>
+<li>shift in cloud altitude</li>
+<li>more precipitation (known problem)<ul>
+<li>rain evaporation near surface decrease temperature and increase humidity (stable BL?).</li>
+</ul>
+</li>
+<li>abrupt decrease in cloud fraction in the Sc to Cu transition region.<ul>
+<li>differences in diurnal cycle.</li>
+</ul>
+</li>
+<li>other possible effect: pairing U tendency: CLUBB &amp; DYNEND (changing thermodynamical structure)</li>
+</ul>
+</li>
+<li>
+<p>reason: response of E3SM over Sc to Cu transition region is different from global.</p>
+<ul>
+<li>global: <img alt="" src="https://gmd.copernicus.org/articles/14/1921/2021/gmd-14-1921-2021-f08-web.png"/></li>
+<li>but, temp. response over Sc to Cu transition region is different from global (See below)</li>
+<li>also, response for the cloud formation is also different over Sc region and Cu region.</li>
+<li>furthermore, changes in wind field during CLUBB process causes temperature and moisture advection because wind tendency in CLUBB is strongly paired with DYNEND.<ul>
+<li>response to wind due to subcycling is more sensitive than reducing the overall time step<ul>
+<li>when the subcycling timestep changes, cloud´s vertical location changes:<a href="https://compy-dtn.pnl.gov/kima320/pictures/rad_noclubbsub_compy_FC5AV1C-L_ne30_gmd_2020_330_with_forcing_method/Compare_test_INC_Diff(noclubbsub-ctrl)Vertical_profiles.pdf">see vertical plot</a></li>
+</ul>
+</li>
+<li>check the veritical thermodynamic structure change due to the time step sensitivity and its cause.</li>
+<li>e.g.: <img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/01_global/All_zonal_by_chkpt_and_add_substeps-6.png"/></li>
+</ul>
 </li>
 </ul>
-<p>call outfld( trim(adjustl(varname)),get_var(state,vsuffix), pcols , lchnk )
-call pbuf_get_field
-call check_qflx
-call check_water
-call qneg3
-    - Clipping of negative water concentrations within the physics package (QNEG3) (<a href="https://doi.org/10.5194/gmd-11-1971-2018">Zhang et al., 2018</a>)
-call massborrow(</p>
-<p>call physics_state_check(
-    - validate state coming from the dynamics</p>
-<p>call diag_state_b4_phys_write (state)
-    - dump out "before physics" state</p>
-<p>call check_tracers_init(state, tracerint)</p>
-<h2 id="-">---------------------</h2>
-<div class="highlight"><pre><span></span><code>call t_startf('energy_fixer')
-   call check_energy_fix(state, ptend, nstep, flx_heat)
-   call physics_update(state, ptend, ztodt, tend)
-   call check_energy_chng(state, tend, "chkengyfix", nstep, ztodt, zero, zero, zero, flx_heat)
-! Save state for convective tendency calculations.
-call diag_conv_tend_ini(state, pbuf)
-call t_stopf('energy_fixer')
-</code></pre></div>
-<hr/>
-<div class="highlight"><pre><span></span><code>call t_startf('dry_adjustment')
-
-! Copy state info for input to dadadj
-! This is a kludge, so that dadadj does not have to be correctly reformulated in dry static energy
-
-lq(:) = .FALSE.
-lq(1) = .TRUE.
-call physics_ptend_init(ptend, state%psetcols, 'dadadj', ls=.true., lq=lq)
-ptend%s(:ncol,:pver)   = state%t(:ncol,:pver)
-ptend%q(:ncol,:pver,1) = state%q(:ncol,:pver,1)
-
-call dadadj (lchnk, ncol, state%pmid,  state%pint,  state%pdel,  &amp;
-     ptend%s, ptend%q(1,1,1))
-ptend%s(:ncol,:)   = (ptend%s(:ncol,:)   - state%t(:ncol,:)  )/ztodt * cpair
-ptend%q(:ncol,:,1) = (ptend%q(:ncol,:,1) - state%q(:ncol,:,1))/ztodt
-call physics_update(state, ptend, ztodt, tend)
-
-call t_stopf('dry_adjustment')
-</code></pre></div>
-<hr/>
-<p>state$s, t, q, pdel 
-tend%dTdt, dudt, dvdt,
-cam_in%cflx</p>
-<p>ftem
-CIDiff
-pbuf</p>
+</li>
+<li>response due to subcycling is different from reducing the time step<ul>
+<li>when the time step outside of the MACMIC changes, overall cloud fraction changes: <a href="https://compy-dtn.pnl.gov/kima320/pictures/rad_noclubbsub_compy_FC5AV1C-L_ne30_gmd_2020_330_with_forcing_method/Compare_oct_INC_Diff(noclubbsub-nosub)Vertical_profiles.pdf">see vertical plot</a></li>
+<li>when the subcycling timestep changes, cloud´s vertical location changes:<a href="https://compy-dtn.pnl.gov/kima320/pictures/rad_noclubbsub_compy_FC5AV1C-L_ne30_gmd_2020_330_with_forcing_method/Compare_test_INC_Diff(noclubbsub-ctrl)Vertical_profiles.pdf">see vertical plot</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="simulation-setting">simulation setting</h2>
 <ul>
-<li>pten: derive type variable</li>
-<li>state vector (state%T)</li>
-<li>pbuf (optional) 아무거나 넣고 필요할 때 꺼내 씀.</li>
-<li>e.g., state + pten x dt = 다음 timestep state variable.</li>
+<li>ctrl: <ul>
+<li>every other timestep: 1800 s</li>
+<li>macro/microphysics timestep: 300 s</li>
+</ul>
+</li>
+<li>noclubbsub:<ul>
+<li>All timestep: 1800 s</li>
+</ul>
+</li>
+</ul>
+<h2 id="results">Results</h2>
+<ul>
+<li>when the timestep for the subcycle change, CLUBB shows largest differences <a href="https://compy-dtn.pnl.gov/kima320/pictures/rad_noclubbsub_compy_FC5AV1C-L_ne30_gmd_2020_330_with_forcing_method/Compare_test_INC_Diff(noclubbsub-ctrl)Vertical_profiles.pdf">vertical profile</a><ul>
+<li>clouds shift vertically</li>
+<li></li>
+</ul>
+</li>
+<li></li>
+</ul>
+<h2 id="turbulence">Turbulence</h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><input id="__tabbed_1_3" name="__tabbed_1" type="radio"><input id="__tabbed_1_4" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">California ANN</label><label for="__tabbed_1_2">California JJA</label><label for="__tabbed_1_3">Peru ANN</label><label for="__tabbed_1_4">Peru SON</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/noclubbsub/Cross_section_single_var_diff_turbulence_California_ANN(ctrl-noclubbsub)-0.png"/> <img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/noclubbsub/Cross_section_single_var_diff_turbulence_California_ANN(ctrl-noclubbsub)-1.png"/> <img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/noclubbsub/Cross_section_single_var_diff_turbulence_California_ANN(ctrl-noclubbsub)-2.png"/> <img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/noclubbsub/Cross_section_single_var_diff_turbulence_California_ANN(ctrl-noclubbsub)-3.png"/> <img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/noclubbsub/Cross_section_single_var_diff_turbulence_California_ANN(ctrl-noclubbsub)-4.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/noclubbsub/Cross_section_single_var_diff_turbulence_California_JJA(ctrl-noclubbsub)-0.png"/> <img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/noclubbsub/Cross_section_single_var_diff_turbulence_California_JJA(ctrl-noclubbsub)-1.png"/> <img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/noclubbsub/Cross_section_single_var_diff_turbulence_California_JJA(ctrl-noclubbsub)-2.png"/> <img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/noclubbsub/Cross_section_single_var_diff_turbulence_California_JJA(ctrl-noclubbsub)-3.png"/> <img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/noclubbsub/Cross_section_single_var_diff_turbulence_California_JJA(ctrl-noclubbsub)-4.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/noclubbsub/Cross_section_single_var_diff_turbulence_Peru_ANN(ctrl-noclubbsub)-0.png"/> <img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/noclubbsub/Cross_section_single_var_diff_turbulence_Peru_ANN(ctrl-noclubbsub)-1.png"/> <img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/noclubbsub/Cross_section_single_var_diff_turbulence_Peru_ANN(ctrl-noclubbsub)-2.png"/> <img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/noclubbsub/Cross_section_single_var_diff_turbulence_Peru_ANN(ctrl-noclubbsub)-3.png"/> <img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/noclubbsub/Cross_section_single_var_diff_turbulence_Peru_ANN(ctrl-noclubbsub)-4.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/noclubbsub/Cross_section_single_var_diff_turbulence_Peru_SON(ctrl-noclubbsub)-0.png"/> <img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/noclubbsub/Cross_section_single_var_diff_turbulence_Peru_SON(ctrl-noclubbsub)-1.png"/> <img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/noclubbsub/Cross_section_single_var_diff_turbulence_Peru_SON(ctrl-noclubbsub)-2.png"/> <img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/noclubbsub/Cross_section_single_var_diff_turbulence_Peru_SON(ctrl-noclubbsub)-3.png"/> <img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/noclubbsub/Cross_section_single_var_diff_turbulence_Peru_SON(ctrl-noclubbsub)-4.png"/></p>
+</div>
+</div>
+</input></input></input></input></div>
+<h2 id="advection-at-850-hpa">Advection at 850 hPa</h2>
+<ul>
+<li>temperature advection: <img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/noclubbsub/pressure_slice_Temp._adv_850.png"/></li>
+<li>moisture advection: <img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/noclubbsub/pressure_slice_Moisture_adv_850.png"/></li>
+<li>other variables at 850 hPa: <img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/short/Single_level_plot_Q850(short-ctrl).png"/></li>
+</ul>
+<h2 id="checkpoints">Checkpoints</h2>
+<h3 id="california">California</h3>
+<ul>
+<li>for JJA</li>
+</ul>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:4"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><input id="__tabbed_2_3" name="__tabbed_2" type="radio"><input id="__tabbed_2_4" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">Q</label><label for="__tabbed_2_2">T</label><label for="__tabbed_2_3">CLDLIQ</label><label for="__tabbed_2_4">RH</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/noclubbsub/Cross_section_chkpt_California_JJA_noclubbsub-ctrl-0.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/noclubbsub/Cross_section_chkpt_California_JJA_noclubbsub-ctrl-1.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/noclubbsub/Cross_section_chkpt_California_JJA_noclubbsub-ctrl-2.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/noclubbsub/Cross_section_chkpt_California_JJA_noclubbsub-ctrl-3.png"/></p>
+</div>
+</div>
+</input></input></input></input></div>
+<h3 id="peru">Peru</h3>
+<ul>
+<li>1-year average</li>
+</ul>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:6"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio"><input id="__tabbed_3_2" name="__tabbed_3" type="radio"><input id="__tabbed_3_3" name="__tabbed_3" type="radio"><input id="__tabbed_3_4" name="__tabbed_3" type="radio"><input id="__tabbed_3_5" name="__tabbed_3" type="radio"><input id="__tabbed_3_6" name="__tabbed_3" type="radio"><div class="tabbed-labels"><label for="__tabbed_3_1">Q</label><label for="__tabbed_3_2">T</label><label for="__tabbed_3_3">CLDLIQ</label><label for="__tabbed_3_4">RH</label><label for="__tabbed_3_5">Vertical Profile-Peru</label><label for="__tabbed_3_6">Peru-trade</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/noclubbsub/Cross_section_chkpt_Peru_noclubbsub-ctrl-0.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/noclubbsub/Cross_section_chkpt_Peru_noclubbsub-ctrl-1.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/noclubbsub/Cross_section_chkpt_Peru_noclubbsub-ctrl-2.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/noclubbsub/Cross_section_chkpt_Peru_noclubbsub-ctrl-3.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/noclubbsub/Compare_test_INC_Diff(noclubbsub-ctrl)Vertical_profiles-16.png"/><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/noclubbsub/Compare_test_INC_Diff(noclubbsub-ctrl)Vertical_profiles-17.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/noclubbsub/Compare_test_INC_Diff(noclubbsub-ctrl)Vertical_profiles-18.png"/><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/noclubbsub/Compare_test_INC_Diff(noclubbsub-ctrl)Vertical_profiles-19.png"/></p>
+</div>
+</div>
+</input></input></input></input></input></input></div>
+<h2 id="next-step">next step</h2>
+<ul>
+<li>compare </li>
+<li>check qsat sensitivity to temperature and moisture<ul>
+<li>to see if the temp. adv. or moisture adv. is strong enough to change the cloud fraction.</li>
+</ul>
+</li>
+<li>check the occurrence of RH&gt;95%.</li>
+<li></li>
+<li></li>
 </ul>
 </article>
 </div>
@@ -607,7 +725,7 @@ pbuf</p>
 </main>
 <footer class="md-footer">
 <nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="Previous: Atmospheric Model" class="md-footer__link md-footer__link--prev" href="../02_model/" rel="prev">
+<a aria-label="Previous: E3SM status" class="md-footer__link md-footer__link--prev" href="../01_status/" rel="prev">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
 </div>
@@ -616,17 +734,17 @@ pbuf</p>
 <span class="md-footer__direction">
                 Previous
               </span>
-              Atmospheric Model
+              E3SM status
             </div>
 </div>
 </a>
-<a aria-label="Next: about cloud regime" class="md-footer__link md-footer__link--next" href="../04_cloud/" rel="next">
+<a aria-label="Next: Diurnal Cycle" class="md-footer__link md-footer__link--next" href="../02_diurnal/" rel="next">
 <div class="md-footer__title">
 <div class="md-ellipsis">
 <span class="md-footer__direction">
                 Next
               </span>
-              about cloud regime
+              Diurnal Cycle
             </div>
 </div>
 <div class="md-footer__button md-icon">

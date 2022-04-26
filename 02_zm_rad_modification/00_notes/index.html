@@ -407,13 +407,18 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="../../03_Sc_to_Cu/03_analysis/">
+        Notes
+      </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../../03_Sc_to_Cu/01_status/">
         E3SM status
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../03_Sc_to_Cu/03_analysis/">
-        Notes
+<a class="md-nav__link" href="../../03_Sc_to_Cu/04_short/">
+        Shorter timestep
       </a>
 </li>
 <li class="md-nav__item">
@@ -843,9 +848,40 @@
 </ul>
 <h3 id="3-shallow-cumulus-are-formed-in-the-lower-layer">3. Shallow cumulus are formed in the lower layer</h3>
 <ul>
-<li>available CAPE trigger more of shallow convection in CLUBB process, but shallow cumulus are formed in the lower layer, depleting humidity in the lower layer</li>
+<li>When DEEPCU ls less active, turbulence within the boundary layer increases during CLUBB process<ul>
+<li>colder near cloud bottom, warmer near surface</li>
+<li>turbulence within the boundary layer become more turbulent, but the cloud top become more stable.<ul>
+<li>DYNEND &amp; CLUBB wind speed tendencies are pairing. For that reason, less Q is transported near 850 hPa. <img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/pressure_slice_Moisture_adv_850.png"/></li>
+<li>more cloud water is precipitated out due to higher turbulence (see <a href="https://compy-dtn.pnl.gov/kima320/pictures/rad_test_3h_compy_FC5AV1C-L_ne30_gmd_2020_330_with_forcing_method/multiple_plot/Diur_cy_diff_of_Liquid_0th.pdf">Water &lt;--&gt; Precip tendency</a>)</li>
+<li>cloud water fall speed increases ({==why??=} fall speed is a function of droplet size)</li>
+<li>rain evaporates more in test simulation near surface.</li>
+<li>one of the drawbacks of CLUBB-MG coupling (The configurations used by Bogenschutz et al. (2013), Guo et al. (2014), and Guo et al. (2015)) is that <ins>MG microphysics is designed to parameterize stratiform cloud and whose assumptions about subgrid variability may not be well-suited to cumulus clouds</ins>.</li>
+<li>also, a different marginal PDF shape of cloud water is assumed by CLUBB in order to diagnose cloud liquid water content (namely, a truncated normal mixture) than is assumed by the microphysics in order to compute autoconversion and accretion (namely, a gamma function) (Morrison and Gettelman, 2008). </li>
+<li>Hohenegger and Bretherton (2011) stated that “the main difference between shallow and deep convection is precipitation (both rain and snow) and its effects“. <ul>
+<li>Thayer-Calder et al. (<a href="http://www.doi.org/10.5194/gmd-8-3801-2015">2015</a>) mentioned that replacing ZM-CLUBB with CLUBB-SILHS will replace many of these problems</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>higher stability near cloud top<ul>
+<li>less turbulence, less buoyancy, adn  near the cloud top</li>
+<li>PBL height decreases (?; not sure about this mechanism..) --&gt; need to check <a href="https://compy-dtn.pnl.gov/kima320/pictures/rad_test_3h_compy_FC5AV1C-L_ne30_gmd_2020_330_with_forcing_method/Reg_timeseries_4_PBLH_ctrl-test.pdf">plot</a><ul>
+<li>temperature near PBL height shift downward.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>available CAPE trigger more of shallow convection in CLUBB process, but shallow cumulus are formed in the lower layer, depleting humidity in the lower layer<ul>
 <li>shallow convections are often triggered in the lower level then deep convection (Lu et al., 2012; Guo et al., 2015)</li>
-<li>however, this effect cannot explain the overall cloud fraction decrease.<ul>
+</ul>
+</li>
+<li>these effects has diurnal cycle (because CAPE increase during daytime)</li>
+<li>Overall, the interplay between physics and dynamics seems to be more effective (?)<ul>
+<li>nudging simulation need to be done.</li>
+</ul>
+</li>
 <li>check point: <ul>
 <li>did CLUBB really trigger more shallow convection?: <ul>
 <li>CLDLIQ in CLUBB substeps: <ul>
@@ -854,10 +890,8 @@
 <li><a href="https://compy-dtn.pnl.gov/kima320/pictures/rad_test_compy_FC5AV1C-L_ne30_gmd_2020_330_with_forcing_method/Compare__DEEPCU_INC_Diff(test-ctrl)Vertical_profiles.pdf">plot link</a></li>
 </ul>
 </li>
-<li>turbulence: turbulence within the PBL increased in the trade cumulus region. But, cloud top turbulence decreased because clouds are no longer formed in the higher layer.<img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/differences/Diff_Vertical_profiles_of_single_Variable-2.png"/></li>
+<li>turbulence: turbulence within the PBL increased in the trade cumulus region. Cloud top instability decreases because cloud bottom is colder.<img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/differences/Diff_Vertical_profiles_of_single_Variable-2.png"/></li>
 <li>overall Q &amp; RH changes</li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>

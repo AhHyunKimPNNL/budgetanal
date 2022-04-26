@@ -336,13 +336,18 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="../../03_Sc_to_Cu/03_analysis/">
+        Notes
+      </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../../03_Sc_to_Cu/01_status/">
         E3SM status
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../03_Sc_to_Cu/03_analysis/">
-        Notes
+<a class="md-nav__link" href="../../03_Sc_to_Cu/04_short/">
+        Shorter timestep
       </a>
 </li>
 <li class="md-nav__item">
@@ -434,6 +439,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="#clubb-variables">
     CLUBB variables
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cloud-fraction-vs-cover">
+    CLOUD FRACTION vs cover
   </a>
 </li>
 </ul>
@@ -660,6 +670,91 @@ CAPE-based triggers are commonly used in deep convection schemes such as the ZM 
 </li>
 <li>w´<span class="arithmatex">\(\theta_v\)</span>: buoyancy flux<ul>
 <li>The negative buoyancy fluxes near cloud base indicate an evident decoupling and the PBL remains poorly mixed with double welldefined peaks in w0 2 near cloud base. </li>
+</ul>
+</li>
+</ul>
+<h2 id="cloud-fraction-vs-cover">CLOUD FRACTION vs cover</h2>
+<ul>
+<li>From Kassianov et al (<a href="https://doi.org/10.1175/JAM-2184.1">2005</a>): <ul>
+<li>ISCCP (satellite): total cloud amount = “the fraction of the earth’s surface covered by cloud” (Hahn et al. 2001). </li>
+<li>In surface climatology studies:“the fraction of hemispherical sky covered by cloud” (Hahn et al. 2001). </li>
+<li>Climate models: the cloud fraction = “the horizontal area fraction covered by clouds as viewed from nadir” (Del Genio et al. 1996).</li>
+</ul>
+</li>
+<li>In E3SM<ul>
+<li>CLOUDCOVER_CLUBB: <ul>
+<li>save cloud_frac in CLUBB</li>
+<li>calculated in advance_clubb_core</li>
+<li>use PDF to calculate stratiform-like clouds and update alst (f=mixt_frac x cloud_frac_1 (1-mixt_frac) x cloud_frac2) (see Griffin and Larson (<a href="https://gmd.copernicus.org/articles/9/2031/2016/gmd-9-2031-2016.pdf">2016</a>) <ul>
+<li>this calculation is in page 40 of CLUBB_document_paper.pdf</li>
+</ul>
+</li>
+<li>then add deep convective cloud ( cloud_frac(i,k) = min(ast(i,k)+deepcu(i,k),1.0_r8) )</li>
+<li>replace cld (CLOUD) using pbuf function at the end of the CLUBB calculation (do not write it in history output yet)</li>
+<li>write CLOUDCOVER_CLUBB in history output within the CLUBB scheme.</li>
+<li>results for CLOUDCOVER_CLUBB are different from CLOUD.</li>
+</ul>
+</li>
+<li>ALST<ul>
+<li>cloud_frac in CLUBB before adding deep convective cloud.</li>
+</ul>
+</li>
+<li>AIST<ul>
+<li>calculated by aist_vector subroutine in CLUBB</li>
+</ul>
+</li>
+<li>CLOUDFRAC_CLUBB:<ul>
+<li>save ast in CLUBB (liquid stratiform cloud)</li>
+<li>have same value with ALST</li>
+</ul>
+</li>
+<li>AST<ul>
+<li>Stratiform cloud calculated in CLUBB</li>
+<li>ast = max(alst(i,k),aist(i,k))</li>
+</ul>
+</li>
+<li>cldo<ul>
+<li>old cloud fraction used in CLDMIC</li>
+<li>copy value from AST</li>
+</ul>
+</li>
+<li>DEEPCU and CONCLD<ul>
+<li>deepcu(i,k) = max(0.0_r8,min(dp1<em>log(1.0_r8+500.0_r8</em>(cmfmc(i,k+1)-cmfmc_sh(i,k+1))),0.6_r8)</li>
+<li>currently, deepcu == concld<ul>
+<li>concld(i,k) = min(cloud_frac(i,k)-alst(i,k)+deepcu(i,k),0.80_r8) in CLUBB</li>
+<li>but at this stage, cloud_frac == alst.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>CLOUD (pbuf name: CLD)<ul>
+<li>save history output in cloud_cover_diags_out subroutine (located in cloud_diagnostics_calc in cloud_diagnostics.F90).<ul>
+<li>in-cloud mixing ratio limit is also in this subroutine.</li>
+</ul>
+</li>
+<li>location: AERWETRM -&gt; bc_history_write -&gt; update nudging -&gt; <mark class="critic">Calculate CLOUD</mark> -&gt; PBCDIAG -&gt; RAD</li>
+<li>called in <ul>
+<li>[] micro_mg_cam.F90</li>
+<li>[] physpkg.F90</li>
+<li>[] cam_diagnostics.F90</li>
+<li>[] conditional_diag_main.F90</li>
+<li>[] radiation_data.F90</li>
+<li>[] radiation.F90<ul>
+<li>if single_column.and.scm_crm_mode.and.have_cld, then use cldobs</li>
+<li>single level cloud fraction (CLDTOT, CLDLOW, CLODMED, CLDHGH) changes due to radiation, but not CLOUD</li>
+</ul>
+</li>
+<li>[] cloud_diagnostics.F90</li>
+<li>[] zm_conv_intr.F90</li>
+<li>[] convect_deep.F90</li>
+<li>[] convect_shallow.F90</li>
+<li>[] cospsimulator_intr.F90</li>
+<li>[] clubb_intr.F90: CLOUDs are calculated in here
+<img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/short/Cross_section_single_var_diff_cloud_test_California_JJA(short-ctrl).png"/></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>

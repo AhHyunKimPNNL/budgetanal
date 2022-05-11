@@ -369,6 +369,20 @@
 <a class="md-nav__link" href="#results">
     Results
   </a>
+<nav aria-label="Results" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#first-analysis">
+    first analysis
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#second-analysis">
+    second analysis
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#turbulence">
@@ -404,8 +418,18 @@
     next step
   </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#diurnal-cycle">
+    Diurnal cycle
+  </a>
+</li>
 </ul>
 </nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../05_macmic/">
+        MACMIC shorter
+      </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../02_diurnal/">
@@ -576,33 +600,15 @@
 <li>
 <p>Focus more on macmic timestep sensitivity over Sc to Cu transition region.</p>
 <ul>
-<li>
-<p>eye catching points: </p>
-<ul>
-<li>warm advection at 850 hPa. (Is this results in stable BL?) </li>
-<li>shift in cloud altitude</li>
-<li>more precipitation (known problem)<ul>
-<li>rain evaporation near surface decrease temperature and increase humidity (stable BL?).</li>
-</ul>
-</li>
-<li>abrupt decrease in cloud fraction in the Sc to Cu transition region.<ul>
-<li>differences in diurnal cycle.</li>
-</ul>
-</li>
-<li>other possible effect: pairing U tendency: CLUBB &amp; DYNEND (changing thermodynamical structure)</li>
-</ul>
-</li>
-<li>
-<p>reason: response of E3SM over Sc to Cu transition region is different from global.</p>
-<ul>
-<li>global: <img alt="" src="https://gmd.copernicus.org/articles/14/1921/2021/gmd-14-1921-2021-f08-web.png"/></li>
-<li>but, temp. response over Sc to Cu transition region is different from global (See below)</li>
-<li>also, response for the cloud formation is also different over Sc region and Cu region.</li>
+<li>reason: response of E3SM over Sc to Cu transition region is different from global.<ul>
+<li>Santos et al. (2021) show that the time step sensitivity of the microphysics is different when the micro/macro cloud physics is sub cycled.</li>
+<li>response for the cloud formation is also different over Sc region and Cu region.</li>
 <li>furthermore, changes in wind field during CLUBB process causes temperature and moisture advection because wind tendency in CLUBB is strongly paired with DYNEND.<ul>
 <li>response to wind due to subcycling is more sensitive than reducing the overall time step<ul>
 <li>when the subcycling timestep changes, cloud´s vertical location changes:<a href="https://compy-dtn.pnl.gov/kima320/pictures/rad_noclubbsub_compy_FC5AV1C-L_ne30_gmd_2020_330_with_forcing_method/Compare_test_INC_Diff(noclubbsub-ctrl)Vertical_profiles.pdf">see vertical plot</a></li>
 </ul>
 </li>
+<li>Barrett et al. (2019) mentioned that sequential splitting simulation is more sensitive to the changes in time step, things may change within the time step: e.g., the displacement of air may change the saturation of liquid.</li>
 <li>check the veritical thermodynamic structure change due to the time step sensitivity and its cause.</li>
 <li>e.g.: <img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/01_global/All_zonal_by_chkpt_and_add_substeps-6.png"/></li>
 </ul>
@@ -610,9 +616,35 @@
 </ul>
 </li>
 <li>response due to subcycling is different from reducing the time step<ul>
-<li>when the time step outside of the MACMIC changes, overall cloud fraction changes: <a href="https://compy-dtn.pnl.gov/kima320/pictures/rad_noclubbsub_compy_FC5AV1C-L_ne30_gmd_2020_330_with_forcing_method/Compare_oct_INC_Diff(noclubbsub-nosub)Vertical_profiles.pdf">see vertical plot</a></li>
-<li>when the subcycling timestep changes, cloud´s vertical location changes:<a href="https://compy-dtn.pnl.gov/kima320/pictures/rad_noclubbsub_compy_FC5AV1C-L_ne30_gmd_2020_330_with_forcing_method/Compare_test_INC_Diff(noclubbsub-ctrl)Vertical_profiles.pdf">see vertical plot</a></li>
+<li>when the time step outside of the MACMIC changes, overall cloud fraction changes: <a href="https://compy-dtn.pnl.gov/kima320/pictures/rad_noclubbsub_compy_FC5AV1C-L_ne30_gmd_2020_330_with_forcing_method/Compare_oct_INC_Diff(noclubbsub-nosub)Vertical_profiles.pdf">see vertical profile</a></li>
+<li>when the subcycling timestep changes, cloud´s vertical location changes:<a href="https://compy-dtn.pnl.gov/kima320/pictures/rad_noclubbsub_compy_FC5AV1C-L_ne30_gmd_2020_330_with_forcing_method/Compare_test_INC_Diff(noclubbsub-ctrl)Vertical_profiles.pdf">see vertical profile</a></li>
+<li>however, <mark class="critic">increasing the MAC-MIC subcycling frequency does not show the similar results as above</mark>: <a href="https://compy-dtn.pnl.gov/kima320/pictures/rad_macmic36_compy_FC5AV1C-L_ne30_gmd_2020_330_with_forcing_method/Compare_INC_Diff(macmic36-ctrl)Vertical_profiles.pdf">see vertical profile</a></li>
 </ul>
+</li>
+<li>
+<p>question</p>
+<ol>
+<li>why clouds are forming in the lower layer?</li>
+<li>why cloud fraction decrease?</li>
+<li>Does the timestep difference related with temp adv &amp; moisture adv? If it does, is it related with CLUBB&amp;Dynamics wind tendency pairing?</li>
+</ol>
+</li>
+<li>
+<p>possible answer</p>
+<ol>
+<li>why clouds are forming in the lower layer?<ul>
+<li>more clouds are formed during the CLUBB substep --&gt; interaction w/ microphysics</li>
+</ul>
+</li>
+<li>why cloud fraction decrease?<ul>
+<li>30% drier BL top decrease LWP by 10~15% (<a href="https://www.sciencedirect.com/science/article/pii/S1364682621000183">Malap et al., 2021</a></li>
+<li>increase in rainfall.</li>
+<li>less entrainment/detrainment near BL top. </li>
+<li>less cloud evaporation</li>
+</ul>
+</li>
+<li>seems to be due to more confined BL top in sub cycled simulation.</li>
+</ol>
 </li>
 </ul>
 </li>
@@ -621,23 +653,112 @@
 <ul>
 <li>ctrl: <ul>
 <li>every other timestep: 1800 s</li>
-<li>macro/microphysics timestep: 300 s</li>
+<li>number of subcycle (cld_macmic_num_steps): 6</li>
+<li>macro/microphysics timestep (clubb_timestep in nl): 300 s</li>
 </ul>
 </li>
 <li>noclubbsub:<ul>
 <li>All timestep: 1800 s</li>
+<li>number of subcycle (cld_macmic_num_steps): 1</li>
+<li>macro/microphysics timestep (clubb_timestep in nl): 1800 s</li>
+</ul>
+</li>
+<li>macmic36:<ul>
+<li>every other timestep: 1800 s</li>
+<li>number of subcycle (cld_macmic_num_steps): 36</li>
+<li>macro/microphysics timestep (clubb_timestep in nl): 60 s</li>
 </ul>
 </li>
 </ul>
 <h2 id="results">Results</h2>
+<h3 id="first-analysis">first analysis</h3>
 <ul>
-<li>when the timestep for the subcycle change, CLUBB shows largest differences <a href="https://compy-dtn.pnl.gov/kima320/pictures/rad_noclubbsub_compy_FC5AV1C-L_ne30_gmd_2020_330_with_forcing_method/Compare_test_INC_Diff(noclubbsub-ctrl)Vertical_profiles.pdf">vertical profile</a><ul>
-<li>clouds shift vertically</li>
-<li></li>
+<li>warm and dry advection at 850 hPa. (Is this results in stable BL? or the result of stable BL?)</li>
+<li>shift in cloud altitude</li>
+<li>
+<p>temp. response over Sc to Cu transition region is different from global (e.g.:<img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/noclubbsub/T_in_noclubbsub.png"/> )</p>
+</li>
+<li>
+<p>more precipitation (known problem)</p>
+</li>
+<li>according to Santos et al. (2021), precipitation increases when CLUBB-MG subcycle together. Cloud physics is not sensitive to the subcycling-CLUBB-alone simulation, but sensitive to microphysics simulation. Sensitivity increases when the CLUBB-MG subcycles together.<ul>
+<li>Santos et al. (2021) found that Extreme precip (97.7 mm d-1 or higher) increases in CLUBB-MG subcycle simulation.</li>
+<li>rain evaporation near surface decrease temperature and increase humidity (stable BL?).</li>
 </ul>
 </li>
-<li></li>
+<li>abrupt decrease in cloud fraction in the Sc to Cu transition region.<ul>
+<li>differences in diurnal cycle.</li>
 </ul>
+</li>
+<li>Q increase within the BL <img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/noclubbsub/Q_in_noclubbsub.png"/></li>
+<li>cloud water fall speed increases (????)</li>
+<li>less TKE near surface.</li>
+<li>other possible effect: pairing U tendency: CLUBB &amp; DYNEND (changing thermodynamical structure)</li>
+</ul>
+<h3 id="second-analysis">second analysis</h3>
+<ul>
+<li>
+<p>when the timestep for the subcycle change, CLUBB shows largest differences <a href="https://compy-dtn.pnl.gov/kima320/pictures/rad_noclubbsub_compy_FC5AV1C-L_ne30_gmd_2020_330_with_forcing_method/Compare_oct_INC_Diff(ctrl-noclubbsub)Vertical_profiles.pdf">vertical profile</a></p>
+<ul>
+<li>clouds shift vertically</li>
+</ul>
+</li>
+<li>
+<p>CLUBB response (accumulated increments)</p>
+<ul>
+<li>currently for macmic36, first 12 increments and very last one is accumulated (due to storage problem).</li>
+<li>plot link: <a href="https://compy-dtn.pnl.gov/kima320/pictures/rad_noclubbsub_compy_FC5AV1C-L_ne30_gmd_2020_330_with_forcing_method/Vertical_profiles_add_substep_variable_and_chkpt_in_one_page.pdf">noclubbsub</a> <a href="https://compy-dtn.pnl.gov/kima320/pictures/rad_ctrl_compy_FC5AV1C-L_ne30_gmd_2020_330_with_forcing_method/Vertical_profiles_add_substep_variable_and_chkpt_in_one_page.pdf">ctrl</a> <a href="https://compy-dtn.pnl.gov/kima320/pictures/rad_macmic36_compy_FC5AV1C-L_ne30_gmd_2020_330_with_forcing_method/Vertical_profiles_add_substep_variable_and_chkpt_in_one_page.pd">macmic36</a></li>
+<li>CLDMIC increments are almost the same, but CLUBB´s increments and their accumulated values differ by simulation.<ul>
+<li>Q<ul>
+<li>when macmic is not subcycled, CLUBB simulate Q as a well mixed boundary layer.</li>
+<li>double layer (maybe decoupling?) seems to be smoothed when the number of substep increases.</li>
+</ul>
+</li>
+<li>T<ul>
+<li>inversion layer become more sharper -&gt; this may cause the shift in cloud layer</li>
+</ul>
+</li>
+<li>CLDLIQ: <ul>
+<li>increments oscillates (as in Williamson (2013))</li>
+<li>in the trade cumulus region, less cloud water forms above 850 hPa and more cloud water forms below 850 hPa as the number of sub cycle time step increases.</li>
+<li>However, more cloud water forms in CTRL simulation than other (noclubb &amp; macmic36)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>region</th>
+<th>noclubbsub</th>
+<th>ctrl</th>
+<th>macmic36</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>peru</td>
+<td><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/short/Peru_CLUBB_noclubbsub.png"/></td>
+<td><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/short/Peru_CLUBB_ctrl.png"/></td>
+<td><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/short/Peru_CLUBB_macmic36.png"/></td>
+</tr>
+<tr>
+<td>peru trade</td>
+<td><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/short/Peru-trade_CLUBB_noclubbsub.png"/></td>
+<td><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/short/Peru-trade_CLUBB_ctrl.png"/></td>
+<td><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/short/Peru-trade_CLUBB_macmic36.png"/></td>
+</tr>
+<tr>
+<td>california</td>
+<td><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/short/Cali_CLUBB_noclubbsub.png"/></td>
+<td><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/short/Cali_CLUBB_ctrl.png"/></td>
+<td><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/short/Cali_CLUBB_macmic36.png"/></td>
+</tr>
+</tbody>
+</table>
 <h2 id="turbulence">Turbulence</h2>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><input id="__tabbed_1_3" name="__tabbed_1" type="radio"><input id="__tabbed_1_4" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">California ANN</label><label for="__tabbed_1_2">California JJA</label><label for="__tabbed_1_3">Peru ANN</label><label for="__tabbed_1_4">Peru SON</label></div>
 <div class="tabbed-content">
@@ -657,16 +778,30 @@
 </input></input></input></input></div>
 <h2 id="advection-at-850-hpa">Advection at 850 hPa</h2>
 <ul>
-<li>temperature advection: <img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/noclubbsub/pressure_slice_Temp._adv_850.png"/></li>
-<li>moisture advection: <img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/noclubbsub/pressure_slice_Moisture_adv_850.png"/></li>
-<li>other variables at 850 hPa: <img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/short/Single_level_plot_Q850(short-ctrl).png"/></li>
+<li>advections does not seems to be related to the time step. (even if it does, it´s not linearly related)</li>
 </ul>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:4"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><input id="__tabbed_2_3" name="__tabbed_2" type="radio"><input id="__tabbed_2_4" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">temp. ctrl vs noclubbsub</label><label for="__tabbed_2_2">moist ctrl vs noclubbsub</label><label for="__tabbed_2_3">temp. ctrl vs macmic36</label><label for="__tabbed_2_4">moist ctrl vs macmic36</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/noclubbsub/pressure_slice_Temp._adv_850.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/noclubbsub/pressure_slice_Moisture_adv_850.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/macmic36/pressure_slice_Temp._adv_850.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/macmic36/pressure_slice_Q_adv_850.png"/></p>
+</div>
+</div>
+</input></input></input></input></div>
 <h2 id="checkpoints">Checkpoints</h2>
 <h3 id="california">California</h3>
 <ul>
 <li>for JJA</li>
 </ul>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:4"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><input id="__tabbed_2_3" name="__tabbed_2" type="radio"><input id="__tabbed_2_4" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">Q</label><label for="__tabbed_2_2">T</label><label for="__tabbed_2_3">CLDLIQ</label><label for="__tabbed_2_4">RH</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:4"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio"><input id="__tabbed_3_2" name="__tabbed_3" type="radio"><input id="__tabbed_3_3" name="__tabbed_3" type="radio"><input id="__tabbed_3_4" name="__tabbed_3" type="radio"><div class="tabbed-labels"><label for="__tabbed_3_1">Q</label><label for="__tabbed_3_2">T</label><label for="__tabbed_3_3">CLDLIQ</label><label for="__tabbed_3_4">RH</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/noclubbsub/Cross_section_chkpt_California_JJA_noclubbsub-ctrl-0.png"/></p>
@@ -686,7 +821,7 @@
 <ul>
 <li>1-year average</li>
 </ul>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:6"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio"><input id="__tabbed_3_2" name="__tabbed_3" type="radio"><input id="__tabbed_3_3" name="__tabbed_3" type="radio"><input id="__tabbed_3_4" name="__tabbed_3" type="radio"><input id="__tabbed_3_5" name="__tabbed_3" type="radio"><input id="__tabbed_3_6" name="__tabbed_3" type="radio"><div class="tabbed-labels"><label for="__tabbed_3_1">Q</label><label for="__tabbed_3_2">T</label><label for="__tabbed_3_3">CLDLIQ</label><label for="__tabbed_3_4">RH</label><label for="__tabbed_3_5">Vertical Profile-Peru</label><label for="__tabbed_3_6">Peru-trade</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:6"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio"><input id="__tabbed_4_2" name="__tabbed_4" type="radio"><input id="__tabbed_4_3" name="__tabbed_4" type="radio"><input id="__tabbed_4_4" name="__tabbed_4" type="radio"/><input id="__tabbed_4_5" name="__tabbed_4" type="radio"/><input id="__tabbed_4_6" name="__tabbed_4" type="radio"/><div class="tabbed-labels"><label for="__tabbed_4_1">Q</label><label for="__tabbed_4_2">T</label><label for="__tabbed_4_3">CLDLIQ</label><label for="__tabbed_4_4">RH</label><label for="__tabbed_4_5">Vertical Profile-Peru</label><label for="__tabbed_4_6">Peru-trade</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/noclubbsub/Cross_section_chkpt_Peru_noclubbsub-ctrl-0.png"/></p>
@@ -707,18 +842,62 @@
 <p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/noclubbsub/Compare_test_INC_Diff(noclubbsub-ctrl)Vertical_profiles-18.png"/><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/noclubbsub/Compare_test_INC_Diff(noclubbsub-ctrl)Vertical_profiles-19.png"/></p>
 </div>
 </div>
-</input></input></input></input></input></input></div>
+</input></input></input></div>
 <h2 id="next-step">next step</h2>
 <ul>
-<li>compare </li>
+<li>check if reducing CLUBB only also sharpens the BL top.<ul>
+<li>do</li>
+</ul>
+</li>
+<li>need to find a way to resolve qliq conservation problem due to subcycle</li>
+<li>check water budget (table)<ul>
+<li>q_vap, q_liquid, q_rain: total &amp; by check point</li>
+</ul>
+</li>
 <li>check qsat sensitivity to temperature and moisture<ul>
 <li>to see if the temp. adv. or moisture adv. is strong enough to change the cloud fraction.</li>
 </ul>
 </li>
 <li>check the occurrence of RH&gt;95%.</li>
-<li></li>
+<li>*</li>
+</ul>
+<h2 id="diurnal-cycle">Diurnal cycle</h2>
+<ul>
+<li>First 10 day average (3 data per hour of Oct. 2009)<ul>
+<li>over Peruvian, subcycled simulation (ctrl) has less cloud in the night-morning and more clouds in the afternoon. </li>
+<li>this seems to be because not subcycled simulation (noclubbsub) precipitate more during daytime where </li>
+<li>rainfall<ul>
+<li>in ctrl, more rain forms within cloud layer, evaporate near surface.</li>
+<li>in noclubbsub, more rain forms near surface, less evaporation</li>
+<li>evaporation / condensation of rain near sfc create stability/instability </li>
+</ul>
+</li>
 <li></li>
 </ul>
+</li>
+</ul>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:6"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio"/><input id="__tabbed_5_2" name="__tabbed_5" type="radio"/><input id="__tabbed_5_3" name="__tabbed_5" type="radio"/><input id="__tabbed_5_4" name="__tabbed_5" type="radio"/><input id="__tabbed_5_5" name="__tabbed_5" type="radio"/><input id="__tabbed_5_6" name="__tabbed_5" type="radio"/><div class="tabbed-labels"><label for="__tabbed_5_1">California</label><label for="__tabbed_5_2">Cali-turb</label><label for="__tabbed_5_3">Peru</label><label for="__tabbed_5_4">Peru-turb</label><label for="__tabbed_5_5">Peru trade</label><label for="__tabbed_5_6">PT-turb</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/noclubbsub/Diur_cy_diff_of_Liquid_0th_noclubbsub-ctrl-7.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/noclubbsub/Diur_cy_diff_of_Turbulence_0th-7.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/noclubbsub/Diur_cy_diff_of_Liquid_0th_noclubbsub-ctrl-8.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/noclubbsub/Diur_cy_diff_of_Turbulence_0th-8.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/noclubbsub/Diur_cy_diff_of_Liquid_0th_noclubbsub-ctrl-9.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/noclubbsub/Diur_cy_diff_of_Turbulence_0th-9.png"/></p>
+</div>
+</div>
+</div>
 </article>
 </div>
 </div>
@@ -738,13 +917,13 @@
             </div>
 </div>
 </a>
-<a aria-label="Next: Diurnal Cycle" class="md-footer__link md-footer__link--next" href="../02_diurnal/" rel="next">
+<a aria-label="Next: MACMIC shorter" class="md-footer__link md-footer__link--next" href="../05_macmic/" rel="next">
 <div class="md-footer__title">
 <div class="md-ellipsis">
 <span class="md-footer__direction">
                 Next
               </span>
-              Diurnal Cycle
+              MACMIC shorter
             </div>
 </div>
 <div class="md-footer__button md-icon">

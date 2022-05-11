@@ -316,6 +316,11 @@
 </ul>
 </nav>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#wind-field">
+    Wind field
+  </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -419,6 +424,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../03_Sc_to_Cu/04_short/">
         Shorter timestep
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../03_Sc_to_Cu/05_macmic/">
+        MACMIC shorter
       </a>
 </li>
 <li class="md-nav__item">
@@ -606,7 +616,7 @@
 <li>DEEPCU: Reduction of convection due to radiative heating lead to:<ul>
 <li>increase in Q in the lower part of the atmosphere due to less pumping of air.</li>
 <li>decrease in Q in the cloud layer due to less 'pumping up the air'.
-<img alt="Q" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/differences/by_regions/Compare_test_n_ctrl_Peru_trade_Q_CLUBB_n_DEEPCU.png"/></li>
+<img align="right" alt="Q" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/differences/by_regions/Compare_test_n_ctrl_Peru_trade_Q_CLUBB_n_DEEPCU.png"/></li>
 </ul>
 </li>
 <li>CLUBB: put convection due to radiative heating back.<ul>
@@ -1026,6 +1036,40 @@
 </div>
 </div>
 </input></input></input></input></div>
+<h2 id="wind-field">Wind field</h2>
+<ul>
+<li>Beljaars et al. (<a href="https://doi.org/10.3389/feart.2018.00137">2019</a>)<ul>
+<li>the diffusion coefficients and particularly the transfer coefficients at the lowest model level see a higher wind speed due to dynamics increment (dynamics accelerates the flow and diffusion decelerates it) and due to the higher transfer coefficient, the wind at the lowest model level is reduced more by turbulent diffusion.</li>
+</ul>
+</li>
+<li>wind speed decreases within the boundary layer only in Peruvian region.</li>
+</ul>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:5"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio"><input id="__tabbed_4_2" name="__tabbed_4" type="radio"/><input id="__tabbed_4_3" name="__tabbed_4" type="radio"/><input id="__tabbed_4_4" name="__tabbed_4" type="radio"/><input id="__tabbed_4_5" name="__tabbed_4" type="radio"/><div class="tabbed-labels"><label for="__tabbed_4_1">California</label><label for="__tabbed_4_2">Peru</label><label for="__tabbed_4_3">Peru-trade</label><label for="__tabbed_4_4">Australia</label><label for="__tabbed_4_5">Nambian</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/test/wind_Diff(test-ctrl)Vertical_profiles-7.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/test/wind_Diff(test-ctrl)Vertical_profiles-8.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/test/wind_Diff(test-ctrl)Vertical_profiles-9.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/test/wind_Diff(test-ctrl)Vertical_profiles-10.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/test/wind_Diff(test-ctrl)Vertical_profiles-11.png"/></p>
+</div>
+</div>
+</input></div>
+<ul>
+<li>advection near surface does not show significant effect except for peruvian because of the wind speed change shown above<ul>
+<li><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/test/pressure_slice_Q_adv_1000.png"/></li>
+<li><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/02_zm_rad_modification/test/pressure_slice_T_adv_1000.png"/></li>
+</ul>
+</li>
+</ul>
 </article>
 </div>
 </div>

@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.2.3, mkdocs-material-8.1.4" name="generator"/>
-<title>E3SM status - Budget Analysis</title>
+<title>MACMIC shorter - Budget Analysis</title>
 <link href="../../assets/stylesheets/main.bb3983ee.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.e6a45f82.min.css" rel="stylesheet"/>
 <meta content="#009485" name="theme-color"/>
@@ -21,7 +21,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#status">
+<a class="md-skip" href="#macro-microphysics-subcycling">
           Skip to content
         </a>
 </div>
@@ -45,7 +45,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              E3SM status
+              MACMIC shorter
             
           </span>
 </div>
@@ -340,14 +340,24 @@
         Notes
       </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../01_status/">
+        E3SM status
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../04_short/">
+        Shorter timestep
+      </a>
+</li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
 <label class="md-nav__link md-nav__link--active" for="__toc">
-          E3SM status
+          MACMIC shorter
           <span class="md-nav__icon md-icon"></span>
 </label>
 <a class="md-nav__link md-nav__link--active" href="./">
-        E3SM status
+        MACMIC shorter
       </a>
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
 <label class="md-nav__title" for="__toc">
@@ -356,51 +366,51 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#zonal-cross-section-using-cosp">
-    Zonal &amp; Cross section using COSP
+<a class="md-nav__link" href="#motivation">
+    motivation
   </a>
-<nav aria-label="Zonal &amp; Cross section using COSP" class="md-nav">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#simulation-setting">
+    simulation setting
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#results">
+    Results
+  </a>
+<nav aria-label="Results" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#near-peru">
-    near Peru
+<a class="md-nav__link" href="#global-result">
+    Global result
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#near-california">
-    near California
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#precipitation">
-    Precipitation
+<a class="md-nav__link" href="#zonal">
+    zonal
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#water-budget">
-    Water budget
+<a class="md-nav__link" href="#horizontal">
+    horizontal
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#previously-studied">
-    Previously studied.
+<a class="md-nav__link" href="#regional-results">
+    Regional results
   </a>
 </li>
 </ul>
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../04_short/">
-        Shorter timestep
-      </a>
+<a class="md-nav__link" href="#things-to-watch-out-for-when-analyzing">
+    Things to watch out for when analyzing
+  </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../05_macmic/">
-        MACMIC shorter
-      </a>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../02_diurnal/">
@@ -566,262 +576,273 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="status">Status</h1>
-<h2 id="zonal-cross-section-using-cosp">Zonal &amp; Cross section using COSP</h2>
+<h1 id="macro-microphysics-subcycling">Macro-microphysics subcycling</h1>
+<h2 id="motivation">motivation</h2>
 <ul>
-<li>E3SM results are compared with CALIPSO data using COSP for the "apple-to-apple" comparison</li>
-<li>The passive instruments used in ISCCP and MODIS provides cloud optical properties better than the active instruments</li>
-<li>the active instruments used on CALIPSO measures cloud height and the vertical structure of clouds (Chepfer et al., 2008; Kay et al., 2012)</li>
+<li>Santos et al. (2021) showed that the E3SM is more sensitive to time step when the micro/macro cloud physics is sub cycled together.</li>
+<li>Wan et al. (2021) also mentioned that increasing the subcycling frequency causes the cooling, drying, and cloud fraction decrease in the tropical middle and upper troposphere and mostly high-cloud fractions.<ul>
+<li>Pronounced problems are shown mostly in high clouds (Wan et al., 2021). This is a conflicting result from Santos et al. (2021), but the difference in integration period may cause this problem due to high seasonality in cloud fraction.</li>
+<li>time step sensitivity due to MAC-MIC is expected to be due to the microphysics.</li>
+<li>however, <ins>coupling between MAC-MIC</ins> seems to contributes large portion of cloud fraction decrease over stratocumulus regions (see green boxes in macmic36-cldmic36) </li>
 </ul>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">CALIPSO Cloud fraction</label><label for="__tabbed_1_2">MISR Cloud fraction</label></div>
+</li>
+</ul>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><input id="__tabbed_1_3" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">macmic36-ctrl</label><label for="__tabbed_1_2">macmic36-cldmic36</label><label for="__tabbed_1_3">nosub-ctrl</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<ul>
-<li>CALIPSO data are only available between 80˚S and 80˚N</li>
-<li>Compared to CALIPSO, E3SM simulate<ul>
-<li>High-level cloud: <ul>
-<li>underestimate near the west tropical Pacific and other tropical deep convection regions (Xie et al., 2018; Zhang,Yuying et al. 2019)</li>
-<li>closely associated with the increase of vertical resolution (Xie et al., 2018)    </li>
-</ul>
-</li>
-<li>Low-level cloud:<ul>
-<li>underestimate the marine stratocumulus regions along the west coasts of major continents (Xie et al., 2018, Zhang,Yuying et al., 2019) </li>
-<li>underestimate the marine stratocumulus region near California</li>
-<li>underestimation of coastal Sc might be due to the area of low vertical velocity skewness assumed for Sc in CLUBB is too narrow and the annual mean skewness is too high (<a href="https://doi.org/10.1029/2018JD028927">Qian et al. 2018</a>).<ul>
-<li>gamma (Constant of the width of PDF in w coordinate)</li>
-<li>c8 (onstant associated with Newtonian damping of w´<sup>3</sup>)</li>
-</ul>
-</li>
-<li>overestiate the Southern Ocean clouds (overestimate clouds with optical depth 9.4 or higher)</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><img alt="CALIPSO" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/Zonal_average_w_sat_cloud_products.png"/></li>
-</ul>
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/macmic36/Cloud_regimes(using_Annual_mean_macmic36-ctrl).png"/></p>
 </div>
 <div class="tabbed-block">
-<ul>
-<li>underestimate in the Sc regions appears to be related to the underpredicted optically intermediate thick clouds (Zhang,Yuying et al., 2019)</li>
-<li><img alt="Figure 5" src="https://agupubs.onlinelibrary.wiley.com/cms/asset/90824f3f-8f11-4133-b6a3-5b704fa05bdf/jame20880-fig-0005-m.jpg"/></li>
-</ul>
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/macmic36/Cloud_regimes(using_Annual_mean_macmic36-cldmic36).png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/nosub/Cloud_regimes(using_Annual_mean_nosub-ctrl).png"/></p>
 </div>
 </div>
-</input></input></div>
-<h3 id="near-peru">near Peru</h3>
+</input></input></input></div>
+<h2 id="simulation-setting">simulation setting</h2>
+<div class="admonition note inline end">
+<p class="admonition-title">in cam namelist</p>
 <ul>
-<li>cross section: -5˚N, 120˚W to -5˚S, 80˚W<ul>
-<li>CALIPSO contour: cloud fraction</li>
-<li>MISR contour: <ul>
-<li>cross-section: cloud top occurence within a month for the cloud that has the optical thickness between 3.6 and 23</li>
-<li>map: same as cross-section, but for low-level.</li>
+<li>clubb_timestep: timestep for clubb (automatically changes only when clubb_timestep &gt; dtime)</li>
+<li>cld_macmic_num_steps: number of clubb steps within the subcycling loop</li>
+<li>micro_mg_num_steps: number of microphysics steps within the subcycling loop</li>
+</ul>
+</div>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>dtime</th>
+<th>MAC-MIC subcycle together</th>
+<th>clubb_timestep</th>
+<th>microphysics timestep</th>
+<th>etc</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ctrl</td>
+<td>1800 s</td>
+<td>6</td>
+<td>300 s</td>
+<td>300 s</td>
+<td></td>
+</tr>
+<tr>
+<td>noclubbsub</td>
+<td>1800 s</td>
+<td>1</td>
+<td>1800 s</td>
+<td>1800 s</td>
+<td></td>
+</tr>
+<tr>
+<td>nosub</td>
+<td>300 s</td>
+<td>1</td>
+<td>300 s</td>
+<td>300 s</td>
+<td></td>
+</tr>
+<tr>
+<td>macmic36</td>
+<td>1800 s</td>
+<td>36</td>
+<td>60 s</td>
+<td>60 s</td>
+<td></td>
+</tr>
+<tr>
+<td>mac6mic6</td>
+<td>1800 s</td>
+<td>6</td>
+<td>60 s</td>
+<td>60 s</td>
+<td>clubb and microphysics runs 36 times, but only subcycled together 6 times</td>
+</tr>
+<tr>
+<td>clubb36</td>
+<td>1800 s</td>
+<td>6</td>
+<td>60 s</td>
+<td>300 s</td>
+<td></td>
+</tr>
+<tr>
+<td>cldmic36</td>
+<td>1800 s</td>
+<td>6</td>
+<td>300 s</td>
+<td>60 s</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="results">Results</h2>
+<h3 id="global-result">Global result</h3>
+<ul>
+<li>difference between <code>ctrl</code> and <code>macmic36</code> seems to be mostly due to MAC-MIC coupling.<ul>
+<li>Q decrease near <ins>850 hPa or above between 30˚S to 30˚N</ins> seems to be due to <code>cldmic36</code> and MAC-MIC coupling.<ul>
+<li>However, these differences are not only confined to stratocumulus region, but to almost the entire area between 30˚S to 30˚N (<a href="https://compy-dtn.pnl.gov/kima320/pictures/rad_macmic36_compy_FC5AV1C-L_ne30_gmd_2020_330_with_forcing_method/Slice_level_850hPa(using_Annual_mean_macmic36-cldmic36).pdf">see plot</a>).</li>
+<li>process that affect low latitude Q is mostly dynamics and CLUBB.</li>
 </ul>
 </li>
-<li>gray line: planetary boundary layer height </li>
+<li>T decrease seems to be mostly due to MAC-MIC coupling.</li>
+<li>low-level cloud fraction decrease is the combination of <code>cldmic36</code> and MAC-MIC coupling.</li>
+<li>high-level cloud fraction decrease is the combination of <code>clubb36</code> and MAC-MIC coupling. </li>
 </ul>
 </li>
-<li>underesimate optically thin clouds (shown in Zhang,Yuying et al., 2019)</li>
-<li>underestimation of deep convective clouds: Xie et al. (2018) show that the changes in tunable parameter, especially reducing dp1 (convective cloud fraction coefficient that controls the size of ensemble convective plume), lead to a large reduction of clouds in the low and middle levels.</li>
-<li><ins>too high cloud base</ins></li>
-<li>cloud top<ul>
-<li>stratocumulus cloud tops are comparable</li>
-<li>trade cumulus cloud top are higher in E3SM than the satelite observation<ul>
-<li>Use of CLUBB makes the PBL and cloud top higher (Kubar et al., 2020)</li>
-<li>Tuning issues (Xie et al., 2018)</li>
-<li><ins>possible cause</ins>: entrainment/detrainment near cloud top is too strong (?) or too buoyant (?) (see <a href="https://compy-dtn.pnl.gov/kima320/pictures/q_budget_rad_compy_FC5AV1C-L_ne30_maint-1.0_cnd_diag1.1/Cross_section_chkpt_cloud_water_Peru.pdf">plot</a> )</li>
-<li>possibility of de-coupling (low PBL height, decoupled with cloud layer) is also shown.<ul>
-<li>decrease in cloud fraction near cloud base during <a href="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/multiple_plots/regional/Diurnal_cycle_of_CLDLIQ_chkpt_in_one_page_Peru.png">CLUBB</a></li>
-<li>two layers of <a href="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/multiple_plots/regional/Diurnal_cycle_of_Turbulence_Peru.png">buoyancy flux</a></li>
+<li><mark class="critic">reducing CLUBB and CLDMIC timestep and coupling MAC-MIC frequency increases cloud fraction especially over stratocumulus regions (why?)</mark><ul>
+<li>Q near 850 hPa also increases (why?)</li>
 </ul>
 </li>
 </ul>
-</li>
-<li>deep convective cloud: lower in E3SM than CALIPSO</li>
-</ul>
-</li>
-<li>cloud thickness<ul>
-<li>stratocumulus: shallower in E3SM than CALIPSO<ul>
-<li>underestimate optically thin low cloud (Zhang,Yuying et al., 2019)</li>
-</ul>
-</li>
-<li>trade cumulus: </li>
-<li>deep convective cloud: E3SM underestimates mid-level clouds (typical error in climate models; Zhang,M.H. et al., <a href="https://doi.org/10.1029/2004JD005021">2005</a>).</li>
-</ul>
-</li>
-<li>convection reduce turbulence and heat/moisture transport during CLUBB</li>
-</ul>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:8"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><input id="__tabbed_2_3" name="__tabbed_2" type="radio"><input id="__tabbed_2_4" name="__tabbed_2" type="radio"><input id="__tabbed_2_5" name="__tabbed_2" type="radio"><input id="__tabbed_2_6" name="__tabbed_2" type="radio"><input id="__tabbed_2_7" name="__tabbed_2" type="radio"><input id="__tabbed_2_8" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">CALIPSO</label><label for="__tabbed_2_2">MISR (only 0.3&lt;tau&lt;3.6)</label><label for="__tabbed_2_3">MISR (only 3.6&lt;tau&lt;23)</label><label for="__tabbed_2_4">LWP (MODIS) Annual</label><label for="__tabbed_2_5">Cloud Forcing (CERES) Annual</label><label for="__tabbed_2_6">Precipitation</label><label for="__tabbed_2_7">turbulence</label><label for="__tabbed_2_8">Cloud water increment by checkpoint</label></div>
+<h3 id="zonal">zonal</h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:6"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><input id="__tabbed_2_3" name="__tabbed_2" type="radio"><input id="__tabbed_2_4" name="__tabbed_2" type="radio"><input id="__tabbed_2_5" name="__tabbed_2" type="radio"><input id="__tabbed_2_6" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">ctrl vs. macmic36</label><label for="__tabbed_2_2">ctrl vs. clubb36</label><label for="__tabbed_2_3">ctrl vs. cldmic36</label><label for="__tabbed_2_4">mac6mic6 vs. ctrl</label><label for="__tabbed_2_5">macmic36 vs. cldmic36</label><label for="__tabbed_2_6">macmic36 vs. mac6mic6</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<ul>
-<li><img alt="Sc-Cu Peru" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/Cross_section_w_sat_cloud_products_Peru_ANN.png"/></li>
-</ul>
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/macmic36/_zonal_macmic36-ctrl.png"/></p>
 </div>
 <div class="tabbed-block">
-<ul>
-<li><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/Cross_section_w_MISR_cloud_products_Peru_ANN_cumulus.png"/></li>
-</ul>
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/clubb36/_zonal_clubb36-ctrl.png"/></p>
 </div>
 <div class="tabbed-block">
-<ul>
-<li><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/Cross_section_w_MISR_cloud_products_Peru_ANN_stratocumulus.png"/></li>
-</ul>
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/cldmic36/_zonal_cldmic36-ctrl.png"/></p>
 </div>
 <div class="tabbed-block">
-<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/cosp/Cross_section_w_sat_LWP_Peru_ANN.png"/></p>
+<p>(need to update later! this is not an annual average) <img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/mac6mic6/_zonal_mac6mic6-ctrl.png"/></p>
 </div>
 <div class="tabbed-block">
-<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/cosp/Cross_section_CERES_Precip_Peru_ANN.png"/></p>
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/macmic36/_zonal_macmic36-cldmic36.png"/></p>
 </div>
 <div class="tabbed-block">
-<p>![](<img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/cosp/Cross_section_GPCP_Precip_Peru_ANN.png"/></p>
-</div>
-<div class="tabbed-block">
-<ul>
-<li>currently have only 2009 Oct result</li>
-<li><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/Cross_section_single_var_turbulence_Peru.png"/></li>
-</ul>
-</div>
-<div class="tabbed-block">
-<ul>
-<li><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/Cross_section_chkpt_MACMIC_cloud_water_Peru.png"/></li>
-</ul>
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/macmic36/_zonal_macmic36-mac6mic6.png"/></p>
 </div>
 </div>
-</input></input></input></input></input></input></input></input></div>
-<h3 id="near-california">near California</h3>
-<ul>
-<li>GPCI cross section (35˚N, 125˚W to 1˚S, 173˚W): to examine how well these models capture cloud regime transition.<ul>
-<li>E3SM fails to simulate the evolution and transition of clouds from Sc to shallow Cu toped boundary layers in the trade cumulus regions (Xie et al. <a href="https://doi.org/10.1029/ 2018MS001350">2018</a>)<ul>
-<li>reduced triggering of deep convective activities over the low cloud regions improves the low clouds (inclusion of CLUBB) </li>
-<li>retuning the convective entrainment rate (dmpdz) and convective cloud fraction coefficient (dp1) acts to redistribute clouds in the vertical and reduced convective ice cloud effective radius (re_ice_deep) helps sustain more high clouds.</li>
-<li>considerable reduction of low clouds off the California cost and a lack of clouds at low and middle levels (&lt;6 km) over the ITCZ region.</li>
-<li>increase in high clouds is mostly attributable to a reduction in the threshold RH with respect to ice for ice cloud fraction to equal to 1.0 (Xie et al., 2018)</li>
-</ul>
-</li>
-<li>underestimate the occurence of stratocumulus cloud (3.6&lt;tau&lt;23) top near coastal region</li>
-<li>Largely underestimate cumulus cloud (0.3&lt;tau&lt;3.6) top</li>
-</ul>
-</li>
-<li>underestimate LWP compared to MODIS<ul>
-<li>LWP observations from microwave instruments such as SSM/I can have significant uncertainties (see <a href="https://doi.org/10.1029/2008GL035427">Li et al. 2008</a>, for a comparison between different satellite observations of LWP)</li>
-<li>but, according to Sporre et al. (<a href="https://doi.org/10.5194/amt-9-3193-2016">2016</a>), MODIS shows reasonable agreement with their ground-based counterparts over Finland.</li>
-</ul>
-</li>
-<li>overestimate precipitation but the differences over Sc to Cu region are not statistically significant (Xie et al (<a href="https://doi.org/10.1029/2019MS001702">2019</a>) )</li>
-<li>stratocumulus clouds are not as bright in the stratocumulus region, but brighter than CERES when it gets closer to the equator. <ul>
-<li>Less brighter clouds in stratocumulus regions seem to be due to low LWP and relatively high precipitation.</li>
-</ul>
-</li>
-</ul>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:7"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio"><input id="__tabbed_3_2" name="__tabbed_3" type="radio"><input id="__tabbed_3_3" name="__tabbed_3" type="radio"><input id="__tabbed_3_4" name="__tabbed_3" type="radio"><input id="__tabbed_3_5" name="__tabbed_3" type="radio"><input id="__tabbed_3_6" name="__tabbed_3" type="radio"/><input id="__tabbed_3_7" name="__tabbed_3" type="radio"/><div class="tabbed-labels"><label for="__tabbed_3_1">CALIPSO</label><label for="__tabbed_3_2">MISR (0.3&lt;tau&lt;3.6)</label><label for="__tabbed_3_3">MISR (3.6&lt;tau&lt;23)</label><label for="__tabbed_3_4">LWP (MODIS) Ann.</label><label for="__tabbed_3_5">LWP JJA</label><label for="__tabbed_3_6">Cloud Forcing</label><label for="__tabbed_3_7">Precip.</label></div>
+</input></input></input></input></input></input></div>
+<h3 id="horizontal">horizontal</h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:6"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio"><input id="__tabbed_3_2" name="__tabbed_3" type="radio"><input id="__tabbed_3_3" name="__tabbed_3" type="radio"><input id="__tabbed_3_4" name="__tabbed_3" type="radio"><input id="__tabbed_3_5" name="__tabbed_3" type="radio"><input id="__tabbed_3_6" name="__tabbed_3" type="radio"><div class="tabbed-labels"><label for="__tabbed_3_1">ctrl vs. macmic36</label><label for="__tabbed_3_2">ctrl vs. clubb36</label><label for="__tabbed_3_3">ctrl vs. cldmic36</label><label for="__tabbed_3_4">macmic36 vs. cldmic36</label><label for="__tabbed_3_5">mac6mic6 vs. ctrl</label><label for="__tabbed_3_6">macmic36 vs. mac6mic6</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<ul>
-<li><img alt="Sc-Cu Cal" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/Cross_section_w_sat_cloud_products_California_ANN.png"/></li>
-</ul>
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/macmic36/Cloud_regimes(using_Annual_mean_macmic36-ctrl).png"/></p>
 </div>
 <div class="tabbed-block">
-<ul>
-<li><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/Cross_section_w_MISR_cloud_products_California_ANN_cumulus.png"/></li>
-</ul>
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/clubb36/Cloud_regimes(using_Annual_mean_clubb36-ctrl).png"/></p>
 </div>
 <div class="tabbed-block">
-<ul>
-<li><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/Cross_section_w_MISR_cloud_products_California_ANN_stratocumulus.png"/></li>
-</ul>
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/cldmic36/Cloud_regimes(using_Annual_mean_cldmic36-ctrl).png"/></p>
 </div>
 <div class="tabbed-block">
-<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/cosp/Cross_section_w_sat_LWP_California_ANN.png"/></p>
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/macmic36/Cloud_regimes(using_Annual_mean_macmic36-cldmic36).png"/></p>
 </div>
 <div class="tabbed-block">
-<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/cosp/Cross_section_w_sat_LWP_California_JJA.png"/></p>
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/mac6mic6/Cloud_regimes(using_Annual_mean_mac6mic6-ctrl)_CLD_n_PREC_U.png"/></p>
 </div>
 <div class="tabbed-block">
-<ul>
-<li>CERES Annual average</li>
-<li><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/cosp/Cross_section_CERES_Precip_California_ANN.png"/></li>
-</ul>
-</div>
-<div class="tabbed-block">
-<p>![](<img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/cosp/Cross_section_GPCP_Precip_California_ANN.png"/> </p>
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/macmic36/Cloud_regimes(using_Annual_mean_macmic36-mac6mic6)_CLD_n_PREC_U.png"/></p>
 </div>
 </div>
-</input></input></input></input></input></div>
-<ul>
-<li>turbulence</li>
-</ul>
-<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio"/><input id="__tabbed_4_2" name="__tabbed_4" type="radio"/><div class="tabbed-labels"><label for="__tabbed_4_1">turbulence</label><label for="__tabbed_4_2">Cloud water increment by checkpoint</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<p><img alt="Sc-Cu Cal" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/cosp/Cross_section_single_var_turbulence_California_ANN.png"/></p>
-</div>
-<div class="tabbed-block">
-<ul>
-<li><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/Cross_section_chkpt_MACMIC_cloud_water_California.png"/></li>
-</ul>
-</div>
-</div>
-</div>
-<h2 id="precipitation">Precipitation</h2>
-<ul>
-<li>GPCP vs. E3SM
-<img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/ctrl/Single_level_plot_precip(GPCP-ctrl).png"/></li>
-</ul>
-<h2 id="water-budget">Water budget</h2>
-<ul>
-<li>ERA5 vs. E3SM<ul>
-<li>updraft: in the deep convection region, E3SM has its peak in the upper part of the atmosphere, where ERA5 has its peak in the lower part of the atmosphere</li>
-<li>subsidence: relatively weaker subsidence in the trade cumulus region near California coast (important in determining the vertical extent of boundary layer convection and the characteristics of clouds).</li>
-<li>RH: <ul>
-<li>Peru: drier in E3SM above the boundary layer. seems to be due to stronger subsidence</li>
-<li>Cali: Higher RH in E3SM but lower RH in the mid-cloud level of the deep convective region.</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<div class="tabbed-set tabbed-alternate" data-tabs="5:3"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio"/><input id="__tabbed_5_2" name="__tabbed_5" type="radio"/><input id="__tabbed_5_3" name="__tabbed_5" type="radio"/><div class="tabbed-labels"><label for="__tabbed_5_1">Peru Annual</label><label for="__tabbed_5_2">California Annual</label><label for="__tabbed_5_3">California JJA</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/ctrl/Cross_section_compare_with_era5_water_Peru_ANN-0.png"/> <img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/ctrl/Cross_section_compare_with_era5_water_Peru_ANN-1.png"/></p>
-</div>
-<div class="tabbed-block">
-<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/ctrl/Cross_section_compare_with_era5_water_California_ANN-0.png"/> <img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/ctrl/Cross_section_compare_with_era5_water_California_ANN-1.png"/></p>
-</div>
-<div class="tabbed-block">
-<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/ctrl/Cross_section_compare_with_era5_water_California_JJA-0.png"/> <img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/ctrl/Cross_section_compare_with_era5_water_California_JJA-1.png"/></p>
-</div>
-</div>
-</div>
-<h2 id="previously-studied">Previously studied.</h2>
+</input></input></input></input></input></input></div>
+<h3 id="regional-results">Regional results</h3>
 <ul>
 <li>
-<p>Physics vs. Dynamics</p>
+<p><del>when the timestep for the subcycle change, CLUBB shows largest differences</del>: <a href="https://compy-dtn.pnl.gov/kima320/pictures/rad_noclubbsub_compy_FC5AV1C-L_ne30_gmd_2020_330_with_forcing_method/Compare_oct_INC_Diff(ctrl-noclubbsub)Vertical_profiles.pdf">vertical profile</a></p>
 <ul>
-<li>
-<p>Brunke et al. (<a href="https://doi.org/10.1029/2019GL084747">2019</a>) analyize the E3SMv1 &amp; other models´ spatial errors of low-level clouds.</p>
-<ul>
-<li>E3SMv1 generates low cloud fraction (only the clouds with cloud fractions that are 45% or higher) for higher LTS values than ERA-Interim, indicating that the model dynamics deficiencies are not the primary reason for the spatial errors in the modeled cloud deck.</li>
-<li>when the prescribed dynamics is used (MERRA2 wind data were nudged), more low-level clouds closer to the coast and less low-level clouds further away from the coast (figures e &amp; f is actually sensitivity - AMIP) <img alt="" src="https://agupubs.onlinelibrary.wiley.com/cms/asset/17fc4f0e-d9c0-46f5-ab28-0ad1387157f5/grl59704-fig-0003-m.jpg"/>.</li>
-<li>this result indicates that the interactions between the large-scale dynamics and physical parameterization may generate deficiencies in simulating low-level clouds.<ul>
-<li>suspecting that the error is due to the skewness of the subgrid vertical velocity variance simulated by CLUBB might be too high near the coast.</li>
-</ul>
-</li>
+<li>clouds shift vertically, but this seems to be due to the calculation error (this problem seems to be due to calculating MAC-MIC with too large timestep, because it does not appears in <code>nosub</code> simuluation: <a href="https://compy-dtn.pnl.gov/kima320/pictures/rad_nosub_compy_FC5AV1C-L_ne30_gmd_2020_330_with_forcing_method/Vertical_profiles_add_substep_variable_and_chkpt_in_one_page.pdf">see plot</a>.</li>
 </ul>
 </li>
 <li>
-<p>Wan et al., (2021) also mentioned that the low-cloud fraction and SWCRE changes in regions associated with subsidence can be attributed primarily to the thermodynamic responses of the model atmosphere instead of vertical velocity changes.</p>
-</li>
-</ul>
-</li>
-<li>
-<p>CLUBB related</p>
+<p>CLUBB response (accumulated increments)</p>
 <ul>
-<li>Bogenschutz et al (<a href="https://doi.org/10.1029/2020MS002239">2021</a>) also found that E3SM tends to produce too little cloud fraction compared to the C3M (Kato et al., 2010) satellite observations, but produces a peak cloud liquid water amount that is fairly comparable to observations. Thus, the radiational biases in the CNTL experiment appear to stem from Sc clouds that are simulated to be too few in amount. <img alt="Figure 8" src="https://agupubs.onlinelibrary.wiley.com/cms/asset/8ee79ebb-fa82-414f-aba8-7c30b0593a1e/jame21390-fig-0008-m.jpg"/></li>
-<li>tunable parameter sensitivity (Zhang,Haipeng et al. <a href="https://doi.org/10.1029/2018MS001423">2018</a> </li>
+<li>currently for macmic36, first 12 increments and very last one is accumulated (due to storage problem).</li>
+<li>plot link: <a href="https://compy-dtn.pnl.gov/kima320/pictures/rad_noclubbsub_compy_FC5AV1C-L_ne30_gmd_2020_330_with_forcing_method/Vertical_profiles_add_substep_variable_and_chkpt_in_one_page.pdf">noclubbsub</a> <a href="https://compy-dtn.pnl.gov/kima320/pictures/rad_ctrl_compy_FC5AV1C-L_ne30_gmd_2020_330_with_forcing_method/Vertical_profiles_add_substep_variable_and_chkpt_in_one_page.pdf">ctrl</a> <a href="https://compy-dtn.pnl.gov/kima320/pictures/rad_macmic36_compy_FC5AV1C-L_ne30_gmd_2020_330_with_forcing_method/Vertical_profiles_add_substep_variable_and_chkpt_in_one_page.pd">macmic36</a></li>
+<li>CLDMIC increments are almost the same, but CLUBB´s increments and their accumulated values differ by simulation.<ul>
+<li>Q<ul>
+<li>when macmic is not subcycled, CLUBB simulate Q as a well mixed boundary layer.</li>
+<li>double layer (maybe decoupling?) seems to be smoothed when the number of substep increases.</li>
 </ul>
 </li>
+<li>T<ul>
+<li>inversion layer become more sharper -&gt; this may cause the shift in cloud layer</li>
+</ul>
+</li>
+<li>CLDLIQ:<ul>
+<li>increments oscillates (as in Williamson (2013))</li>
+<li>in the trade cumulus region, less cloud water forms above 850 hPa and more cloud water forms below 850 hPa as the number of sub cycle time step increases.</li>
+<li>However, more cloud water forms in CTRL simulation than other (noclubb &amp; macmic36)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>region</th>
+<th>noclubbsub</th>
+<th>ctrl</th>
+<th>macmic36</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>peru</td>
+<td><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/short/Peru_CLUBB_noclubbsub.png"/></td>
+<td><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/short/Peru_CLUBB_ctrl.png"/></td>
+<td><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/short/Peru_CLUBB_macmic36.png"/></td>
+</tr>
+<tr>
+<td>peru trade</td>
+<td><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/short/Peru-trade_CLUBB_noclubbsub.png"/></td>
+<td><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/short/Peru-trade_CLUBB_ctrl.png"/></td>
+<td><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/short/Peru-trade_CLUBB_macmic36.png"/></td>
+</tr>
+<tr>
+<td>california</td>
+<td><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/short/Cali_CLUBB_noclubbsub.png"/></td>
+<td><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/short/Cali_CLUBB_ctrl.png"/></td>
+<td><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/short/Cali_CLUBB_macmic36.png"/></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>region</th>
+<th>clubb36</th>
+<th>cldmic36</th>
+<th>mac6mic6</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>peru</td>
+<td><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/short/Peru_CLUBB_clubb36.png"/></td>
+<td><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/short/Peru_CLUBB_cldmic36.png"/></td>
+<td><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/short/Peru_CLUBB_mac6mic6.png"/></td>
+</tr>
+<tr>
+<td>peru trade</td>
+<td><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/short/Peru-trade_CLUBB_clubb36.png"/></td>
+<td><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/short/Peru-trade_CLUBB_cldmic36.png"/></td>
+<td><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/short/Peru-trade_CLUBB_mac6mic6.png"/></td>
+</tr>
+<tr>
+<td>california</td>
+<td><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/short/Cali_CLUBB_clubb36.png"/></td>
+<td><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/short/Cali_CLUBB_cldmic36.png"/></td>
+<td><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/short/Cali_CLUBB_mac6mic6.png"/></td>
+</tr>
+</tbody>
+</table>
+<h2 id="things-to-watch-out-for-when-analyzing">Things to watch out for when analyzing</h2>
+<ul>
+<li>clubb time stepping sensitivity</li>
+<li>cldmic time stepping sensitivity</li>
+<li>coupling between clubb &amp; cldmic</li>
 </ul>
 </article>
 </div>
@@ -829,7 +850,7 @@
 </main>
 <footer class="md-footer">
 <nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="Previous: Notes" class="md-footer__link md-footer__link--prev" href="../03_analysis/" rel="prev">
+<a aria-label="Previous: Shorter timestep" class="md-footer__link md-footer__link--prev" href="../04_short/" rel="prev">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
 </div>
@@ -838,17 +859,17 @@
 <span class="md-footer__direction">
                 Previous
               </span>
-              Notes
+              Shorter timestep
             </div>
 </div>
 </a>
-<a aria-label="Next: Shorter timestep" class="md-footer__link md-footer__link--next" href="../04_short/" rel="next">
+<a aria-label="Next: Diurnal Cycle" class="md-footer__link md-footer__link--next" href="../02_diurnal/" rel="next">
 <div class="md-footer__title">
 <div class="md-ellipsis">
 <span class="md-footer__direction">
                 Next
               </span>
-              Shorter timestep
+              Diurnal Cycle
             </div>
 </div>
 <div class="md-footer__button md-icon">

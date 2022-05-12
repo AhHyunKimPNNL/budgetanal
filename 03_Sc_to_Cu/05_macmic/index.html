@@ -695,6 +695,7 @@
 </li>
 <li><mark class="critic">reducing CLUBB and CLDMIC timestep and coupling MAC-MIC frequency increases cloud fraction especially over stratocumulus regions (why?)</mark><ul>
 <li>Q near 850 hPa also increases (why?)</li>
+<li>this difference is even larger than the coupling outside of the MAC-MIC (<a href="https://compy-dtn.pnl.gov/kima320/pictures/rad_nosub_compy_FC5AV1C-L_ne30_gmd_2020_330_with_forcing_method/Cloud_regimes(using_Annual_mean_nosub-ctrl).pdf">nosub - ctrl</a>)</li>
 </ul>
 </li>
 </ul>
@@ -746,17 +747,23 @@
 </input></input></input></input></input></input></div>
 <h3 id="regional-results">Regional results</h3>
 <ul>
-<li>
-<p><del>when the timestep for the subcycle change, CLUBB shows largest differences</del>: <a href="https://compy-dtn.pnl.gov/kima320/pictures/rad_noclubbsub_compy_FC5AV1C-L_ne30_gmd_2020_330_with_forcing_method/Compare_oct_INC_Diff(ctrl-noclubbsub)Vertical_profiles.pdf">vertical profile</a></p>
-<ul>
+<li><del>when the timestep for the subcycle change, CLUBB shows largest differences</del>: <a href="https://compy-dtn.pnl.gov/kima320/pictures/rad_noclubbsub_compy_FC5AV1C-L_ne30_gmd_2020_330_with_forcing_method/Compare_oct_INC_Diff(ctrl-noclubbsub)Vertical_profiles.pdf">vertical profile</a><ul>
 <li>clouds shift vertically, but this seems to be due to the calculation error (this problem seems to be due to calculating MAC-MIC with too large timestep, because it does not appears in <code>nosub</code> simuluation: <a href="https://compy-dtn.pnl.gov/kima320/pictures/rad_nosub_compy_FC5AV1C-L_ne30_gmd_2020_330_with_forcing_method/Vertical_profiles_add_substep_variable_and_chkpt_in_one_page.pdf">see plot</a>.</li>
+</ul>
+</li>
+<li>Cloud water is diagnostic variable where other water-related variables are prognostic variable.<ul>
+<li>cloud water (rcm) increment calculation: <code>∆qc = rcm - qc_state</code><ul>
+<li>∆qc increases if the qc_state decreases but rcm does not decreas</li>
+<li>∆qc increases if rcm increases</li>
+</ul>
+</li>
+<li>in cldmic36, cloud water increment does not change much because less clouds are expected to be diagnosed during CLUBB due to the removal of total water.</li>
 </ul>
 </li>
 <li>
 <p>CLUBB response (accumulated increments)</p>
 <ul>
-<li>currently for macmic36, first 12 increments and very last one is accumulated (due to storage problem).</li>
-<li>plot link: <a href="https://compy-dtn.pnl.gov/kima320/pictures/rad_noclubbsub_compy_FC5AV1C-L_ne30_gmd_2020_330_with_forcing_method/Vertical_profiles_add_substep_variable_and_chkpt_in_one_page.pdf">noclubbsub</a> <a href="https://compy-dtn.pnl.gov/kima320/pictures/rad_ctrl_compy_FC5AV1C-L_ne30_gmd_2020_330_with_forcing_method/Vertical_profiles_add_substep_variable_and_chkpt_in_one_page.pdf">ctrl</a> <a href="https://compy-dtn.pnl.gov/kima320/pictures/rad_macmic36_compy_FC5AV1C-L_ne30_gmd_2020_330_with_forcing_method/Vertical_profiles_add_substep_variable_and_chkpt_in_one_page.pd">macmic36</a></li>
+<li>vertical profile plot link: <a href="https://compy-dtn.pnl.gov/kima320/pictures/rad_noclubbsub_compy_FC5AV1C-L_ne30_gmd_2020_330_with_forcing_method/Vertical_profiles_add_substep_variable_and_chkpt_in_one_page.pdf">noclubbsub</a> <a href="https://compy-dtn.pnl.gov/kima320/pictures/rad_ctrl_compy_FC5AV1C-L_ne30_gmd_2020_330_with_forcing_method/Vertical_profiles_add_substep_variable_and_chkpt_in_one_page.pdf">ctrl</a> <a href="https://compy-dtn.pnl.gov/kima320/pictures/rad_macmic36_compy_FC5AV1C-L_ne30_gmd_2020_330_with_forcing_method/Vertical_profiles_add_substep_variable_and_chkpt_in_one_page.pd">macmic36</a></li>
 <li>CLDMIC increments are almost the same, but CLUBB´s increments and their accumulated values differ by simulation.<ul>
 <li>Q<ul>
 <li>when macmic is not subcycled, CLUBB simulate Q as a well mixed boundary layer.</li>
@@ -773,9 +780,56 @@
 <li>However, more cloud water forms in CTRL simulation than other (noclubb &amp; macmic36)</li>
 </ul>
 </li>
+<li><mark class="critic">maybe CLUBB needs enough time to find equilibrium?</mark></li>
+<li>these differences arise from instantaneous response of CLUBB: (<a href="https://compy-dtn.pnl.gov/kima320/pictures/wat_macmic36_compy_FC5AV1C-L_ne30_gmd_2020_330_with_forcing_method/Compare_INC_Diff(macmic36-mac6mic6)Vertical_profiles.pdf">macmic36 vs mac6mic6 differences</a>)</li>
 </ul>
 </li>
 </ul>
+</li>
+<li>
+<p>중간정리</p>
+<ul>
+<li>CLDMIC time step을 줄이면 cloud water가 줄어든다.<ul>
+<li>의외로 왜인지 알기가 어렵다...</li>
+</ul>
+</li>
+<li>전체 time step을 줄이면 cloud water가 줄어든다.<ul>
+<li>이것만 보면 CLDMIC에 의해 cloud water가 줄어든다고 생각할 수 있다.</li>
+</ul>
+</li>
+<li>
+<p>전체 time step을 줄이되 coupling frequency는 그대로 두면 cloud water는 줄지 않는다.</p>
+<ul>
+<li>생각: <ul>
+<li>CLUBB time step만 줄이면 처음 increment는 + 나머지는 - , RH는 점차 증가함.<ul>
+<li><mark class="critic">CLUBB이 cloud water를 생성할 때 너무 많은 RH를 줄이기 때문에 이걸 compensate 하기 위해서 그런게 아닐까??</mark>: RH가 얼마나 초과되고 얼마나 줄어드는지 확인 필요함. 실제로 cldliq의 변화가 코드 상에서 RH에 어떻게 영향을 주는지 확인 필요함.</li>
+<li>아니면, CLUBB은 cloud water를 생성하기도 하지만 advection도 시킴. 첫 step에서는 생성에 의한 increment, 그 다음부터는 advection에 의한 변화일 가능성이 있음.</li>
+</ul>
+</li>
+<li>CLDMIC time step이 줄어들면 cloud water increment가 줄어든다. (Q가 줄어드나??????? T가 줄어드나????)<ul>
+<li>CLDMIC 과정에서 RH가 (작지만) 증가하기 때문에 CLDMIC 때문에 cloud water 가 줄어들 이유가 없다.</li>
+<li>cloud water increment는 앞서 계산된 cloud water와 새로 계산한 cloud water의 차이이므로, 첫번째 CLUBB time step 에서의 RH 감소가 그 다음에도 반영된 걸 수도..? (이게 어떻게 계산되는지 확인해봐야 한다.)</li>
+<li>보니까 </li>
+</ul>
+</li>
+<li>MAC-MIC이 cou, 근데 coupling frequency가 늘면 increment 이 매우 작다.<ul>
+<li>question: CLDMAC에서도 RH는 증가한다. 근데 CLDMIC랑 coupled 된 다음에는 cloud water가 증가하고, CLDMAC바로 다음에 다시 CLDMAC을 계산할 땐 왜 cloud water가 줄어드나? 그리고 CLUBB의 cloud water 계산은 prognostic한데 coupling time step 변화에 따라 값이 왜이렇게 차이가 나나?<ul>
+<li>CLUBB의 Q나 T에대한 sensitivity를 확인해봐야함. CLDMAC이랑 CLDMIC 중에서 어떤게 Q랑 T에 영향을 더 주는지 봐야함.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>sequential splitting 방법에서 diagnostic variable을 어떻게 다루는지 확인해보아야함.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>in Peru-trade region, Q increments has two layer (why?): <mark class="critic">possibly due to evap.</mark> (need to check)</p>
 </li>
 </ul>
 <table>
@@ -838,6 +892,15 @@
 </tr>
 </tbody>
 </table>
+<div class="admonition note">
+<p class="admonition-title">CLUBB에서 cloud water 증가에 의한 q 감소</p>
+<ul>
+<li>rcm (cloud water)을 diagnostic 하게 계산.</li>
+<li>Q = rtm (mass total water mixing ratio) - rcm  </li>
+<li>relvar = relative cloud water variance??? (Barker et al., 1996; Guo et al., 2014)   </li>
+<li>qclvar = cloud water variance</li>
+</ul>
+</div>
 <h2 id="things-to-watch-out-for-when-analyzing">Things to watch out for when analyzing</h2>
 <ul>
 <li>clubb time stepping sensitivity</li>

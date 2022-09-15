@@ -398,6 +398,11 @@
   </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#monthly-mean">
+    Monthly mean
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#global-average">
     Global average
   </a>
@@ -409,9 +414,62 @@
 <a class="md-nav__link" href="#regional-results">
     Regional results
   </a>
+<nav aria-label="Regional results" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#monthly-mean_1">
+    Monthly mean
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#average">
+    average
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#vertical-profile">
+    vertical profile
+  </a>
+<nav aria-label="vertical profile" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cloud-product">
+    Cloud product
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#clubb-variables">
+    CLUBB variables
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#california">
+    California
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#peru">
+    Peru
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#peru-trade">
+    Peru-trade
+  </a>
 </li>
 </ul>
 </nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-by-step-analysis">
+    step-by-step analysis
+  </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#things-to-watch-out-for-when-analyzing">
@@ -487,14 +545,19 @@
           References
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../99_Personal_notes/05_references/important_notes/">
+        Notes
+      </a>
+</li>
 <li class="md-nav__item md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_6_7_2" id="__nav_6_7_2" type="checkbox"/>
-<label class="md-nav__link" for="__nav_6_7_2">
+<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_6_7_3" id="__nav_6_7_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6_7_3">
           E3SM
           <span class="md-nav__icon md-icon"></span>
 </label>
 <nav aria-label="E3SM" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_6_7_2">
+<label class="md-nav__title" for="__nav_6_7_3">
 <span class="md-nav__icon md-icon"></span>
           E3SM
         </label>
@@ -518,13 +581,13 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_6_7_3" id="__nav_6_7_3" type="checkbox"/>
-<label class="md-nav__link" for="__nav_6_7_3">
+<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_6_7_4" id="__nav_6_7_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6_7_4">
           Process Coupling
           <span class="md-nav__icon md-icon"></span>
 </label>
 <nav aria-label="Process Coupling" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_6_7_3">
+<label class="md-nav__title" for="__nav_6_7_4">
 <span class="md-nav__icon md-icon"></span>
           Process Coupling
         </label>
@@ -548,13 +611,13 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_6_7_4" id="__nav_6_7_4" type="checkbox"/>
-<label class="md-nav__link" for="__nav_6_7_4">
+<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_6_7_5" id="__nav_6_7_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6_7_5">
           Stratocumulus
           <span class="md-nav__icon md-icon"></span>
 </label>
 <nav aria-label="Stratocumulus" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_6_7_4">
+<label class="md-nav__title" for="__nav_6_7_5">
 <span class="md-nav__icon md-icon"></span>
           Stratocumulus
         </label>
@@ -588,31 +651,25 @@
 <h1 id="macro-microphysics-subcycling">Macro-microphysics subcycling</h1>
 <h2 id="motivation">motivation</h2>
 <ul>
-<li>Santos et al. (2021) showed that the E3SM is more sensitive to time step when the micro/macro cloud physics is sub cycled together.</li>
-<li>Wan et al. (2021) also mentioned that increasing the subcycling frequency causes the cooling, drying, and cloud fraction decrease in the tropical middle and upper troposphere and mostly high-cloud fractions.<ul>
-<li>Pronounced problems are shown mostly in high clouds (Wan et al., 2021). This is a conflicting result from Santos et al. (2021), but the difference in integration period may cause this problem due to high seasonality in cloud fraction.<ul>
+<li>Wan et al. (2021) mentioned that increasing the subcycling frequency causes the cooling, drying, and cloud fraction decrease in the tropical middle and upper troposphere and mostly high-cloud fractions.</li>
+<li>time step sensitivity due to MAC-MIC coupling is expected to be mostly due to the microphysics. </li>
+<li>However, Santos et al. (2021) showed that the E3SM water budget simulation results are more sensitive to time step when the micro/macro cloud physics is sub cycled together.</li>
+<li>Pronounced reduction of cloud fraction over stratocumulus regions is known to be mostly due to the timestep sensitivity outside the cloud physics scheme. However, there are still remaining problems due to the changes in <ins>subcycling frequency between MAC-MIC</ins> over stratocumulus regions (MACMIC_Shorter simulation in Wan et al. (2021) paper). </li>
+<li>According to Gettelman et al. (2015), cloud liquid increases when the macrophysics and microphysics subcycled more frequently in the CAM5 model (different macrophysics scheme with E3SM).</li>
+<li>(following Figures are from Wan et al. 2021)
+<img alt="Wan et al. 2021, Fig 8" src="https://gmd.copernicus.org/articles/14/1921/2021/gmd-14-1921-2021-f08-web.png"/>
+<img alt="Wan et al. 2021, Fig 10" src="https://gmd.copernicus.org/articles/14/1921/2021/gmd-14-1921-2021-f10-web.png"/></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li>conflicting results in Santos et al. (2021) and Wan et al. (2021).<ul>
 <li>in Santos et al. (2021), high cloud increases in All_Shorter and All_Except_MacMic_Shorter simulation, but decrease in MacMic_shorter simulation.</li>
 <li>in Wan et al. (2021), high cloud decreases in All_Shorter and MacMic_shorter simulation, but increase in high latitude in All_Except_MacMic_Shorter simulation.</li>
 </ul>
 </li>
-<li>time step sensitivity due to MAC-MIC is expected to be due to the microphysics.</li>
-<li>however, <ins>coupling between MAC-MIC</ins> seems to contributes large portion of cloud fraction decrease over stratocumulus regions (see green boxes in macmic36-cldmic36) </li>
 </ul>
-</li>
-</ul>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><input id="__tabbed_1_3" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">macmic36-ctrl</label><label for="__tabbed_1_2">macmic36-cldmic36</label><label for="__tabbed_1_3">nosub-ctrl</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/macmic36/Cloud_regimes(using_Annual_mean_macmic36-ctrl).png"/></p>
 </div>
-<div class="tabbed-block">
-<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/macmic36/Cloud_regimes(using_Annual_mean_macmic36-cldmic36).png"/></p>
-</div>
-<div class="tabbed-block">
-<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/nosub/Cloud_regimes(using_Annual_mean_nosub-ctrl).png"/></p>
-</div>
-</div>
-</input></input></input></div>
 <h2 id="simulation-setting">simulation setting</h2>
 <div class="admonition note inline end">
 <p class="admonition-title">in cam namelist</p>
@@ -690,128 +747,146 @@
 <td>60 s</td>
 <td></td>
 </tr>
+<tr>
+<td>thv</td>
+<td>1800 s</td>
+<td>36</td>
+<td>60 s</td>
+<td>60 s</td>
+<td>same as macmic36 but <span class="arithmatex">\(\theta_v\)</span> is fixed for 6 substeps (1st substep <span class="arithmatex">\(\theta_v\)</span> = 2nd st <span class="arithmatex">\(\theta_v\)</span> = ...=6th substep <span class="arithmatex">\(\theta_v\)</span>,...,31st st <span class="arithmatex">\(\theta_v\)</span>=...=36th st <span class="arithmatex">\(\theta_v\)</span>)</td>
+</tr>
 </tbody>
 </table>
 <div class="admonition info">
 <p class="admonition-title">note</p>
 <p>in Bogenschutz et al. <a href="https://doi.org/10.5194/gmd-5-1407-2012">(2012)</a>, CLUBB requires a time step less than 300 s (the reason was not explained in this paper).</p>
 </div>
+<ul>
+<li>period: 2009.10.01~2010.12.31 (results are averages from 2010.01.01 to 2010.12.31)</li>
+<li>compset: FC5AV1C-L (climatological ,CIMP5 forcings, </li>
+<li>resolution: ne30 (horizontal) L72</li>
+</ul>
 <h2 id="results">Results</h2>
 <h3 id="global-result">Global result</h3>
 <ul>
-<li>difference between <code>ctrl</code> and <code>macmic36</code> seems to be mostly due to MAC-MIC coupling.<ul>
-<li>Q decrease near <ins>850 hPa or above between 30˚S to 30˚N</ins> seems to be due to <code>cldmic36</code> and MAC-MIC coupling.<ul>
-<li>However, these differences are not only confined to stratocumulus region, but to almost the entire area between 30˚S to 30˚N (<a href="https://compy-dtn.pnl.gov/kima320/pictures/rad_macmic36_compy_FC5AV1C-L_ne30_gmd_2020_330_with_forcing_method/Slice_level_850hPa(using_Annual_mean_macmic36-cldmic36).pdf">see plot</a>).</li>
-<li>process that affect low latitude Q is mostly dynamics and CLUBB.</li>
+<li>Gettelmen et al. (2014) showed that substepping micro-macrophysics more frequently lead to increase cloud and simulate rain close to LES. <ul>
+<li>decreasing the time step just for microphysics overpredicts depletion of cloud water.</li>
+<li>when the coupling frequency increases, rain can evaporate below cloud, and peak precipitation mass occurs within cloud or near cloud base, more similar to the LES.</li>
 </ul>
 </li>
-<li>T decrease seems to be mostly due to MAC-MIC coupling.</li>
+<li>However, substepping micro-macrophysics even further in E3SM reduce the low-level cloud.</li>
+<li>difference between <code>ctrl</code> and <code>macmic36</code> seems to be mostly due to MAC-MIC coupling because pronounced changes in Q and cloud related products.<ul>
+<li>Q decrease near <ins>850 hPa or above between 30˚S to 30˚N</ins> (<a href="https://compy-dtn.pnl.gov/kima320/pictures/rad_macmic36_compy_FC5AV1C-L_ne30_gmd_2020_330_with_forcing_method/Slice_level_850hPa(using_Annual_mean_macmic36-cldmic36).pdf">see plot</a>).</li>
+<li><mark class="critic">T decrease seems to be mostly due to MAC-MIC coupling</mark>: why????.</li>
 <li>low-level cloud fraction decrease is the combination of <code>cldmic36</code> and MAC-MIC coupling.</li>
 <li>high-level cloud fraction decrease is the combination of <code>clubb36</code> and MAC-MIC coupling. </li>
 </ul>
 </li>
-<li><mark class="critic">reducing CLUBB and CLDMIC timestep and coupling MAC-MIC frequency increases cloud fraction especially over stratocumulus regions (why?)</mark><ul>
-<li>Q near 850 hPa also increases (why?)</li>
-<li>this difference is even larger than the coupling outside of the MAC-MIC (<a href="https://compy-dtn.pnl.gov/kima320/pictures/rad_nosub_compy_FC5AV1C-L_ne30_gmd_2020_330_with_forcing_method/Cloud_regimes(using_Annual_mean_nosub-ctrl).pdf">nosub - ctrl</a>)</li>
-</ul>
-</li>
 </ul>
 <h4 id="zonal">zonal</h4>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:6"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><input id="__tabbed_2_3" name="__tabbed_2" type="radio"><input id="__tabbed_2_4" name="__tabbed_2" type="radio"><input id="__tabbed_2_5" name="__tabbed_2" type="radio"><input id="__tabbed_2_6" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">ctrl vs. macmic36</label><label for="__tabbed_2_2">ctrl vs. clubb36</label><label for="__tabbed_2_3">ctrl vs. cldmic36</label><label for="__tabbed_2_4">mac6mic6 vs. ctrl</label><label for="__tabbed_2_5">macmic36 vs. cldmic36</label><label for="__tabbed_2_6">macmic36 vs. mac6mic6</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:5"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><input id="__tabbed_1_3" name="__tabbed_1" type="radio"><input id="__tabbed_1_4" name="__tabbed_1" type="radio"><input id="__tabbed_1_5" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">ctrl vs. macmic36</label><label for="__tabbed_1_2">macmic36 vs. mac6mic6</label><label for="__tabbed_1_3">ctrl vs. clubb36</label><label for="__tabbed_1_4">ctrl vs. cldmic36</label><label for="__tabbed_1_5">ctrl vs. mac6mic6</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/macmic36/_zonal_macmic36-ctrl.png"/></p>
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/macmic36/_zonal_macmic36-ctrl.png"/>
+<img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/macmic36/_zonal1_macmic36-ctrl.png"/>
+<img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/macmic36/_zonal2_macmic36-ctrl.png"/></p>
 </div>
 <div class="tabbed-block">
-<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/clubb36/_zonal_clubb36-ctrl.png"/></p>
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/macmic36/_zonal_macmic36-mac6mic6.png"/>
+<img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/macmic36/_zonal1_macmic36-mac6mic6.png"/>
+<img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/macmic36/_zonal2_macmic36-mac6mic6.png"/></p>
 </div>
 <div class="tabbed-block">
-<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/cldmic36/_zonal_cldmic36-ctrl.png"/></p>
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/clubb36/_zonal_clubb36-ctrl.png"/>
+<img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/clubb36/_zonal1_clubb36-ctrl.png"/>
+<img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/clubb36/_zonal2_clubb36-ctrl.png"/></p>
 </div>
 <div class="tabbed-block">
-<p>(need to update later! this is not an annual average) <img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/mac6mic6/_zonal_mac6mic6-ctrl.png"/></p>
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/cldmic36/_zonal_cldmic36-ctrl.png"/>
+<img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/cldmic36/_zonal1_cldmic36-ctrl.png"/>
+<img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/cldmic36/_zonal2_cldmic36-ctrl.png"/></p>
 </div>
 <div class="tabbed-block">
-<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/macmic36/_zonal_macmic36-cldmic36.png"/></p>
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/mac6mic6/_zonal_mac6mic6-ctrl.png"/>
+<img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/mac6mic6/_zonal1_mac6mic6-ctrl.png"/>
+<img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/mac6mic6/_zonal2_mac6mic6-ctrl.png"/></p>
 </div>
-<div class="tabbed-block">
-<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/macmic36/_zonal_macmic36-mac6mic6.png"/></p>
 </div>
-</div>
-</input></input></input></input></input></input></div>
+</input></input></input></input></input></div>
 <h4 id="horizontal">horizontal</h4>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:6"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio"><input id="__tabbed_3_2" name="__tabbed_3" type="radio"><input id="__tabbed_3_3" name="__tabbed_3" type="radio"><input id="__tabbed_3_4" name="__tabbed_3" type="radio"><input id="__tabbed_3_5" name="__tabbed_3" type="radio"><input id="__tabbed_3_6" name="__tabbed_3" type="radio"><div class="tabbed-labels"><label for="__tabbed_3_1">ctrl vs. macmic36</label><label for="__tabbed_3_2">ctrl vs. clubb36</label><label for="__tabbed_3_3">ctrl vs. cldmic36</label><label for="__tabbed_3_4">macmic36 vs. cldmic36</label><label for="__tabbed_3_5">mac6mic6 vs. ctrl</label><label for="__tabbed_3_6">macmic36 vs. mac6mic6</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:5"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><input id="__tabbed_2_3" name="__tabbed_2" type="radio"><input id="__tabbed_2_4" name="__tabbed_2" type="radio"><input id="__tabbed_2_5" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">ctrl vs. macmic36</label><label for="__tabbed_2_2">macmic36 vs. mac6mic6</label><label for="__tabbed_2_3">ctrl vs. clubb36</label><label for="__tabbed_2_4">ctrl vs. cldmic36</label><label for="__tabbed_2_5">ctrl vs. mac6mic6</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/macmic36/Cloud_regimes(using_Annual_mean_macmic36-ctrl)_CLD_n_PREC_U.png"/></p>
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/macmic36/Cloud_regimes(using_Annual_mean_macmic36-ctrl)_Cloud_fraction.png"/>
+<img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/macmic36/Cloud_regimes(using_Annual_mean_macmic36-ctrl)_Cloud_water.png"/>
+<img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/macmic36/Cloud_regimes(using_Annual_mean_macmic36-ctrl)_Rad_prec.png"/></p>
 </div>
 <div class="tabbed-block">
-<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/clubb36/Cloud_regimes(using_Annual_mean_clubb36-ctrl)_CLD_n_PREC_U.png"/></p>
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/macmic36/Cloud_regimes(using_Annual_mean_macmic36-mac6mic6)_Cloud_fraction.png"/>
+<img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/macmic36/Cloud_regimes(using_Annual_mean_macmic36-mac6mic6)_Cloud_water.png"/>
+<img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/macmic36/Cloud_regimes(using_Annual_mean_macmic36-mac6mic6)_Rad_prec.png"/></p>
 </div>
 <div class="tabbed-block">
-<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/cldmic36/Cloud_regimes(using_Annual_mean_cldmic36-ctrl)_CLD_n_PREC_U.png"/></p>
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/clubb36/Cloud_regimes(using_Annual_mean_clubb36-ctrl)_Cloud_fraction.png"/>
+<img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/clubb36/Cloud_regimes(using_Annual_mean_clubb36-ctrl)_Cloud_water.png"/>
+<img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/clubb36/Cloud_regimes(using_Annual_mean_clubb36-ctrl)_Rad_prec.png"/></p>
 </div>
 <div class="tabbed-block">
-<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/macmic36/Cloud_regimes(using_Annual_mean_macmic36-cldmic36)_CLD_n_PREC_U.png"/></p>
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/cldmic36/Cloud_regimes(using_Annual_mean_cldmic36-ctrl)_Cloud_fraction.png"/>
+<img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/cldmic36/Cloud_regimes(using_Annual_mean_cldmic36-ctrl)_Cloud_water.png"/>
+<img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/cldmic36/Cloud_regimes(using_Annual_mean_cldmic36-ctrl)_Rad_prec.png"/></p>
 </div>
 <div class="tabbed-block">
-<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/mac6mic6/Cloud_regimes(using_Annual_mean_mac6mic6-ctrl)_CLD_n_PREC_U.png"/></p>
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/mac6mic6/Cloud_regimes(using_Annual_mean_mac6mic6-ctrl)_Cloud_fraction.png"/>
+<img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/mac6mic6/Cloud_regimes(using_Annual_mean_mac6mic6-ctrl)_Cloud_water.png"/>
+<img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/mac6mic6/Cloud_regimes(using_Annual_mean_mac6mic6-ctrl)_Rad_prec.png"/></p>
 </div>
-<div class="tabbed-block">
-<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/macmic36/Cloud_regimes(using_Annual_mean_macmic36-mac6mic6)_CLD_n_PREC_U.png"/></p>
 </div>
-</div>
-</input></input></input></input></input></input></div>
+</input></input></input></input></input></div>
+<h4 id="monthly-mean">Monthly mean</h4>
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/Seasonal_changes_of_vertical_integrals-0.png"/></p>
 <h4 id="global-average">Global average</h4>
 <ul>
-<li>cloud water tendency is the largest in <code>macmic36</code> and water to precipitation conversion is also the largest.<ul>
-<li>when the CLUBB time step is shorter, the rate of the 'cloud water to precipitation' conversion becomes larger, leaving less cloud water in the air.</li>
-<li>when the microphysics time step is shorter, less cloud water is converted to precipitation, leaving more cloud water in the air.<ul>
-<li>in the toy model, more cloud water is converted to precipitation when the microphysics time step is shorter.</li>
-</ul>
-</li>
-<li>however, in <code>MACMIC36</code>, 15% of the cloud water remain in the atmosphere, but the cloud fraction is smaller. <ul>
-<li>cloud fraction decrease but cloud water increase?</li>
-</ul>
-</li>
-</ul>
-</li>
+<li>In E3SM, less cloud water is depleted in <code>CLDMIC36</code> and <code>MAC6MIC6</code>: when the microphysics time step is shorter, less cloud water is converted to precipitation, leaving more cloud water in the air.</li>
 <li>
-<p>low-level cloud fraction </p>
+<p>In <code>macmic36</code>, cloud water tendency and 'cloud water to precipitation' (cloud water sink term) conversion  are the largest among the other sensitivity simulations.</p>
 <ul>
-<li><code>macmic36</code> has the smallest value, but <code>mac6mic6</code> has the largest value. </li>
-<li>cloud water to precipitation conversion decreases in <code>cldmic36</code> and <code>mac6mic6</code> simulation, but increase in <code>macmic36</code></li>
-<li>cloud water tendency increases in <code>clubb36</code> and <code>macmic36</code></li>
-<li></li>
-<li>(solved) more cloud water formed when CLUBB is subcycled more frequently, but the total cloud water is higher in CLDMIC36 than CLUBB36<ul>
-<li>in the zonal average plot, low-level cloud fraction and low-level cloud water decrease</li>
-<li>in the zonal average plot, high-level cloud fraction and low-level cloud water decrease</li>
+<li>when the CLUBB time step is shorter, CLUBB produces more cloud water.</li>
+<li>'cloud water to precipitation' conversion process contains autoconversion and accretion. These processes are a function of the cloud water. Since microphysics process depletes cloud water during its calculation, the net decrease in  'cloud water to precipitation' is expected.<ul>
+<li><ins>Autoconversion</ins> decreases when the microphysics scheme substep is shorter.</li>
+<li>autoconversion also decrease in <code>macmic36</code>. <mark class="critic">Why?????</mark> (possibly due to decrease in state cloud water)</li>
 </ul>
 </li>
-<li>no cloud evaporation in microphysics scheme.</li>
+<li>High 'cloud water to precipitation' in <code>macmic36</code> is mostly due to <ins>accretion</ins>. <mark class="critic">why?</mark><ul>
+<li>accretion is a function of cloud water and the rain water. Since autoconversion is a function of the cloud water and its increment is not as large as accretion, this change is mostly due to rain water amount.</li>
+<li>increase in accretion is possibly related to rain water build up.<ul>
+<li>possible reason: increase in cloud water tendency -&gt; more cloud -&gt; more rain -&gt; higher rain fall speed -&gt; more sedimentation</li>
+</ul>
+</li>
+<li>however, in the toy model (still need to work more on this) :<a href="https://github.com/AhHyunKimPNNL/2021_budgetAnalDrawings/blob/main/Sc_Cu/jupyter/MACMIC_subcycle_toy_model.ipynb"><mark class="critic">toy model result</mark></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li>
 <p>Gettelman et al (2015) mentioned that most of the condensates (Qc) are depleted in long time steps (also, simple forward-Euler time integration scheme tends to overpredict depletion)</p>
+</li>
+</ul>
+<p>*Remaining question:
+    * why accretion increases in stratocumulus regions?
+    * why cloud fraction decreases especially over the stratocumulus regions?</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <ul>
-<li>In E3SM, less cloud water is depleted in <code>CLDMIC36</code> and <code>MAC6MIC6</code></li>
-<li>But, more cloud water is depleted in <code>macmic36</code> <ul>
-<li><mark class="critic">question</mark>: <ul>
-<li>why more cloud water is depleted in <code>MACMIC36</code> than <code>mac6mic6</code>?</li>
-<li>why cloud fraction decreases especially over the stratocumulus regions?</li>
+<li>Some evidence suggests that the lack of microphysical sensitivity in shallow convection is associated with an increasing dominance of the accretion process over autoconversion as precipitation rates increase (Stevens and Seifert <a href="https://doi.org/10.2151/jmsj.86A.143">2008</a>).</li>
+<li>In Gettelman et al. (2015), increasing Nc increased accretion and Ac/Au ratio by an order of magnitude.</li>
+<li>Posselt and Lohmann (2008) show that a prognostic treatment of precipitation increases the relative contribution to precipitation from accretion compared with autoconversion in weakly precipitating clouds. Given that this appears from Wood et al. (<a href="https://journals.ametsoc.org/view/journals/atsc/66/10/2009jas3072.1.xml">2009</a>) model results to be a critical determinant of the sensitivity of precipitation to cloud microphysics, it may be plausible to hypothesize that diagnostic treatment of warm rain formation in climate models will overestimate the microphysical sensitivity and therefore the second AIE. </li>
 </ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p>source and sink of cloud water</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">source and sink of cloud water</p>
 <ul>
-<li>source<ul>
-<li>CLUBB condensation (diagnostic cloud)</li>
-</ul>
-</li>
+<li>source: CLUBB condensation (diagnostic cloud)</li>
 <li>sink<ul>
 <li>cloud to precipitation conversion</li>
 <li>detrainment in CLUBB</li>
@@ -820,8 +895,7 @@
 </ul>
 </li>
 </ul>
-</li>
-</ul>
+</div>
 <table>
 <thead>
 <tr>
@@ -884,8 +958,8 @@
 </table>
 <ul>
 <li>precipitation<ul>
-<li>in CLDMIC36 and MAC6MIC6, less cloud water is converted to precipitation, but large-scale precipitation increases.</li>
-<li>when MACMIC subcycled together (ctrl, macmic36), convective precipitation does not change</li>
+<li>in <code>CLDMIC36</code> and <code>MAC6MIC6</code>, less cloud water is converted to precipitation, but large-scale precipitation increases.</li>
+<li>when MACMIC subcycled together (<code>ctrl</code>, <code>macmic36</code>), convective precipitation does not change</li>
 <li>changing the frequency of MACMIC coupling affects convective precipitation.</li>
 </ul>
 </li>
@@ -927,36 +1001,299 @@
 </tbody>
 </table>
 <h3 id="regional-results">Regional results</h3>
+<h4 id="monthly-mean_1">Monthly mean</h4>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:3"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio"><input id="__tabbed_3_2" name="__tabbed_3" type="radio"><input id="__tabbed_3_3" name="__tabbed_3" type="radio"><div class="tabbed-labels"><label for="__tabbed_3_1">ITCZ</label><label for="__tabbed_3_2">Storm track</label><label for="__tabbed_3_3">Stratocumulus regions</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/Seasonal_changes_of_vertical_integrals-1.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/Seasonal_changes_of_vertical_integrals-2.png"/>
+<img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/Seasonal_changes_of_vertical_integrals-3.png"/>
+<img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/Seasonal_changes_of_vertical_integrals-4.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/Seasonal_changes_of_vertical_integrals-5.png"/>
+<img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/Seasonal_changes_of_vertical_integrals-6.png"/>
+<img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/Seasonal_changes_of_vertical_integrals-7.png"/>
+<img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/Seasonal_changes_of_vertical_integrals-8.png"/>
+<img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/Seasonal_changes_of_vertical_integrals-9.png"/>
+<img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/Seasonal_changes_of_vertical_integrals-10.png"/></p>
+</div>
+</div>
+</input></input></input></div>
 <ul>
-<li>Gettelmen et al. (2014) mentioned that, for the long time steps commonly employed by GCMs can deplete all the cloud water and condense more cloud water at the next time step, resulting in an oscillation between cloud and no cloud states.<ul>
-<li>in this study, QCRAT (a limiter) is introduced to avoid cloud water depletion. QCRAT is effective in cold regions with supercooled water. The limiter is effective in lower liquid amounts, and also in the place where the vapor deposition process occurs (depletes water onto ice and snow).</li>
-<li>smaller microphysics time step may overpredict depletion in E3SM.</li>
+<li>cloud fraction decreases mostly in the stratocumulus regions when the macro-microphysics subcycled more frequently (<code>macmic36</code>).<ul>
+<li>cloud fraction is calculated only during CLUBB process (<mark class="critic">need to ask if it is really true</mark>).</li>
+</ul>
+</li>
+<li>when macro-microphysics subcycled more frequently (<code>macmic36</code>), more cloud water forms but less cloud fraction during macrophysics process.<ul>
+<li>in the first substep of <code>macmic36</code>, cloud water tendency is smaller and cloud fraction is larger than <code>mac6mic6</code>.</li>
+<li>However, the summation of cloud water tendency during 2~36 substeps is larger and cloud fraction tendency is smaller in <code>macmic36</code> than <code>mac6mic6</code>.</li>
+<li>cloud water increment in <code>mac6mic6</code> in every 6 substep is only twice as large as the increments in <code>macmic36</code> during 2~36 substeps.</li>
+<li>similar effect is shown in the first calculation in the 2~36 substeps, but the cloud water in the first substep in <code>mac6mic6</code> and <code>macmic36</code> is almost the same.<ul>
+<li>this indicates that the difference in first substep comes from the decrease in specific humidity.</li>
+<li>larger difference is shown in the 1 month ave. because <code>macmic36</code> is more stratus-like, producing more denser cloud due to less w skewness.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>1 month ave.</th>
+<th>sample plot</th>
+<th>full plot</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>vert. profile of increments in each substeps of CLUBB</td>
+<td><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/macmic36/Peru_trade_MAC.png"/></td>
+<td><a href="https://compy-dtn.pnl.gov/kima320/pictures/wat_macmic36_compy_FC5AV1C-L_ne30_gmd_2020_330_with_forcing_method//MAC_INC_Diff(macmic36-mac6mic6)Vertical_profiles.pdf">link</a></td>
+</tr>
+<tr>
+<td>vert. profile of increments in each chechk points</td>
+<td><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/macmic36/Peru_trade_sum_chkpt_1-36.png"/></td>
+<td><a href="https://compy-dtn.pnl.gov/kima320/pictures/wat_macmic36_compy_FC5AV1C-L_ne30_gmd_2020_330_with_forcing_method/Compare_INC_Diff(macmic36-mac6mic6)Vertical_profiles.pdf">link</a></td>
+</tr>
+<tr>
+<td>same as the plot above, but 1st step of CLUBB is excluded</td>
+<td><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/macmic36/Peru_trade_sum_chkpt_2-36.png"/></td>
+<td><a href="https://compy-dtn.pnl.gov/kima320/pictures/wat_macmic36_compy_FC5AV1C-L_ne30_gmd_2020_330_with_forcing_method/Compare_(no_CLUBB_first_step)INC_Diff(macmic36-mac6mic6)Vertical_profiles.pdf">link</a></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>first step</th>
+<th>sample plot</th>
+<th>full plot</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>vert. profile of increments in each substeps of CLUBB</td>
+<td><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/macmic36/Peru_trade_1stp_MAC.png"/></td>
+<td><a href="https://compy-dtn.pnl.gov/kima320/pictures/stp_macmic36_compy_FC5AV1C-L_ne30_gmd_2020_330_with_forcing_method/MAC_INC_Diff(macmic36-mac6mic6)Vertical_profiles_step1.pdf">link</a></td>
+</tr>
+<tr>
+<td>vert. profile of increments in each chechk points in the very first calculation</td>
+<td><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/macmic36/Peru_trade_1stp_sum_chkpt_1-36.png"/></td>
+<td><a href="https://compy-dtn.pnl.gov/kima320/pictures/stp_macmic36_compy_FC5AV1C-L_ne30_gmd_2020_330_with_forcing_method/Compare_INC_Diff(macmic36-mac6mic6)Vertical_profiles_step1.pdf">link</a></td>
+</tr>
+<tr>
+<td>same as the plot above, but 1st step of CLUBB is excluded</td>
+<td><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/macmic36/Peru_trade_1stp_sum_chkpt_2-36.png"/></td>
+<td><a href="https://compy-dtn.pnl.gov/kima320/pictures/stp_macmic36_compy_FC5AV1C-L_ne30_gmd_2020_330_with_forcing_method/Compare_INC_Diff_no_first_step_of_CLUBB(macmic36-mac6mic6)Vertical_profiles_step1.pdf">link</a></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>1 year ave.</th>
+<th>sample plot</th>
+<th>full plot</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Skewness of <span class="arithmatex">\(\overline{w^{´}}\)</span> and <span class="arithmatex">\(\overline{w^´\theta_v}\)</span></td>
+<td><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/macmic36/Stratocumulus_CLUBB_skw_buoyancy.png"/></td>
+<td><a href="https://compy-dtn.pnl.gov/kima320/pictures/rad_macmic36_compy_FC5AV1C-L_ne30_gmd_2020_330_with_forcing_method/Diff(macmic36-mac6mic6)_july_Vertical_profiles_of_single_Variable.pdf">link</a></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>CLUBB produces more clouds when the atmosphere is supersaturated. During the micro-macrophysics subcycle, supersaturation is produced during the microphysics process.</li>
+<li>For that reason, linear relationship between RH increment during microphysical processes and cloud water increment during macrophysics process, but the cloud water increment is more sensitive when RH increments are small. </li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>sample plot</th>
+<th>full plot</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/macmic36/Peru_scatter_plot.png"/></td>
+<td><a href="https://compy-dtn.pnl.gov/kima320/pictures/wat_macmic36_compy_FC5AV1C-L_ne30_gmd_2020_330_with_forcing_method/Scatt_Diff(macmic36-mac6mic6)_ANN.pdf">link</a></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>forming more cloud water lead to increase the accretion rate.<ul>
+<li>smaller cloud fraction increment and larger cloud water increment may lead to heavier precipitation (since the accretion &amp; autoconversions are the function of in-cloud cloud water and in-cloud rain):</li>
+<li>According to Posselt and Lohmann (2008), in the regions where the total water path is smaller (drizzling regions, e.g., stratocumulus region), precipitation amount is sensitive to sub-time steps because liquid water has to accumulate in the atmosphere before conversion processes can produce precipitation.<ul>
+<li>Increasing the number of sub-time steps leads to changes in the autoconversion and accretion rates. More sub-time steps lead to slower sedimentation and thus rain water is kept longer in the atmosphere and is maintained there for the next (model) time step (compared to a diagnostic scheme where all rain water is removed within one time step). Thus, there is generally more rain water in the atmosphere the larger the number of sub-time steps. And more rain water means higher accretion rates. As the accretion process also removes cloud water, less cloud water is available for the autoconversion. Therefore, the autoconversion rates decrease. Thus, the total conversion rate (=autoconversion+accretion rate) increases if the increase in accretion overcompensates the decrease in autoconversion. A decrease of the total conversion rate results if the decrease in autoconversion is larger than the increase in accretion.</li>
+<li>accretion으로 생긴 강수들은 대체로 sedimentation으로 넘어감.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Skewness of w is also smallest in <code>macmic36</code>.<ul>
+<li><span class="arithmatex">\(\overline{w^{´3}}\)</span> tendency is a function of <span class="arithmatex">\(\overline{w^´\theta_v}\)</span>. decrease in <span class="arithmatex">\(\overline{w^´\theta_v}\)</span> decreases <span class="arithmatex">\(\overline{w^{´3}}\)</span> in <code>macmic36</code>. This increase the weight of the 1st Gaussian component, leading to produce more 'stratus-like' clouds (Guo et al., 2014).</li>
+<li><mark class="critic">this is because the strong coupling between boundary layer turbulence and atmospheric conditions, such as the profiles of temperature, humidity, and surface heating fluxes, is critical and amplifies the interscheme differences in GCM (Guo et al. <a href="https://doi.org/10.1029/2018MS001505">2019</a>)</mark>.<ul>
+<li>하나 확실한 건 cloud layer 에서의 buoyancy term이 cloud fraction에 영향을 주는 게 확실하다 (see the equation for the buoyancy terms in Section 3.5.4 (CLUBB document paper) ).<ul>
+<li><span class="arithmatex">\(\theta_v\)</span>를 6 substep마다 고정하는  약 5%정도의 영향밖에 안 줌.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Parameters related to Newtonian and buoyancy-damping terms of total water flux were found to be the most influential parameters for stratocu- mulus, while the most influential parameters for shallow cumulus were those related to skewness of vertical velocity (Guo et al., 2014).<ul>
+<li>The increase in the heat flux (positive changes) close to the cloud top suggests that the cloud top entrainment weakens under surface warming (also see Zhang et al. (<a href="https://doi.org/10.1029/2018MS001423">2018</a>). </li>
+</ul>
+</li>
+<li>그런데, skewness가 차이나기 시작하는 건 5번째 time step부터임.</li>
+<li>이게 나중에 cloud formation이 더 많이 차이나게 하는 원인이 될 수 있다 (초반엔 차이가 크지 않음).</li>
+</ul>
+</li>
+<li>heat flux change: increase in heat flux near cloud top indicates weak entrainment. this may lead to drier FT.<ul>
+<li>when </li>
+</ul>
+</li>
+<li>increase in the formation of clouds during macrophysics process depletes water vapor, leading to decrease in cloud.</li>
+<li>
+<p><mark class="critic">need to plot something that supports the formation of stratus like cloud: see PDF in Guo et al. (<a href="https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2018MS001505">2019</a>) and the description in Guo et al. (<a href="https://agupubs.onlinelibrary.wiley.com/doi/full/10.1002/2014MS000315">2014</a></mark></p>
+</li>
+<li>
+<p>cloud water sink is largest in <code>macmic36</code>. This sink mostly comes from accretion.</p>
+</li>
+<li>
+<p>autoconversion is sensitive to microphysics time step.</p>
+</li>
+<li>
+<p>global large-scale precipitation increases in <code>macmic36</code>, and the increase is larger in stratocumulus regions</p>
+<ul>
+<li>stratocumulus regions are sensitive to rain because drizzle is expected in these regions.</li>
+<li>rain evaporates less.</li>
+<li>high accretion.</li>
+</ul>
+</li>
+<li>In Gettelman et al. (2015), accretion increased when MAC-MIC scheme is subcycled because hydrometeors experience more evaporation when the time step size is shorter, leaving larger rain water in the atmosphere.<ul>
+<li>In E3SM, accretion increases when MAC-MIC subcycled more frequently. </li>
+<li>However in E3SM, rain evaporation decreases due to higher rain fall speed (rain fall speed is equivalent to <span class="arithmatex">\(q_r^{0.8}\)</span>)</li>
+</ul>
+</li>
+<li>low-level cloud fraction: <ul>
+<li><code>macmic36</code> has the smallest value, but <code>mac6mic6</code> has the largest value.</li>
+<li>in <code>mac6mic6</code> simulation, low-level cloud fraction increases but the cloud water decreases or unchanged.</li>
+</ul>
+</li>
+<li>increase in Q in mac6mic6 simulation is partially due to less water vapor sink in CLUBB (=CLDMAC): <a href="https://compy-dtn.pnl.gov/kima320/pictures/wat_mac6mic6_compy_FC5AV1C-L_ne30_gmd_2020_330_with_forcing_method/Compare_INC_Diff(mac6mic6-ctrl)Vertical_profiles.pdf">vertical profile by process</a>.</li>
+<li>in stratocumulus region, <code>macmic36</code> Q decrease near the cloud top. </li>
+<li>the source and sink is almost the same throughout the simulations <img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/cloud_water_source_and_sink.png"/></li>
+<li>when macrophysics time step is shorter, deep convection decreases.<ul>
+<li><mark class="critic">need to check why</mark> (possibly due to surface temperature change during CLUBB process)</li>
+</ul>
+</li>
+</ul>
+<div class="admonition note inline end">
+<p class="admonition-title">variable description</p>
+<ul>
+<li><span class="arithmatex">\(q_v\)</span> = water vapor mixing ratio</li>
+<li><span class="arithmatex">\(q_l\)</span> = cloud water mixing ratio</li>
+<li><span class="arithmatex">\(q_r\)</span> = rain water mixing ratio</li>
+<li>D = <span class="arithmatex">\(q_v\)</span> tendency due to dynamics, turbulence, etc.</li>
+<li>C = <span class="arithmatex">\(q_l\)</span> tendency due to cloud formation (=<span class="arithmatex">\(q_v\)</span> tendency due to cloud formation).</li>
+<li>R = <span class="arithmatex">\(q_r\)</span> tendency due to rain formation (=<span class="arithmatex">\(q_l\)</span> tendency due to autoconversion/accretion by rain)</li>
+<li>P = <span class="arithmatex">\(q_r\)</span> tendency due to sedimentation.</li>
+</ul>
+</div>
+<ul>
+<li>Basic equation<ul>
+<li><span class="arithmatex">\(\frac{dq_v}{dt} = D - C\)</span></li>
+<li><span class="arithmatex">\(\frac{dq_l}{dt} = C - R\)</span></li>
+<li><span class="arithmatex">\(\frac{dq_r}{dt} = R - P\)</span></li>
+<li>The C term and the R term are almost twice as large in <code>macmic36</code> simulation compared to other simulations.<ul>
+<li><mark class="critic">still need to investigate</mark></li>
+<li>as in Gettelman et al. (2015), <span class="arithmatex">\(q_l\)</span> and <span class="arithmatex">\(q_r\)</span> are larger when cloud macro-microphysics subcycle more frequently (see B and D) <img alt="Figure 1" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/Gettelman_et_al_2015_Fig1.png"/></li>
+</ul>
+</li>
+<li>Increase in the C term depletes <span class="arithmatex">\(q_v\)</span>. Since stratocumulus regions have well-mixed boundary layer, turbulent mixing replenishes the RH and <span class="arithmatex">\(q_v\)</span> (Q in the plot) within the boundary layer (D term in the equation increases), but depletes the <span class="arithmatex">\(q_v\)</span> above the boundary layer (see vertical integral of Q differences). <ul>
+<li>cloud water near cloud top decreases even when the cloud water tendency increase (see normalized vertically integrated cloud water &amp; tendency above and below the PBL height plot). </li>
+<li>Q decrease near the surface (vertical profile plots) seems to be mostly due to less evaporation.<ul>
+<li>accretion increases -&gt; rain increases -&gt; rain fall speed (proportional to <span class="arithmatex">\(q_r^{0.8}\)</span>) increases -&gt; evaporation decreases (see vertical profile/cloud product plots).</li>
+</ul>
+</li>
+<li>RH decrease near cloud top seems to be due to less cloud LW radiative cooling effect.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>vertical profile of CLDLIQ (left &amp; middle) and Q (right)</th>
+<th>vertical profile by chkpt (Peru region only)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="vertical profile of Q and CLDLIQ" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/macmic36/vertical_profile_of_Q_and_cldliq(macmic36-ctrl).png"/></td>
+<td><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/wat_macmic36/Compare_INC_Diff(macmic36-ctrl)Vertical_profiles-16.png"/></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>vertically integrated differences between macmic36 and ctrl (above PBL and below PBL)<ul>
+<li>Q are integrated from 700 hPa to PBL height (above PBL), PBL heigth to 1000 hPa (below PBL).</li>
+<li>Normalized Q = 100 * (macmic36 - ctrl)/ctrl </li>
+<li>the results shown here is in percent.
+<img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/macmic36/map_of_PBLH.png"/>
+<img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/macmic36/map_of_CMELIQ_diff_macmic36-ctrl.png"/>
+<img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/macmic36/map_of_CLDLIQ_diff_macmic36-ctrl.png"/></li>
+</ul>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li>buoyancy product: 결과값은 <span class="arithmatex">\(\overline{w^´\theta_v}\)</span>라서 <span class="arithmatex">\(\theta_v\)</span>가 쓰일 줄 알았는데 아니었다! analytic integration을 함(diagnosed 된다는 뜻인듯).<ul>
+<li>buoyancy term에서 cloud layer 쪽 positive 값은 <span class="arithmatex">\(\overline{w^´\q_c}\)</span>에 의한 값이다. </li>
+<li>buoyancy term에서 surface 근처 positive 값은 <span class="arithmatex">\(\overline{w^´\theta_l}\)</span>과 <span class="arithmatex">\(\overline{w^´q_v}\)</span>에 의한 값이다.</li>
+</ul>
+</li>
+<li>toy model 만들면서 배운 것: CLUBB에서 cloud fraction 계산할 때 liquid water의 온도를 사용한다. 따라서, 구름이 생성되어서 발생하는 응결열 때문에 qsat이 올라가는 영향은 거의 안받는다.</li>
+<li>According to Guo et al. (<a href="https://doi.org/10.1175/JCLI-D-13-00347.1">2014</a>), relative cloud water variance (RELVAR in E3SM) is higher for stratocumulus than cumulus clouds. <ul>
+<li>Most of the υ values for cumulus range from 1 to 1.5, and most of the stratocumulus values range from 2 to 5 in the single-column model CLUBB simulations reported in Guo et al. (2010). </li>
+<li>however, RELVAR is known to be more sensitive to autoconversion (by a factor of 6) than accretion ( by a factor of 1.6)</li>
+<li>in E3SM, accretion enhancement factor is 1.5</li>
+</ul>
+</li>
+</ul>
+</div>
+<ul>
+<li>
+<p>clubb_cldliq_inc 랑 mg2_rhw_inc scatter plot 그려볼 것!</p>
+<ul>
+<li>결과: https://compy-dtn.pnl.gov/kima320/pictures/wat_macmic36_compy_FC5AV1C-L_ne30_gmd_2020_330_with_forcing_method/Scatt_Diff(macmic36-mac6mic6)_ANN.pdf</li>
+<li>microphysics에서의 RH 증가에 대한 macrophysics의 cloud liquid response는 비슷하게 나타남.</li>
 </ul>
 </li>
 <li>
-<p>from the table (vertical integrals are integrated from 680 hPa to 1000 hPa (low-cloud levels by ISCCP))</p>
+<p><mark class="critic">smaller <span class="arithmatex">\(\overline{w^{´3}}\)</span> </mark> is found near cloud layer in <code>macmic36</code> than <code>mac6mic6</code> simulation because <span class="arithmatex">\(\theta_v\)</span> is a function of q_v and q_l, and CLUBB sees the changes in q_v, q_l, and T due to microphysics more frequently.</p>
 <ul>
-<li>when the time step is shorter, less cloud water become rain (less sink), but in <code>MACMIC36</code> converts more cloud water to rain (more sink).<ul>
-<li>Different fromd Gettelman et al. (2014), smaller microphysics time step does not overpredict depletion in E3SM.</li>
-<li>cloud water depletion in <code>macmic36</code> is mostly due to accretion. <mark class="critic">why?</mark><ul>
-<li>accretion is a function of cloud water and the rain water. Since autoconversion is a function of the cloud water and its increment is not as large as accretion, this change is mostly due to rain water amount.</li>
-<li>increase in accretion is possibly related to rain water build up.</li>
-<li>however, in the toy model, :<a href="https://github.com/AhHyunKimPNNL/2021_budgetAnalDrawings/blob/main/Sc_Cu/jupyter/MACMIC_subcycle_toy_model.ipynb"><mark class="critic">toy model result</mark></a></li>
-<li>global large-scale precipitation increases in <code>macmic36</code>, and the increase is larger in stratocumulus regions</li>
-<li><mark class="critic">need to check</mark> rain water used in accretion calculation is in-cloud rain water. If the cloud fraction threshold changes, would result in <code>macmic36</code> change???</li>
+<li><span class="arithmatex">\(Skw = \frac{\overline{w^{´3}}}{(\overline{w^{´2}})^{1.5}}\)</span> </li>
+<li><span class="arithmatex">\(\theta_v = T(\frac{P_0}{P})^{R_d/c_p}(1+0.61 q_v - q_l)\)</span></li>
+<li>mixture fraction = <span class="arithmatex">\(0.5(1-Skw\sqrt{\frac{1}{4+Skw^2}})\)</span> (assume that the normalized skw is similar to skw)</li>
+<li>smaller <span class="arithmatex">\(\overline{w^{´3}}\)</span> will produce more stratus-like clouds, shifting the PDF towards the first Gaussian (Guo et al., 2014).</li>
+</ul>
+</li>
 <li>
+<p>일단, large increment는 substep에 의한것으로 추정된다. 왜냐하면 first step은 mac6mic6이 더 크기 때문이다. (처음부터 그런것 같지는 않고, macmic36이 Q가 더 작아서 초반에 supersaturation 값이 작게 시작하기 때문인걸로 보임.  </p>
 <ul>
-<li>cldmic36과 macmic36의 차이점: microphysics qc sink 계산 시 cldmic36 &amp; mac6mic6은 coupling 되기 전까&gt;지 cldmic 내에서 qc가 감소함. 따라서 qc sink도 덜 일어났을 가능성이 있다.</li>
+<li>add all substeps: https://compy-dtn.pnl.gov/kima320/pictures/wat_macmic36_compy_FC5AV1C-L_ne30_gmd_2020_330_with_forcing_method/Compare_INC_Diff(macmic36-mac6mic6)Vertical_profiles.pdf</li>
+<li>add only 2~36 substeps: https://compy-dtn.pnl.gov/kima320/pictures/wat_macmic36_compy_FC5AV1C-L_ne30_gmd_2020_330_with_forcing_method/Compare_(no_CLUBB_first_step)INC_Diff(macmic36-mac6mic6)Vertical_profiles.pdf<ul>
+<li>여기서 보면 2-36 substep만 더했을 때 Q가 전체 더했을 때보다 작거나 같다. Q가 더 많게 보인 건 첫번째 time step에서 Q가 더 많이 남았기 때문임.</li>
 </ul>
 </li>
-</ul>
-</li>
-<li>however, net source and sink is almost the same throughout the simulations <img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/cloud_water_source_and_sink.png"/></li>
-</ul>
-</li>
-<li>due to the less sink, low level cloud fraction is mostly higher in stratocumulus regions except for <code>macmic36</code></li>
-<li>in <code>mac6mic6</code> simulation, low-level cloud fraction increases but the cloud water decreases or remains almost the same.</li>
-<li>in stratocumulus region, <code>macmic36</code> Q decrease </li>
+<li>Macrophysics substep: https://compy-dtn.pnl.gov/kima320/pictures/wat_macmic36_compy_FC5AV1C-L_ne30_gmd_2020_330_with_forcing_method/MAC_INC_Diff(macmic36-mac6mic6)Vertical_profiles.pdf</li>
 </ul>
 </li>
 <li>
@@ -974,12 +1311,50 @@
 <li>in cldmic36, cloud water increment does not change much because less clouds are expected to be diagnosed during CLUBB due to the removal of total water.</li>
 </ul>
 </li>
+<li>cloud radiative effect might not be as strong as expected because effective radius also decrease (brighter clouds)</li>
 </ul>
 <div class="admonition note inline end">
 <p class="admonition-title">Note</p>
-<p>MPDW2P = -prao_grid - prco_grid - psacwso_grid - bergso_grid (autoc. &amp; acc. &amp; berg.)</p>
+<ul>
+<li>Group A steps: first time step: effect of outside of the mac-mic process</li>
+<li>Group B steps: 2~6, 8~12,..., 32~36th time steps: supersaturation due to CLUBB turbulence.</li>
+<li>Group C steps: 1,7,...,31th time steps: supersaturation due to microphysics process.</li>
+</ul>
 </div>
-<div class="tabbed-set tabbed-alternate" data-tabs="4:3"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio"/><input id="__tabbed_4_2" name="__tabbed_4" type="radio"/><input id="__tabbed_4_3" name="__tabbed_4" type="radio"/><div class="tabbed-labels"><label for="__tabbed_4_1">cloud</label><label for="__tabbed_4_2">cloud source &amp; sink</label><label for="__tabbed_4_3">precipitation</label></div>
+<ul>
+<li>
+<p>by time sub steps</p>
+<ul>
+<li>Summation of cloud water increment during macrophysics process is larger in <code>macmic36</code> than <code>mac6mic6</code>: <a href="https://compy-dtn.pnl.gov/kima320/pictures/wat_macmic36_compy_FC5AV1C-L_ne30_gmd_2020_330_with_forcing_method/Compare_INC_Diff(macmic36-mac6mic6)Vertical_profiles.pdf">plot</a></li>
+<li>but the cloud water increment for the first sub step and every time when the macro-microphysics are coupled are larger in <code>mac6mic6</code> than <code>macmic36</code>: <a href="https://compy-dtn.pnl.gov/kima320/pictures/wat_macmic36_compy_FC5AV1C-L_ne30_gmd_2020_330_with_forcing_method/MAC_INC_Diff(macmic36-mac6mic6)Vertical_profiles.pdf">plot</a> </li>
+<li>
+<p>total water tendency differences are almost the same by timesteps: 결국, turbulence에 의한 qv의 증가는 거의 일정함. mac6mic6에서 GroupB의 cloud tendency가 0에 수렴하는 이유는 Group A에서 생긴 condenstational heat 때문에 RH가 줄어들기 때문인거같은데 확실하지 않음.....</p>
+<ul>
+<li>CLUBB Q tendency: mostly affected by turbulent mixing + cloud condensation: <a href="https://compy-dtn.pnl.gov/kima320/pictures/wat_macmic36_compy_FC5AV1C-L_ne30_gmd_2020_330_with_forcing_method/Total_water(macmic36-mac6mic6)Vertical_profiles.pdf">macmic36 - mac6mic6</a></li>
+<li>보면, Q tendency가 in-cloud 부분에서만 증가하는게 보이는데, 그건 total water가 Microphysics 과정 중에서 감소한 cloud water 때문 아님?????/</li>
+</ul>
+</li>
+<li>
+<p>cloud water tendency in each time step increases seems to be due to the Q increment during microphysics process.</p>
+</li>
+<li>Group B step을 보면 cloud water 증가가 거의 없음. 즉 CLUBB 내부에서 발생한 turbulent mixing은 supersaturation을 발생시키지 않는다.</li>
+<li>Group C step을 보면 cloud water 증가가 발생한다.<ul>
+<li>microphysics에서 cloud water가 감소하면 total cloud water가 바뀌어서 turbulent mixing </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="admonition note inline end">
+<p class="admonition-title">Note</p>
+<ul>
+<li>3D variables are vertically integrated from 700 hPa to 1000 hPa.</li>
+<li>MPDW2P = -prao_grid - prco_grid - psacwso_grid - bergso_grid (autoc. &amp; acc. &amp; berg.)</li>
+<li>sedimentation substep = v * rho * g * dt / dp. A substep to fulfill the CFL condition.</li>
+</ul>
+</div>
+<h4 id="average">average</h4>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:5"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio"><input id="__tabbed_4_2" name="__tabbed_4" type="radio"><input id="__tabbed_4_3" name="__tabbed_4" type="radio"/><input id="__tabbed_4_4" name="__tabbed_4" type="radio"/><input id="__tabbed_4_5" name="__tabbed_4" type="radio"/><div class="tabbed-labels"><label for="__tabbed_4_1">cloud</label><label for="__tabbed_4_2">cloud source &amp; sink</label><label for="__tabbed_4_3">precipitation</label><label for="__tabbed_4_4">other cloud prop</label><label for="__tabbed_4_5">others</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/Global/bar_Graph-0.png"/></p>
@@ -990,154 +1365,130 @@
 <div class="tabbed-block">
 <p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/Global/bar_Graph-2.png"/></p>
 </div>
+<div class="tabbed-block">
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/Global/bar_Graph-3.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/Global/bar_Graph-4.png"/></p>
 </div>
 </div>
-<ul>
-<li>
-<p>CLUBB response (accumulated increments)</p>
-<ul>
-<li>vertical profile plot link: <a href="https://compy-dtn.pnl.gov/kima320/pictures/rad_noclubbsub_compy_FC5AV1C-L_ne30_gmd_2020_330_with_forcing_method/Vertical_profiles_add_substep_variable_and_chkpt_in_one_page.pdf">noclubbsub</a> <a href="https://compy-dtn.pnl.gov/kima320/pictures/rad_ctrl_compy_FC5AV1C-L_ne30_gmd_2020_330_with_forcing_method/Vertical_profiles_add_substep_variable_and_chkpt_in_one_page.pdf">ctrl</a> <a href="https://compy-dtn.pnl.gov/kima320/pictures/rad_macmic36_compy_FC5AV1C-L_ne30_gmd_2020_330_with_forcing_method/Vertical_profiles_add_substep_variable_and_chkpt_in_one_page.pd">macmic36</a></li>
-<li>CLDMIC increments are almost the same, but CLUBB´s increments and their accumulated values differ by simulation.<ul>
-<li>Q<ul>
-<li>when macmic is not subcycled, CLUBB simulate Q as a well mixed boundary layer.</li>
-<li>double layer (maybe decoupling?) seems to be smoothed when the number of substep increases.</li>
-</ul>
-</li>
-<li>T<ul>
-<li>inversion layer become more sharper -&gt; this may cause the shift in cloud layer</li>
-</ul>
-</li>
-<li>CLDLIQ:<ul>
-<li>increments oscillates (as in Williamson (2013))</li>
-<li>in the trade cumulus region, less cloud water forms above 850 hPa and more cloud water forms below 850 hPa as the number of sub cycle time step increases.</li>
-<li>However, more cloud water forms in CTRL simulation than other (noclubb &amp; macmic36)</li>
-</ul>
-</li>
-<li>these differences arise from instantaneous response of CLUBB: (<a href="https://compy-dtn.pnl.gov/kima320/pictures/wat_macmic36_compy_FC5AV1C-L_ne30_gmd_2020_330_with_forcing_method/Compare_INC_Diff(macmic36-mac6mic6)Vertical_profiles.pdf">macmic36 vs mac6mic6 differences</a>)</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p>중간정리</p>
-<ul>
-<li>CLDMIC time step을 줄이면 cloud water가 줄어든다.<ul>
-<li>의외로 왜인지 알기가 어렵다...</li>
-</ul>
-</li>
-<li>전체 time step을 줄이면 cloud water가 줄어든다.<ul>
-<li>이것만 보면 CLDMIC에 의해 cloud water가 줄어든다고 생각할 수 있다.</li>
-</ul>
-</li>
-<li>
-<p>전체 time step을 줄이되 coupling frequency는 그대로 두면 cloud water는 줄지 않는다.</p>
-<ul>
-<li>생각: <ul>
-<li>CLUBB time step만 줄이면 처음 increment는 + 나머지는 - , RH는 점차 증가함.<ul>
-<li><mark class="critic">CLUBB이 cloud water를 생성할 때 너무 많은 RH를 줄이기 때문에 이걸 compensate 하기 위해서 그런게 아닐까??</mark>: RH가 얼마나 초과되고 얼마나 줄어드는지 확인 필요함. 실제로 cldliq의 변화가 코드 상에서 RH에 어떻게 영향을 주는지 확인 필요함.</li>
-<li>아니면, CLUBB은 cloud water를 생성하기도 하지만 advection도 시킴. 첫 step에서는 생성에 의한 increment, 그 다음부터는 advection에 의한 변화일 가능성이 있음.</li>
-</ul>
-</li>
-<li>CLDMIC time step이 줄어들면 cloud water increment가 줄어든다. (Q가 줄어드나??????? T가 줄어드나????)<ul>
-<li>CLDMIC 과정에서 RH가 (작지만) 증가하기 때문에 CLDMIC 때문에 cloud water 가 줄어들 이유가 없다.</li>
-<li>cloud water increment는 앞서 계산된 cloud water와 새로 계산한 cloud water의 차이이므로, 첫번째 CLUBB time step 에서의 RH 감소가 그 다음에도 반영된 걸 수도..? (이게 어떻게 계산되는지 확인해봐야 한다.)</li>
-<li>보니까 </li>
-</ul>
-</li>
-<li>MAC-MIC이 cou, 근데 coupling frequency가 늘면 increment 이 매우 작다.<ul>
-<li>question: CLDMAC에서도 RH는 증가한다. 근데 CLDMIC랑 coupled 된 다음에는 cloud water가 증가하고, CLDMAC바로 다음에 다시 CLDMAC을 계산할 땐 왜 cloud water가 줄어드나? 그리고 CLUBB의 cloud water 계산은 prognostic한데 coupling time step 변화에 따라 값이 왜이렇게 차이가 나나?<ul>
-<li>CLUBB의 Q나 T에대한 sensitivity를 확인해봐야함. CLDMAC이랑 CLDMIC 중에서 어떤게 Q랑 T에 영향을 더 주는지 봐야함.</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p>sequential splitting 방법에서 diagnostic variable을 어떻게 다루는지 확인해보아야함.</p>
-</li>
-</ul>
-</li>
-<li>
-<p>in Peru-trade region, Q increments has two layer (why?): <mark class="critic">possibly due to evap.</mark> (need to check)</p>
-</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>region</th>
-<th>noclubbsub</th>
-<th>ctrl</th>
-<th>macmic36</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>peru</td>
-<td><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/short/Peru_CLUBB_noclubbsub.png"/></td>
-<td><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/short/Peru_CLUBB_ctrl.png"/></td>
-<td><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/short/Peru_CLUBB_macmic36.png"/></td>
-</tr>
-<tr>
-<td>peru trade</td>
-<td><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/short/Peru-trade_CLUBB_noclubbsub.png"/></td>
-<td><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/short/Peru-trade_CLUBB_ctrl.png"/></td>
-<td><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/short/Peru-trade_CLUBB_macmic36.png"/></td>
-</tr>
-<tr>
-<td>california</td>
-<td><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/short/Cali_CLUBB_noclubbsub.png"/></td>
-<td><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/short/Cali_CLUBB_ctrl.png"/></td>
-<td><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/short/Cali_CLUBB_macmic36.png"/></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>region</th>
-<th>clubb36</th>
-<th>cldmic36</th>
-<th>mac6mic6</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>peru</td>
-<td><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/short/Peru_CLUBB_clubb36.png"/></td>
-<td><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/short/Peru_CLUBB_cldmic36.png"/></td>
-<td><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/short/Peru_CLUBB_mac6mic6.png"/></td>
-</tr>
-<tr>
-<td>peru trade</td>
-<td><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/short/Peru-trade_CLUBB_clubb36.png"/></td>
-<td><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/short/Peru-trade_CLUBB_cldmic36.png"/></td>
-<td><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/short/Peru-trade_CLUBB_mac6mic6.png"/></td>
-</tr>
-<tr>
-<td>california</td>
-<td><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/short/Cali_CLUBB_clubb36.png"/></td>
-<td><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/short/Cali_CLUBB_cldmic36.png"/></td>
-<td><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/short/Cali_CLUBB_mac6mic6.png"/></td>
-</tr>
-</tbody>
-</table>
-<div class="admonition note">
-<p class="admonition-title">CLUBB에서 cloud water 증가에 의한 q 감소</p>
-<ul>
-<li>rcm (cloud water)을 diagnostic 하게 계산.</li>
-<li>Q = rtm (mass total water mixing ratio) - rcm  </li>
-<li>relvar = relative cloud water variance??? (Barker et al., 1996; Guo et al., 2014)   </li>
-<li>qclvar = cloud water variance</li>
-</ul>
+</input></input></div>
+<h4 id="vertical-profile">vertical profile</h4>
+<h5 id="cloud-product">Cloud product</h5>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio"/><input id="__tabbed_5_2" name="__tabbed_5" type="radio"/><div class="tabbed-labels"><label for="__tabbed_5_1">MACMIC36 - ctrl</label><label for="__tabbed_5_2">MACMIC36 - MAC6MIC6</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/macmic36/Cloud_source_sink(macmic36-ctrl)_Vertical_profiles_of_single_Variable-2.png"/></p>
 </div>
+<div class="tabbed-block">
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/macmic36/Cloud_source_sink(macmic36-mac6mic6)_Vertical_profiles_of_single_Variable-2.png"/></p>
+</div>
+</div>
+</div>
+<h5 id="clubb-variables">CLUBB variables</h5>
+<ul>
+<li>The increase in the heat flux (positive changes) close to the cloud top suggests that the cloud top entrainment weakens under surface warming. </li>
+<li>heat flux change: increase in heat flux near cloud top indicates weak entrainment. this may lead to drier FT.</li>
+</ul>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio"/><input id="__tabbed_6_2" name="__tabbed_6" type="radio"/><div class="tabbed-labels"><label for="__tabbed_6_1">MACMIC36 - ctrl</label><label for="__tabbed_6_2">MACMIC36 - MAC6MIC6</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/macmic36/Diff(macmic36-ctrl)_ANN_Vertical_profiles_of_single_Variable-2.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/macmic36/Diff(macmic36-mac6mic6)_ANN_Vertical_profiles_of_single_Variable-2.png"/></p>
+</div>
+</div>
+</div>
+<h5 id="california">California</h5>
+<ul>
+<li>values are 1-month averages of Oct. 2009</li>
+</ul>
+<div class="tabbed-set tabbed-alternate" data-tabs="7:4"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio"/><input id="__tabbed_7_2" name="__tabbed_7" type="radio"/><input id="__tabbed_7_3" name="__tabbed_7" type="radio"/><input id="__tabbed_7_4" name="__tabbed_7" type="radio"/><div class="tabbed-labels"><label for="__tabbed_7_1">MACMIC36 - CTRL</label><label for="__tabbed_7_2">MACMIC36 - MAC6MIC6</label><label for="__tabbed_7_3">MACMIC36 - MAC6MIC6(macro. substeps)</label><label for="__tabbed_7_4">MACMIC36 - MAC6MIC6(micro. substeps)</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/wat_macmic36/Compare_INC_Diff(macmic36-ctrl)Vertical_profiles-14.png"/> <img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/wat_macmic36/Compare_INC_Diff(macmic36-ctrl)Vertical_profiles-15.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/wat_macmic36/Compare_INC_Diff(macmic36-mac6mic6)Vertical_profiles-14.png"/> <img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/wat_macmic36/Compare_INC_Diff(macmic36-mac6mic6)Vertical_profiles-15.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/wat_macmic36/MAC_INC_Diff(macmic36-mac6mic6)Vertical_profiles-14.png"/> <img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/wat_macmic36/MAC_INC_Diff(macmic36-mac6mic6)Vertical_profiles-15.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/wat_macmic36/MIC_INC_Diff(macmic36-mac6mic6)Vertical_profiles-14.png"/> <img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Anal sis/03_Sc_Cu/wat_macmic36/MIC_INC_Diff(macmic36-mac6mic6)Vertical_profiles-15.png"/></p>
+</div>
+</div>
+</div>
+<h5 id="peru">Peru</h5>
+<ul>
+<li>values are 1-month averages of Oct. 2009</li>
+</ul>
+<div class="tabbed-set tabbed-alternate" data-tabs="8:4"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio"/><input id="__tabbed_8_2" name="__tabbed_8" type="radio"/><input id="__tabbed_8_3" name="__tabbed_8" type="radio"/><input id="__tabbed_8_4" name="__tabbed_8" type="radio"/><div class="tabbed-labels"><label for="__tabbed_8_1">MACMIC36 - CTRL</label><label for="__tabbed_8_2">MACMIC36 - MAC6MIC6</label><label for="__tabbed_8_3">MACMIC36 - MAC6MIC6(macro. substeps)</label><label for="__tabbed_8_4">MACMIC36 - MAC6MIC6(micro. substeps)</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/wat_macmic36/Compare_INC_Diff(macmic36-ctrl)Vertical_profiles-16.png"/> <img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/wat_macmic36/Compare_INC_Diff(macmic36-ctrl)Vertical_profiles-17.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/wat_macmic36/Compare_INC_Diff(macmic36-mac6mic6)Vertical_profiles-16.png"/> <img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/wat_macmic36/Compare_INC_Diff(macmic36-mac6mic6)Vertical_profiles-17.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/wat_macmic36/MAC_INC_Diff(macmic36-mac6mic6)Vertical_profiles-16.png"/> <img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Anal sis/03_Sc_Cu/wat_macmic36/MAC_INC_Diff(macmic36-mac6mic6)Vertical_profiles-17.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/wat_macmic36/MIC_INC_Diff(macmic36-mac6mic6)Vertical_profiles-16.png"/> <img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Anal sis/03_Sc_Cu/wat_macmic36/MIC_INC_Diff(macmic36-mac6mic6)Vertical_profiles-17.png"/></p>
+</div>
+</div>
+</div>
+<h5 id="peru-trade">Peru-trade</h5>
+<ul>
+<li>values are 1-month averages of Oct. 2009</li>
+</ul>
+<div class="tabbed-set tabbed-alternate" data-tabs="9:4"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio"/><input id="__tabbed_9_2" name="__tabbed_9" type="radio"/><input id="__tabbed_9_3" name="__tabbed_9" type="radio"/><input id="__tabbed_9_4" name="__tabbed_9" type="radio"/><div class="tabbed-labels"><label for="__tabbed_9_1">MACMIC36 - CTRL</label><label for="__tabbed_9_2">MACMIC36 - MAC6MIC6</label><label for="__tabbed_9_3">MACMIC36 - MAC6MIC6(macro. substeps)</label><label for="__tabbed_9_4">MACMIC36 - MAC6MIC6(micro. substeps)</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/wat_macmic36/Compare_INC_Diff(macmic36-ctrl)Vertical_profiles-18.png"/> <img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/wat_macmic36/Compare_INC_Diff(macmic36-ctrl)Vertical_profiles-19.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/wat_macmic36/Compare_INC_Diff(macmic36-mac6mic6)Vertical_profiles-18.png"/> <img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/wat_macmic36/Compare_INC_Diff(macmic36-mac6mic6)Vertical_profiles-19.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/wat_macmic36/MAC_INC_Diff(macmic36-mac6mic6)Vertical_profiles-18.png"/> <img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Anal sis/03_Sc_Cu/wat_macmic36/MAC_INC_Diff(macmic36-mac6mic6)Vertical_profiles-19.png"/></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Analysis/03_Sc_Cu/wat_macmic36/MIC_INC_Diff(macmic36-mac6mic6)Vertical_profiles-18.png"/> <img alt="" src="https://compy-dtn.pnl.gov/kima320/png_plot/Budget_Anal sis/03_Sc_Cu/wat_macmic36/MIC_INC_Diff(macmic36-mac6mic6)Vertical_profiles-19.png"/></p>
+</div>
+</div>
+</div>
+<h2 id="step-by-step-analysis">step-by-step analysis</h2>
+<ul>
+<li>in the first time step, <code>macmic36</code> has larger cloud water &amp; cloud fraction.</li>
+<li>water vapor decreases as soon as cloud forms.</li>
+<li>cloud source and sink are larger in <code>macmic36</code> than <code>mac6mic6</code></li>
+<li>cloud starts to form less in <code>macmic36</code> due to less water vapor.</li>
+<li>문제는 Q 감소가 CLDLIQ 증가보다 4배 큼. --&gt; entrainment mixing 감소때문으로 추정</li>
+<li>CLUBB은 작은 RH 변화 만으로도 운량 증가: <a href="https://compy-dtn.pnl.gov/kima320/pictures/wat_macmic36_compy_FC5AV1C-L_ne30_gmd_2020_330_with_forcing_method/Scatt_Diff(macmic36-mac6mic6)_ANN.pdf">scatter plot</a></li>
+<li>most variable related to CLUBB changes after the big cloud water changes.</li>
+<li>
+<p>https://compy-dtn.pnl.gov/kima320/pictures/stp_macmic36_compy_FC5AV1C-L_ne30_gmd_2020_330_with_forcing_method/multiple_plot/single_Var_diff_of__macmic36-mac6mic6.pdf</p>
+</li>
+<li>
+<p>다음주에 할 일 </p>
+<ul>
+<li>self-collection &amp; breakup 영향 보기: https://journals.ametsoc.org/view/journals/mwre/140/8/mwr-d-11-00283.1.xml</li>
+<li>진짜로 3D 모델을 만들어보자(sedimentation을 넣기 위함).</li>
+</ul>
+</li>
+<li>
+<p>increments oscillates (as in Williamson (2013))</p>
+</li>
+</ul>
 <h2 id="things-to-watch-out-for-when-analyzing">Things to watch out for when analyzing</h2>
 <ul>
 <li>clubb time stepping sensitivity</li>
 <li>cldmic time stepping sensitivity</li>
 <li>coupling between clubb &amp; cldmic</li>
+<li>sequential splitting 방법에서 diagnostic variable을 어떻게 다루는지 확인해보아야함.</li>
 </ul>
 </article>
 </div>

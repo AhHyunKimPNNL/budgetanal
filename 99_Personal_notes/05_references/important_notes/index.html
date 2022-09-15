@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="../../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.2.3, mkdocs-material-8.1.4" name="generator"/>
-<title>Xie et al.(2018,JAMES) - Budget Analysis</title>
+<title>Notes - Budget Analysis</title>
 <link href="../../../assets/stylesheets/main.bb3983ee.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.e6a45f82.min.css" rel="stylesheet"/>
 <meta content="#009485" name="theme-color"/>
@@ -21,7 +21,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#e3sm-related-papers">
+<a class="md-skip" href="#important-notes">
           Skip to content
         </a>
 </div>
@@ -45,7 +45,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Xie et al.(2018,JAMES)
+              Notes
             
           </span>
 </div>
@@ -421,13 +421,14 @@
           References
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../important_notes/">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<a class="md-nav__link md-nav__link--active" href="./">
         Notes
       </a>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_7_3" id="__nav_6_7_3" type="checkbox"/>
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_6_7_3" id="__nav_6_7_3" type="checkbox"/>
 <label class="md-nav__link" for="__nav_6_7_3">
           E3SM
           <span class="md-nav__icon md-icon"></span>
@@ -443,47 +444,10 @@
         Rasch et al.(2019,JAMES)
       </a>
 </li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-          Xie et al.(2018,JAMES)
-          <span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Xie_et_al_2018_JAMES/">
         Xie et al.(2018,JAMES)
       </a>
-<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#xie-et-al-2018">
-    Xie et al. (2018)
-  </a>
-<nav aria-label="Xie et al. (2018)" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#clubb">
-    CLUBB
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#model-tuning">
-    Model tuning
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#results">
-    Results
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../Zhang_et_al_2018_GMD/">
@@ -561,536 +525,47 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="e3sm-related-papers">E3SM related papers</h1>
-<h2 id="xie-et-al-2018">Xie et al. (2018)</h2>
-<p><a href="https://doi.org/10.1029/2018MS001350">Understanding Cloud and Convective Characteristics in Version 1 of the E3SM Atmosphere Model</a></p>
+<h1 id="important-notes">Important notes</h1>
 <ul>
 <li>
-<p>summary for CLUBB</p>
+<p>Zheng et al. (<a href="https://doi.org/10.1175/MWR-D-19-0349.1">2020</a>)</p>
 <ul>
-<li>CLUBB: a simplified third-order turbulence parameterization Cloud Layers Unified By Binormals<ul>
-<li>unified treatment of boundary layer turbulence, shallow convection, and cloud macrophysics</li>
-<li>leads to a reduction in subtropical coast stratocumulus cloud -&gt; improved by increasing vertical resolution</li>
-<li>an assumed joint subgrid probability density function (PDF): provides flexibility in the representing a variety of turbulent and cloud regemes.</li>
-<li>paired with ZM deep convection scheme (Zhang and McFarlane, 1995)</li>
-</ul>
-</li>
-<li>increase in vertical resolution<ul>
-<li>underestimate high clouds over the tropical warm pool: due to the selection for numerical stability of a higher air parcel launch level in the deep convection scheme.</li>
-<li>considerable degradation in cloud and precipitation fields without retuning.<ul>
-<li>weaker tropical and subtropical SCRE &amp; LCRE</li>
-<li>stronger precipitation in the ICTZ</li>
-</ul>
-</li>
-</ul>
-</li>
+<li>The largely reduced raindrop number due to the self-collection of raindrops and unchanged rainwater mixing ratio result in significantly larger rain fall speed at levels right above the rain evaporating zone compared with levels below and above (Fig. 5e). Closer to the surface, the rain evaporation and self-collection trigger the conservation check to prevent the in-cloud rain number concentration and the in-cloud rain water from becoming negative, which resets the in-cloud rain number concentration to a large value relative to the in-cloud rain water and results in small rain fall-speed.</li>
 </ul>
 </li>
 <li>
-<p>Remaining problems in EAMv1</p>
+<p>Guo et al. (<a href="https://doi.org/10.1002/2014MS000405">2015</a>)</p>
 <ul>
-<li>underestimation of stratocumulus near the west coasts of major continents in the subtropics</li>
-<li>the substantially reduced high clouds over the tropical warm pool (TWP)</li>
-<li>other notable regional changes in cloud and precipitation.</li>
-</ul>
-</li>
-</ul>
-<h3 id="clubb">CLUBB</h3>
-<ul>
-<li>CLUBB: Cloud Layer Unified By Binormals ( Turbulence(boundary layer), Shallow Convection, and Cloud Macrophysics.)</li>
-<li>PDF<ul>
-<li>Third-order (temperature, moisture, and vertical velocity) assumed PDF</li>
-<li>shape: Gaussian shape (stratocumulus &amp; cumulus clouds to be represented with a single PDF) (Bogenschutz et al., 2010; Larson et al., 2002)</li>
-<li>the skewness of temperature and moisture is assumed to be proportional to the skewness of vertical velocity to reduce the computational cost.</li>
-<li>the widths and skewness of the PDF are determined  by the higher-order moments predicted by CLUBB.</li>
-<li>calculation of cloud fraction and cloud water mixing ration using PDF is <mark class="critic">limited to liquid clouds</mark> </li>
-</ul>
-</li>
-<li>Ice cloud fraction continues to be determined using a RH based scheme (Gettlman et al., 2010)<ul>
-<li>threshold for ice cloud formation: RHw/RHi &gt; 100% (rhmaxi, tunable)</li>
+<li><span class="arithmatex">\(\beta\)</span> (determining the skewness of <span class="arithmatex">\(\overline{q_t}\)</span> and <span class="arithmatex">\(\overline{\theta_l}\)</span>) is found to have a significant impact on the global mean low-cloud fraction, because it determines the thermodynamic turbulent structure through skewness of scalars.</li>
+<li>The CLUBB parameter related to cloud water subgrid variability C2rt is also found to have significant impact on the low-cloud fraction, especially over the high-latitude oceans such as oceanic storm track regions over the North Pacific. This is mainly through the coupling between cloud macrophysics (CLUBB) and cloud microphysics. C2rt affects the subgrid variability of liquid condensate through its control of the dissipation term of total water variance. This, therefore, changes the inverse of relative variance of in-cloud cloud water, which influences autoconversion, accretion, and immersion freezing of cloud liquid water and further on low-cloud fraction. This occurs in high latitudes because the variance of relative variance of in-cloud cloud water is high in these regions.</li>
 </ul>
 </li>
 <li>
-<p>tunable parameters: for the pressure correlation, dissipation, and skewness closure that appear in CLUBB´s predictive equations.</p>
-</li>
-<li>
-<p>vertical layer</p>
+<p>Golaz et al. (<a href="https://doi.org/10.1175/1520-0469(2002)059&lt;3540:APBMFB&gt;2.0.CO;2">2002</a>)</p>
 <ul>
-<li>importance of higher top: to capture important atmospheric features such as<ul>
-<li>troposphere &amp; stratosphere: Quasi Biennial Oscillation, Sudden Stratospheric Warming, Southern Annular Mode</li>
-<li>Stratospheric interaction: affect the mean state and inerannual variability of the tropospheric climate.</li>
-</ul>
-</li>
-<li>PBL<ul>
-<li>better capture the gradient in the geophysical field near inversion</li>
-<li>accurate depiction of resolved-scale thermodynamics that spawns complicated interaction between <ul>
-<li>land-surface flux</li>
-<li>turbulence mixing</li>
-<li>cloud microphysics (surface-to-troposphere water vapor gradients, cloud vertical extent, etc)</li>
-<li>radiation</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p><img alt="EAM vertical layer" src="https://agupubs.onlinelibrary.wiley.com/cms/asset/7ef1d350-d2fe-4793-9a4b-933548828edc/jame20776-fig-0001-m.png"/></p>
-<ul>
-<li>General performance<ul>
-<li>CLUBB led to a more realistic transition from stratocumulus to trade wind cumulus regions in the subtropical oceans (Bogenschutz et al., 2013)</li>
-<li>LWCF: -4 W m<sup>-2</sup> compared to observation<ul>
-<li>most severe in tropics: shallower deep convection depth --&gt; lead to <ul>
-<li>reduce stratiform high clouds due to weaker detrainment from the reduced convective peneration.</li>
-<li>dry biases in the tropical middle and upper troposphere</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>SWCF: 5 W m<sup>-2</sup> (with CLUBB) 8 m<sup>-2</sup> (without CLUBB)</li>
-<li>precipitation: excessive compared to observations.</li>
-</ul>
-</li>
-</ul>
-<h3 id="model-tuning">Model tuning</h3>
-<ul>
-<li>vertical resolution<ul>
-<li>tuning parameter<ul>
-<li>entrainment (<ins>dmpdz</ins>): reduced (to increase the peneration depth of deep convection) </li>
-<li>convective precipitation efficiency (<ins>c0_ocn</ins>, <ins>c0_lnd</ins>): reduced (due to excessive precipitation)<ul>
-<li>reduce convective precipitation</li>
-<li>allow more condensate in the convective clouds &amp; detrainment from  convection</li>
-</ul>
-</li>
-<li>areal extent of convective updraft (<ins>dp1</ins>): reduced<ul>
-<li>increase high cloud</li>
-<li>reduce LWCF biases</li>
-<li>cause underproduction of low- and middle level cloud in convectively active region</li>
-</ul>
-</li>
-<li>ice sedimentation rate (<ins>ice_sed_ai</ins>): smaller</li>
-<li>detrainment ice particle size (<ins>re_ice_deep</ins>): smaller<ul>
-<li>remain in the atmosphere longer (increase high cloud lifetime &amp; brighter cloud)</li>
-</ul>
-</li>
-<li>upper bound threshold RH for max. ice cloud fraction (<ins>rhmaxi</ins>): reduced<ul>
-<li>increase high-level cloud amount, reduce LWCF negative bias</li>
-</ul>
-</li>
-<li>threshold size of Aitken-mode sulfate aerosols for IN (<ins>so4_sz_thresh_icenuc</ins>):reduced<ul>
-<li>increase high-level cloud amount, reduce LWCF negative bias</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>sensitive areas<ul>
-<li>precipitation bias: Amazon &amp; Tropical warm pool (TWP)</li>
-<li>SWCF: stratocumulus region (eastern ocean basins)</li>
-<li>surface wind stress bias: tropics &amp; Southern Ocean (SO)</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>Tuned parameter</th>
-<th>Brief description</th>
-<th>EAMv0</th>
-<th>EAMv1L</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Deep convection</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>dmpdz</td>
-<td>Convective parcel fractional entrainment rate for updrafts</td>
-<td>−1.0e−3</td>
-<td>−0.7e−3 (−)</td>
-</tr>
-<tr>
-<td>C0_ocn</td>
-<td>Autoconversion parameter for deep convective clouds over ocean</td>
-<td>0.0035</td>
-<td>0.007 (−)</td>
-</tr>
-<tr>
-<td>C0_lnd</td>
-<td>Autoconversion parameter for deep convective clouds over land</td>
-<td>0.009</td>
-<td>0.007 (−)</td>
-</tr>
-<tr>
-<td>Ke</td>
-<td>Convective rain evaporation</td>
-<td>1.0e−6</td>
-<td>1.5e−6 (+)</td>
-</tr>
-<tr>
-<td>Tiedke_add</td>
-<td>Perturbation added to the parcel buoyancy in ZM scheme</td>
-<td>0.5</td>
-<td>0.8</td>
-</tr>
-<tr>
-<td>capeten</td>
-<td>Capeten is the number of tentative CAPE computed—one for each neutral buoyancy crossing—to find the maximum cape of updraft plume for use in the ZM convective scheme.</td>
-<td>0.1e−6</td>
-<td>0.075e−6</td>
-</tr>
-<tr>
-<td>liftlevel</td>
-<td>The lowest possible launch level above the models bottom level</td>
-<td>0.1e−6</td>
-<td>0.075e−6</td>
-</tr>
-<tr>
-<td>Cloud macrophysics</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>dp1</td>
-<td>Convective cloud fraction coefficient that controls the size of ensemble convective plume</td>
-<td>0.025</td>
-<td>0.045 (−)</td>
-</tr>
-<tr>
-<td>rhmaxi</td>
-<td>Threshold RH with respect to ice for ice cloud fraction to equal to 1.0</td>
-<td>1.10</td>
-<td>1.05</td>
-</tr>
-<tr>
-<td>Re_ice_deep</td>
-<td>Convective ice cloud effective radius</td>
-<td>25e−6</td>
-<td>16e−6</td>
-</tr>
-<tr>
-<td>Cloud microphysics</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Micro_mg_dcs</td>
-<td>Autoconversion size threshold for cloud ice to snow</td>
-<td>600e−6</td>
-<td>T dependent (−)</td>
-</tr>
-<tr>
-<td>Ice_sed_ai</td>
-<td>Fall speed parameter for cloud ice</td>
-<td>700</td>
-<td>500</td>
-</tr>
-<tr>
-<td>Aerosols</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>so4_sz_thresh_icenuc</td>
-<td>Aitken mode sulfate aerosol size threshold for homogeneous ice nucleation</td>
-<td>0.1e−6</td>
-<td>0.075e−6</td>
-</tr>
-<tr>
-<td>*** CLUBB parameters not available in EAMv0 but require tuning from EAMv0_CL72 to EAMv1L</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>C1</td>
-<td>Constant associated with the dissipation of <span class="arithmatex">\(\overline{ w^{´2} }\)</span></td>
-<td>1.0</td>
-<td>1.335</td>
-</tr>
-<tr>
-<td>C2rt</td>
-<td>Constant associated with the dissipation of total water mixing ratio</td>
-<td>1.0</td>
-<td>1.75</td>
-</tr>
-<tr>
-<td>C8</td>
-<td>Constant associated with the damping of <span class="arithmatex">\(\overline{ w^{´3} }\)</span> used in CLUBB</td>
-<td>4.2</td>
-<td>4.3 (+)</td>
-</tr>
-<tr>
-<td>C14</td>
-<td>Constant in Newtonian damping of <span class="arithmatex">\(\overline{ u^{´2} }\)</span> and <span class="arithmatex">\(\overline{ v^{´2} }\)</span> used in CLUBB</td>
-<td>1.0</td>
-<td>1.3 (+)</td>
-</tr>
-<tr>
-<td>C_k10</td>
-<td>Momentum diffusion factor</td>
-<td>0.6</td>
-<td>0.3</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>horizontal resolution<ul>
-<li>use short-hindcast simulation (Ma et al., 2014; Xie et al., 2012)</li>
-<li>similar parameters that were used in increasing vertical resolution are used.</li>
-<li>additionally tuned parameters<ul>
-<li>convective ice cloud particle size &amp; Aitken mode sulfate aerosol size threshold: more reduced.</li>
-<li>C1, C8, C14: fine-tune the clouds and SWCF over the stratocumulus regimes in order to offset the negative effect due to the other tuning</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>Tuned parameter</th>
-<th>Brief description</th>
-<th>EAMv1L</th>
-<th>EAMv1H</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Deep convection</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>dmpdz</td>
-<td>Convective parcel fractional entrainment rate for updrafts</td>
-<td>−0.7e−3</td>
-<td>−0.2e−3 (−)</td>
-</tr>
-<tr>
-<td>C0_ocn</td>
-<td>Autoconversion parameter for deep convective clouds over ocean</td>
-<td>0.007</td>
-<td>0.0035 (−)</td>
-</tr>
-<tr>
-<td>C0_lnd</td>
-<td>Autoconversion parameter for deep convective clouds over land</td>
-<td>0.007</td>
-<td>0.0043 (−)</td>
-</tr>
-<tr>
-<td>ke</td>
-<td>Convective rain evaporation</td>
-<td>1.5e−6</td>
-<td>6e−6 (+)</td>
-</tr>
-<tr>
-<td>alfa</td>
-<td>Maximum convective downdraft mass flux fraction that controls the strength of downdraft ensemble</td>
-<td>0.1</td>
-<td>0.2 (+)</td>
-</tr>
-<tr>
-<td>Cloud macrophysics</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>dp1</td>
-<td>Convective cloud fraction coefficient that control the size of ensemble convective plume</td>
-<td>0.045</td>
-<td>0.039 (−)</td>
-</tr>
-<tr>
-<td>Re_ice_deep</td>
-<td>Convective ice cloud effective radius</td>
-<td>16e−6</td>
-<td>12e−6 (−)</td>
-</tr>
-<tr>
-<td>CLUBB (turbulence)</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>C1</td>
-<td>Constant associated with the dissipation of <span class="arithmatex">\(\overline{ w^{´2} }\)</span></td>
-<td>1.335</td>
-<td>1.50 (+)</td>
-</tr>
-<tr>
-<td>C8</td>
-<td>Constant associated with the damping of <span class="arithmatex">\(\overline{ w^{´3} }\)</span> used in CLUBB</td>
-<td>4.3</td>
-<td>4.73 (+)</td>
-</tr>
-<tr>
-<td>C14</td>
-<td>Constant in Newtonian damping of <span class="arithmatex">\(\overline{ u^{´2} }\)</span> and <span class="arithmatex">\(\overline{ v^{´2} }\)</span>  used in CLUBB</td>
-<td>1.3</td>
-<td>1.75 (+)</td>
-</tr>
-<tr>
-<td>Aerosols</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>dust_emis_fact</td>
-<td>Dust emission parameter</td>
-<td>2.05</td>
-<td>2.50 (+)</td>
-</tr>
-<tr>
-<td>so4_sz_thresh_icenuc</td>
-<td>Aitken mode sulfate aerosol size threshold for homogeneous ice nucleation</td>
-<td>0.075e−6</td>
-<td>0.05e−6 (−)</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>large model sensitivity in deep convection regime to the increase of vertical resolution indicatees the poor scale awareness of the ZM scheme. (originally designed to work at a scale of 100 km or larger)<ul>
-<li>related properties: the level of the air parcel launch (liftlevel), free convection, melting, neutral buoyancy</li>
-</ul>
-</li>
-</ul>
-<h3 id="results">Results</h3>
-<ul>
-<li>
-<p>Cloud</p>
-<ul>
-<li>CLUBB led to a more realistic transition from stratocumulus to trade wind cumulus regions in the subtropical oceans in CAM5 (Bogenschutz et al., 2013) and also in EAMv1L.</li>
-<li>substantial decrease in Sc near the coasts in EAMv1:<ul>
-<li>might be due to the narrow area of low vertical velocity skewness in CLUBB and the annual mean skewness is too high</li>
-<li>near Peru/Chile and Calinornian coast</li>
-</ul>
-</li>
-<li>increase of low clouds: <ul>
-<li>especially in the trade cumulus regions due to a better representation of the boundary layer structure.(see Figure2 and Figure4 in this article)</li>
-</ul>
-</li>
-<li>problems with tuning<ul>
-<li>tuning of parameter to balance the TOA radiative budget reduces low clouds: <mark class="critic">due to competition &amp; interaction between shallow and deep convection</mark></li>
-<li>dp1 reduction: lead to a large reduction of clouds in the low and middle levels ( cloud below 4 km)</li>
+<li><img alt="" src="https://journals.ametsoc.org/view/journals/atsc/59/24/i1520-0469-59-24-3540-f01.gif"/></li>
 </ul>
 </li>
 <li>
-<p><mark class="critic">adjusting parameters such as CAPE (capeten) and the air parcel launch level (liftlevel) due to increase in vertical resolution affect Sc and Cu transition</mark>.</p>
-</li>
-<li>
-<p><img alt="Figure2" src="https://agupubs.onlinelibrary.wiley.com/cms/asset/c50c3b91-50a6-4a7c-9d67-bf3bc5d03af5/jame20776-fig-0002-m.png"/></p>
-</li>
-<li>
-<p><img alt="Figure4" src="https://agupubs.onlinelibrary.wiley.com/cms/asset/af82cf35-8da6-4bdd-9b4a-365c218e447a/jame20776-fig-0004-m.png"/></p>
-</li>
-<li>
-<p>reduction of high level cloud (drier free troposphere) --&gt; due to high vertical resolution</p>
+<p>Posselt and Lohmann (<a href="https://doi.org/10.5194/acp-8-2949-2008">2008</a>)</p>
 <ul>
-<li>water vapor is more easily confined to the surface and boundary layer.</li>
-<li>excessive ice cloud and insufficient liquid cloud have been an outstanding issue in CAM5 (Kay et al., 2016; Xie et al., 2013).</li>
-<li>IWP simulated by EAMv1L (11.64 g m<sup>-2</sup>) is significantly smaller than that produced by EAMv0 (31.70 g m<sup>-2</sup>) due to <mark class="critic">change of the ice-to-snow autoconversion scheme</mark>.</li>
-<li>substantially weaker LWCF over the TWP due to less high cloud cover.</li>
-</ul>
-</li>
+<li>Moisture budget consideration usually assume that the column integral of the apparent moisture sink (condensation/evaporation) equals the precipitation at the surface plus the evaporation from the surface (surface latent heat flux) (Yanai et al., 1973). Therefore the precipitation is mainly determined by the available moisture. However, in case of diminished or even suppressed autoconversion and accretion due to very low TWP as during EPIC, the precipitation formation depends not only on the available moisture but also on the amount of liquid water in the atmosphere. Liquid water has to accumulate in the atmosphere before the conversion processes can produce precipitation. Therefore, the drizzle case shows some dependence of the precipitation on the number of sub-time steps because the LWP varies with the number of sub-time steps.</li>
 </ul>
 </li>
 <li>
-<p>Precipitation</p>
+<p>Zhang et al. (<a href="https://doi.org/10.1029/2018MS001423">2018</a>)</p>
 <ul>
-<li>excessive precipiation over large portions of the tropic, Arabian Sea, Pacific ITCZ, the subtropical oceans, Nortwestern Indian Ocean and Africa.</li>
-<li>less precipitation over Amazon, TWP, and South China Sea. (mostly due to tuning)</li>
-</ul>
-</li>
-<li>
-<p>Temperature &amp; Moisture</p>
-<ul>
-<li>cold biases in the upper troposphere in the tropical and subtropical regions</li>
-<li>moistures are trapped in the lower levels, drier mid/upper troposphere.</li>
-</ul>
-</li>
-<li>
-<p>Impact of tuning parameter "capeten" and Air Parcel Launch Level in ZM</p>
-<ul>
-<li>capeten: the number of negative buoyancy layers that deep convection can penetrate.</li>
-<li>adjustment leads to:<ul>
-<li>overall: negative on high clouds &amp; tropical precipitation</li>
-<li>increase in low clouds in the Sc/Cu transition region</li>
-<li>decrease of low clouds along the equatorial deep convection region (reduction up to 15%)</li>
-<li>tropical convection is substantially suppressed over the TWP &amp; Eastern Pacific warm pool off the central Americal coast (reduced high cloud &amp; LWCF)</li>
-<li>enhanced precipitation and high clod over tropical lands &amp; adjacent oceans (increase in LWCF)</li>
-<li>significant cloud reduction above 6 km is due to the higher cloud launch level.</li>
+<li>Previous studies (Brient et al., 2015; Vial et al., 2016; M. Zhang et al., 2013) have shown that stronger shallow convection can transport more moisture from the PBL to the free troposphere and thus contribute to the LCC decrease, usually with the deepening of PBL clouds (convective drying).</li>
 </ul>
 </li>
 </ul>
-</li>
-<li>
-<p>Summary</p>
-<ul>
-<li>Overall improvement in comparison with EAMv0
-    1) cloud products
-        - increased stratocumulus (except near the coasts) and trade-wind cumulus
-        - better transition from Sc to Cu
-    2) reduced biases in LWCF, especially over tropical land and adjacent ocean
-    3) notably improved precipitation over the oceans adjacent to the indian peninsula and tropical eastern Indian ocean.</li>
-<li>remaining problems due to CLUBB, MG2:<ul>
-<li>dry biases over the Amazon region</li>
-<li>substantial reduction of Sc off the west coast of major continents in the subtropics</li>
-<li>largely reduced high clouds over TWP</li>
-<li>lack of low and middle level clouds over deep convection regions</li>
-<li>dry bias in TWP and South East Asia.</li>
-<li><mark class="critic">CLUBB led to an initial reduction of stratocumulus clouds</mark></li>
-</ul>
-</li>
-<li>Impact of increasing vertical resolution<ul>
-<li>large reduction of high cloud over tropical deep convection regimes (weaker LWCF over TWP)</li>
-<li>excessive precipitation in the tropics</li>
-<li>increase of Sc off the west coasts of Nort and South America</li>
-<li>But, tuning parameter leads to an overall increase of high clouds and reduction of low and middle clouds in the tropical region</li>
-</ul>
-</li>
-<li>Impact of increasing horizontal resolution<ul>
-<li>decrease in cloud and precipitation field (weaker SWCF and LWCF) in the tropical and subtropical regions</li>
-<li>stronger precipitation in ITCZ</li>
-<li>But, tuning parameter leads to improve clouds and precipitation, including notable increase of Sc.</li>
-</ul>
-</li>
-<li>ZM tuning (capeten &amp; liftlevel)<ul>
-<li>supresses deep convection over tropical oceans and enhances over lands.</li>
-<li>reduce high clouds and tropical precipitation</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>output from the MISR simulator (Marchand&amp; Ackerman, 2010) is to facilitate model-observation comparison of low-level clouds, as MISR provides the most accurate retrievals of cloud top heignts for low-level clouds among the available satellite cloud simulators contained in the Cloud Feedback Model Intercomparison Project Observaion Simulator Package (Bodas-Salcedo et al., 2011; Kay et al., 2012) </p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>MG2 only plays a minor role in influencing low cloud amount</p>
-</div>
 </article>
 </div>
 </div>
 </main>
 <footer class="md-footer">
 <nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="Previous: Rasch et al.(2019,JAMES)" class="md-footer__link md-footer__link--prev" href="../Rasch_et_al_2019_JAMES/" rel="prev">
+<a aria-label="Previous: Summary" class="md-footer__link md-footer__link--prev" href="../" rel="prev">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
 </div>
@@ -1099,17 +574,17 @@
 <span class="md-footer__direction">
                 Previous
               </span>
-              Rasch et al.(2019,JAMES)
+              Summary
             </div>
 </div>
 </a>
-<a aria-label="Next: Zhang et al.(2018,GMD)" class="md-footer__link md-footer__link--next" href="../Zhang_et_al_2018_GMD/" rel="next">
+<a aria-label="Next: Rasch et al.(2019,JAMES)" class="md-footer__link md-footer__link--next" href="../Rasch_et_al_2019_JAMES/" rel="next">
 <div class="md-footer__title">
 <div class="md-ellipsis">
 <span class="md-footer__direction">
                 Next
               </span>
-              Zhang et al.(2018,GMD)
+              Rasch et al.(2019,JAMES)
             </div>
 </div>
 <div class="md-footer__button md-icon">
